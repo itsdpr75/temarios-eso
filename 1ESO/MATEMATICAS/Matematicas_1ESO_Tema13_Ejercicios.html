@@ -1,0 +1,293 @@
+<!-- Matematicas_1ESO_Tema13_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 13: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 13: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 13.1 Población, muestra y variables estadísticas -->
+    <div class="section-divider"><h3>13.1 Población y variables</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.01</span></div><div class="card-body"><p>Define población estadística.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.02</span></div><div class="card-body"><p>¿Qué es una muestra representativa?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.03</span></div><div class="card-body"><p>Clasifica: "color de ojos" como variable estadística.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.04</span></div><div class="card-body"><p>Clasifica: "número de hermanos" como variable estadística.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.05</span></div><div class="card-body"><p>Clasifica: "altura en cm" como variable estadística.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.06</span></div><div class="card-body"><p>Da un ejemplo de variable cualitativa ordinal.</p></div><div class="answer-area"><textarea placeholder="Ejemplo..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.07</span></div><div class="card-body"><p>Si una población tiene 500 individuos y se estudia una muestra de 50, ¿cuál es el tamaño de la muestra?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.08</span></div><div class="card-body"><p>¿En qué se diferencia un censo de un muestreo?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.09</span></div><div class="card-body"><p>Clasifica: "nota en un examen (suspenso, aprobado, notable, sobresaliente)" como variable estadística.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.1.10</span></div><div class="card-body"><p>¿Por qué es importante que una muestra sea representativa?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.11</span></div><div class="card-body"><p>En una encuesta sobre deportes, se preguntó a 100 estudiantes. Si 35 eligieron fútbol, calcula la frecuencia relativa.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.12</span></div><div class="card-body"><p>Clasifica y justifica: "tiempo de carga de una página web en segundos".</p></div><div class="answer-area"><textarea placeholder="Clasifica y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.13</span></div><div class="card-body"><p>Si una variable toma valores {rojo, verde, azul}, ¿es discreta o continua? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.14</span></div><div class="card-body"><p>Describe una técnica de muestreo aleatorio simple para seleccionar 20 estudiantes de una clase de 100.</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.15</span></div><div class="card-body"><p>Si una población tiene N=2000 y se toma una muestra de n=200, ¿qué porcentaje de la población se estudia?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.16</span></div><div class="card-body"><p>Clasifica: "nivel de satisfacción (1-5)" como variable estadística y explica por qué.</p></div><div class="answer-area"><textarea placeholder="Clasifica y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.17</span></div><div class="card-body"><p>Si una variable cualitativa tiene 4 categorías y una cuantitativa discreta toma valores enteros del 1 al 10, ¿cuántos valores distintos pueden observarse en total si se estudian conjuntamente?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.18</span></div><div class="card-body"><p>Demuestra que la frecuencia relativa siempre está entre 0 y 1.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.1.19</span></div><div class="card-body"><p>Investiga: ¿qué es el muestreo estratificado y cuándo es preferible al aleatorio simple?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.1.20</span></div><div class="card-body"><p>Demuestra que la suma de todas las frecuencias relativas es siempre 1.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.1.21</span></div><div class="card-body"><p>Si una variable continua se agrupa en intervalos de amplitud constante, ¿cómo afecta esto al cálculo de frecuencias?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.1.22</span></div><div class="card-body"><p>Calcula el tamaño mínimo de muestra necesario para estimar una proporción poblacional con error máximo del 5% y nivel de confianza del 95% (usa fórmula aproximada).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.1.23</span></div><div class="card-body"><p>Demuestra que si dos variables son independientes, la frecuencia conjunta esperada es el producto de las frecuencias marginales.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.1.24</span></div><div class="card-body"><p>Investiga: ¿qué es el sesgo de selección en muestreo y cómo puede afectar a las conclusiones estadísticas?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.1.25</span></div><div class="card-body"><p>Problema aplicado: En una empresa de 500 empleados, se quiere estudiar la satisfacción laboral. Diseña un plan de muestreo estratificado por departamentos (Ventas:200, IT:150, Admin:100, Otros:50) para obtener una muestra de 50 empleados proporcional.</p></div><div class="answer-area"><textarea placeholder="Diseña el plan..."></textarea></div></div>
+    </div>
+
+    <!-- 13.2 Tablas de frecuencias y gráficos -->
+    <div class="section-divider"><h3>13.2 Tablas y gráficos</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.01</span></div><div class="card-body"><p>Calcula la frecuencia absoluta de un valor que aparece 7 veces en un conjunto de 50 datos.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.02</span></div><div class="card-body"><p>Si la frecuencia absoluta de un valor es 12 y el total de datos es 60, calcula su frecuencia relativa.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.03</span></div><div class="card-body"><p>Construye la frecuencia acumulada para los valores: 2 (f=5), 4 (f=8), 6 (f=3).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.04</span></div><div class="card-body"><p>¿Qué tipo de gráfico es más adecuado para representar la variable "deporte favorito"?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.05</span></div><div class="card-body"><p>Si la frecuencia relativa acumulada hasta un valor es 0.75, ¿qué porcentaje de datos es menor o igual a ese valor?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.06</span></div><div class="card-body"><p>¿Cuándo se usa un histograma en lugar de un diagrama de barras?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.07</span></div><div class="card-body"><p>Calcula la frecuencia relativa de un valor si su frecuencia absoluta es 9 y N=45.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.08</span></div><div class="card-body"><p>Si la suma de frecuencias absolutas es 100, ¿cuál debe ser la suma de frecuencias relativas?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.09</span></div><div class="card-body"><p>Dibuja mentalmente un diagrama de barras para: valor 1 (f=4), valor 2 (f=7), valor 3 (f=2).</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.2.10</span></div><div class="card-body"><p>¿Qué información adicional proporciona la frecuencia acumulada respecto a la absoluta?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.11</span></div><div class="card-body"><p>Construye la tabla completa de frecuencias para: valores 1,2,3,4 con f_i = 5,10,15,10 respectivamente.</p></div><div class="answer-area"><textarea placeholder="Construye la tabla..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.12</span></div><div class="card-body"><p>Si en un gráfico circular un sector tiene ángulo 90°, ¿cuál es su frecuencia relativa?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.13</span></div><div class="card-body"><p>Calcula la frecuencia relativa acumulada para el tercer valor si las frecuencias absolutas son: 8,12,15,10 (N=45).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.14</span></div><div class="card-body"><p>Demuestra que la frecuencia relativa acumulada del último valor es siempre 1.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.15</span></div><div class="card-body"><p>Si un histograma tiene intervalos de amplitud 2 y frecuencias 5,10,15, ¿cómo se calcula la densidad de frecuencia para cada barra?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.16</span></div><div class="card-body"><p>Calcula el ángulo del sector circular correspondiente a una frecuencia relativa de 0.35.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.17</span></div><div class="card-body"><p>Si la frecuencia acumulada hasta un valor es 30 y N=50, ¿cuántos datos son mayores que ese valor?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.18</span></div><div class="card-body"><p>Describe cómo se construye un polígono de frecuencias a partir de un histograma.</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.2.19</span></div><div class="card-body"><p>Investiga: ¿qué es un diagrama de Pareto y cuándo se utiliza?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.2.20</span></div><div class="card-body"><p>Demuestra que la frecuencia relativa acumulada es una función no decreciente.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.2.21</span></div><div class="card-body"><p>Si una variable continua se agrupa en intervalos de amplitud variable, ¿cómo debe ajustarse el histograma para que el área represente correctamente la frecuencia?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.2.22</span></div><div class="card-body"><p>Calcula la frecuencia relativa acumulada inversa (de mayor a menor) para un conjunto de datos con frecuencias absolutas: 10,20,30,40.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.2.23</span></div><div class="card-body"><p>Demuestra que el área total de un histograma con densidades de frecuencia es igual a 1.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.2.24</span></div><div class="card-body"><p>Investiga: ¿cómo se representa gráficamente una variable bivariante (dos variables simultáneamente)?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.2.25</span></div><div class="card-body"><p>Problema aplicado: En un estudio de tiempos de respuesta de un servidor (en ms): [120,135,142,128,155,130,145,138,150,140]. Agrupa en intervalos de amplitud 10, construye la tabla de frecuencias y describe qué gráfico sería más informativo.</p></div><div class="answer-area"><textarea placeholder="Resuelve..."></textarea></div></div>
+    </div>
+
+    <!-- 13.3 Media, mediana y moda -->
+    <div class="section-divider"><h3>13.3 Media, mediana, moda</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.01</span></div><div class="card-body"><p>Calcula la media de: 3, 5, 7, 9.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.02</span></div><div class="card-body"><p>Calcula la mediana de: 2, 4, 6, 8, 10.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.03</span></div><div class="card-body"><p>Calcula la moda de: 1, 2, 2, 3, 3, 3, 4.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.04</span></div><div class="card-body"><p>Calcula la media ponderada si los valores 2,4,6 tienen frecuencias 3,2,1 respectivamente.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.05</span></div><div class="card-body"><p>Calcula la mediana de: 5, 1, 9, 3, 7.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.06</span></div><div class="card-body"><p>¿Puede una distribución tener más de una moda? Ejemplifica.</p></div><div class="answer-area"><textarea placeholder="Responde y ejemplifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.07</span></div><div class="card-body"><p>Calcula la media de: 10, 20, 30, 40, 50.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.08</span></div><div class="card-body"><p>Calcula la mediana de: 8, 2, 5, 9, 1, 7.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.09</span></div><div class="card-body"><p>Si todos los valores de un conjunto son iguales a 5, ¿cuál es la media, mediana y moda?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.3.10</span></div><div class="card-body"><p>¿Qué medida de tendencia central es más adecuada para una variable cualitativa nominal?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.11</span></div><div class="card-body"><p>Calcula la media, mediana y moda de: 1, 2, 2, 3, 4, 5, 10.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.12</span></div><div class="card-body"><p>Si la media de 4 números es 15 y tres de ellos son 10, 12, 18, calcula el cuarto número.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.13</span></div><div class="card-body"><p>Calcula la mediana de un conjunto con 10 datos ordenados: 3,5,7,9,11,13,15,17,19,21.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.14</span></div><div class="card-body"><p>Si se añade un valor extremo (outlier) muy alto a un conjunto de datos, ¿cómo afecta a la media y a la mediana?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.15</span></div><div class="card-body"><p>Calcula la media ponderada de notas: examen (peso 60%, nota 7), proyecto (peso 40%, nota 9).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.16</span></div><div class="card-body"><p>Demuestra que la media minimiza la suma de cuadrados de las desviaciones.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.17</span></div><div class="card-body"><p>Si una distribución es bimodal con modas en 5 y 15, ¿qué puede decirse sobre su forma?</p></div><div class="answer-area"><textarea placeholder="Analiza..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.18</span></div><div class="card-body"><p>Calcula la media, mediana y moda para datos agrupados: intervalos [0-10):f=5, [10-20):f=10, [20-30):f=15 (usa marcas de clase).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.3.19</span></div><div class="card-body"><p>Investiga: ¿qué es la media geométrica y cuándo es preferible a la aritmética?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.3.20</span></div><div class="card-body"><p>Demuestra que la mediana minimiza la suma de valores absolutos de las desviaciones.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.3.21</span></div><div class="card-body"><p>Calcula la media, mediana y moda de una distribución asimétrica a la derecha y explica las diferencias observadas.</p></div><div class="answer-area"><textarea placeholder="Calcula y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.3.22</span></div><div class="card-body"><p>Si se transforman linealmente los datos (y_i = a·x_i + b), ¿cómo se transforman la media, mediana y moda?</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.3.23</span></div><div class="card-body"><p>Demuestra que en una distribución simétrica unimodal, media, mediana y moda coinciden.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.3.24</span></div><div class="card-body"><p>Investiga: ¿qué es la desviación media y cómo se relaciona con la media y mediana?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.3.25</span></div><div class="card-body"><p>Problema aplicado: En un sistema, los tiempos de respuesta (ms) son: [45,52,48,120,55,50,47,150,53,49]. Calcula media, mediana y moda. ¿Cuál es más representativa para monitorizar el rendimiento? Justifica.</p></div><div class="answer-area"><textarea placeholder="Calcula y justifica..."></textarea></div></div>
+    </div>
+
+    <!-- 13.4 Probabilidad: sucesos y regla de Laplace -->
+    <div class="section-divider"><h3>13.4 Probabilidad básica</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.01</span></div><div class="card-body"><p>Calcula la probabilidad de sacar cara al lanzar una moneda justa.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.02</span></div><div class="card-body"><p>Calcula la probabilidad de sacar un número par al lanzar un dado justo.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.03</span></div><div class="card-body"><p>¿Cuál es la probabilidad del suceso seguro?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.04</span></div><div class="card-body"><p>¿Cuál es la probabilidad del suceso imposible?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.05</span></div><div class="card-body"><p>Si P(A) = 0.3, calcula P(Ā).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.06</span></div><div class="card-body"><p>Calcula la probabilidad de sacar un 5 o un 6 al lanzar un dado.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.07</span></div><div class="card-body"><p>En una urna con 3 bolas rojas y 2 azules, calcula P(sacar roja).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.08</span></div><div class="card-body"><p>¿Puede una probabilidad ser mayor que 1? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.09</span></div><div class="card-body"><p>Calcula la probabilidad de sacar un número primo al lanzar un dado.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">13.4.10</span></div><div class="card-body"><p>Si dos sucesos son incompatibles, ¿cómo se calcula P(A ∪ B)?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.11</span></div><div class="card-body"><p>Calcula la probabilidad de sacar dos caras al lanzar dos monedas justas.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.12</span></div><div class="card-body"><p>Si P(A)=0.4, P(B)=0.5 y P(A∩B)=0.2, calcula P(A ∪ B).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.13</span></div><div class="card-body"><p>En una baraja española de 40 cartas, calcula P(sacar un oro).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.14</span></div><div class="card-body"><p>Calcula la probabilidad de que al lanzar dos dados la suma sea 7.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.15</span></div><div class="card-body"><p>Si A y B son independientes, P(A)=0.3, P(B)=0.4, calcula P(A ∩ B).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.16</span></div><div class="card-body"><p>Demuestra que si A ⊆ B, entonces P(A) ≤ P(B).</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.17</span></div><div class="card-body"><p>Calcula la probabilidad de sacar al menos un 6 al lanzar dos dados.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.18</span></div><div class="card-body"><p>Si P(A)=0.6 y P(B|A)=0.5, calcula P(A ∩ B).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">13.4.19</span></div><div class="card-body"><p>Investiga: ¿qué es la probabilidad condicionada y cómo se calcula?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.4.20</span></div><div class="card-body"><p>Demuestra la regla de Laplace a partir de los axiomas de probabilidad para casos equiprobables.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.4.21</span></div><div class="card-body"><p>Calcula la probabilidad de que al lanzar tres monedas justas salgan exactamente dos caras.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.4.22</span></div><div class="card-body"><p>Demuestra que P(A ∪ B ∪ C) = P(A)+P(B)+P(C) - P(A∩B) - P(A∩C) - P(B∩C) + P(A∩B∩C).</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.4.23</span></div><div class="card-body"><p>Calcula la probabilidad de que al extraer dos cartas sin reemplazo de una baraja de 40, ambas sean oros.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.4.24</span></div><div class="card-body"><p>Investiga: ¿qué es el teorema de Bayes y cómo se aplica en actualización de creencias?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">13.4.25</span></div><div class="card-body"><p>Problema aplicado: En un sistema, la probabilidad de fallo de un componente es 0.01. Si el sistema tiene 3 componentes independientes en serie (falla si alguno falla), calcula la probabilidad de que el sistema funcione.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 13</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. Población estadística es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) Una muestra pequeña</label><label class="test-option"><input type="radio" name="q1" value="b"> b) El conjunto total de elementos de interés</label><label class="test-option"><input type="radio" name="q1" value="c"> c) Un individuo</label><label class="test-option"><input type="radio" name="q1" value="d"> d) Un gráfico</label></div></div>
+      <div class="test-question"><p>2. Variable "número de hijos" es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) Cualitativa nominal</label><label class="test-option"><input type="radio" name="q2" value="b"> b) Cualitativa ordinal</label><label class="test-option"><input type="radio" name="q2" value="c"> c) Cuantitativa discreta</label><label class="test-option"><input type="radio" name="q2" value="d"> d) Cuantitativa continua</label></div></div>
+      <div class="test-question"><p>3. Frecuencia relativa se calcula como:</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) f_i · N</label><label class="test-option"><input type="radio" name="q3" value="b"> b) f_i / N</label><label class="test-option"><input type="radio" name="q3" value="c"> c) N / f_i</label><label class="test-option"><input type="radio" name="q3" value="d"> d) f_i + N</label></div></div>
+      <div class="test-question"><p>4. Gráfico adecuado para variable cualitativa:</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) Histograma</label><label class="test-option"><input type="radio" name="q4" value="b"> b) Diagrama de barras o circular</label><label class="test-option"><input type="radio" name="q4" value="c"> c) Polígono de frecuencias</label><label class="test-option"><input type="radio" name="q4" value="d"> d) Dispersión</label></div></div>
+      <div class="test-question"><p>5. Media de 2,4,6,8 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) 4</label><label class="test-option"><input type="radio" name="q5" value="b"> b) 5</label><label class="test-option"><input type="radio" name="q5" value="c"> c) 6</label><label class="test-option"><input type="radio" name="q5" value="d"> d) 20</label></div></div>
+      <div class="test-question"><p>6. Mediana de 1,3,5,7,9 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) 3</label><label class="test-option"><input type="radio" name="q6" value="b"> b) 5</label><label class="test-option"><input type="radio" name="q6" value="c"> c) 7</label><label class="test-option"><input type="radio" name="q6" value="d"> d) 25</label></div></div>
+      <div class="test-question"><p>7. Moda de 1,2,2,3,3,3 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) 1</label><label class="test-option"><input type="radio" name="q7" value="b"> b) 2</label><label class="test-option"><input type="radio" name="q7" value="c"> c) 3</label><label class="test-option"><input type="radio" name="q7" value="d"> d) No tiene</label></div></div>
+      <div class="test-question"><p>8. Medida robusta frente a outliers:</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) Media</label><label class="test-option"><input type="radio" name="q8" value="b"> b) Mediana</label><label class="test-option"><input type="radio" name="q8" value="c"> c) Moda</label><label class="test-option"><input type="radio" name="q8" value="d"> d) Todas</label></div></div>
+      <div class="test-question"><p>9. Probabilidad de suceso imposible:</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) -1</label><label class="test-option"><input type="radio" name="q9" value="b"> b) 0</label><label class="test-option"><input type="radio" name="q9" value="c"> c) 0.5</label><label class="test-option"><input type="radio" name="q9" value="d"> d) 1</label></div></div>
+      <div class="test-question"><p>10. Regla de Laplace:</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) P(A) = |A| + |Ω|</label><label class="test-option"><input type="radio" name="q10" value="b"> b) P(A) = |A| / |Ω|</label><label class="test-option"><input type="radio" name="q10" value="c"> c) P(A) = |Ω| / |A|</label><label class="test-option"><input type="radio" name="q10" value="d"> d) P(A) = |A| · |Ω|</label></div></div>
+      <div class="test-question"><p>11. P(A) siempre cumple:</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) P(A) < 0</label><label class="test-option"><input type="radio" name="q11" value="b"> b) 0 ≤ P(A) ≤ 1</label><label class="test-option"><input type="radio" name="q11" value="c"> c) P(A) > 1</label><label class="test-option"><input type="radio" name="q11" value="d"> d) P(A) = 2</label></div></div>
+      <div class="test-question"><p>12. P(Ā) =</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) P(A)</label><label class="test-option"><input type="radio" name="q12" value="b"> b) 1 + P(A)</label><label class="test-option"><input type="radio" name="q12" value="c"> c) 1 - P(A)</label><label class="test-option"><input type="radio" name="q12" value="d"> d) P(A) - 1</label></div></div>
+      <div class="test-question"><p>13. Probabilidad de sacar par en dado justo:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) 1/6</label><label class="test-option"><input type="radio" name="q13" value="b"> b) 1/3</label><label class="test-option"><input type="radio" name="q13" value="c"> c) 1/2</label><label class="test-option"><input type="radio" name="q13" value="d"> d) 2/3</label></div></div>
+      <div class="test-question"><p>14. Si P(A)=0.2, P(B)=0.3 y son incompatibles, P(A∪B)=</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) 0.06</label><label class="test-option"><input type="radio" name="q14" value="b"> b) 0.5</label><label class="test-option"><input type="radio" name="q14" value="c"> c) 0.1</label><label class="test-option"><input type="radio" name="q14" value="d"> d) 0.6</label></div></div>
+      <div class="test-question"><p>15. Espacio muestral al lanzar un dado:</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) {1,2,3,4,5}</label><label class="test-option"><input type="radio" name="q15" value="b"> b) {1,2,3,4,5,6}</label><label class="test-option"><input type="radio" name="q15" value="c"> c) {par, impar}</label><label class="test-option"><input type="radio" name="q15" value="d"> d) {cara, cruz}</label></div></div>
+      <div class="test-question"><p>16. Frecuencia acumulada es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) f_i / N</label><label class="test-option"><input type="radio" name="q16" value="b"> b) Σ_{j≤i} f_j</label><label class="test-option"><input type="radio" name="q16" value="c"> c) f_i · N</label><label class="test-option"><input type="radio" name="q16" value="d"> d) N - f_i</label></div></div>
+      <div class="test-question"><p>17. Histograma se usa para:</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) Variables cualitativas</label><label class="test-option"><input type="radio" name="q17" value="b"> b) Variables cuantitativas continuas agrupadas</label><label class="test-option"><input type="radio" name="q17" value="c"> c) Variables cualitativas ordinales</label><label class="test-option"><input type="radio" name="q17" value="d"> d) Cualquier variable</label></div></div>
+      <div class="test-question"><p>18. Si media > mediana, la distribución probablemente es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) Simétrica</label><label class="test-option"><input type="radio" name="q18" value="b"> b) Asimétrica a la izquierda</label><label class="test-option"><input type="radio" name="q18" value="c"> c) Asimétrica a la derecha</label><label class="test-option"><input type="radio" name="q18" value="d"> d) Uniforme</label></div></div>
+      <div class="test-question"><p>19. Probabilidad de sacar un as en baraja de 40 cartas:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) 1/40</label><label class="test-option"><input type="radio" name="q19" value="b"> b) 1/10</label><label class="test-option"><input type="radio" name="q19" value="c"> c) 4/40</label><label class="test-option"><input type="radio" name="q19" value="d"> d) 1/4</label></div></div>
+      <div class="test-question"><p>20. Para variable cualitativa nominal, la medida de tendencia central adecuada es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) Media</label><label class="test-option"><input type="radio" name="q20" value="b"> b) Mediana</label><label class="test-option"><input type="radio" name="q20" value="c"> c) Moda</label><label class="test-option"><input type="radio" name="q20" value="d"> d) Cualquiera</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema13_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 13</a></p></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // ---------- KaTeX (con protección de SVG) ----------
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false,
+          ignoredTags: ["svg", "script", "noscript", "style", "textarea", "pre", "code", "mermaid"]
+        });
+      } catch (e) {
+        console.warn('KaTeX render error:', e);
+      }
+    }
+
+    // ---------- Mermaid (aunque no se use en este archivo) ----------
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      var mermaidElements = document.querySelectorAll('.mermaid');
+      if (mermaidElements.length > 0) {
+        mermaid.run({ nodes: [...mermaidElements] }).catch(function(err) {
+          console.warn('Mermaid render error:', err);
+        });
+      }
+    }
+
+    // ---------- Carga inicial ----------
+    document.addEventListener('DOMContentLoaded', function() {
+      initMermaid(false);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+
+    // ---------- Tema oscuro ----------
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    // CORREGIDO: comillas correctas
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initMermaid(isDark);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+  </script>
+</body>
+</html>

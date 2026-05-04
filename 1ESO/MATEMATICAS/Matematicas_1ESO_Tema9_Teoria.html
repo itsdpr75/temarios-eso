@@ -1,0 +1,563 @@
+<!-- Matematicas_1ESO_Tema9_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 9: Geometría Plana I | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}.mermaid{text-align:center;margin:1rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    /* Estilos para figuras geométricas SVG */
+    .geo-figure{text-align:center;margin:1.5rem 0;background:var(--bg-card);padding:1rem;border-radius:8px;border:1px solid var(--border)}
+    .geo-figure svg{max-width:300px;height:auto}
+    .geo-figure figcaption{font-size:.9rem;color:var(--text-muted);margin-top:.5rem}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-shapes"></i> <span>Tema 9: Geometría Plana I</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-9-1" class="nav-link"><i class="fa-solid fa-1"></i> 9.1 Elementos básicos</a></li>
+        <li><a href="#subtema-9-2" class="nav-link"><i class="fa-solid fa-2"></i> 9.2 Ángulos y operaciones</a></li>
+        <li><a href="#subtema-9-3" class="nav-link"><i class="fa-solid fa-3"></i> 9.3 Triángulos</a></li>
+        <li><a href="#subtema-9-4" class="nav-link"><i class="fa-solid fa-4"></i> 9.4 Rectas notables</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-9-1">
+        <h2><i class="fa-solid fa-vector-square"></i> 9.1 Elementos básicos: puntos, rectas, planos</h2>
+        <p class="intro">La geometría plana estudia las propiedades de figuras en dos dimensiones, partiendo de conceptos primitivos que se definen axiomáticamente.</p>
+        <article>
+          <h3>Definiciones axiomáticas</h3>
+          <ul>
+            <li><strong>Punto:</strong> Posición en el espacio sin dimensión. Se denota con letras mayúsculas: $A$, $B$, $C$.</li>
+            <li><strong>Recta:</strong> Sucesión infinita de puntos en una dirección. Se denota $\overleftrightarrow{AB}$ o con letras minúsculas $r$, $s$.</li>
+            <li><strong>Plano:</strong> Superficie bidimensional infinita. Se denota con letras griegas: $\alpha$, $\beta$, $\gamma$.</li>
+          </ul>
+          <!-- FIGURA: punto, recta, plano -->
+          <figure class="geo-figure">
+            <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+              <!-- Punto A -->
+              <circle cx="50" cy="80" r="3" fill="var(--primary)"/><text x="55" y="75" font-size="12" fill="var(--text-main)">A</text>
+              <!-- Recta r -->
+              <line x1="120" y1="30" x2="220" y2="120" stroke="var(--primary)" stroke-width="2"/><text x="190" y="50" font-size="12" fill="var(--text-main)">r</text>
+              <!-- Plano α (paralelogramo) -->
+              <polygon points="250,20 290,40 270,90 230,70" fill="none" stroke="var(--primary)" stroke-width="1.5"/><text x="255" y="55" font-size="12" fill="var(--text-main)">α</text>
+            </svg>
+            <figcaption>Punto A, recta r y plano α</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Segmentos, semirrectas y notación</h3>
+          <ul>
+            <li><strong>Segmento $\overline{AB}$:</strong> Porción de recta entre dos puntos extremos.</li>
+            <li><strong>Semirrecta:</strong> Parte de recta con origen en un punto y extensión infinita en una dirección.</li>
+            <li><strong>Pertenencia:</strong> $A \in r$ significa "el punto $A$ pertenece a la recta $r$".</li>
+          </ul>
+          <figure class="geo-figure">
+            <svg viewBox="0 0 250 100" xmlns="http://www.w3.org/2000/svg">
+              <line x1="30" y1="50" x2="220" y2="50" stroke="var(--primary)" stroke-width="2"/>
+              <circle cx="60" cy="50" r="3" fill="var(--primary)"/><text x="40" y="45" font-size="12" fill="var(--text-main)">A</text>
+              <circle cx="180" cy="50" r="3" fill="var(--primary)"/><text x="185" y="45" font-size="12" fill="var(--text-main)">B</text>
+              <line x1="60" y1="50" x2="180" y2="50" stroke="var(--primary)" stroke-width="4"/>
+              <text x="110" y="40" font-size="11" fill="var(--primary)">segmento AB</text>
+            </svg>
+            <figcaption>Segmento $\overline{AB}$</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Posiciones relativas</h3>
+          <ul>
+            <li><strong>Paralelas ($r \parallel s$):</strong> Rectas coplanarias que no se intersecan.</li>
+            <li><strong>Secantes:</strong> Rectas que se cortan en un punto.</li>
+            <li><strong>Perpendiculares ($r \perp s$):</strong> Secantes que forman ángulos de $90^\circ$: $\angle(r,s) = 90^\circ$.</li>
+            <li><strong>Incidentes:</strong> Rectas que se cortan (término general para secantes).</li>
+          </ul>
+          <div class="katex-display">$$ r \perp s \implies \angle(r,s) = 90^\circ $$</div>
+          <figure class="geo-figure">
+            <svg viewBox="0 0 250 150" xmlns="http://www.w3.org/2000/svg">
+              <!-- Paralelas -->
+              <line x1="30" y1="30" x2="120" y2="30" stroke="var(--primary)" stroke-width="2"/><text x="130" y="35" font-size="12" fill="var(--text-main)">r</text>
+              <line x1="30" y1="70" x2="120" y2="70" stroke="var(--primary)" stroke-width="2"/><text x="130" y="75" font-size="12" fill="var(--text-main)">s</text>
+              <text x="60" y="50" font-size="11" fill="var(--primary)">r ∥ s</text>
+              <!-- Perpendiculares -->
+              <line x1="170" y1="20" x2="170" y2="120" stroke="var(--primary)" stroke-width="2"/>
+              <line x1="140" y1="70" x2="210" y2="70" stroke="var(--primary)" stroke-width="2"/>
+              <text x="180" y="100" font-size="11" fill="var(--primary)">r ⟂ s</text>
+              <rect x="164" y="64" width="12" height="12" fill="none" stroke="var(--primary)"/>
+            </svg>
+            <figcaption>Rectas paralelas y perpendiculares</figcaption>
+          </figure>
+          <div class="mermaid">
+            graph TD
+            A[Elementos basicos] --> B[Punto A]
+            A --> C[Recta r]
+            A --> D[Plano α]
+            C --> E[Posiciones relativas]
+            E --> F[Paralelas r//s]
+            E --> G[Secantes]
+            E --> H[Perpendiculares r⊥s]
+            style F fill:#1a237e,color:#fff,stroke:#fff
+            style H fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En sistemas CAD, los puntos, rectas y planos son primitivas para modelado 3D. En GPS, la localización usa coordenadas en un plano de referencia. En renderizado gráfico, las relaciones de paralelismo y perpendicularidad definen proyecciones y sombras.</p>
+        </div>
+      </section>
+
+      <section id="subtema-9-2">
+        <h2><i class="fa-solid fa-angle-up"></i> 9.2 Ángulos: tipos, operaciones y bisectriz</h2>
+        <p class="intro">Los ángulos miden la apertura entre dos semirrectas con origen común. Su manejo preciso es esencial en navegación, diseño y física.</p>
+        <article>
+          <h3>Medida sexagesimal</h3>
+          <p>Un grado ($^\circ$) se divide en 60 minutos ($'$), y cada minuto en 60 segundos ($''$):</p>
+          <div class="katex-display">$$ 1^\circ = 60' \qquad 1' = 60'' \qquad 1^\circ = 3600'' $$</div>
+          <p>Conversión a decimal: $45^\circ 30' 15'' = 45 + \frac{30}{60} + \frac{15}{3600} = 45.5041\overline{6}^\circ$</p>
+        </article>
+        <article>
+          <h3>Clasificación de ángulos</h3>
+          <ul>
+            <li><strong>Agudo:</strong> $0^\circ &lt; \alpha &lt; 90^\circ$</li>
+            <li><strong>Recto:</strong> $\alpha = 90^\circ$</li>
+            <li><strong>Obtuso:</strong> $90^\circ &lt; \alpha &lt; 180^\circ$</li>
+            <li><strong>Llano:</strong> $\alpha = 180^\circ$</li>
+            <li><strong>Completo:</strong> $\alpha = 360^\circ$</li>
+          </ul>
+          <!-- FIGURA: ángulos agudo, recto, obtuso -->
+          <figure class="geo-figure">
+            <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- Agudo -->
+              <path d="M30,80 L30,50 L80,50" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="55" y="45" font-size="11" fill="var(--primary)">agudo</text>
+              <!-- Recto -->
+              <path d="M150,80 L150,40 L200,80" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <rect x="144" y="56" width="12" height="12" fill="none" stroke="var(--primary)"/>
+              <text x="175" y="95" font-size="11" fill="var(--primary)">recto</text>
+              <!-- Obtuso -->
+              <path d="M280,80 L280,50 L340,80" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="310" y="95" font-size="11" fill="var(--primary)">obtuso</text>
+            </svg>
+            <figcaption>Ángulos agudo, recto y obtuso</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Operaciones en base 60</h3>
+          <p>Suma respetando carrieds sexagesimales:</p>
+          <div class="katex-display">$$ 45^\circ 30' 15'' + 28^\circ 45' 50'' = 74^\circ 76' 5'' = 74^\circ 16' 5'' $$</div>
+          <p>Resta con préstamos: $90^\circ - 45^\circ 30' 15'' = 44^\circ 29' 45''$</p>
+        </article>
+        <article>
+          <h3>Bisectriz y simetría</h3>
+          <p>La <strong>bisectriz</strong> de un ángulo es la semirrecta que lo divide en dos ángulos iguales.</p>
+          <figure class="geo-figure">
+            <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,90 L100,20 L180,90" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <line x1="100" y1="20" x2="150" y2="55" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="4"/>
+              <text x="120" y="45" font-size="11" fill="var(--primary)">bisectriz</text>
+            </svg>
+            <figcaption>Bisectriz de un ángulo</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Clasificación angular (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Angulo] --> B{Medida}
+            B -->|0-90| C[Agudo]
+            B -->|90| D[Recto]
+            B -->|90-180| E[Obtuso]
+            B -->|180| F[Llano]
+            B -->|360| G[Completo]
+            style D fill:#1a237e,color:#fff,stroke:#fff
+            style F fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <article>
+          <h3>Comparativa de medidas (Chart.js)</h3>
+          <div class="chart-container"><canvas id="angleChart"></canvas></div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En motores gráficos, la rotación de objetos usa ángulos en grados o radianes. En navegación aérea, los rumbos se expresan en grados sexagesimales. En diseño de engranajes, los ángulos de presión determinan la transmisión de fuerza.</p>
+        </div>
+      </section>
+
+      <section id="subtema-9-3">
+        <h2><i class="fa-solid fa-triangle"></i> 9.3 Triángulos: clasificación y propiedades</h2>
+        <p class="intro">El triángulo es el polígono más simple y fundamental en geometría. Sus propiedades son la base de la triangulación en topografía y computación gráfica.</p>
+        <article>
+          <h3>Clasificación por lados</h3>
+          <ul>
+            <li><strong>Equilátero:</strong> Tres lados iguales. Todos los ángulos = $60^\circ$.</li>
+            <li><strong>Isósceles:</strong> Dos lados iguales. Ángulos opuestos a lados iguales son iguales.</li>
+            <li><strong>Escaleno:</strong> Tres lados distintos. Todos los ángulos distintos.</li>
+          </ul>
+          <!-- FIGURA: triángulos por lados -->
+          <figure class="geo-figure">
+            <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- Equilátero -->
+              <polygon points="40,90 90,10 140,90" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="70" y="110" font-size="11" fill="var(--primary)">equilátero</text>
+              <!-- Isósceles -->
+              <polygon points="180,90 220,30 250,90" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="280,90" font-size="11" fill="var(--primary)">isósceles</text>
+              <!-- Escaleno -->
+              <polygon points="290,90 310,40 370,80" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="330" y="110" font-size="11" fill="var(--primary)">escaleno</text>
+            </svg>
+          </figure>
+        </article>
+        <article>
+          <h3>Clasificación por ángulos</h3>
+          <ul>
+            <li><strong>Acutángulo:</strong> Tres ángulos agudos ($&lt;90^\circ$).</li>
+            <li><strong>Rectángulo:</strong> Un ángulo recto ($=90^\circ$). Lados: catetos e hipotenusa.</li>
+            <li><strong>Obtusángulo:</strong> Un ángulo obtuso ($&gt;90^\circ$).</li>
+          </ul>
+          <figure class="geo-figure">
+            <svg viewBox="0 0 360 120" xmlns="http://www.w3.org/2000/svg">
+              <!-- Acutángulo (equilátero = acutángulo) -->
+              <polygon points="40,90 90,10 140,90" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="70" y="110" font-size="11" fill="var(--primary)">acutángulo</text>
+              <!-- Rectángulo -->
+              <polygon points="180,90 180,40 260,90" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <rect x="174" y="64" width="10" height="10" fill="none" stroke="var(--primary)"/>
+              <text x="200" y="110" font-size="11" fill="var(--primary)">rectángulo</text>
+              <!-- Obtusángulo -->
+              <polygon points="290,90 310,40 360,85" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="325" y="110" font-size="11" fill="var(--primary)">obtusángulo</text>
+            </svg>
+          </figure>
+        </article>
+        <article>
+          <h3>Teoremas fundamentales</h3>
+          <p><strong>Suma de ángulos internos:</strong> $\alpha + \beta + \gamma = 180^\circ$.</p>
+          <p><strong>Ángulo exterior:</strong> $\delta = \alpha + \beta$.</p>
+          <div class="katex-display">$$ \alpha + \beta + \gamma = 180^\circ \qquad \delta = \alpha + \beta $$</div>
+          <p><strong>Desigualdad triangular:</strong> $a &lt; b + c$, etc.</p>
+        </article>
+        <article>
+          <h3>Clasificación cruzada (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Triangulo] --> B[Por lados]
+            A --> C[Por angulos]
+            B --> D[Equilatero]
+            B --> E[Isosceles]
+            B --> F[Escaleno]
+            C --> G[Acutangulo]
+            C --> H[Rectangulo]
+            C --> I[Obtusangulo]
+            D & G --> J[Equilatero = Acutangulo]
+            style J fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En topografía, la triangulación permite medir distancias inaccesibles. En computación gráfica, las mallas poligonales usan triángulos como primitivas de renderizado. En ingeniería estructural, las celosías trianguladas distribuyen cargas eficientemente.</p>
+        </div>
+      </section>
+
+      <section id="subtema-9-4">
+        <h2><i class="fa-solid fa-draw-polygon"></i> 9.4 Rectas notables y puntos característicos</h2>
+        <p class="intro">Las rectas notables de un triángulo definen puntos de concurrencia con propiedades geométricas fundamentales para diseño y análisis estructural.</p>
+        <article>
+          <h3>Definición de rectas notables</h3>
+          <ul>
+            <li><strong>Mediatriz:</strong> Recta perpendicular a un lado por su punto medio.</li>
+            <li><strong>Bisectriz:</strong> Divide un ángulo interior en dos iguales.</li>
+            <li><strong>Mediana:</strong> Segmento que une un vértice con el punto medio del lado opuesto.</li>
+            <li><strong>Altura:</strong> Segmento perpendicular desde un vértice al lado opuesto.</li>
+          </ul>
+          <!-- Mediatriz, bisectriz, mediana, altura -->
+          <figure class="geo-figure">
+            <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+              <!-- Triángulo base -->
+              <polygon points="100,200 20,50 220,80" fill="none" stroke="var(--primary)" stroke-width="2"/>
+              <text x="95" y="215" font-size="11" fill="var(--text-main)">A</text>
+              <text x="5" y="45" font-size="11" fill="var(--text-main)">B</text>
+              <text x="225" y="80" font-size="11" fill="var(--text-main)">C</text>
+              <!-- Mediana desde A al punto medio de BC -->
+              <line x1="100" y1="200" x2="120" y2="65" stroke="#4caf50" stroke-width="2"/>
+              <text x="105" y="150" font-size="10" fill="#4caf50">mediana</text>
+              <!-- Altura desde B al lado AC -->
+              <line x1="20" y1="50" x2="150" y2="140" stroke="#f44336" stroke-width="1.5" stroke-dasharray="4"/>
+              <text x="40" y="100" font-size="10" fill="#f44336">altura</text>
+            </svg>
+            <figcaption>Mediana (verde) y altura (roja) en un triángulo</figcaption>
+          </figure>
+        </article>
+        <article>
+          <h3>Puntos de concurrencia</h3>
+          <ul>
+            <li><strong>Circuncentro ($O$):</strong> Intersección de mediatrices.</li>
+            <li><strong>Incentro ($I$):</strong> Intersección de bisectrices.</li>
+            <li><strong>Baricentro ($G$):</strong> Intersección de medianas (centro de masas).</li>
+            <li><strong>Ortocentro ($H$):</strong> Intersección de alturas.</li>
+          </ul>
+          <div class="katex-display">$$ \text{Baricentro } G = \left(\frac{x_A+x_B+x_C}{3}, \frac{y_A+y_B+y_C}{3}\right) $$</div>
+        </article>
+        <article>
+          <h3>Localización según tipo de triángulo</h3>
+          <ul>
+            <li><strong>Acutángulo:</strong> Los cuatro puntos están en el interior del triángulo.</li>
+            <li><strong>Rectángulo:</strong> Circuncentro en punto medio de hipotenusa; ortocentro en vértice del ángulo recto.</li>
+            <li><strong>Obtusángulo:</strong> Circuncentro y ortocentro están en el exterior del triángulo.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Flujo de concurrencia (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Rectas notables] --> B[Mediatrices]
+            A --> C[Bisectrices]
+            A --> D[Medianas]
+            A --> E[Alturas]
+            B --> F[Circuncentro O]
+            C --> G[Incentro I]
+            D --> H[Baricentro G]
+            E --> I[Ortocentro H]
+            style F fill:#1a237e,color:#fff,stroke:#fff
+            style G fill:#1a237e,color:#fff,stroke:#fff
+            style H fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <article>
+          <h3>Posición de puntos notables (Chart.js)</h3>
+          <div class="chart-container"><canvas id="pointsChart"></canvas></div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En ingeniería estructural, el baricentro determina el centro de gravedad para análisis de estabilidad. En diseño industrial, la simetría de mediatrices y bisectrices optimiza distribución de tensiones.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_1ESO_Tema9_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 9</a></p></footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // ---------- KaTeX ----------
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false,
+          ignoredTags: ["svg", "script", "noscript", "style", "textarea", "pre", "code", "mermaid"]
+        });
+      } catch (e) {
+        console.warn('KaTeX render error:', e);
+      }
+    }
+
+    // ---------- Mermaid ----------
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      const mermaidElements = document.querySelectorAll('.mermaid');
+      if (mermaidElements.length > 0) {
+        mermaid.run({ nodes: [...mermaidElements] }).catch(function(err) {
+          console.warn('Mermaid render error:', err);
+        });
+      }
+    }
+
+    // ---------- Chart.js: Ángulos ----------
+    function initAngleChart(dark) {
+      var ctx = document.getElementById('angleChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      if (ctx.chart) ctx.chart.destroy();
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Agudo','Recto','Obtuso','Llano'],
+          datasets: [{
+            label: 'Medida (grados)',
+            data: [45, 90, 120, 180],
+            backgroundColor: ['#4caf50','#2196f3','#ff9800','#f44336'],
+            borderColor: dark ? '#fff' : '#000',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Clasificación de ángulos', color: textColor }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor } },
+            x: { ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // ---------- Chart.js: Puntos notables ----------
+    function initPointsChart(dark) {
+      var ctx = document.getElementById('pointsChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      if (ctx.chart) ctx.chart.destroy();
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      ctx.chart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Acutángulo',
+              data: [{x:2,y:3}, {x:4,y:5}, {x:3,y:2}],
+              backgroundColor: 'rgba(76,175,80,0.6)',
+              pointRadius: 6
+            },
+            {
+              label: 'Rectángulo',
+              data: [{x:1,y:4}, {x:5,y:4}, {x:3,y:1}],
+              backgroundColor: 'rgba(33,150,243,0.6)',
+              pointRadius: 6
+            },
+            {
+              label: 'Obtusángulo',
+              data: [{x:0,y:2}, {x:6,y:3}, {x:2,y:0}],
+              backgroundColor: 'rgba(255,152,0,0.6)',
+              pointRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Puntos notables por tipo de triángulo', color: textColor }
+          },
+          scales: {
+            x: { ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // ---------- Carga inicial ----------
+    document.addEventListener('DOMContentLoaded', function() {
+      initMermaid(false);
+      setTimeout(function() {
+        initKaTeX();
+        initAngleChart(false);
+        initPointsChart(false);
+      }, 50);
+    });
+
+    // ---------- Tema oscuro ----------
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      setTimeout(function() {
+        initKaTeX();
+        initAngleChart(true);
+        initPointsChart(true);
+      }, 50);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initMermaid(isDark);
+      setTimeout(function() {
+        initKaTeX();
+        initAngleChart(isDark);
+        initPointsChart(isDark);
+      }, 50);
+    });
+
+    // Menú móvil y scrollspy
+    var menuToggle = document.getElementById('menu-toggle'),
+        sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', function() {
+      sidebar.classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        if (window.innerWidth < 992) sidebar.classList.remove('open');
+      });
+    });
+    var sections = document.querySelectorAll('section'),
+        navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', function() {
+      var current = '';
+      sections.forEach(function(section) {
+        var sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) current = section.getAttribute('id');
+      });
+      navLinks.forEach(function(link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

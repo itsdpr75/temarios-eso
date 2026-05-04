@@ -1,0 +1,283 @@
+<!-- Matematicas_1ESO_Tema5_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 5: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 5: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 5.1 Tipos de decimales y conversión a fracción -->
+    <div class="section-divider"><h3>5.1 Tipos y conversión</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.01</span></div><div class="card-body"><p>Clasifica: $0,75$ (exacto, periódico puro, mixto).</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.02</span></div><div class="card-body"><p>Clasifica: $0,\overline{3}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.03</span></div><div class="card-body"><p>Clasifica: $2,1\overline{6}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.04</span></div><div class="card-body"><p>Convierte a fracción: $0,4$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.05</span></div><div class="card-body"><p>Convierte a fracción: $0,\overline{6}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.06</span></div><div class="card-body"><p>Convierte a fracción: $0,1\overline{6}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.07</span></div><div class="card-body"><p>Escribe como decimal: $\frac{3}{4}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.08</span></div><div class="card-body"><p>Escribe como decimal: $\frac{2}{9}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.09</span></div><div class="card-body"><p>¿Cuántas cifras decimales tiene $0,0025$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.1.10</span></div><div class="card-body"><p>¿Es $\pi$ un decimal exacto? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.11</span></div><div class="card-body"><p>Convierte a fracción irreducible: $0,125$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.12</span></div><div class="card-body"><p>Convierte: $0,\overline{18}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.13</span></div><div class="card-body"><p>Convierte: $3,2\overline{45}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.14</span></div><div class="card-body"><p>Demuestra que $0,\overline{9} = 1$ usando la regla de conversión.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.15</span></div><div class="card-body"><p>Encuentra la fracción generatriz de $0,0\overline{3}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.16</span></div><div class="card-body"><p>Clasifica y convierte: $-2,5\overline{7}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.17</span></div><div class="card-body"><p>Si $\frac{a}{b} = 0,1\overline{6}$, halla $a$ y $b$ mínimos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.18</span></div><div class="card-body"><p>Convierte a decimal y clasifica: $\frac{7}{11}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.1.19</span></div><div class="card-body"><p>Demuestra que todo decimal exacto puede escribirse como fracción con denominador potencia de 10.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.1.20</span></div><div class="card-body"><p>Demuestra que la conversión de periódico puro a fracción siempre produce una fracción irreducible si el periodo y 9 son coprimos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.1.21</span></div><div class="card-body"><p>Encuentra la fracción generatriz de $0,12\overline{34}$ y simplifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.1.22</span></div><div class="card-body"><p>Si $x = 0,\overline{a}$ con $a$ dígito, demuestra que $x = \frac{a}{9}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.1.23</span></div><div class="card-body"><p>Investiga: ¿por qué $\sqrt{2}$ no puede expresarse como decimal periódico?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.1.24</span></div><div class="card-body"><p>Demuestra que la suma de dos decimales exactos es exacta.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.1.25</span></div><div class="card-body"><p>Problema aplicado: En un sistema monetario, 1 euro = 100 céntimos. Expresa $0,\overline{3}$ euros en céntimos como fracción exacta.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 5.2 Operaciones con decimales -->
+    <div class="section-divider"><h3>5.2 Operaciones con decimales</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.01</span></div><div class="card-body"><p>Calcula: $2,5 + 3,7$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.02</span></div><div class="card-body"><p>Calcula: $8,4 - 2,9$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.03</span></div><div class="card-body"><p>Calcula: $1,2 \times 3$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.04</span></div><div class="card-body"><p>Calcula: $4,5 \div 5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.05</span></div><div class="card-body"><p>Calcula: $0,6 + 0,25$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.06</span></div><div class="card-body"><p>Calcula: $7,2 - 3,45$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.07</span></div><div class="card-body"><p>Calcula: $2,5 \times 0,4$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.08</span></div><div class="card-body"><p>Calcula: $6,3 \div 0,7$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.09</span></div><div class="card-body"><p>Calcula: $1,25 + 0,75 - 0,5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.2.10</span></div><div class="card-body"><p>Calcula: $0,1 \times 0,1 \times 0,1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.11</span></div><div class="card-body"><p>Calcula: $3,14 \times 2,5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.12</span></div><div class="card-body"><p>Calcula: $12,6 \div 0,3$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.13</span></div><div class="card-body"><p>Resuelve: $(2,4 + 1,6) \times 0,5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.14</span></div><div class="card-body"><p>Calcula: $5,75 - (2,3 + 1,45)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.15</span></div><div class="card-body"><p>Encuentra $x$: $2,5 \times x = 10$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.16</span></div><div class="card-body"><p>Calcula: $0,\overline{3} \times 6$ (usa fracción).</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.17</span></div><div class="card-body"><p>Resuelve: $3,2 \div 0,8 + 1,5 \times 2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.18</span></div><div class="card-body"><p>Calcula: $1,25^2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.2.19</span></div><div class="card-body"><p>Demuestra que multiplicar por $0,1$ equivale a dividir entre 10.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.2.20</span></div><div class="card-body"><p>Demuestra que la multiplicación de decimales es asociativa.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.2.21</span></div><div class="card-body"><p>Calcula: $(0,\overline{6} + 0,25) \div 0,5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.2.22</span></div><div class="card-body"><p>Resuelve: $x \div 0,25 = 3,2$ para $x$ decimal exacto.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.2.23</span></div><div class="card-body"><p>Demuestra que dividir entre $0,\overline{3}$ equivale a multiplicar por 3.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.2.24</span></div><div class="card-body"><p>Investiga: ¿cómo se implementa la aritmética decimal en computadoras (BCD vs flotante)?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.2.25</span></div><div class="card-body"><p>Problema aplicado: Un producto cuesta 12,99€. Con IVA 21%, calcula precio final con dos decimales.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 5.3 Redondeo, truncamiento y estimación -->
+    <div class="section-divider"><h3>5.3 Redondeo y estimación</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.01</span></div><div class="card-body"><p>Redondea $3,14159$ a décimas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.02</span></div><div class="card-body"><p>Redondea $2,718$ a centésimas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.03</span></div><div class="card-body"><p>Trunca $5,999$ a unidades.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.04</span></div><div class="card-body"><p>Estima: $12,3 + 8,7 \approx$ ?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.05</span></div><div class="card-body"><p>Redondea $0,45$ a décimas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.06</span></div><div class="card-body"><p>Trunca $3,14159$ a centésimas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.07</span></div><div class="card-body"><p>¿Cuál es el error absoluto al redondear $\pi$ a 3,14?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.08</span></div><div class="card-body"><p>Estima el producto: $4,8 \times 2,1 \approx$ ?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.09</span></div><div class="card-body"><p>Redondea $9,99$ a unidades.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.3.10</span></div><div class="card-body"><p>¿Redondear o truncar da menor error para $2,49$ a unidades?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.11</span></div><div class="card-body"><p>Calcula error relativo al aproximar $e \approx 2,72$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.12</span></div><div class="card-body"><p>Redondea $0,0499$ a centésimas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.13</span></div><div class="card-body"><p>Trunca y redondea $3,14159$ a milésimas. Compara resultados.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.14</span></div><div class="card-body"><p>Estima: $(12,7 - 3,4) \times 2,1 \approx$ ?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.15</span></div><div class="card-body"><p>Si un valor se redondea a 5,0 (décimas), ¿entre qué valores puede estar?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.16</span></div><div class="card-body"><p>Calcula error absoluto y relativo al truncar $\frac{1}{3}$ a 0,33.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.17</span></div><div class="card-body"><p>Demuestra que el error absoluto del redondeo a $n$ decimales es $\leq 0,5 \times 10^{-n}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.18</span></div><div class="card-body"><p>Estima el cociente: $47,8 \div 5,9 \approx$ ?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.3.19</span></div><div class="card-body"><p>¿Cuándo es preferible truncar en lugar de redondear en contextos financieros?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.3.20</span></div><div class="card-body"><p>Demuestra que el redondeo minimiza el error absoluto máximo posible para una precisión dada.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.3.21</span></div><div class="card-body"><p>Calcula error acumulado al sumar 100 números redondeados a centésimas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.3.22</span></div><div class="card-body"><p>Si $x$ se redondea a $x'$ con error absoluto $\epsilon$, demuestra que el error relativo es $\leq \frac{\epsilon}{|x|-\epsilon}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.3.23</span></div><div class="card-body"><p>Investiga: ¿qué es el redondeo bancario (round half to even) y por qué se usa?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.3.24</span></div><div class="card-body"><p>Demuestra que truncar siempre subestima para números positivos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.3.25</span></div><div class="card-body"><p>Problema aplicado: En mediciones, un instrumento tiene precisión ±0,05. Si mide 12,3, ¿cuál es el intervalo real posible?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 5.4 Notación científica básica -->
+    <div class="section-divider"><h3>5.4 Notación científica</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.01</span></div><div class="card-body"><p>Escribe en notación científica: $4500$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.02</span></div><div class="card-body"><p>Escribe en notación científica: $0,0032$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.03</span></div><div class="card-body"><p>Convierte a decimal: $2,5 \times 10^3$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.04</span></div><div class="card-body"><p>Convierte a decimal: $7,8 \times 10^{-2}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.05</span></div><div class="card-body"><p>Calcula: $(3 \times 10^2) \times (2 \times 10^3)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.06</span></div><div class="card-body"><p>Calcula: $(8 \times 10^5) \div (2 \times 10^2)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.07</span></div><div class="card-body"><p>¿Es $12 \times 10^3$ notación científica válida? Corrige si no.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.08</span></div><div class="card-body"><p>Escribe: $0,000001$ en notación científica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.09</span></div><div class="card-body"><p>Calcula: $10^4 \times 10^{-2}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">5.4.10</span></div><div class="card-body"><p>¿Qué representa $1,5 \times 10^0$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.11</span></div><div class="card-body"><p>Calcula: $(4,2 \times 10^3) + (3,8 \times 10^3)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.12</span></div><div class="card-body"><p>Calcula: $(6 \times 10^{-4}) \times (5 \times 10^2)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.13</span></div><div class="card-body"><p>Resuelve: $(2,5 \times 10^6) \div (5 \times 10^{-2})$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.14</span></div><div class="card-body"><p>Escribe en notación científica: $0,000405$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.15</span></div><div class="card-body"><p>Calcula: $(3 \times 10^2)^2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.16</span></div><div class="card-body"><p>Demuestra que $(a \times 10^m) \times (b \times 10^n) = (a \cdot b) \times 10^{m+n}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.17</span></div><div class="card-body"><p>Calcula: $1,2 \times 10^3 + 4,5 \times 10^2$ (igualar exponentes).</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.18</span></div><div class="card-body"><p>Escribe: $7800000$ en notación científica con 3 cifras significativas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">5.4.19</span></div><div class="card-body"><p>Si $x = 2,3 \times 10^4$ y $y = 1,7 \times 10^3$, calcula $x + y$ en notación científica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.4.20</span></div><div class="card-body"><p>Demuestra que la notación científica de un número positivo es única.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.4.21</span></div><div class="card-body"><p>Calcula: $\frac{(6 \times 10^8) \times (2 \times 10^{-3})}{3 \times 10^2}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.4.22</span></div><div class="card-body"><p>Resuelve: $(1,5 \times 10^{-4})^3$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.4.23</span></div><div class="card-body"><p>Demuestra que $\sqrt{a \times 10^{2n}} = \sqrt{a} \times 10^n$ para $a \geq 0$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.4.24</span></div><div class="card-body"><p>Investiga: ¿cómo se representa la notación científica en formato IEEE 754 para flotantes?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">5.4.25</span></div><div class="card-body"><p>Problema aplicado: La distancia Tierra-Sol es $1,496 \times 10^8$ km. ¿Cuántos segundos tarda la luz (300000 km/s) en recorrerla? Expresa resultado en notación científica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 5</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. $0,25$ como fracción es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) $\frac{1}{2}$</label><label class="test-option"><input type="radio" name="q1" value="b"> b) $\frac{1}{4}$</label><label class="test-option"><input type="radio" name="q1" value="c"> c) $\frac{2}{5}$</label><label class="test-option"><input type="radio" name="q1" value="d"> d) $\frac{25}{10}$</label></div></div>
+      <div class="test-question"><p>2. $0,\overline{3}$ convertido a fracción es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) $\frac{3}{10}$</label><label class="test-option"><input type="radio" name="q2" value="b"> b) $\frac{1}{3}$</label><label class="test-option"><input type="radio" name="q2" value="c"> c) $\frac{3}{9}$</label><label class="test-option"><input type="radio" name="q2" value="d"> d) $\frac{33}{100}$</label></div></div>
+      <div class="test-question"><p>3. $2,5 + 3,75 =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) 5,25</label><label class="test-option"><input type="radio" name="q3" value="b"> b) 6,25</label><label class="test-option"><input type="radio" name="q3" value="c"> c) 5,75</label><label class="test-option"><input type="radio" name="q3" value="d"> d) 6,75</label></div></div>
+      <div class="test-question"><p>4. $1,2 \times 0,5 =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) 0,06</label><label class="test-option"><input type="radio" name="q4" value="b"> b) 0,6</label><label class="test-option"><input type="radio" name="q4" value="c"> c) 6,0</label><label class="test-option"><input type="radio" name="q4" value="d"> d) 0,52</label></div></div>
+      <div class="test-question"><p>5. $4,8 \div 0,6 =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) 0,8</label><label class="test-option"><input type="radio" name="q5" value="b"> b) 8</label><label class="test-option"><input type="radio" name="q5" value="c"> c) 80</label><label class="test-option"><input type="radio" name="q5" value="d"> d) 0,08</label></div></div>
+      <div class="test-question"><p>6. Redondea $3,14159$ a centésimas:</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) 3,14</label><label class="test-option"><input type="radio" name="q6" value="b"> b) 3,15</label><label class="test-option"><input type="radio" name="q6" value="c"> c) 3,1</label><label class="test-option"><input type="radio" name="q6" value="d"> d) 3,142</label></div></div>
+      <div class="test-question"><p>7. Truncar $2,999$ a unidades da:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) 2</label><label class="test-option"><input type="radio" name="q7" value="b"> b) 3</label><label class="test-option"><input type="radio" name="q7" value="c"> c) 2,9</label><label class="test-option"><input type="radio" name="q7" value="d"> d) 3,0</label></div></div>
+      <div class="test-question"><p>8. $0,0045$ en notación científica es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) $4,5 \times 10^{-3}$</label><label class="test-option"><input type="radio" name="q8" value="b"> b) $4,5 \times 10^{-4}$</label><label class="test-option"><input type="radio" name="q8" value="c"> c) $45 \times 10^{-4}$</label><label class="test-option"><input type="radio" name="q8" value="d"> d) $0,45 \times 10^{-2}$</label></div></div>
+      <div class="test-question"><p>9. $(2 \times 10^3) \times (3 \times 10^2) =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) $5 \times 10^5$</label><label class="test-option"><input type="radio" name="q9" value="b"> b) $6 \times 10^5$</label><label class="test-option"><input type="radio" name="q9" value="c"> c) $6 \times 10^6$</label><label class="test-option"><input type="radio" name="q9" value="d"> d) $5 \times 10^6$</label></div></div>
+      <div class="test-question"><p>10. ¿Cuál es periódico puro?</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) $0,25$</label><label class="test-option"><input type="radio" name="q10" value="b"> b) $0,1\overline{6}$</label><label class="test-option"><input type="radio" name="q10" value="c"> c) $0,\overline{3}$</label><label class="test-option"><input type="radio" name="q10" value="d"> d) $3,14159$</label></div></div>
+      <div class="test-question"><p>11. $0,1\overline{6}$ como fracción es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) $\frac{1}{6}$</label><label class="test-option"><input type="radio" name="q11" value="b"> b) $\frac{16}{90}$</label><label class="test-option"><input type="radio" name="q11" value="c"> c) $\frac{15}{90}$</label><label class="test-option"><input type="radio" name="q11" value="d"> d) $\frac{1}{9}$</label></div></div>
+      <div class="test-question"><p>12. Error absoluto al redondear $\pi$ a 3,14 es aproximadamente:</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) 0,00159</label><label class="test-option"><input type="radio" name="q12" value="b"> b) 0,0159</label><label class="test-option"><input type="radio" name="q12" value="c"> c) 0,159</label><label class="test-option"><input type="radio" name="q12" value="d"> d) 1,59</label></div></div>
+      <div class="test-question"><p>13. $7,8 \times 10^{-2}$ en decimal es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) 0,78</label><label class="test-option"><input type="radio" name="q13" value="b"> b) 0,078</label><label class="test-option"><input type="radio" name="q13" value="c"> c) 78</label><label class="test-option"><input type="radio" name="q13" value="d"> d) 0,0078</label></div></div>
+      <div class="test-question"><p>14. Para sumar decimales, primero:</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) Multiplicar por 10</label><label class="test-option"><input type="radio" name="q14" value="b"> b) Alinear comas</label><label class="test-option"><input type="radio" name="q14" value="c"> c) Contar cifras</label><label class="test-option"><input type="radio" name="q14" value="d"> d) Redondear</label></div></div>
+      <div class="test-question"><p>15. $(4 \times 10^5) \div (2 \times 10^2) =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) $2 \times 10^3$</label><label class="test-option"><input type="radio" name="q15" value="b"> b) $2 \times 10^7$</label><label class="test-option"><input type="radio" name="q15" value="c"> c) $8 \times 10^3$</label><label class="test-option"><input type="radio" name="q15" value="d"> d) $2 \times 10^{-3}$</label></div></div>
+      <div class="test-question"><p>16. ¿Cuál NO es notación científica válida?</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) $1,2 \times 10^3$</label><label class="test-option"><input type="radio" name="q16" value="b"> b) $12 \times 10^2$</label><label class="test-option"><input type="radio" name="q16" value="c"> c) $0,5 \times 10^4$</label><label class="test-option"><input type="radio" name="q16" value="d"> d) b y c</label></div></div>
+      <div class="test-question"><p>17. Redondear $2,45$ a décimas da:</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) 2,4</label><label class="test-option"><input type="radio" name="q17" value="b"> b) 2,5</label><label class="test-option"><input type="radio" name="q17" value="c"> c) 2,0</label><label class="test-option"><input type="radio" name="q17" value="d"> d) 3,0</label></div></div>
+      <div class="test-question"><p>18. $0,\overline{9} =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) 0,9</label><label class="test-option"><input type="radio" name="q18" value="b"> b) 1</label><label class="test-option"><input type="radio" name="q18" value="c"> c) 0,99</label><label class="test-option"><input type="radio" name="q18" value="d"> d) No existe</label></div></div>
+      <div class="test-question"><p>19. En $a \times 10^n$, $a$ debe cumplir:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) $0 &lt; a &lt; 10$</label><label class="test-option"><input type="radio" name="q19" value="b"> b) $1 \leq |a| &lt; 10$</label><label class="test-option"><input type="radio" name="q19" value="c"> c) $a$ entero</label><label class="test-option"><input type="radio" name="q19" value="d"> d) $a &gt; 0$</label></div></div>
+      <div class="test-question"><p>20. Estimación rápida: $19,8 \times 5,1 \approx$</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) 10</label><label class="test-option"><input type="radio" name="q20" value="b"> b) 100</label><label class="test-option"><input type="radio" name="q20" value="c"> c) 1000</label><label class="test-option"><input type="radio" name="q20" value="d"> d) 50</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema5_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 5</a></p></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    function initKaTeX() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: "$$", right: "$$", display: true },
+            { left: "$", right: "$", display: false }
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    function initMermaid(dark) {
+      if (typeof mermaid !== 'undefined') {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: dark ? 'dark' : 'default',
+          securityLevel: 'loose',
+          fontFamily: 'Albert Sans, system-ui, sans-serif'
+        });
+        document.querySelectorAll('.mermaid').forEach(function(el) {
+          if (!el.dataset.processed) {
+            el.dataset.processed = 'true';
+            try {
+              mermaid.run({ nodes: [el] });
+            } catch (e) {
+              console.warn('Mermaid render error:', e);
+            }
+          }
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initKaTeX();
+      initMermaid(false);
+    });
+
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    // CORREGIDO: comillas coincidentes en 'theme'
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initKaTeX();
+      initMermaid(isDark);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!-- Matematicas_2ESO_Tema2_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 2: Fracciones y Decimales Avanzados | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}.mermaid{text-align:center;margin:1rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-calculator"></i> <span>Tema 2: Fracciones y Decimales Avanzados</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-2-1" class="nav-link"><i class="fa-solid fa-1"></i> 2.1 Operaciones complejas</a></li>
+        <li><a href="#subtema-2-2" class="nav-link"><i class="fa-solid fa-2"></i> 2.2 Aproximaciones y error</a></li>
+        <li><a href="#subtema-2-3" class="nav-link"><i class="fa-solid fa-3"></i> 2.3 Fracciones generatrices</a></li>
+        <li><a href="#subtema-2-4" class="nav-link"><i class="fa-solid fa-4"></i> 2.4 Problemas multi-etapa</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-2-1">
+        <h2><i class="fa-solid fa-layer-group"></i> 2.1 Operaciones complejas y jerarquía</h2>
+        <p class="intro">La evaluación correcta de expresiones con fracciones y decimales requiere dominar la jerarquía de operaciones y estrategias de simplificación para minimizar errores.</p>
+        <article>
+          <h3>Jerarquía reforzada con números racionales</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-brackets-round"></i> <strong>Paréntesis anidados:</strong> Resolver de dentro hacia fuera.</li>
+            <li><i class="fa-solid fa-superscript"></i> <strong>Potencias y raíces:</strong> Aplicar antes de productos/cocientes.</li>
+            <li><i class="fa-solid fa-multiply"></i> <strong>Multiplicación/División:</strong> De izquierda a derecha.</li>
+            <li><i class="fa-solid fa-plus"></i> <strong>Suma/Resta:</strong> De izquierda a derecha, último paso.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Estrategias de simplificación previa</h3>
+          <ul>
+            <li><strong>Factor común:</strong> Extraer antes de operar para reducir términos.</li>
+            <li><strong>Amplificación estratégica:</strong> Elegir denominador común que minimice cálculos.</li>
+            <li><strong>Conversión temprana:</strong> Pasar decimales a fracciones cuando facilite la simplificación.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Manejo de signos en expresiones mixtas</h3>
+          <p>Regla de signos aplicada simultáneamente a fracciones y decimales:</p>
+          <div class="katex-display">$$ \left(-\frac{3}{4} + \frac{1}{2}\right)^2 \cdot \left(0,\overline{6} - 0,25\right) = \left(-\frac{1}{4}\right)^2 \cdot \left(\frac{2}{3} - \frac{1}{4}\right) = \frac{1}{16} \cdot \frac{5}{12} = \frac{5}{192} $$</div>
+        </article>
+        <article>
+          <h3>Árbol de resolución jerárquica (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Expresion compleja] --> B[Resolver paréntesis internos]
+            B --> C[Calcular potencias]
+            C --> D[Multiplicar/dividir]
+            D --> E[Sumar/restar]
+            E --> F[Verificar signos en cada paso]
+            F --> G[Simplificar resultado final]
+            G --> H[Expresion evaluada]
+            style H fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-bolt"></i> Método rápido: Checklist de 5 pasos</strong>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-circle-check"></i> Identificar y resolver paréntesis más internos primero.</li>
+            <li><i class="fa-solid fa-superscript"></i> Calcular todas las potencias antes de productos.</li>
+            <li><i class="fa-solid fa-filter"></i> Simplificar fracciones en cada paso intermedio.</li>
+            <li><i class="fa-solid fa-signs-post"></i> Contar signos negativos: par → positivo, impar → negativo.</li>
+            <li><i class="fa-solid fa-rotate-left"></i> Verificar resultado estimando orden de magnitud.</li>
+          </ol>
+        </div>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En hojas de cálculo como Excel, la evaluación de fórmulas sigue esta jerarquía estricta. En motores de scripting (JavaScript, Python), el parsing de expresiones requiere el mismo orden para resultados consistentes. En cálculo de métricas compuestas (KPIs), la correcta jerarquía evita sesgos en indicadores de rendimiento.</p>
+        </div>
+      </section>
+
+      <section id="subtema-2-2">
+        <h2><i class="fa-solid fa-ruler-combined"></i> 2.2 Aproximaciones y error absoluto/relativo</h2>
+        <p class="intro">En contextos reales, los valores exactos no siempre son necesarios ni posibles. Las aproximaciones controladas permiten trabajar con precisión adecuada al problema.</p>
+        <article>
+          <h3>Tipos de aproximación</h3>
+          <ul>
+            <li><strong>Truncamiento:</strong> Eliminar cifras decimales sin redondear (siempre por defecto).</li>
+            <li><strong>Redondeo:</strong> Ajustar a la cifra más cercana: $\geq 5$ sube, $&lt; 5$ mantiene.</li>
+          </ul>
+          <p><strong>Criterio de decisión:</strong> Usar redondeo cuando se busca minimizar error; truncamiento cuando se requiere cota inferior garantizada.</p>
+        </article>
+        <article>
+          <h3>Medidas de error</h3>
+          <p><strong>Error absoluto:</strong> Diferencia en valor absoluto entre valor real y aproximado:</p>
+          <div class="katex-display">$$ E_a = |V_{\text{real}} - V_{\text{aprox}}| $$</div>
+          <p><strong>Error relativo:</strong> Proporción del error respecto al valor real, expresado en porcentaje:</p>
+          <div class="katex-display">$$ E_r = \frac{E_a}{|V_{\text{real}}|} \qquad E_r(\%) = E_r \cdot 100 $$</div>
+          <p>Ejemplo con $\pi$:</p>
+          <div class="katex-display">$$ V_{\text{real}} = \pi \approx 3,14159, \quad V_{\text{aprox}} = 3,14 \implies E_a = 0,00159, \quad E_r = \frac{0,00159}{3,14159} \approx 0,0005 = 0,05\% $$</div>
+        </article>
+        <article>
+          <h3>Propagación básica de errores</h3>
+          <ul>
+            <li><strong>Suma/Resta:</strong> Los errores absolutos se suman: $E_a(A \pm B) = E_a(A) + E_a(B)$</li>
+            <li><strong>Producto/Cociente:</strong> Los errores relativos se suman: $E_r(A \cdot B) \approx E_r(A) + E_r(B)$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Selección de aproximación (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Valor a aproximar] --> B{¿Contexto requiere cota?}
+            B -->|Sí, cota inferior| C[Truncar]
+            B -->|No, minimizar error| D[Redondear]
+            C & D --> E[Calcular E_a y E_r]
+            E --> F{¿Error dentro de tolerancia?}
+            F -->|Sí| G[Aceptar aproximación]
+            F -->|No| H[Refinar con más cifras]
+            style G fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <article>
+          <h3>Comparativa de errores (Chart.js)</h3>
+          <div class="chart-container"><canvas id="errorChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Error absoluto y relativo para distintas aproximaciones de $\pi$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En control de calidad industrial, las tolerancias se especifican mediante error absoluto máximo permitido. En simulaciones numéricas, el error relativo guía el criterio de convergencia de algoritmos iterativos. En diseño CAD, las aproximaciones controladas equilibran precisión visual y rendimiento computacional.</p>
+        </div>
+      </section>
+
+      <section id="subtema-2-3">
+        <h2><i class="fa-solid fa-repeat"></i> 2.3 Fracciones generatrices</h2>
+        <p class="intro">Todo decimal periódico representa un número racional. Obtener su fracción generatriz permite operar con precisión exacta, evitando acumulación de errores de redondeo.</p>
+        <article>
+          <h3>Clasificación de decimales racionales</h3>
+          <ul>
+            <li><strong>Exactos:</strong> Número finito de cifras decimales ($0,25 = \frac{1}{4}$).</li>
+            <li><strong>Periódicos puros:</strong> Período comienza inmediatamente tras la coma ($0,\overline{3} = \frac{1}{3}$).</li>
+            <li><strong>Periódicos mixtos:</strong> Parte no periódica (anteperíodo) antes del período ($0,1\overline{6} = \frac{1}{6}$).</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Método sistemático de obtención</h3>
+          <p><strong>Decimal exacto:</strong></p>
+          <div class="katex-display">$$ 0,25 = \frac{25}{10^2} = \frac{25}{100} = \frac{1}{4} $$</div>
+          <p><strong>Periódico puro:</strong> Numerador = período, denominador = tantos 9 como cifras en el período:</p>
+          <div class="katex-display">$$ 0,\overline{27} = \frac{27}{99} = \frac{3}{11} $$</div>
+          <p><strong>Periódico mixto:</strong> Numerador = (número completo - parte no periódica), denominador = tantos 9 como cifras en período seguidos de tantos 0 como cifras en anteperíodo:</p>
+          <div class="katex-display">$$ 0,2\overline{3} = \frac{23-2}{90} = \frac{21}{90} = \frac{7}{30} \qquad 1,\overline{27} = \frac{127-1}{99} = \frac{126}{99} = \frac{14}{11} $$</div>
+          <p><strong>Simplificación final:</strong> Siempre reducir a forma irreducible usando MCD.</p>
+        </article>
+        <article>
+          <h3>Diagrama de decisión (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Decimal] --> B{¿Tiene período?}
+            B -->|No| C[Exacto: numerador=sin coma, denominador=10^n]
+            B -->|Sí| D{¿Período empieza en coma?}
+            D -->|Sí| E["Puro: num=período, den=9...9"]
+            D -->|No| F["Mixto: num=completo-no periódico, den=9...90...0"]
+            C & E & F --> G[Simplificar con MCD]
+            G --> H[Fracción irreducible]
+            style H fill:#1a237e,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <article>
+          <h3>Convergencia hacia generatriz (Chart.js)</h3>
+          <div class="chart-container"><canvas id="convergenceChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Aproximaciones decimales sucesivas convergen hacia la fracción exacta $\frac{7}{30}$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En sistemas de álgebra computacional (CAS), la representación fraccionaria exacta permite simplificaciones simbólicas imposibles con decimales. En cálculos iterativos (métodos numéricos), usar la generatriz evita deriva por acumulación de errores de redondeo. En renderizado vectorial, la conversión precisa garantiza consistencia geométrica en transformaciones.</p>
+        </div>
+      </section>
+
+      <section id="subtema-2-4">
+        <h2><i class="fa-solid fa-diagram-project"></i> 2.4 Resolución de problemas multi-etapa</h2>
+        <p class="intro">Los problemas reales rara vez se resuelven en un solo paso. Una metodología estructurada permite abordar situaciones complejas con fracciones y decimales de forma sistemática.</p>
+        <article>
+          <h3>Metodología de 5 fases</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Comprensión:</strong> Leer detenidamente, extraer datos numéricos y relaciones verbales.</li>
+            <li><i class="fa-solid fa-list-check"></i> <strong>Identificación:</strong> Determinar operaciones necesarias (sumas, productos, conversiones).</li>
+            <li><i class="fa-solid fa-sitemap"></i> <strong>Planificación:</strong> Ordenar pasos respetando jerarquía y dependencias lógicas.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Ejecución:</strong> Calcular con verificación intermedia de signos y órdenes de magnitud.</li>
+            <li><i class="fa-solid fa-comment-dots"></i> <strong>Interpretación:</strong> Contextualizar resultado, verificar coherencia con enunciado.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Tipologías frecuentes</h3>
+          <ul>
+            <li><strong>Repartos proporcionales con ajustes:</strong> Distribuir cantidades con porcentajes sucesivos o condiciones adicionales.</li>
+            <li><strong>Conversiones encadenadas:</strong> Cambiar unidades múltiples veces (ej: km/h → m/s → cm/min).</li>
+            <li><strong>Mezclas con porcentajes:</strong> Combinar componentes con distintas proporciones, calcular resultado final.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Estrategias de verificación</h3>
+          <ul>
+            <li><strong>Estimación previa:</strong> Predecir orden de magnitud del resultado antes de calcular.</li>
+            <li><strong>Coherencia de unidades:</strong> Verificar que todas las magnitudes estén en unidades compatibles.</li>
+            <li><strong>Análisis dimensional:</strong> Comprobar que las operaciones respetan dimensiones físicas (si aplica).</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ejemplo resuelto: Llenado de depósito</h3>
+          <p>"Un depósito se llena al 40% en 2 horas. ¿Cuánto tardará en llenarse completamente si el caudal se reduce un 25%?"</p>
+          <div class="katex-display">$$ \text{Caudal inicial: } \frac{40\%}{2\text{ h}} = 20\%\text{/h} \qquad \text{Caudal reducido: } 20\% \cdot (1 - 0,25) = 15\%\text{/h} $$</div>
+          <div class="katex-display">$$ t = \frac{100\%}{15\%\text{/h}} = \frac{100}{15} = \frac{20}{3} \approx 6,67 \text{ h} $$</div>
+          <p><strong>Verificación:</strong> $6,67 \text{ h} > 2 \text{ h}$ (coherente, caudal menor → tiempo mayor).</p>
+        </article>
+        <article>
+          <h3>Flujo de resolución multi-etapa (Mermaid)</h3>
+          <div class="mermaid">
+            graph TD
+            A[Enunciado] --> B[Extraer datos y relaciones]
+            B --> C[Identificar operaciones necesarias]
+            C --> D[Planificar orden de pasos]
+            D --> E[Ejecutar con verificación intermedia]
+            E --> F[Interpretar resultado en contexto]
+            F --> G{¿Coherente?}
+            G -->|Sí| H[Solución aceptada]
+            G -->|No| I[Revisar planificación]
+            style H fill:#1a237e,color:#fff,stroke:#fff
+            style I fill:#c62828,color:#fff,stroke:#fff
+          </div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En planificación de proyectos, las dependencias entre tareas requieren resolver problemas multi-etapa con porcentajes de avance. En logística, la optimización de rutas implica conversiones encadenadas de unidades y cálculos de tiempos. En procesos industriales básicos, el modelado de mezclas y proporciones sigue esta metodología estructurada.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema2_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 2</a></p></footer>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code', 'mermaid']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      document.querySelectorAll('.mermaid').forEach(function (el) {
+        if (!el.dataset.processed) {
+          el.dataset.processed = 'true';
+          mermaid.run({ nodes: [el] });
+        }
+      });
+    }
+
+    function initErrorChart(dark) {
+      var ctx = document.getElementById('errorChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var tc = dark ? '#f5f5f5' : '#212121',
+          gc = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['3', '3,1', '3,14', '3,141', '3,1416'],
+          datasets: [
+            {
+              label: 'Error absoluto',
+              data: [0.14159, 0.04159, 0.00159, 0.00059, 0.00001],
+              backgroundColor: '#1a237e'
+            },
+            {
+              label: 'Error relativo (%)',
+              data: [4.5, 1.33, 0.05, 0.019, 0.0003],
+              backgroundColor: '#3949ab',
+              yAxisID: 'y1'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: tc } },
+            title: { display: true, text: 'Errores en aproximaciones de π', color: tc }
+          },
+          scales: {
+            y: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+              title: { display: true, text: 'E_a', color: tc },
+              ticks: { color: tc },
+              grid: { color: gc }
+            },
+            y1: {
+              type: 'linear',
+              display: true,
+              position: 'right',
+              title: { display: true, text: 'E_r (%)', color: tc },
+              ticks: { color: tc },
+              grid: { drawOnChartArea: false }
+            },
+            x: { ticks: { color: tc }, grid: { color: gc } }
+          }
+        }
+      });
+    }
+
+    function initConvergenceChart(dark) {
+      var ctx = document.getElementById('convergenceChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var tc = dark ? '#f5f5f5' : '#212121',
+          gc = dark ? '#444' : '#e0e0e0';
+      var data = [];
+      var approx = 0;
+      for (var i = 1; i <= 10; i++) {
+        approx += 23 / Math.pow(100, i);
+        data.push({ x: i, y: approx });
+      }
+      data.push({ x: 11, y: 7 / 30 });
+      if (ctx.chart) ctx.chart.destroy();
+      ctx.chart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+          datasets: [
+            {
+              label: 'Aproximación decimal',
+              data: data,
+              borderColor: '#1a237e',
+              backgroundColor: 'rgba(26,35,126,0.3)',
+              pointRadius: 4
+            },
+            {
+              label: 'Valor exacto 7/30',
+              data: [{ x: 1, y: 7 / 30 }, { x: 11, y: 7 / 30 }],
+              borderColor: '#4caf50',
+              borderDash: [5, 5],
+              pointRadius: 0
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: tc } },
+            title: { display: true, text: 'Convergencia hacia fracción generatriz', color: tc }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Iteración', color: tc }, ticks: { color: tc }, grid: { color: gc } },
+            y: { title: { display: true, text: 'Valor', color: tc }, ticks: { color: tc }, grid: { color: gc }, min: 0.23, max: 0.234 }
+          }
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      initMermaid(false);
+      setTimeout(function () {
+        initKaTeX();
+        initErrorChart(false);
+        initConvergenceChart(false);
+      }, 50);
+    });
+
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      initErrorChart(true);
+      initConvergenceChart(true);
+    }
+
+    themeToggle.addEventListener('click', function () {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initKaTeX();
+      initMermaid(isDark);
+      initErrorChart(isDark);
+      initConvergenceChart(isDark);
+    });
+
+    var menuToggle = document.getElementById('menu-toggle'),
+        sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', function () { sidebar.classList.toggle('open'); });
+    document.querySelectorAll('.nav-link').forEach(function (link) {
+      link.addEventListener('click', function () { if (window.innerWidth < 992) sidebar.classList.remove('open'); });
+    });
+    var sections = document.querySelectorAll('section'),
+        navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', function () {
+      var current = '';
+      sections.forEach(function (section) {
+        var st = section.offsetTop - 100;
+        if (pageYOffset >= st) current = section.getAttribute('id');
+      });
+      navLinks.forEach(function (link) {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) link.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

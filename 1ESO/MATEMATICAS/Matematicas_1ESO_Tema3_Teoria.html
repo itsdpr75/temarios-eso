@@ -1,0 +1,366 @@
+<!-- Matematicas_1ESO_Tema3_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 3: Números Enteros | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .mermaid-wrap{text-align:center;margin:1rem 0}
+    .mermaid-wrap .mermaid{display:inline-block;max-width:100%}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .prompt-box{border-left:4px solid #00897b;background:rgba(0,137,123,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0;position:relative}
+    .prompt-box .prompt-header i{color:#00897b;margin-right:.5rem}
+    .prompt-header{font-weight:600;color:#00695c;margin-bottom:.75rem;display:flex;align-items:center}
+    .prompt-text{background:var(--bg-body);border:1px solid var(--border);border-radius:6px;padding:1rem;font-family:monospace;white-space:pre-wrap;word-break:break-word;max-height:150px;overflow-y:auto;font-size:.9rem;color:var(--text-main);margin-bottom:.75rem}
+    .copy-btn{background:var(--primary);color:#fff;border:none;padding:.5rem 1rem;border-radius:6px;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;font-weight:600;transition:background var(--transition)}
+    .copy-btn:hover{background:var(--primary-light)}
+    .copy-btn.copied{background:#00695c;pointer-events:none}
+    .copy-btn i{font-size:.9rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-minus"></i> <span>Tema 3: Números Enteros</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-3-1" class="nav-link"><i class="fa-solid fa-1"></i> 3.1 Concepto y recta numérica</a></li>
+        <li><a href="#subtema-3-2" class="nav-link"><i class="fa-solid fa-2"></i> 3.2 Suma y resta de enteros</a></li>
+        <li><a href="#subtema-3-3" class="nav-link"><i class="fa-solid fa-3"></i> 3.3 Multiplicación y división</a></li>
+        <li><a href="#subtema-3-4" class="nav-link"><i class="fa-solid fa-4"></i> 3.4 Operaciones combinadas</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 3.1 -->
+      <section id="subtema-3-1">
+        <h2><i class="fa-solid fa-ruler-horizontal"></i> 3.1 Concepto, recta numérica y valor absoluto</h2>
+        <p class="intro">Los números enteros amplían los naturales para representar cantidades con dirección.</p>
+        <article>
+          <h3>El conjunto Z</h3>
+          <p>Los números enteros incluyen los naturales, sus opuestos y el cero:</p>
+          <div class="katex-display">$$ \mathbb{Z} = \{\dots, -3, -2, -1, 0, 1, 2, 3, \dots\} $$</div>
+          <ul>
+            <li><strong>Enteros positivos:</strong> $1, 2, 3, \dots$ (coinciden con $\mathbb{N}^+$)</li>
+            <li><strong>Enteros negativos:</strong> $-1, -2, -3, \dots$ (opuestos de los positivos)</li>
+            <li><strong>El cero:</strong> neutro, no tiene signo</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Recta numérica y orden</h3>
+          <p>En la recta, los enteros se ordenan de izquierda a derecha: menor a mayor.</p>
+          <div class="mermaid-wrap"><div class="mermaid">graph LR
+A[-5] --> B[-3] --> C[-1] --> D[0] --> E[2] --> F[4] --> G[6]
+style D fill:#1a237e,color:#fff,stroke:#fff</div></div>
+          <p>Ejemplos: $-5 &lt; -2$, $0 &gt; -3$, $4 &gt; -10$.</p>
+        </article>
+        <article>
+          <h3>Valor absoluto</h3>
+          <p>El valor absoluto de un entero $a$, $|a|$, es su distancia al cero. Siempre no negativo:</p>
+          <div class="katex-display">$$ |a| = \begin{cases} a & \text{si } a \geq 0 \\ -a & \text{si } a &lt; 0 \end{cases} $$</div>
+          <p>Ejemplos: $|-7| = 7$, $|3| = 3$, $|0| = 0$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>Temperaturas bajo cero = negativos; saldos deudores = negativos. Valor absoluto mide magnitud sin signo.</p>
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-header"><i class="fa-solid fa-robot"></i> Prompt para IA</div>
+          <pre class="prompt-text" id="prompt-3-1">Soy un estudiante de 12 años. Explícame qué son los números enteros, la recta numérica y el valor absoluto de forma sencilla. Usa ejemplos con temperaturas, dinero o plantas de un edificio. Quiero entenderlo como si fuera un juego.</pre>
+          <button class="copy-btn" data-target="prompt-3-1"><i class="fa-solid fa-copy"></i> Copiar prompt</button>
+        </div>
+      </section>
+
+      <!-- 3.2 -->
+      <section id="subtema-3-2">
+        <h2><i class="fa-solid fa-plus-minus"></i> 3.2 Suma y resta de enteros</h2>
+        <p class="intro">Suma y resta con enteros siguen reglas de signo que permiten calcular variaciones netas.</p>
+        <article>
+          <h3>Suma de enteros: reglas de signo</h3>
+          <ul>
+            <li><strong>Mismo signo:</strong> sumar valores absolutos, conservar signo.<br>Ej: $(-8)+(-3)=-11$</li>
+            <li><strong>Distinto signo:</strong> restar valores absolutos, signo del mayor.<br>Ej: $(-8)+3=-5$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Resta como suma del opuesto</h3>
+          <p>$a - b = a + (-b)$. Ej: $4 - (-6) = 10$.</p>
+        </article>
+        <article>
+          <h3>Flujo de decisión</h3>
+          <div class="mermaid-wrap"><div class="mermaid">graph TD
+A["Operación: a ± b"] --> B{"¿Es resta?"}
+B -->|Sí| C["Convertir: a - b = a + (-b)"]
+B -->|No| D["Suma directa"]
+C & D --> E{"¿Mismo signo?"}
+E -->|Sí| F["Sumar valores, conservar signo"]
+E -->|No| G["Restar valores, signo del mayor"]
+F & G --> H["Resultado"]</div></div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-bolt"></i> Método rápido</strong>
+          <ol><li>Identifica signos.</li><li>Si es resta, cambia signo del segundo.</li><li>Aplica regla mismo/distinto signo.</li><li>Verifica con recta numérica.</li></ol>
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-header"><i class="fa-solid fa-robot"></i> Prompt para IA</div>
+          <pre class="prompt-text" id="prompt-3-2">Soy un estudiante de 12 años. Explícame cómo sumar y restar números enteros (con signos positivos y negativos) de manera muy sencilla. Dame trucos para recordar las reglas y ejemplos con cosas como subir/bajar temperatura o ganar/perder dinero.</pre>
+          <button class="copy-btn" data-target="prompt-3-2"><i class="fa-solid fa-copy"></i> Copiar prompt</button>
+        </div>
+      </section>
+
+      <!-- 3.3 -->
+      <section id="subtema-3-3">
+        <h2><i class="fa-solid fa-multiply"></i> 3.3 Multiplicación y división de enteros</h2>
+        <p class="intro">Extienden las operaciones básicas incorporando la regla de los signos.</p>
+        <article>
+          <h3>Regla de los signos</h3>
+          <p>Signos iguales → positivo; signos distintos → negativo.</p>
+          <div class="katex-display">$$ (+) \times (+) = + \quad (-) \times (-) = + \quad (+) \times (-) = - $$</div>
+          <p>Ej: $(-3)\times(-5)=15$, $(-12)\div 4=-3$.</p>
+        </article>
+        <article>
+          <h3>Propiedad distributiva</h3>
+          <p>$-3\cdot(4+(-2)) = -3\cdot 2 = -6$.</p>
+        </article>
+        <article>
+          <h3>Esquema visual</h3>
+          <div class="mermaid-wrap"><div class="mermaid">graph TD
+A["Signo del resultado"] --> B{"¿Mismo signo?"}
+B -->|Sí| C["Positivo (+)"]
+B -->|No| D["Negativo (-)"]
+C --> E["Ej: (-)×(-)=+"]
+D --> F["Ej: (+)÷(-)=-"]</div></div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>Multiplicar velocidad negativa por tiempo negativo da desplazamiento positivo.</p>
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-header"><i class="fa-solid fa-robot"></i> Prompt para IA</div>
+          <pre class="prompt-text" id="prompt-3-3">Soy un estudiante de 12 años. Explícame la regla de los signos para multiplicar y dividir números enteros. Usa ejemplos divertidos como amigos y enemigos, o pasos adelante/atrás. Quiero trucos para no equivocarme nunca.</pre>
+          <button class="copy-btn" data-target="prompt-3-3"><i class="fa-solid fa-copy"></i> Copiar prompt</button>
+        </div>
+      </section>
+
+      <!-- 3.4 -->
+      <section id="subtema-3-4">
+        <h2><i class="fa-solid fa-calculator"></i> 3.4 Operaciones combinadas y problemas</h2>
+        <p class="intro">Resolver expresiones con varias operaciones requiere respetar la jerarquía.</p>
+        <article>
+          <h3>Jerarquía de operaciones (PAPOMUDAS)</h3>
+          <ol>
+            <li><strong>P</strong>aréntesis</li>
+            <li><strong>P</strong>otencias</li>
+            <li><strong>M</strong>ultiplicaciones y <strong>D</strong>ivisiones</li>
+            <li><strong>S</strong>umas y <strong>R</strong>estas</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo paso a paso</h3>
+          <div class="katex-display">$$ -2 \cdot [3 + (-4)^2] - 5 = -43 $$</div>
+          <ol>
+            <li>Potencia: $(-4)^2=16$</li>
+            <li>Paréntesis: $3+16=19$</li>
+            <li>Multiplicación: $-2\times19=-38$</li>
+            <li>Resta: $-38-5=-43$</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Árbol de resolución</h3>
+          <div class="mermaid-wrap"><div class="mermaid">graph TD
+A["-2*3+-4^2-5"] --> B["-4^2 = 16"]
+B --> C["3+16 = 19"]
+C --> D["-2*19 = -38"]
+D --> E["-38-5 = -43"]
+E --> F["Resultado: -43"]
+style F fill:#1a237e,color:#fff,stroke:#fff</div></div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En programación, un error de signo cambia completamente el algoritmo.</p>
+        </div>
+        <div class="prompt-box">
+          <div class="prompt-header"><i class="fa-solid fa-robot"></i> Prompt para IA</div>
+          <pre class="prompt-text" id="prompt-3-4">Soy un estudiante de 12 años. Explícame cómo resolver operaciones combinadas con números enteros (sumas, restas, multiplicaciones, divisiones y paréntesis). Usa la regla PAPOMUDAS con ejemplos sencillos y trucos para no perderme.</pre>
+          <button class="copy-btn" data-target="prompt-3-4"><i class="fa-solid fa-copy"></i> Copiar prompt</button>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_1ESO_Tema3_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 3</a></p></footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Guardar fuente original de cada diagrama Mermaid (texto sin escapes)
+    const mermaidSources = new Map();
+
+    function captureMermaidSources() {
+      document.querySelectorAll('.mermaid').forEach((el, index) => {
+        // Guardamos el texto original (sin procesar)
+        if (!mermaidSources.has(el)) {
+          mermaidSources.set(el, el.textContent.trim());
+        }
+      });
+    }
+
+    function initKaTeX() {
+      if (typeof renderMathInElement === 'function') {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false
+        });
+      }
+    }
+
+    async function renderSingleMermaid(el, text) {
+      try {
+        // Usar mermaid.render en lugar de run para control total
+        const { svg } = await mermaid.render('mermaid-svg-' + Math.random().toString(36).substr(2, 9), text);
+        el.innerHTML = svg;
+      } catch (e) {
+        console.error('Error en diagrama Mermaid:', e);
+        el.innerHTML = '<div style="color:red; padding:1rem; border:1px dashed red;">⚠️ Error en el diagrama. Revisa la sintaxis.</div>';
+      }
+    }
+
+    async function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+
+      // Renderizar cada diagrama individualmente
+      const elements = document.querySelectorAll('.mermaid');
+      for (const el of elements) {
+        const source = mermaidSources.get(el);
+        if (source) {
+          await renderSingleMermaid(el, source);
+        } else {
+          // Si no está en el mapa, usar textContent actual y guardarlo
+          const fallbackSource = el.textContent.trim();
+          mermaidSources.set(el, fallbackSource);
+          await renderSingleMermaid(el, fallbackSource);
+        }
+      }
+    }
+
+    // Al cargar el DOM
+    document.addEventListener('DOMContentLoaded', function() {
+      captureMermaidSources();
+      initKaTeX();
+      initMermaid(false);
+    });
+
+    // Toggle modo oscuro
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initKaTeX();
+      initMermaid(true);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initKaTeX();
+      initMermaid(isDark);
+    });
+
+    // Menú móvil
+    const menuToggle = document.getElementById('menu-toggle');
+    const sidebar = document.getElementById('sidebar');
+    menuToggle.addEventListener('click', () => sidebar.classList.toggle('open'));
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 992) sidebar.classList.remove('open');
+      });
+    });
+
+    // Scrollspy
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (pageYOffset >= section.offsetTop - 100) current = section.getAttribute('id');
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) link.classList.add('active');
+      });
+    });
+
+    // Copiar prompts
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const textToCopy = document.getElementById(targetId).textContent;
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          btn.classList.add('copied');
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Copiado!';
+          setTimeout(() => {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar prompt';
+          }, 2000);
+        }).catch(() => alert('No se pudo copiar. Copia manualmente el prompt.'));
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!-- Matematicas_1ESO_Tema2_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 2: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 2: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 2.1 Criterios de divisibilidad -->
+    <div class="section-divider"><h3>2.1 Criterios de divisibilidad</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.01</span></div><div class="card-body"><p>¿Es 246 divisible por 2? Justifica usando el criterio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.02</span></div><div class="card-body"><p>¿Es 315 divisible por 3? Usa la suma de cifras.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.03</span></div><div class="card-body"><p>¿Es 470 divisible por 5? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.04</span></div><div class="card-body"><p>¿Es 1 000 divisible por 10? Explica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.05</span></div><div class="card-body"><p>¿Es 594 divisible por 9? Calcula la suma de cifras.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.06</span></div><div class="card-body"><p>¿Es 1 353 divisible por 11? Aplica el criterio de posiciones.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.07</span></div><div class="card-body"><p>Escribe un número de 3 cifras divisible por 2 y por 5.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.08</span></div><div class="card-body"><p>¿Qué cifra debe tener al final un número para ser divisible por 2 y por 5?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.09</span></div><div class="card-body"><p>¿Es 72 divisible por 3 y por 9 a la vez? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.1.10</span></div><div class="card-body"><p>Verifica si 825 es divisible por 3, 5 y 11.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.11</span></div><div class="card-body"><p>Encuentra el menor número de 4 cifras divisible por 2, 3 y 5.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.12</span></div><div class="card-body"><p>¿Es 2 046 divisible por 11? Detalla el cálculo de posiciones.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.13</span></div><div class="card-body"><p>Completa: 4_7 es divisible por 3. ¿Qué cifras pueden ocupar el espacio?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.14</span></div><div class="card-body"><p>¿Puede un número ser divisible por 9 y no por 3? Razona.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.15</span></div><div class="card-body"><p>Encuentra un número entre 100 y 150 divisible por 2, 3 y 11.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.16</span></div><div class="card-body"><p>Si un número es divisible por 6, ¿qué dos criterios debe cumplir?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.17</span></div><div class="card-body"><p>¿Es 1 234 567 890 divisible por 2, 3, 5, 9 y 10? Verifica cada uno.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.18</span></div><div class="card-body"><p>Demuestra que si un número es divisible por 10, también lo es por 2 y por 5.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.1.19</span></div><div class="card-body"><p>¿Qué números de dos cifras son divisibles por 11?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.1.20</span></div><div class="card-body"><p>Demuestra el criterio de divisibilidad por 3 usando aritmética modular básica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.1.21</span></div><div class="card-body"><p>¿Existe un número divisible por 2, 3, 5, 9 y 11 a la vez? Halla el menor positivo.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.1.22</span></div><div class="card-body"><p>Si $N = \overline{a0b}$ es divisible por 11, ¿qué relación deben cumplir $a$ y $b$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.1.23</span></div><div class="card-body"><p>Demuestra que la suma de dos múltiplos de $n$ es también múltiplo de $n$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.1.24</span></div><div class="card-body"><p>¿Puede un número impar ser divisible por 6? Justifica con contraejemplo o demostración.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.1.25</span></div><div class="card-body"><p>Investiga: ¿existe un criterio sencillo de divisibilidad por 7? Describe uno si lo encuentras.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 2.2 Números primos y compuestos -->
+    <div class="section-divider"><h3>2.2 Números primos y compuestos</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.01</span></div><div class="card-body"><p>¿Es 17 un número primo? Lista sus divisores para justificar.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.02</span></div><div class="card-body"><p>¿Es 21 un número primo? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.03</span></div><div class="card-body"><p>Escribe los 8 primeros números primos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.04</span></div><div class="card-body"><p>¿Por qué el 1 no se considera primo?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.05</span></div><div class="card-body"><p>¿Es 2 el único primo par? Explica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.06</span></div><div class="card-body"><p>Clasifica como primo o compuesto: 29, 33, 37, 45.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.07</span></div><div class="card-body"><p>¿Cuántos divisores tiene un número primo?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.08</span></div><div class="card-body"><p>Escribe tres números compuestos entre 10 y 20.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.09</span></div><div class="card-body"><p>¿Es 91 primo? Verifica sus divisores.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.2.10</span></div><div class="card-body"><p>Lista los primos menores que 30.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.11</span></div><div class="card-body"><p>Aplica la criba de Eratóstenes para hallar primos hasta 50.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.12</span></div><div class="card-body"><p>¿Es $2^5 - 1 = 31$ un número primo? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.13</span></div><div class="card-body"><p>¿Puede un primo terminar en 4? Razona usando criterios de divisibilidad.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.14</span></div><div class="card-body"><p>Si un número es primo y mayor que 5, ¿en qué cifras puede terminar?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.15</span></div><div class="card-body"><p>Encuentra dos primos gemelos (diferencia 2) entre 20 y 50.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.16</span></div><div class="card-body"><p>¿Es 121 un número primo? Factorízalo si no lo es.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.17</span></div><div class="card-body"><p>Demuestra que todo número compuesto tiene un divisor primo ≤ su raíz cuadrada.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.18</span></div><div class="card-body"><p>¿Cuántos primos hay entre 50 y 100? Lista al menos 5.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.2.19</span></div><div class="card-body"><p>Si $p$ es primo, ¿es $p^2$ siempre compuesto? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.2.20</span></div><div class="card-body"><p>Resume la demostración de Euclides de que existen infinitos primos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.2.21</span></div><div class="card-body"><p>Si $p > 3$ es primo, demuestra que $p^2 - 1$ es divisible por 24.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.2.22</span></div><div class="card-body"><p>Investiga: ¿qué son los números de Mersenne? Da un ejemplo primo.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.2.23</span></div><div class="card-body"><p>¿Puede la suma de dos primos impares ser prima? Ejemplifica o demuestra.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.2.24</span></div><div class="card-body"><p>Si $n = p \cdot q$ con $p,q$ primos distintos, ¿cuántos divisores tiene $n$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.2.25</span></div><div class="card-body"><p>Demuestra que entre $n!+2$ y $n!+n$ no hay primos para $n \geq 2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 2.3 Descomposición en factores primos -->
+    <div class="section-divider"><h3>2.3 Descomposición factorial</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.01</span></div><div class="card-body"><p>Descompón en factores primos: 24.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.02</span></div><div class="card-body"><p>Descompón en factores primos: 36.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.03</span></div><div class="card-body"><p>Descompón en factores primos: 50.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.04</span></div><div class="card-body"><p>Descompón en factores primos: 72.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.05</span></div><div class="card-body"><p>Descompón en factores primos: 100.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.06</span></div><div class="card-body"><p>Expresa $2^3 \cdot 3 \cdot 5$ como número natural.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.07</span></div><div class="card-body"><p>¿Cuál es la descomposición de 18?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.08</span></div><div class="card-body"><p>Verifica: $48 = 2^4 \cdot 3$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.09</span></div><div class="card-body"><p>Descompón: 15.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.3.10</span></div><div class="card-body"><p>Descompón: 81.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.11</span></div><div class="card-body"><p>Descompón: 144.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.12</span></div><div class="card-body"><p>Descompón: 210.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.13</span></div><div class="card-body"><p>Si $n = 2^a \cdot 3^b$ y $n=72$, halla $a$ y $b$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.14</span></div><div class="card-body"><p>¿Cuántos divisores tiene $2^2 \cdot 3^3$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.15</span></div><div class="card-body"><p>Descompón: 360 y expresa con notación de potencias.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.16</span></div><div class="card-body"><p>Si $a = 2^3 \cdot 5$ y $b = 2 \cdot 3^2 \cdot 5$, escribe sus descomposiciones.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.17</span></div><div class="card-body"><p>Verifica el teorema fundamental: descompón 60 de dos formas distintas y compara.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.18</span></div><div class="card-body"><p>¿Es única la descomposición de 100 en primos? Justifica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.3.19</span></div><div class="card-body"><p>Descompón: 504.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.3.20</span></div><div class="card-body"><p>Si $n = p_1^{\alpha_1} \cdots p_k^{\alpha_k}$, demuestra que el número de divisores es $(\alpha_1+1)\cdots(\alpha_k+1)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.3.21</span></div><div class="card-body"><p>Descompón 1 001 y verifica que es producto de tres primos distintos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.3.22</span></div><div class="card-body"><p>Si $n = 2^a \cdot 3^b \cdot 5^c$ tiene 24 divisores, da una posible terna $(a,b,c)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.3.23</span></div><div class="card-body"><p>Demuestra que si $a \mid b$, entonces en la descomposición de $a$ los exponentes son ≤ los de $b$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.3.24</span></div><div class="card-body"><p>Investiga: ¿qué es la función $\Omega(n)$ que cuenta factores primos con multiplicidad? Calcula $\Omega(72)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.3.25</span></div><div class="card-body"><p>Si $n!$ se descompone en primos, ¿cuál es el exponente de 2 en $10!$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 2.4 MCD y mcm -->
+    <div class="section-divider"><h3>2.4 Múltiplos y divisores: MCD y mcm</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.01</span></div><div class="card-body"><p>Calcula: $\text{MCD}(12, 18)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.02</span></div><div class="card-body"><p>Calcula: $\text{mcm}(4, 6)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.03</span></div><div class="card-body"><p>Calcula: $\text{MCD}(20, 30)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.04</span></div><div class="card-body"><p>Calcula: $\text{mcm}(5, 8)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.05</span></div><div class="card-body"><p>Calcula: $\text{MCD}(15, 25)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.06</span></div><div class="card-body"><p>Calcula: $\text{mcm}(9, 12)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.07</span></div><div class="card-body"><p>Si $\text{MCD}(a,b)=1$, ¿cómo se llaman $a$ y $b$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.08</span></div><div class="card-body"><p>Verifica: $\text{MCD}(8,12) \cdot \text{mcm}(8,12) = 8 \cdot 12$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.09</span></div><div class="card-body"><p>Calcula: $\text{mcm}(3, 7)$ siendo primos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">2.4.10</span></div><div class="card-body"><p>Calcula: $\text{MCD}(13, 17)$ siendo primos.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.11</span></div><div class="card-body"><p>Calcula: $\text{MCD}(72, 108)$ usando descomposición factorial.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.12</span></div><div class="card-body"><p>Calcula: $\text{mcm}(24, 36)$ usando descomposición factorial.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.13</span></div><div class="card-body"><p>Calcula: $\text{MCD}(48, 60, 72)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.14</span></div><div class="card-body"><p>Calcula: $\text{mcm}(10, 15, 25)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.15</span></div><div class="card-body"><p>Si $\text{MCD}(a,b)=6$ y $\text{mcm}(a,b)=60$, halla $a \cdot b$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.16</span></div><div class="card-body"><p>Encuentra dos números cuyo MCD sea 5 y mcm sea 150.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.17</span></div><div class="card-body"><p>¿Puede el mcm de dos números ser igual a su producto? ¿Cuándo ocurre?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.18</span></div><div class="card-body"><p>Calcula: $\text{MCD}(100, 150)$ y $\text{mcm}(100, 150)$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">2.4.19</span></div><div class="card-body"><p>Si $a = 2^3 \cdot 3 \cdot 5$ y $b = 2^2 \cdot 3^2 \cdot 7$, calcula MCD y mcm.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.4.20</span></div><div class="card-body"><p>Demuestra que $\text{MCD}(a,b) \cdot \text{mcm}(a,b) = a \cdot b$ usando descomposición factorial.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.4.21</span></div><div class="card-body"><p>Si $\text{MCD}(a,b)=d$, demuestra que $\text{MCD}(a/d, b/d)=1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.4.22</span></div><div class="card-body"><p>Encuentra todos los pares $(a,b)$ con $\text{MCD}=4$ y $\text{mcm}=48$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.4.23</span></div><div class="card-body"><p>Demuestra que si $a \mid b$, entonces $\text{mcm}(a,b)=b$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.4.24</span></div><div class="card-body"><p>Si $n = \text{mcm}(1,2,\dots,10)$, ¿cuál es la descomposición factorial de $n$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">2.4.25</span></div><div class="card-body"><p>Problema aplicado: Dos luces parpadean cada 12s y 18s. Si coinciden ahora, ¿cuándo volverán a coincidir?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 2</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. ¿Es 342 divisible por 3?</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) Sí, suma=9</label><label class="test-option"><input type="radio" name="q1" value="b"> b) No, suma=8</label><label class="test-option"><input type="radio" name="q1" value="c"> c) Sí, termina en par</label><label class="test-option"><input type="radio" name="q1" value="d"> d) No, no termina en 0</label></div></div>
+      <div class="test-question"><p>2. ¿Cuál es el menor primo?</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) 0</label><label class="test-option"><input type="radio" name="q2" value="b"> b) 1</label><label class="test-option"><input type="radio" name="q2" value="c"> c) 2</label><label class="test-option"><input type="radio" name="q2" value="d"> d) 3</label></div></div>
+      <div class="test-question"><p>3. Descomposición de 48:</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) $2^3 \cdot 3$</label><label class="test-option"><input type="radio" name="q3" value="b"> b) $2^4 \cdot 3$</label><label class="test-option"><input type="radio" name="q3" value="c"> c) $2^2 \cdot 3^2$</label><label class="test-option"><input type="radio" name="q3" value="d"> d) $3 \cdot 4^2$</label></div></div>
+      <div class="test-question"><p>4. $\text{MCD}(12,18) =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) 3</label><label class="test-option"><input type="radio" name="q4" value="b"> b) 6</label><label class="test-option"><input type="radio" name="q4" value="c"> c) 9</label><label class="test-option"><input type="radio" name="q4" value="d"> d) 12</label></div></div>
+      <div class="test-question"><p>5. $\text{mcm}(4,6) =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) 12</label><label class="test-option"><input type="radio" name="q5" value="b"> b) 24</label><label class="test-option"><input type="radio" name="q5" value="c"> c) 2</label><label class="test-option"><input type="radio" name="q5" value="d"> d) 10</label></div></div>
+      <div class="test-question"><p>6. ¿Es 91 primo?</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) Sí</label><label class="test-option"><input type="radio" name="q6" value="b"> b) No, divisible por 7</label><label class="test-option"><input type="radio" name="q6" value="c"> c) No, divisible por 5</label><label class="test-option"><input type="radio" name="q6" value="d"> d) No, es par</label></div></div>
+      <div class="test-question"><p>7. Criterio de divisibilidad por 11 usa:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) Última cifra</label><label class="test-option"><input type="radio" name="q7" value="b"> b) Suma de cifras</label><label class="test-option"><input type="radio" name="q7" value="c"> c) Diferencia posiciones par/impar</label><label class="test-option"><input type="radio" name="q7" value="d"> d) Producto de cifras</label></div></div>
+      <div class="test-question"><p>8. Si $a \mid b$ y $b \mid c$, entonces:</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) $a \mid c$</label><label class="test-option"><input type="radio" name="q8" value="b"> b) $c \mid a$</label><label class="test-option"><input type="radio" name="q8" value="c"> c) $a = c$</label><label class="test-option"><input type="radio" name="q8" value="d"> d) Ninguna</label></div></div>
+      <div class="test-question"><p>9. $\text{MCD}(a,b)=1$ implica que:</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) Son primos</label><label class="test-option"><input type="radio" name="q9" value="b"> b) Son coprimos</label><label class="test-option"><input type="radio" name="q9" value="c"> c) Uno divide al otro</label><label class="test-option"><input type="radio" name="q9" value="d"> d) Son pares</label></div></div>
+      <div class="test-question"><p>10. Descomposición de 100:</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) $2^2 \cdot 5^2$</label><label class="test-option"><input type="radio" name="q10" value="b"> b) $2 \cdot 5^3$</label><label class="test-option"><input type="radio" name="q10" value="c"> c) $10^2$</label><label class="test-option"><input type="radio" name="q10" value="d"> d) $4 \cdot 25$</label></div></div>
+      <div class="test-question"><p>11. ¿Cuántos divisores tiene un primo?</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) 1</label><label class="test-option"><input type="radio" name="q11" value="b"> b) 2</label><label class="test-option"><input type="radio" name="q11" value="c"> c) 3</label><label class="test-option"><input type="radio" name="q11" value="d"> d) Infinitos</label></div></div>
+      <div class="test-question"><p>12. $\text{mcm}(5,7) =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) 12</label><label class="test-option"><input type="radio" name="q12" value="b"> b) 35</label><label class="test-option"><input type="radio" name="q12" value="c"> c) 5</label><label class="test-option"><input type="radio" name="q12" value="d"> d) 7</label></div></div>
+      <div class="test-question"><p>13. Si un número es divisible por 6, debe ser divisible por:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) 2 y 3</label><label class="test-option"><input type="radio" name="q13" value="b"> b) 3 y 4</label><label class="test-option"><input type="radio" name="q13" value="c"> c) 2 y 4</label><label class="test-option"><input type="radio" name="q13" value="d"> d) 5 y 6</label></div></div>
+      <div class="test-question"><p>14. ¿Es 1 primo?</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) Sí</label><label class="test-option"><input type="radio" name="q14" value="b"> b) No, tiene un solo divisor</label><label class="test-option"><input type="radio" name="q14" value="c"> c) No, es compuesto</label><label class="test-option"><input type="radio" name="q14" value="d"> d) Depende del contexto</label></div></div>
+      <div class="test-question"><p>15. $\text{MCD}(8,12) \cdot \text{mcm}(8,12) =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) 24</label><label class="test-option"><input type="radio" name="q15" value="b"> b) 48</label><label class="test-option"><input type="radio" name="q15" value="c"> c) 96</label><label class="test-option"><input type="radio" name="q15" value="d"> d) 8·12</label></div></div>
+      <div class="test-question"><p>16. Criterio de divisibilidad por 5:</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) Suma cifras múltiplo de 5</label><label class="test-option"><input type="radio" name="q16" value="b"> b) Termina en 0 o 5</label><label class="test-option"><input type="radio" name="q16" value="c"> c) Última cifra par</label><label class="test-option"><input type="radio" name="q16" value="d"> d) Número par</label></div></div>
+      <div class="test-question"><p>17. Si $n = 2^3 \cdot 3^2$, ¿cuántos divisores tiene?</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) 5</label><label class="test-option"><input type="radio" name="q17" value="b"> b) 6</label><label class="test-option"><input type="radio" name="q17" value="c"> c) 12</label><label class="test-option"><input type="radio" name="q17" value="d"> d) 36</label></div></div>
+      <div class="test-question"><p>18. ¿Qué números son coprimos?</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) MCD=1</label><label class="test-option"><input type="radio" name="q18" value="b"> b) mcm=1</label><label class="test-option"><input type="radio" name="q18" value="c"> c) Ambos primos</label><label class="test-option"><input type="radio" name="q18" value="d"> d) Ambos pares</label></div></div>
+      <div class="test-question"><p>19. Descomposición única de un compuesto es garantizada por:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) Criba de Eratóstenes</label><label class="test-option"><input type="radio" name="q19" value="b"> b) Teorema fundamental de la aritmética</label><label class="test-option"><input type="radio" name="q19" value="c"> c) Algoritmo de Euclides</label><label class="test-option"><input type="radio" name="q19" value="d"> d) Criterio de divisibilidad</label></div></div>
+      <div class="test-question"><p>20. Si $\text{MCD}(a,b)=d$, entonces $a/d$ y $b/d$ son:</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) Primos</label><label class="test-option"><input type="radio" name="q20" value="b"> b) Coprimos</label><label class="test-option"><input type="radio" name="q20" value="c"> c) Pares</label><label class="test-option"><input type="radio" name="q20" value="d"> d) Múltiplos</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema2_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 2</a></p></footer>
+  </main>
+  
+  <!-- KaTeX JS + Auto-render -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Función para inicializar/reinicializar KaTeX
+    function initKaTeX() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false}
+        ],
+        throwOnError: false,
+        macros: {
+          "\\MCD": "\\operatorname{MCD}",
+          "\\mcm": "\\operatorname{mcm}"
+        }
+      });
+    }
+    
+    // Función para inicializar Mermaid
+    function initMermaid(dark = false) {
+      mermaid.initialize({ 
+        startOnLoad: true, 
+        theme: dark ? 'dark' : 'neutral',
+        securityLevel: 'loose'
+      });
+      mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+    }
+    
+    // Inicialización al cargar DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      initKaTeX();
+      initMermaid(false);
+    });
+    
+    // Toggle modo oscuro
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+    
+    // Cargar preferencia guardada (CORREGIDO: comillas consistentes)
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+    }
+    
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      // Reinicializar librerías con nuevo tema
+      initKaTeX();
+      initMermaid(isDark);
+    });
+  </script>
+</body>
+</html>

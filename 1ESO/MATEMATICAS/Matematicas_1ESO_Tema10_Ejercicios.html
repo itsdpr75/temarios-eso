@@ -1,0 +1,289 @@
+<!-- Matematicas_1ESO_Tema10_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 10: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 10: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 10.1 Polígonos: clasificación y propiedades -->
+    <div class="section-divider"><h3>10.1 Polígonos</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.01</span></div><div class="card-body"><p>¿Cuántos lados tiene un pentágono?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.02</span></div><div class="card-body"><p>Clasifica: polígono con todos sus ángulos interiores &lt; 180°.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.03</span></div><div class="card-body"><p>Calcula la suma de ángulos interiores de un cuadrilátero.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.04</span></div><div class="card-body"><p>¿Cuánto mide cada ángulo interior de un hexágono regular?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.05</span></div><div class="card-body"><p>Calcula el número de diagonales de un pentágono.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.06</span></div><div class="card-body"><p>Verdadero/Falso: Un polígono regular tiene todos sus lados iguales.</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.07</span></div><div class="card-body"><p>¿Es un rombo un polígono regular? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.08</span></div><div class="card-body"><p>Clasifica: polígono de 8 lados.</p></div><div class="answer-area"><textarea placeholder="Nombra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.09</span></div><div class="card-body"><p>Si un polígono tiene 10 lados, ¿cuánto suman sus ángulos interiores?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.1.10</span></div><div class="card-body"><p>Describe la diferencia entre polígono convexo y cóncavo.</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.11</span></div><div class="card-body"><p>Calcula el ángulo interior de un octógono regular.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.12</span></div><div class="card-body"><p>Si la suma de ángulos interiores de un polígono es 1080°, ¿cuántos lados tiene?</p></div><div class="answer-area"><textarea placeholder="Resuelve..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.13</span></div><div class="card-body"><p>Calcula el número de diagonales de un dodecágono (12 lados).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.14</span></div><div class="card-body"><p>Demuestra que el ángulo exterior de un polígono regular es $\frac{360^\circ}{n}$.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.15</span></div><div class="card-body"><p>Si un polígono regular tiene ángulo interior de 140°, ¿cuántos lados tiene?</p></div><div class="answer-area"><textarea placeholder="Resuelve..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.16</span></div><div class="card-body"><p>Calcula la suma de ángulos exteriores de cualquier polígono convexo.</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.17</span></div><div class="card-body"><p>Demuestra que el número de diagonales de un polígono de $n$ lados es $\frac{n(n-3)}{2}$.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.18</span></div><div class="card-body"><p>Si un polígono tiene 35 diagonales, ¿cuántos lados tiene?</p></div><div class="answer-area"><textarea placeholder="Resuelve..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.1.19</span></div><div class="card-body"><p>Investiga: ¿qué polígonos regulares teselan el plano? Justifica con ángulos.</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.1.20</span></div><div class="card-body"><p>Demuestra que la suma de ángulos interiores de un polígono es $(n-2)\cdot 180^\circ$ usando triangulación.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.1.21</span></div><div class="card-body"><p>Si un polígono convexo tiene $n$ lados, demuestra que el número máximo de ángulos agudos es 3.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.1.22</span></div><div class="card-body"><p>Calcula el área de un hexágono regular de lado $a$ usando descomposición en triángulos equiláteros.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.1.23</span></div><div class="card-body"><p>Demuestra que en un polígono regular, las mediatrices de los lados concurren en el centro.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.1.24</span></div><div class="card-body"><p>Investiga: ¿qué es el teorema de Pick y cómo calcula áreas de polígonos en retícula?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.1.25</span></div><div class="card-body"><p>Problema aplicado: En un panel solar hexagonal de lado 2 m, calcula el área total y el número de diagonales para optimizar cableado.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- 10.2 Circunferencia y círculo: elementos -->
+    <div class="section-divider"><h3>10.2 Circunferencia y círculo</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.01</span></div><div class="card-body"><p>Define circunferencia.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.02</span></div><div class="card-body"><p>¿Cuál es la diferencia entre circunferencia y círculo?</p></div><div class="answer-area"><textarea placeholder="Explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.03</span></div><div class="card-body"><p>Si el radio es 5 cm, calcula el diámetro.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.04</span></div><div class="card-body"><p>Calcula la longitud de una circunferencia de radio 3 cm (usa $\pi \approx 3.14$).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.05</span></div><div class="card-body"><p>Calcula el área de un círculo de radio 4 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.06</span></div><div class="card-body"><p>Define cuerda de una circunferencia.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.07</span></div><div class="card-body"><p>¿Qué es un arco de circunferencia?</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.08</span></div><div class="card-body"><p>Calcula la longitud de un arco de 90° en una circunferencia de radio 6 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.09</span></div><div class="card-body"><p>Calcula el área de un sector circular de 60° en un círculo de radio 5 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.2.10</span></div><div class="card-body"><p>Define corona circular.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.11</span></div><div class="card-body"><p>Si la longitud de una circunferencia es $20\pi$ cm, calcula su radio.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.12</span></div><div class="card-body"><p>Calcula el área de una corona circular con radios 8 cm y 5 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.13</span></div><div class="card-body"><p>Un arco de 120° mide $4\pi$ cm. Calcula el radio de la circunferencia.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.14</span></div><div class="card-body"><p>Calcula el área de un segmento circular si el sector tiene área $12\pi$ cm² y el triángulo asociado tiene área $9$ cm².</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.15</span></div><div class="card-body"><p>Si el área de un círculo es $64\pi$ cm², calcula su perímetro.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.16</span></div><div class="card-body"><p>Demuestra que el área de un sector circular es proporcional al ángulo central.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.17</span></div><div class="card-body"><p>Calcula la longitud de una cuerda que subtiende un arco de 60° en una circunferencia de radio 10 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.18</span></div><div class="card-body"><p>Si dos circunferencias concéntricas tienen áreas $25\pi$ y $49\pi$ cm², calcula el área de la corona.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.2.19</span></div><div class="card-body"><p>Investiga: ¿cómo se calcula el área de un segmento circular solo con radio y altura del segmento?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.2.20</span></div><div class="card-body"><p>Demuestra que el área de un círculo es el límite del área de polígonos regulares inscritos cuando $n \to \infty$.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.2.21</span></div><div class="card-body"><p>Calcula el área de la región común a dos círculos de radio $r$ cuyos centros distan $r$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.2.22</span></div><div class="card-body"><p>Demuestra que la longitud de una cuerda es $2r \sin(\theta/2)$ donde $\theta$ es el ángulo central en radianes.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.2.23</span></div><div class="card-body"><p>Si un sector circular tiene área igual a la de un triángulo equilátero de lado $r$, calcula el ángulo central.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.2.24</span></div><div class="card-body"><p>Investiga: ¿qué es la cuadratura del círculo y por qué es imposible con regla y compás?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.2.25</span></div><div class="card-body"><p>Problema aplicado: En un jardín circular de radio 10 m, se quiere instalar un camino de ancho 1 m alrededor. Calcula el área del camino (corona).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- 10.3 Ángulos en la circunferencia -->
+    <div class="section-divider"><h3>10.3 Ángulos en circunferencia</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.01</span></div><div class="card-body"><p>Define ángulo central.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.02</span></div><div class="card-body"><p>Define ángulo inscrito.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.03</span></div><div class="card-body"><p>Si un ángulo central mide 80°, ¿cuánto mide el arco que abarca?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.04</span></div><div class="card-body"><p>Si un ángulo inscrito abarca un arco de 100°, ¿cuánto mide el ángulo?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.05</span></div><div class="card-body"><p>¿Cuánto mide un ángulo inscrito en una semicircunferencia?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.06</span></div><div class="card-body"><p>Si dos ángulos inscritos abarcan el mismo arco, ¿qué relación hay entre sus medidas?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.07</span></div><div class="card-body"><p>Define ángulo semi-inscrito.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.08</span></div><div class="card-body"><p>Si un ángulo exterior abarca arcos de 120° y 40°, ¿cuánto mide?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.09</span></div><div class="card-body"><p>Verdadero/Falso: Un ángulo inscrito siempre mide la mitad que el central que abarca el mismo arco.</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.3.10</span></div><div class="card-body"><p>Describe la propiedad de perpendicularidad entre radio y tangente.</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.11</span></div><div class="card-body"><p>En una circunferencia, un ángulo inscrito mide 35°. Calcula el arco que abarca y el ángulo central correspondiente.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.12</span></div><div class="card-body"><p>Si un ángulo interior abarca arcos de 80° y 40°, ¿cuánto mide?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.13</span></div><div class="card-body"><p>Demuestra que ángulos inscritos que abarcan el mismo arco son iguales.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.14</span></div><div class="card-body"><p>Calcula el ángulo formado por dos cuerdas que se cortan en el interior de una circunferencia, si abarcan arcos de 100° y 60°.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.15</span></div><div class="card-body"><p>Si una tangente y una cuerda forman un ángulo de 50°, ¿cuánto mide el arco comprendido?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.16</span></div><div class="card-body"><p>Demuestra que el ángulo inscrito en una semicircunferencia es recto.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.17</span></div><div class="card-body"><p>Calcula el ángulo exterior formado por dos secantes que abarcan arcos de 150° y 50°.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.18</span></div><div class="card-body"><p>Si un cuadrilátero está inscrito en una circunferencia, demuestra que sus ángulos opuestos son suplementarios.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.3.19</span></div><div class="card-body"><p>Investiga: ¿qué es el teorema del ángulo inscrito y cómo generaliza a otros ángulos en la circunferencia?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.3.20</span></div><div class="card-body"><p>Demuestra que el ángulo entre una tangente y una cuerda es igual al ángulo inscrito en el arco opuesto.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.3.21</span></div><div class="card-body"><p>Calcula el ángulo formado por dos tangentes desde un punto exterior, si el arco menor entre puntos de tangencia mide 100°.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.3.22</span></div><div class="card-body"><p>Demuestra que el lugar geométrico de puntos desde los que un segmento se ve bajo un ángulo constante es un arco de circunferencia.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.3.23</span></div><div class="card-body"><p>Si un triángulo está inscrito en una circunferencia de radio $R$, demuestra que $a = 2R \sin A$ (ley de senos).</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.3.24</span></div><div class="card-body"><p>Investiga: ¿qué es la potencia de un punto respecto a una circunferencia y cómo se relaciona con ángulos?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.3.25</span></div><div class="card-body"><p>Problema aplicado: En navegación, un faro se ve bajo un ángulo de 30° desde un barco. Si la distancia al faro es 5 km, calcula el radio de la circunferencia de posición.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- 10.4 Posiciones relativas de rectas y circunferencias -->
+    <div class="section-divider"><h3>10.4 Posiciones relativas</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.01</span></div><div class="card-body"><p>Si la distancia del centro a una recta es mayor que el radio, ¿qué posición tienen?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.02</span></div><div class="card-body"><p>¿Cuántos puntos de intersección tiene una recta tangente con una circunferencia?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.03</span></div><div class="card-body"><p>Si dos circunferencias tienen distancia entre centros igual a la suma de radios, ¿qué posición tienen?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.04</span></div><div class="card-body"><p>Define recta secante a una circunferencia.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.05</span></div><div class="card-body"><p>Si dos circunferencias son concéntricas, ¿cuál es la distancia entre sus centros?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.06</span></div><div class="card-body"><p>Verdadero/Falso: Una recta tangente es perpendicular al radio en el punto de contacto.</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.07</span></div><div class="card-body"><p>Si $R=5$ cm, $r=3$ cm, y $d=2$ cm, ¿qué posición tienen las circunferencias?</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.08</span></div><div class="card-body"><p>¿Pueden dos circunferencias tener tres puntos de intersección? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.09</span></div><div class="card-body"><p>Si una recta es secante a una circunferencia de radio 4 cm y la distancia del centro a la recta es 3 cm, ¿cuántos puntos de corte hay?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">10.4.10</span></div><div class="card-body"><p>Describe la posición de dos circunferencias con $R=6$, $r=2$, $d=10$.</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.11</span></div><div class="card-body"><p>Calcula la distancia del centro a una recta tangente si el radio es 7 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.12</span></div><div class="card-body"><p>Si dos circunferencias de radios 5 cm y 3 cm son secantes, ¿entre qué valores puede estar la distancia entre centros?</p></div><div class="answer-area"><textarea placeholder="Calcula el intervalo..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.13</span></div><div class="card-body"><p>Demuestra que si una recta es tangente a una circunferencia, el radio al punto de contacto es perpendicular a la recta.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.14</span></div><div class="card-body"><p>Si dos circunferencias son tangentes internas con $R=9$ cm y $r=4$ cm, calcula la distancia entre centros.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.15</span></div><div class="card-body"><p>Calcula la longitud de la tangente desde un punto exterior a una circunferencia de radio 5 cm, si la distancia del punto al centro es 13 cm.</p></div><div class="answer-area"><textarea placeholder="Calcula con Pitágoras..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.16</span></div><div class="card-body"><p>Demuestra que las tangentes desde un punto exterior a una circunferencia son iguales.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.17</span></div><div class="card-body"><p>Si dos circunferencias secantes tienen radios 6 cm y 4 cm, y distancia entre centros 7 cm, calcula la longitud de la cuerda común.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.18</span></div><div class="card-body"><p>Demuestra que si dos circunferencias son tangentes, el punto de tangencia está en la línea que une los centros.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">10.4.19</span></div><div class="card-body"><p>Investiga: ¿qué son las homotecias y cómo transforman posiciones relativas de circunferencias?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.4.20</span></div><div class="card-body"><p>Demuestra el criterio de secancia: $|R-r| < d < R+r$.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.4.21</span></div><div class="card-body"><p>Calcula el ángulo entre dos tangentes desde un punto exterior, en función de la distancia al centro y el radio.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.4.22</span></div><div class="card-body"><p>Demuestra que el lugar geométrico de centros de circunferencias tangentes a dos rectas secantes son las bisectrices de los ángulos que forman.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.4.23</span></div><div class="card-body"><p>Si tres circunferencias son tangentes dos a dos, demuestra que los centros forman un triángulo cuyos lados son $R_1+R_2$, $R_2+R_3$, $R_3+R_1$.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.4.24</span></div><div class="card-body"><p>Investiga: ¿qué es el problema de Apolonio y cómo clasifica circunferencias tangentes a tres objetos?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">10.4.25</span></div><div class="card-body"><p>Problema aplicado: En un sistema de cobertura, dos antenas circulares de radio 10 km tienen centros a 15 km. Calcula el área de superposición (región secante).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 10</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. Un hexágono tiene:</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) 5 lados</label><label class="test-option"><input type="radio" name="q1" value="b"> b) 6 lados</label><label class="test-option"><input type="radio" name="q1" value="c"> c) 7 lados</label><label class="test-option"><input type="radio" name="q1" value="d"> d) 8 lados</label></div></div>
+      <div class="test-question"><p>2. Suma de ángulos interiores de un pentágono:</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) 360°</label><label class="test-option"><input type="radio" name="q2" value="b"> b) 540°</label><label class="test-option"><input type="radio" name="q2" value="c"> c) 720°</label><label class="test-option"><input type="radio" name="q2" value="d"> d) 180°</label></div></div>
+      <div class="test-question"><p>3. Ángulo interior de un cuadrado:</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) 60°</label><label class="test-option"><input type="radio" name="q3" value="b"> b) 90°</label><label class="test-option"><input type="radio" name="q3" value="c"> c) 120°</label><label class="test-option"><input type="radio" name="q3" value="d"> d) 180°</label></div></div>
+      <div class="test-question"><p>4. Número de diagonales de un cuadrilátero:</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) 1</label><label class="test-option"><input type="radio" name="q4" value="b"> b) 2</label><label class="test-option"><input type="radio" name="q4" value="c"> c) 3</label><label class="test-option"><input type="radio" name="q4" value="d"> d) 4</label></div></div>
+      <div class="test-question"><p>5. Longitud de circunferencia de radio 3:</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) $3\pi$</label><label class="test-option"><input type="radio" name="q5" value="b"> b) $6\pi$</label><label class="test-option"><input type="radio" name="q5" value="c"> c) $9\pi$</label><label class="test-option"><input type="radio" name="q5" value="d"> d) $12\pi$</label></div></div>
+      <div class="test-question"><p>6. Área de círculo de radio 2:</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) $2\pi$</label><label class="test-option"><input type="radio" name="q6" value="b"> b) $4\pi$</label><label class="test-option"><input type="radio" name="q6" value="c"> c) $8\pi$</label><label class="test-option"><input type="radio" name="q6" value="d"> d) $\pi$</label></div></div>
+      <div class="test-question"><p>7. Ángulo inscrito que abarca arco de 100°:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) 100°</label><label class="test-option"><input type="radio" name="q7" value="b"> b) 50°</label><label class="test-option"><input type="radio" name="q7" value="c"> c) 200°</label><label class="test-option"><input type="radio" name="q7" value="d"> d) 25°</label></div></div>
+      <div class="test-question"><p>8. Ángulo inscrito en semicircunferencia:</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) 45°</label><label class="test-option"><input type="radio" name="q8" value="b"> b) 60°</label><label class="test-option"><input type="radio" name="q8" value="c"> c) 90°</label><label class="test-option"><input type="radio" name="q8" value="d"> d) 180°</label></div></div>
+      <div class="test-question"><p>9. Si $d(O,r) = r$, la recta es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) Exterior</label><label class="test-option"><input type="radio" name="q9" value="b"> b) Tangente</label><label class="test-option"><input type="radio" name="q9" value="c"> c) Secante</label><label class="test-option"><input type="radio" name="q9" value="d"> d) Interior</label></div></div>
+      <div class="test-question"><p>10. Dos circunferencias con $d = R + r$ son:</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) Exteriores</label><label class="test-option"><input type="radio" name="q10" value="b"> b) Tangentes externas</label><label class="test-option"><input type="radio" name="q10" value="c"> c) Secantes</label><label class="test-option"><input type="radio" name="q10" value="d"> d) Concéntricas</label></div></div>
+      <div class="test-question"><p>11. Ángulo exterior que abarca arcos 120° y 40°:</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) 40°</label><label class="test-option"><input type="radio" name="q11" value="b"> b) 80°</label><label class="test-option"><input type="radio" name="q11" value="c"> c) 160°</label><label class="test-option"><input type="radio" name="q11" value="d"> d) 20°</label></div></div>
+      <div class="test-question"><p>12. Corona circular con $R=5$, $r=3$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) $16\pi$</label><label class="test-option"><input type="radio" name="q12" value="b"> b) $25\pi$</label><label class="test-option"><input type="radio" name="q12" value="c"> c) $9\pi$</label><label class="test-option"><input type="radio" name="q12" value="d"> d) $34\pi$</label></div></div>
+      <div class="test-question"><p>13. Polígono regular con ángulo interior 120°:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) Triángulo</label><label class="test-option"><input type="radio" name="q13" value="b"> b) Cuadrado</label><label class="test-option"><input type="radio" name="q13" value="c"> c) Pentágono</label><label class="test-option"><input type="radio" name="q13" value="d"> d) Hexágono</label></div></div>
+      <div class="test-question"><p>14. Longitud de arco de 60° en circunferencia $r=6$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) $\pi$</label><label class="test-option"><input type="radio" name="q14" value="b"> b) $2\pi$</label><label class="test-option"><input type="radio" name="q14" value="c"> c) $3\pi$</label><label class="test-option"><input type="radio" name="q14" value="d"> d) $6\pi$</label></div></div>
+      <div class="test-question"><p>15. Si dos ángulos inscritos abarcan el mismo arco:</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) Son suplementarios</label><label class="test-option"><input type="radio" name="q15" value="b"> b) Son iguales</label><label class="test-option"><input type="radio" name="q15" value="c"> c) Suma 180°</label><label class="test-option"><input type="radio" name="q15" value="d"> d) Uno es doble del otro</label></div></div>
+      <div class="test-question"><p>16. Posición si $|R-r| < d < R+r$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) Exteriores</label><label class="test-option"><input type="radio" name="q16" value="b"> b) Tangentes</label><label class="test-option"><input type="radio" name="q16" value="c"> c) Secantes</label><label class="test-option"><input type="radio" name="q16" value="d"> d) Interiores</label></div></div>
+      <div class="test-question"><p>17. Área de sector de 90° en círculo $r=4$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) $2\pi$</label><label class="test-option"><input type="radio" name="q17" value="b"> b) $4\pi$</label><label class="test-option"><input type="radio" name="q17" value="c"> c) $8\pi$</label><label class="test-option"><input type="radio" name="q17" value="d"> d) $16\pi$</label></div></div>
+      <div class="test-question"><p>18. Tangente y radio en punto de contacto:</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) Son paralelos</label><label class="test-option"><input type="radio" name="q18" value="b"> b) Forman 45°</label><label class="test-option"><input type="radio" name="q18" value="c"> c) Son perpendiculares</label><label class="test-option"><input type="radio" name="q18" value="d"> d) Forman 60°</label></div></div>
+      <div class="test-question"><p>19. Polígono cóncavo tiene:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) Todos los ángulos &lt; 180°</label><label class="test-option"><input type="radio" name="q19" value="b"> b) Al menos un ángulo &gt; 180°</label><label class="test-option"><input type="radio" name="q19" value="c"> c) Todos los lados iguales</label><label class="test-option"><input type="radio" name="q19" value="d"> d) Todos los ángulos rectos</label></div></div>
+      <div class="test-question"><p>20. Si $d=0$ para dos circunferencias, son:</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) Exteriores</label><label class="test-option"><input type="radio" name="q20" value="b"> b) Secantes</label><label class="test-option"><input type="radio" name="q20" value="c"> c) Concéntricas</label><label class="test-option"><input type="radio" name="q20" value="d"> d) Tangentes</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema10_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 10</a></p></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false,
+          ignoredTags: ["svg", "script", "noscript", "style", "textarea", "pre", "code", "mermaid"]
+        });
+      } catch (e) {
+        console.warn('KaTeX render error:', e);
+      }
+    }
+
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      var mermaidElements = document.querySelectorAll('.mermaid');
+      if (mermaidElements.length > 0) {
+        mermaid.run({ nodes: [...mermaidElements] }).catch(function(err) {
+          console.warn('Mermaid render error:', err);
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initMermaid(false);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    // CORREGIDO: comillas correctas
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initMermaid(isDark);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+  </script>
+</body>
+</html>

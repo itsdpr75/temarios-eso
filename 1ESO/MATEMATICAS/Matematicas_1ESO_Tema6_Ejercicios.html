@@ -1,0 +1,294 @@
+<!-- Matematicas_1ESO_Tema6_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 6: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 6: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 6.1 Razones y proporciones -->
+    <div class="section-divider"><h3>6.1 Razones y proporciones</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.01</span></div><div class="card-body"><p>Calcula la razón entre 12 y 8.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.02</span></div><div class="card-body"><p>¿Forman proporción $\frac{2}{3}$ y $\frac{6}{9}$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.03</span></div><div class="card-body"><p>Verifica usando producto de extremos: $\frac{4}{5} = \frac{12}{15}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.04</span></div><div class="card-body"><p>Halla $x$ en $\frac{3}{x} = \frac{9}{12}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.05</span></div><div class="card-body"><p>Si 2 kg cuestan 6€, ¿cuánto cuestan 5 kg? (proporcionalidad directa).</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.06</span></div><div class="card-body"><p>Calcula la constante de proporcionalidad si $y=15$ cuando $x=3$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.07</span></div><div class="card-body"><p>¿Son proporcionales las tablas: x=[1,2,3], y=[4,8,12]?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.08</span></div><div class="card-body"><p>Completa: $\frac{5}{8} = \frac{x}{24}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.09</span></div><div class="card-body"><p>Escribe una razón equivalente a $\frac{7}{10}$ con denominador 50.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.1.10</span></div><div class="card-body"><p>Si $a:b = 3:4$ y $a=9$, halla $b$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.11</span></div><div class="card-body"><p>Resuelve: $\frac{x+1}{4} = \frac{3}{2}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.12</span></div><div class="card-body"><p>Demuestra que si $\frac{a}{b}=\frac{c}{d}$, entonces $\frac{a+c}{b+d}=\frac{a}{b}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.13</span></div><div class="card-body"><p>En un mapa escala 1:50000, 3 cm representan ¿cuántos km reales?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.14</span></div><div class="card-body"><p>Si $y$ es proporcional a $x$ con $k=2.5$, calcula $y$ para $x=8$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.15</span></div><div class="card-body"><p>Halla $x$ e $y$ tales que $\frac{2}{3}=\frac{x}{9}=\frac{12}{y}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.16</span></div><div class="card-body"><p>¿Son directamente proporcionales el lado de un cuadrado y su área?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.17</span></div><div class="card-body"><p>Si $\frac{a}{b}=\frac{3}{4}$ y $a+b=35$, halla $a$ y $b$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.18</span></div><div class="card-body"><p>Demuestra que el producto de razones recíprocas es 1.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.1.19</span></div><div class="card-body"><p>En una mezcla, agua:jarabe = 5:2. Si hay 350 ml totales, ¿cuánto hay de cada?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.1.20</span></div><div class="card-body"><p>Demuestra que la proporcionalidad directa es una relación de equivalencia.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.1.21</span></div><div class="card-body"><p>Si $\frac{a}{b}=\frac{c}{d}=\frac{e}{f}$, demuestra que $\frac{a+c+e}{b+d+f}=\frac{a}{b}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.1.22</span></div><div class="card-body"><p>Encuentra $x,y,z$ tales que $\frac{x}{2}=\frac{y}{3}=\frac{z}{4}$ y $x+y+z=45$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.1.23</span></div><div class="card-body"><p>Demuestra que si $y=kx$, entonces $\frac{y_1}{x_1}=\frac{y_2}{x_2}$ para cualquier par de valores.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.1.24</span></div><div class="card-body"><p>Investiga: ¿qué es la proporción áurea y cómo se expresa como razón?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.1.25</span></div><div class="card-body"><p>Problema aplicado: En un plano escala 1:200, una habitación mide 4cm×3cm. Calcula área real en m².</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 6.2 Regla de tres simple directa e inversa -->
+    <div class="section-divider"><h3>6.2 Regla de tres</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.01</span></div><div class="card-body"><p>Regla de tres directa: Si 3 libros cuestan 15€, ¿cuánto cuestan 7?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.02</span></div><div class="card-body"><p>Regla de tres inversa: 4 obreros tardan 12 días. ¿Cuánto tardan 6 obreros?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.03</span></div><div class="card-body"><p>Identifica tipo: Más velocidad → menos tiempo para misma distancia.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.04</span></div><div class="card-body"><p>Directa: Si 5 kg cuestan 20€, ¿cuánto cuestan 8 kg?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.05</span></div><div class="card-body"><p>Inversa: Un grifo llena un depósito en 6 horas. ¿Cuánto tardan 3 grifos iguales?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.06</span></div><div class="card-body"><p>Directa: Si 2 m de tela cuestan 10€, ¿cuánto cuestan 7 m?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.07</span></div><div class="card-body"><p>Inversa: 10 máquinas producen en 8 horas. ¿Cuánto tardan 4 máquinas?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.08</span></div><div class="card-body"><p>Directa: Si 4 litros de pintura cubren 20 m², ¿cuántos litros para 35 m²?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.09</span></div><div class="card-body"><p>Inversa: Un coche a 60 km/h tarda 4 h. ¿Cuánto a 80 km/h?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.2.10</span></div><div class="card-body"><p>Directa: Si 3 entradas cuestan 45€, ¿cuánto cuestan 10?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.11</span></div><div class="card-body"><p>Directa: Si $\frac{2}{5}$ de una cantidad son 30, ¿cuánto es la cantidad total?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.12</span></div><div class="card-body"><p>Inversa: 5 grifos llenan un depósito en 12 h. ¿Cuánto tardan 3 grifos?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.13</span></div><div class="card-body"><p>Directa: Si 8 obreros hacen una obra en 15 días, ¿cuántos obreros para 10 días?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.14</span></div><div class="card-body"><p>Inversa: Un depósito se vacía en 6 h con un desagüe. ¿Cuánto con 2 desagües iguales?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.15</span></div><div class="card-body"><p>Directa: Si 120 g de harina hacen 8 panes, ¿cuántos panes con 450 g?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.16</span></div><div class="card-body"><p>Inversa: 6 máquinas embotellan en 10 h. ¿Cuánto tardan 15 máquinas?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.17</span></div><div class="card-body"><p>Directa: Si 5% de una cantidad son 25, ¿cuál es la cantidad?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.18</span></div><div class="card-body"><p>Inversa: Un viaje de 300 km se hace en 5 h a 60 km/h. ¿Cuánto a 75 km/h?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.2.19</span></div><div class="card-body"><p>Directa: Si 3/4 de un número son 45, ¿cuál es el número?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.2.20</span></div><div class="card-body"><p>Demuestra que en proporcionalidad inversa, el producto de valores correspondientes es constante.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.2.21</span></div><div class="card-body"><p>Regla de tres compuesta: 4 obreros, 6 h/día, hacen obra en 10 días. ¿Cuántos días con 5 obreros, 8 h/día?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.2.22</span></div><div class="card-body"><p>Inversa: Si $x$ e $y$ son inversamente proporcionales y $x=4$ cuando $y=15$, halla $y$ cuando $x=6$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.2.23</span></div><div class="card-body"><p>Directa: Si $y=kx$ y $y=20$ cuando $x=5$, halla $k$ y luego $y$ para $x=12$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.2.24</span></div><div class="card-body"><p>Investiga: ¿cómo se resuelve una regla de tres con magnitudes mixtas (parte directa, parte inversa)?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.2.25</span></div><div class="card-body"><p>Problema aplicado: Un depósito se llena con 3 grifos en 8 h. Si se abre un 4º grifo igual, ¿cuánto tardará?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 6.3 Cálculo de porcentajes -->
+    <div class="section-divider"><h3>6.3 Cálculo de porcentajes</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.01</span></div><div class="card-body"><p>Calcula: $20\%$ de 150.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.02</span></div><div class="card-body"><p>Calcula: $35\%$ de 240.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.03</span></div><div class="card-body"><p>Convierte a porcentaje: $0.45$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.04</span></div><div class="card-body"><p>Convierte a decimal: $75\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.05</span></div><div class="card-body"><p>Convierte a fracción: $40\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.06</span></div><div class="card-body"><p>¿Qué porcentaje es 15 de 60?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.07</span></div><div class="card-body"><p>Calcula: $10\%$ de $10\%$ de 200.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.08</span></div><div class="card-body"><p>Si el $25\%$ de un número es 50, ¿cuál es el número?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.09</span></div><div class="card-body"><p>Calcula: $150\%$ de 80.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.3.10</span></div><div class="card-body"><p>Convierte $\frac{3}{5}$ a porcentaje.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.11</span></div><div class="card-body"><p>Calcula: $12.5\%$ de 320.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.12</span></div><div class="card-body"><p>¿Qué porcentaje representa 18 de 72?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.13</span></div><div class="card-body"><p>Si el $30\%$ de $x$ es 45, halla $x$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.14</span></div><div class="card-body"><p>Calcula: $20\%$ de $50\%$ de 400.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.15</span></div><div class="card-body"><p>Convierte $0.075$ a porcentaje y a fracción irreducible.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.16</span></div><div class="card-body"><p>Si $a$ es $40\%$ de $b$ y $b=150$, halla $a$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.17</span></div><div class="card-body"><p>Demuestra que $x\%$ de $y$ es igual a $y\%$ de $x$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.18</span></div><div class="card-body"><p>Calcula: $125\%$ de 64.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.3.19</span></div><div class="card-body"><p>Si el $15\%$ de una cantidad son 36, ¿cuánto es el $45\%$ de esa cantidad?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.3.20</span></div><div class="card-body"><p>Demuestra que aplicar $p\%$ y luego $q\%$ no es igual a aplicar $(p+q)\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.3.21</span></div><div class="card-body"><p>Si $x$ aumenta $20\%$ y luego disminuye $20\%$, ¿vuelve al valor original?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.3.22</span></div><div class="card-body"><p>Calcula: $33.\overline{3}\%$ de 90.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.3.23</span></div><div class="card-body"><p>Si $a$ es $p\%$ de $b$ y $b$ es $q\%$ de $c$, expresa $a$ como porcentaje de $c$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.3.24</span></div><div class="card-body"><p>Investiga: ¿qué es el porcentaje en masa y cómo se calcula en química?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.3.25</span></div><div class="card-body"><p>Problema aplicado: En una clase de 30 alumnos, $40\%$ son chicas. Si llegan 5 chicos más, ¿qué porcentaje son chicas ahora?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 6.4 Aumentos, descuentos y problemas comerciales -->
+    <div class="section-divider"><h3>6.4 Aumentos y descuentos</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.01</span></div><div class="card-body"><p>Calcula precio final tras aumento $10\%$ sobre 50€.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.02</span></div><div class="card-body"><p>Calcula precio final tras descuento $20\%$ sobre 80€.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.03</span></div><div class="card-body"><p>Un artículo de 120€ tiene descuento $15\%$. ¿Cuánto se paga?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.04</span></div><div class="card-body"><p>Un salario de 1500€ aumenta $5\%$. ¿Nuevo salario?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.05</span></div><div class="card-body"><p>Calcula el factor de aumento para $25\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.06</span></div><div class="card-body"><p>Calcula el factor de descuento para $30\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.07</span></div><div class="card-body"><p>Un producto de 200€ tiene IVA $21\%$. Precio con IVA?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.08</span></div><div class="card-body"><p>Descuento $10\%$ + $10\%$ sobre 100€. ¿Precio final?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.09</span></div><div class="card-body"><p>¿Qué descuento único equivale a dos descuentos sucesivos del $10\%$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">6.4.10</span></div><div class="card-body"><p>Un artículo cuesta 90€ tras descuento $25\%$. ¿Precio original?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.11</span></div><div class="card-body"><p>Calcula precio final: 150€ + aumento $12\%$ - descuento $8\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.12</span></div><div class="card-body"><p>Un artículo de 240€ tiene descuento $20\%$ + $5\%$. Precio final?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.13</span></div><div class="card-body"><p>Si un precio aumenta $30\%$ y luego disminuye $30\%$, ¿cambia el precio?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.14</span></div><div class="card-body"><p>Un producto con IVA $21\%$ cuesta 121€. ¿Precio sin IVA?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.15</span></div><div class="card-body"><p>Calcula el porcentaje de aumento si un valor pasa de 80 a 100.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.16</span></div><div class="card-body"><p>Descuento $25\%$ sobre precio con IVA $21\%$. ¿Orden de aplicación afecta resultado?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.17</span></div><div class="card-body"><p>Un artículo de 300€ tiene descuento $15\%$ + $10\%$. Calcula precio final.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.18</span></div><div class="card-body"><p>Si un precio aumenta $p\%$ y luego disminuye $p\%$, demuestra que el precio final es menor que el inicial.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">6.4.19</span></div><div class="card-body"><p>Calcula el descuento único equivalente a $20\%$ + $15\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.4.20</span></div><div class="card-body"><p>Demuestra que aplicar descuento $d_1\%$ luego $d_2\%$ equivale a descuento único $d = 100 - (100-d_1)(100-d_2)/100$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.4.21</span></div><div class="card-body"><p>Un producto tiene precio $P$. Se aplica aumento $a\%$, luego descuento $d\%$. ¿Para qué valores de $a,d$ el precio final es igual al inicial?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.4.22</span></div><div class="card-body"><p>Calcula precio final: 500€ + IVA $21\%$ - descuento $30\%$ + recargo $5\%$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.4.23</span></div><div class="card-body"><p>Demuestra que el orden de aplicación de descuentos porcentuales no afecta el resultado final.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.4.24</span></div><div class="card-body"><p>Investiga: ¿cómo se calcula el margen de beneficio en comercio y cómo se relaciona con porcentajes?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">6.4.25</span></div><div class="card-body"><p>Problema aplicado: Un artículo cuesta 180€ con IVA $21\%$ incluido. Si se aplica descuento $20\%$ sobre precio sin IVA, ¿cuánto se paga?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 6</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. La razón entre 8 y 12 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) $\frac{2}{3}$</label><label class="test-option"><input type="radio" name="q1" value="b"> b) $\frac{3}{2}$</label><label class="test-option"><input type="radio" name="q1" value="c"> c) 4</label><label class="test-option"><input type="radio" name="q1" value="d"> d) 20</label></div></div>
+      <div class="test-question"><p>2. Si $\frac{3}{4}=\frac{x}{12}$, entonces $x=$</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) 6</label><label class="test-option"><input type="radio" name="q2" value="b"> b) 9</label><label class="test-option"><input type="radio" name="q2" value="c"> c) 16</label><label class="test-option"><input type="radio" name="q2" value="d"> d) 8</label></div></div>
+      <div class="test-question"><p>3. En proporcionalidad directa, si $x$ se duplica, $y$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) Se reduce a la mitad</label><label class="test-option"><input type="radio" name="q3" value="b"> b) Se duplica</label><label class="test-option"><input type="radio" name="q3" value="c"> c) Permanece igual</label><label class="test-option"><input type="radio" name="q3" value="d"> d) Se cuadruplica</label></div></div>
+      <div class="test-question"><p>4. Regla de tres directa: Si 5 kg cuestan 20€, 8 kg cuestan:</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) 28€</label><label class="test-option"><input type="radio" name="q4" value="b"> b) 32€</label><label class="test-option"><input type="radio" name="q4" value="c"> c) 40€</label><label class="test-option"><input type="radio" name="q4" value="d"> d) 25€</label></div></div>
+      <div class="test-question"><p>5. Regla de tres inversa: 4 obreros en 12 días. 6 obreros en:</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) 18 días</label><label class="test-option"><input type="radio" name="q5" value="b"> b) 8 días</label><label class="test-option"><input type="radio" name="q5" value="c"> c) 6 días</label><label class="test-option"><input type="radio" name="q5" value="d"> d) 10 días</label></div></div>
+      <div class="test-question"><p>6. $25\%$ de 200 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) 25</label><label class="test-option"><input type="radio" name="q6" value="b"> b) 50</label><label class="test-option"><input type="radio" name="q6" value="c"> c) 75</label><label class="test-option"><input type="radio" name="q6" value="d"> d) 100</label></div></div>
+      <div class="test-question"><p>7. $0.35$ como porcentaje es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) $3.5\%$</label><label class="test-option"><input type="radio" name="q7" value="b"> b) $35\%$</label><label class="test-option"><input type="radio" name="q7" value="c"> c) $350\%$</label><label class="test-option"><input type="radio" name="q7" value="d"> d) $0.35\%$</label></div></div>
+      <div class="test-question"><p>8. Si el $20\%$ de $x$ es 40, entonces $x=$</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) 8</label><label class="test-option"><input type="radio" name="q8" value="b"> b) 60</label><label class="test-option"><input type="radio" name="q8" value="c"> c) 200</label><label class="test-option"><input type="radio" name="q8" value="d"> d) 80</label></div></div>
+      <div class="test-question"><p>9. Precio 100€ con descuento $15\%$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) 15€</label><label class="test-option"><input type="radio" name="q9" value="b"> b) 85€</label><label class="test-option"><input type="radio" name="q9" value="c"> c) 115€</label><label class="test-option"><input type="radio" name="q9" value="d"> d) 95€</label></div></div>
+      <div class="test-question"><p>10. Factor de aumento para $30\%$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) 0.3</label><label class="test-option"><input type="radio" name="q10" value="b"> b) 1.3</label><label class="test-option"><input type="radio" name="q10" value="c"> c) 30</label><label class="test-option"><input type="radio" name="q10" value="d"> d) 0.7</label></div></div>
+      <div class="test-question"><p>11. Descuento $20\%$ + $10\%$ sobre 100€:</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) 70€</label><label class="test-option"><input type="radio" name="q11" value="b"> b) 72€</label><label class="test-option"><input type="radio" name="q11" value="c"> c) 68€</label><label class="test-option"><input type="radio" name="q11" value="d"> d) 75€</label></div></div>
+      <div class="test-question"><p>12. $\frac{3}{5}$ como porcentaje es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) $30\%$</label><label class="test-option"><input type="radio" name="q12" value="b"> b) $50\%$</label><label class="test-option"><input type="radio" name="q12" value="c"> c) $60\%$</label><label class="test-option"><input type="radio" name="q12" value="d"> d) $75\%$</label></div></div>
+      <div class="test-question"><p>13. En proporcionalidad inversa, si $x$ se duplica, $y$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) Se duplica</label><label class="test-option"><input type="radio" name="q13" value="b"> b) Se reduce a la mitad</label><label class="test-option"><input type="radio" name="q13" value="c"> c) Permanece igual</label><label class="test-option"><input type="radio" name="q13" value="d"> d) Se cuadruplica</label></div></div>
+      <div class="test-question"><p>14. Si $y=2x$, la constante de proporcionalidad es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) 0.5</label><label class="test-option"><input type="radio" name="q14" value="b"> b) 2</label><label class="test-option"><input type="radio" name="q14" value="c"> c) 1</label><label class="test-option"><input type="radio" name="q14" value="d"> d) 4</label></div></div>
+      <div class="test-question"><p>15. Precio con IVA $21\%$ sobre 100€:</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) 21€</label><label class="test-option"><input type="radio" name="q15" value="b"> b) 79€</label><label class="test-option"><input type="radio" name="q15" value="c"> c) 121€</label><label class="test-option"><input type="radio" name="q15" value="d"> d) 100€</label></div></div>
+      <div class="test-question"><p>16. ¿Qué porcentaje es 15 de 60?</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) $15\%$</label><label class="test-option"><input type="radio" name="q16" value="b"> b) $20\%$</label><label class="test-option"><input type="radio" name="q16" value="c"> c) $25\%$</label><label class="test-option"><input type="radio" name="q16" value="d"> d) $40\%$</label></div></div>
+      <div class="test-question"><p>17. Si un valor aumenta $50\%$ y luego disminuye $50\%$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) Vuelve al original</label><label class="test-option"><input type="radio" name="q17" value="b"> b) Es menor que el original</label><label class="test-option"><input type="radio" name="q17" value="c"> c) Es mayor que el original</label><label class="test-option"><input type="radio" name="q17" value="d"> d) Se duplica</label></div></div>
+      <div class="test-question"><p>18. $150\%$ de 40 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) 20</label><label class="test-option"><input type="radio" name="q18" value="b"> b) 40</label><label class="test-option"><input type="radio" name="q18" value="c"> c) 60</label><label class="test-option"><input type="radio" name="q18" value="d"> d) 80</label></div></div>
+      <div class="test-question"><p>19. En $\frac{a}{b}=\frac{c}{d}$, la propiedad fundamental es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) $a+b=c+d$</label><label class="test-option"><input type="radio" name="q19" value="b"> b) $a\cdot d=b\cdot c$</label><label class="test-option"><input type="radio" name="q19" value="c"> c) $a-b=c-d$</label><label class="test-option"><input type="radio" name="q19" value="d"> d) $a/d=b/c$</label></div></div>
+      <div class="test-question"><p>20. Descuento único equivalente a $10\%$ + $20\%$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) $30\%$</label><label class="test-option"><input type="radio" name="q20" value="b"> b) $28\%$</label><label class="test-option"><input type="radio" name="q20" value="c"> c) $25\%$</label><label class="test-option"><input type="radio" name="q20" value="d"> d) $15\%$</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema6_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 6</a></p></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false,
+          // Protege los SVG de Mermaid (si los hubiera)
+          ignoredTags: ["svg", "script", "noscript", "style", "textarea", "pre", "code", "mermaid"]
+        });
+      } catch (e) {
+        console.warn('KaTeX render error:', e);
+      }
+    }
+
+    // Inicialización de Mermaid (aunque no se use en este archivo, se mantiene por si se añaden diagramas)
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      const mermaidElements = document.querySelectorAll('.mermaid');
+      if (mermaidElements.length > 0) {
+        mermaid.run({ nodes: [...mermaidElements] }).catch(function(err) {
+          console.warn('Mermaid render error:', err);
+        });
+      }
+    }
+
+    // Al cargar la página, primero Mermaid (por si acaso), luego KaTeX con un pequeño retardo
+    document.addEventListener('DOMContentLoaded', function() {
+      initMermaid(false);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+
+    // Configuración del tema oscuro
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    // CORREGIDO: comillas coherentes en 'theme'
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initMermaid(isDark);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+  </script>
+</body>
+</html>

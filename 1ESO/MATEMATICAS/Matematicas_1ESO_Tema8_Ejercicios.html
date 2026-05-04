@@ -1,0 +1,289 @@
+<!-- Matematicas_1ESO_Tema8_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 8: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 8: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 8.1 Concepto de igualdad y solución -->
+    <div class="section-divider"><h3>8.1 Concepto y solución</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.01</span></div><div class="card-body"><p>Resuelve: $x + 8 = 15$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.02</span></div><div class="card-body"><p>Resuelve: $3x = 21$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.03</span></div><div class="card-body"><p>Resuelve: $2x - 5 = 9$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.04</span></div><div class="card-body"><p>Verifica si $x=4$ es solución de $5x - 3 = 17$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.05</span></div><div class="card-body"><p>Resuelve: $\frac{x}{3} = 6$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.06</span></div><div class="card-body"><p>Resuelve: $7 = x - 2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.07</span></div><div class="card-body"><p>Resuelve: $4x + 1 = 13$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.08</span></div><div class="card-body"><p>¿Es $x=-1$ solución de $2x + 5 = 3$?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.09</span></div><div class="card-body"><p>Resuelve: $5 = 2x + 1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.1.10</span></div><div class="card-body"><p>Resuelve: $x + x = 14$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.11</span></div><div class="card-body"><p>Resuelve: $3(x - 4) = 12$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.12</span></div><div class="card-body"><p>Resuelve: $2x + 3 = x + 9$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.13</span></div><div class="card-body"><p>Verifica solución de $4x - 2 = 2x + 6$ para $x=4$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.14</span></div><div class="card-body"><p>Resuelve: $\frac{x}{4} + 3 = 7$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.15</span></div><div class="card-body"><p>Resuelve: $6 - 3x = 12$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.16</span></div><div class="card-body"><p>Plantea y resuelve: "Un número más 10 es igual al triple del número".</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.17</span></div><div class="card-body"><p>Resuelve: $2(x + 3) = 3x - 1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.18</span></div><div class="card-body"><p>Demuestra que $ax + b = c$ tiene solución única si $a \neq 0$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.1.19</span></div><div class="card-body"><p>Resuelve: $0.4x + 1.2 = 3.6$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.1.20</span></div><div class="card-body"><p>Demuestra que los principios de equivalencia preservan el conjunto solución.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.1.21</span></div><div class="card-body"><p>Resuelve: $3(2x - 1) - 2(x + 4) = 7$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.1.22</span></div><div class="card-body"><p>Plantea y resuelve: "La suma de dos números es 25 y su diferencia es 7".</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.1.23</span></div><div class="card-body"><p>Demuestra que si $ax + b = ax + c$ con $b \neq c$, la ecuación no tiene solución.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.1.24</span></div><div class="card-body"><p>Investiga: ¿qué es una identidad algebraica? Da un ejemplo con ecuaciones de primer grado.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.1.25</span></div><div class="card-body"><p>Problema aplicado: "Un móvil tiene 90% de batería. Cada hora consume 12%. ¿En cuántas horas llegará al 30%?" Plantea y resuelve ecuación.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 8.2 Resolución paso a paso (paréntesis, fracciones) -->
+    <div class="section-divider"><h3>8.2 Resolución paso a paso</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.01</span></div><div class="card-body"><p>Resuelve: $2(x + 3) = 14$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.02</span></div><div class="card-body"><p>Resuelve: $3x - 2(x - 1) = 5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.03</span></div><div class="card-body"><p>Resuelve: $\frac{x}{2} + 3 = 7$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.04</span></div><div class="card-body"><p>Resuelve: $\frac{2x}{3} = 4$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.05</span></div><div class="card-body"><p>Resuelve: $4(x - 2) + 3 = 11$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.06</span></div><div class="card-body"><p>Resuelve: $\frac{x+1}{2} = 5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.07</span></div><div class="card-body"><p>Resuelve: $5 - 2(x + 1) = 1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.08</span></div><div class="card-body"><p>Resuelve: $\frac{3x}{4} - 2 = 1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.09</span></div><div class="card-body"><p>Resuelve: $2(x + 4) - x = 10$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.2.10</span></div><div class="card-body"><p>Resuelve: $\frac{x}{5} + \frac{x}{3} = 8$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.11</span></div><div class="card-body"><p>Resuelve: $3(2x - 1) - 4(x + 2) = 5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.12</span></div><div class="card-body"><p>Resuelve: $\frac{x-2}{3} + \frac{x+1}{2} = 4$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.13</span></div><div class="card-body"><p>Resuelve: $2(x - 3) + 3(x + 1) = 4x - 1$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.14</span></div><div class="card-body"><p>Resuelve: $\frac{2x+1}{4} - \frac{x-3}{6} = 2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.15</span></div><div class="card-body"><p>Resuelve: $5 - 3(x - 2) = 2(x + 1) - 4$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.16</span></div><div class="card-body"><p>Resuelve: $\frac{x}{2} - \frac{x-1}{3} = \frac{x+2}{6}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.17</span></div><div class="card-body"><p>Resuelve: $4(2x - 3) - 3(x + 2) = 2(3x - 1) + 5$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.18</span></div><div class="card-body"><p>Resuelve: $\frac{3x-2}{5} + \frac{2x+1}{3} = \frac{4x-1}{15}$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.2.19</span></div><div class="card-body"><p>Resuelve: $2[3(x - 1) + 2] - 4 = 3[2(x + 1) - 3]$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.2.20</span></div><div class="card-body"><p>Demuestra que el protocolo de resolución preserva la equivalencia en cada paso.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.2.21</span></div><div class="card-body"><p>Resuelve: $\frac{2(x-1)}{3} - \frac{3(x+2)}{4} = \frac{5x-1}{6} - 2$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.2.22</span></div><div class="card-body"><p>Resuelve: $3[2(x - 3) - 4] + 5 = 2[3(x + 1) - 2] - 7$.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.2.23</span></div><div class="card-body"><p>Demuestra que si una ecuación tiene coeficientes racionales, su solución es racional.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.2.24</span></div><div class="card-body"><p>Investiga: ¿cómo se resuelven ecuaciones con parámetros? Ejemplo: $ax + b = c$ con $a,b,c$ constantes.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.2.25</span></div><div class="card-body"><p>Problema aplicado: "Un depósito se llena con dos grifos: uno tarda 6 h, otro 4 h. ¿Cuánto tardan juntos?" Plantea ecuación con fracciones y resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 8.3 Ecuaciones con incógnita en denominador -->
+    <div class="section-divider"><h3>8.3 Incógnita en denominador</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.01</span></div><div class="card-body"><p>Resuelve: $\frac{3}{x} = 1$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.02</span></div><div class="card-body"><p>Resuelve: $\frac{5}{x-1} = 5$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.03</span></div><div class="card-body"><p>Resuelve: $\frac{2}{x+3} = 1$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.04</span></div><div class="card-body"><p>Resuelve: $\frac{4}{2x} = 2$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.05</span></div><div class="card-body"><p>Resuelve: $\frac{x}{x-2} = 3$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.06</span></div><div class="card-body"><p>Resuelve: $\frac{6}{x} + 2 = 5$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.07</span></div><div class="card-body"><p>Resuelve: $\frac{3}{x-1} - 1 = 2$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.08</span></div><div class="card-body"><p>Resuelve: $\frac{2x}{x+1} = 1$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.09</span></div><div class="card-body"><p>Resuelve: $\frac{5}{2x-3} = 1$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.3.10</span></div><div class="card-body"><p>Resuelve: $\frac{x+1}{x-1} = 2$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.11</span></div><div class="card-body"><p>Resuelve: $\frac{2}{x} + \frac{3}{x} = 5$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.12</span></div><div class="card-body"><p>Resuelve: $\frac{4}{x-2} = \frac{2}{x+1}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.13</span></div><div class="card-body"><p>Resuelve: $\frac{x}{x-3} + 2 = \frac{5}{x-3}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.14</span></div><div class="card-body"><p>Resuelve: $\frac{3}{2x-1} - \frac{1}{x+2} = 0$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.15</span></div><div class="card-body"><p>Resuelve: $\frac{x+2}{x-1} = \frac{x-1}{x+2}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.16</span></div><div class="card-body"><p>Resuelve: $\frac{2x}{x-4} = 3 + \frac{8}{x-4}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.17</span></div><div class="card-body"><p>Resuelve: $\frac{1}{x} + \frac{1}{x+1} = \frac{2}{x(x+1)}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.18</span></div><div class="card-body"><p>Resuelve: $\frac{3x-1}{x+2} = 2 - \frac{5}{x+2}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.3.19</span></div><div class="card-body"><p>Resuelve: $\frac{x}{x-5} - \frac{2}{x+3} = \frac{8}{(x-5)(x+3)}$. Indica dominio.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.3.20</span></div><div class="card-body"><p>Demuestra que multiplicar por el mcm preserva soluciones válidas pero puede introducir extrañas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.3.21</span></div><div class="card-body"><p>Resuelve: $\frac{2}{x-1} + \frac{3}{x+2} = \frac{5x}{(x-1)(x+2)}$. Indica dominio y valida.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.3.22</span></div><div class="card-body"><p>Resuelve: $\frac{x+1}{x-2} - \frac{x-3}{x+1} = \frac{5}{(x-2)(x+1)}$. Indica dominio y valida.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.3.23</span></div><div class="card-body"><p>Demuestra que si una solución anula un denominador, no puede ser válida.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.3.24</span></div><div class="card-body"><p>Investiga: ¿qué son las asíntotas verticales y cómo se relacionan con denominadores nulos?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.3.25</span></div><div class="card-body"><p>Problema aplicado: "Dos resistencias en paralelo: $R_1 = x$, $R_2 = 2x$. Resistencia equivalente $R_{eq} = 4\Omega$. Halla $x$." Plantea $\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2}$ y resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- 8.4 Planteamiento y resolución de problemas -->
+    <div class="section-divider"><h3>8.4 Planteamiento de problemas</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.01</span></div><div class="card-body"><p>Plantea: "Un número más 7 es 20". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.02</span></div><div class="card-body"><p>Plantea: "El doble de un número es 30". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.03</span></div><div class="card-body"><p>Plantea: "Tres números consecutivos suman 33". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.04</span></div><div class="card-body"><p>Plantea: "Juan tiene 5 años más que Ana. Entre los dos tienen 25 años". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.05</span></div><div class="card-body"><p>Plantea: "El perímetro de un cuadrado es 40 cm". Halla el lado.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.06</span></div><div class="card-body"><p>Plantea: "El 20% de un número es 15". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.07</span></div><div class="card-body"><p>Plantea: "Repartir 100€ en dos partes, una el doble que la otra". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.08</span></div><div class="card-body"><p>Plantea: "Un número menos 4 es igual a la mitad del número". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.09</span></div><div class="card-body"><p>Plantea: "La suma de dos números es 50 y su diferencia es 10". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">8.4.10</span></div><div class="card-body"><p>Plantea: "Un rectángulo tiene base el doble que altura. Perímetro 36 cm". Halla dimensiones.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.11</span></div><div class="card-body"><p>Plantea: "Dentro de 5 años, la edad de Luis será el doble que la de Ana. Ahora, Luis tiene 3 años más que Ana". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.12</span></div><div class="card-body"><p>Plantea: "Un número aumentado en su 25% es 75". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.13</span></div><div class="card-body"><p>Plantea: "Tres números consecutivos pares suman 72". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.14</span></div><div class="card-body"><p>Plantea: "El área de un rectángulo es 48 cm². La base es 2 cm mayor que la altura". Halla dimensiones.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.15</span></div><div class="card-body"><p>Plantea: "Repartir 200€ entre tres personas: la segunda recibe 10€ más que la primera, la tercera 20€ más que la segunda". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.16</span></div><div class="card-body"><p>Plantea: "Un artículo con descuento 15% cuesta 85€. ¿Precio original?" Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.17</span></div><div class="card-body"><p>Plantea: "La suma de las edades de padre e hijo es 50. Dentro de 10 años, el padre tendrá el doble que el hijo". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.18</span></div><div class="card-body"><p>Plantea: "Un número es 8 unidades mayor que otro. Su producto es 180". Plantea ecuación cuadrática básica.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">8.4.19</span></div><div class="card-body"><p>Plantea: "Un grifo llena un depósito en 6 h, otro en 4 h. ¿Cuánto tardan juntos?" Resuelve con ecuación de tasas.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.4.20</span></div><div class="card-body"><p>Demuestra que el método de planteamiento sistemático garantiza solución única para problemas bien formulados de primer grado.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.4.21</span></div><div class="card-body"><p>Plantea y resuelve: "Un viajero recorre 1/3 del camino el primer día, 1/4 el segundo, y le faltan 100 km. ¿Longitud total?"</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.4.22</span></div><div class="card-body"><p>Plantea: "Un número de dos cifras tiene suma de cifras 9. Si se invierten, el nuevo número es 27 unidades mayor". Resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.4.23</span></div><div class="card-body"><p>Demuestra que en problemas de edades, la diferencia de edades es constante en el tiempo.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.4.24</span></div><div class="card-body"><p>Investiga: ¿cómo se modelan problemas de mezclas con ecuaciones lineales?</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">8.4.25</span></div><div class="card-body"><p>Problema aplicado: "Un producto cuesta P€ con IVA 21% incluido. Si se aplica descuento 20% sobre precio sin IVA, el precio final es 96€. Halla P." Plantea y resuelve.</p></div><div class="answer-area"><textarea placeholder="Resuelve aquí..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 8</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. Solución de $x + 5 = 12$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) 5</label><label class="test-option"><input type="radio" name="q1" value="b"> b) 7</label><label class="test-option"><input type="radio" name="q1" value="c"> c) 17</label><label class="test-option"><input type="radio" name="q1" value="d"> d) -7</label></div></div>
+      <div class="test-question"><p>2. Solución de $3x = 18$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) 3</label><label class="test-option"><input type="radio" name="q2" value="b"> b) 6</label><label class="test-option"><input type="radio" name="q2" value="c"> c) 15</label><label class="test-option"><input type="radio" name="q2" value="d"> d) 54</label></div></div>
+      <div class="test-question"><p>3. Principio de equivalencia: si sumas 3 a ambos miembros</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) La solución cambia</label><label class="test-option"><input type="radio" name="q3" value="b"> b) La solución se mantiene</label><label class="test-option"><input type="radio" name="q3" value="c"> c) Solo si 3>0</label><label class="test-option"><input type="radio" name="q3" value="d"> d) La ecuación se anula</label></div></div>
+      <div class="test-question"><p>4. Solución de $2x - 4 = 10$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) 3</label><label class="test-option"><input type="radio" name="q4" value="b"> b) 7</label><label class="test-option"><input type="radio" name="q4" value="c"> c) 14</label><label class="test-option"><input type="radio" name="q4" value="d"> d) -3</label></div></div>
+      <div class="test-question"><p>5. Al eliminar paréntesis en $3(x-2)$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) $3x - 2$</label><label class="test-option"><input type="radio" name="q5" value="b"> b) $3x - 6$</label><label class="test-option"><input type="radio" name="q5" value="c"> c) $x - 6$</label><label class="test-option"><input type="radio" name="q5" value="d"> d) $3x + 6$</label></div></div>
+      <div class="test-question"><p>6. mcm de 2, 3, 4 es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) 6</label><label class="test-option"><input type="radio" name="q6" value="b"> b) 12</label><label class="test-option"><input type="radio" name="q6" value="c"> c) 24</label><label class="test-option"><input type="radio" name="q6" value="d"> d) 8</label></div></div>
+      <div class="test-question"><p>7. En $\frac{5}{x-2}$, $x$ no puede ser:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) 0</label><label class="test-option"><input type="radio" name="q7" value="b"> b) 2</label><label class="test-option"><input type="radio" name="q7" value="c"> c) 5</label><label class="test-option"><input type="radio" name="q7" value="d"> d) -2</label></div></div>
+      <div class="test-question"><p>8. Solución de $\frac{3}{x} = 1$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) 1</label><label class="test-option"><input type="radio" name="q8" value="b"> b) 3</label><label class="test-option"><input type="radio" name="q8" value="c"> c) 1/3</label><label class="test-option"><input type="radio" name="q8" value="d"> d) 0</label></div></div>
+      <div class="test-question"><p>9. Traduce: "El triple de un número menos 5"</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) $3(x-5)$</label><label class="test-option"><input type="radio" name="q9" value="b"> b) $3x-5$</label><label class="test-option"><input type="radio" name="q9" value="c"> c) $x^3-5$</label><label class="test-option"><input type="radio" name="q9" value="d"> d) $3-5x$</label></div></div>
+      <div class="test-question"><p>10. "Dos números consecutivos" se expresa:</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) $x, x$</label><label class="test-option"><input type="radio" name="q10" value="b"> b) $x, x+1$</label><label class="test-option"><input type="radio" name="q10" value="c"> c) $x, 2x$</label><label class="test-option"><input type="radio" name="q10" value="d"> d) $x, x-1$</label></div></div>
+      <div class="test-question"><p>11. Solución de $3x - 5 = 2x + 11$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) 6</label><label class="test-option"><input type="radio" name="q11" value="b"> b) 16</label><label class="test-option"><input type="radio" name="q11" value="c"> c) -16</label><label class="test-option"><input type="radio" name="q11" value="d"> d) 5</label></div></div>
+      <div class="test-question"><p>12. Verificar solución significa:</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) Cambiar la ecuación</label><label class="test-option"><input type="radio" name="q12" value="b"> b) Sustituir en original y comprobar igualdad</label><label class="test-option"><input type="radio" name="q12" value="c"> c) Multiplicar por cero</label><label class="test-option"><input type="radio" name="q12" value="d"> d) Ignorar el resultado</label></div></div>
+      <div class="test-question"><p>13. En $ax + b = c$, si $a=0$ y $b \neq c$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) Infinitas soluciones</label><label class="test-option"><input type="radio" name="q13" value="b"> b) Solución única</label><label class="test-option"><input type="radio" name="q13" value="c"> c) Ninguna solución</label><label class="test-option"><input type="radio" name="q13" value="d"> d) Solución cero</label></div></div>
+      <div class="test-question"><p>14. Paso para eliminar denominadores:</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) Sumar denominadores</label><label class="test-option"><input type="radio" name="q14" value="b"> b) Multiplicar por mcm</label><label class="test-option"><input type="radio" name="q14" value="c"> c) Dividir entre mcm</label><label class="test-option"><input type="radio" name="q14" value="d"> d) Restar denominadores</label></div></div>
+      <div class="test-question"><p>15. Solución de $\frac{x}{2} + 3 = 7$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) 4</label><label class="test-option"><input type="radio" name="q15" value="b"> b) 8</label><label class="test-option"><input type="radio" name="q15" value="c"> c) 10</label><label class="test-option"><input type="radio" name="q15" value="d"> d) 20</label></div></div>
+      <div class="test-question"><p>16. En problema de edades, diferencia de edades:</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) Cambia con el tiempo</label><label class="test-option"><input type="radio" name="q16" value="b"> b) Es constante</label><label class="test-option"><input type="radio" name="q16" value="c"> c) Se duplica cada año</label><label class="test-option"><input type="radio" name="q16" value="d"> d) Depende del mes</label></div></div>
+      <div class="test-question"><p>17. "20% de un número" se expresa:</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) $20x$</label><label class="test-option"><input type="radio" name="q17" value="b"> b) $\frac{20}{x}$</label><label class="test-option"><input type="radio" name="q17" value="c"> c) $0.2x$</label><label class="test-option"><input type="radio" name="q17" value="d"> d) $x + 20$</label></div></div>
+      <div class="test-question"><p>18. Solución de $2(x+1) = 3x - 1$:</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) 1</label><label class="test-option"><input type="radio" name="q18" value="b"> b) 3</label><label class="test-option"><input type="radio" name="q18" value="c"> c) -1</label><label class="test-option"><input type="radio" name="q18" value="d"> d) 2</label></div></div>
+      <div class="test-question"><p>19. En ecuación con denominador, solución que anula denominador:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) Es válida</label><label class="test-option"><input type="radio" name="q19" value="b"> b) Debe rechazarse</label><label class="test-option"><input type="radio" name="q19" value="c"> c) Se duplica</label><label class="test-option"><input type="radio" name="q19" value="d"> d) Se convierte en infinita</label></div></div>
+      <div class="test-question"><p>20. Fase final en resolución de problemas:</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) Olvidar el contexto</label><label class="test-option"><input type="radio" name="q20" value="b"> b) Interpretar y verificar en contexto</label><label class="test-option"><input type="radio" name="q20" value="c"> c) Cambiar la pregunta</label><label class="test-option"><input type="radio" name="q20" value="d"> d) Multiplicar por cero</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema8_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 8</a></p></footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false,
+          ignoredTags: ["svg", "script", "noscript", "style", "textarea", "pre", "code", "mermaid"]
+        });
+      } catch (e) {
+        console.warn('KaTeX render error:', e);
+      }
+    }
+
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      var mermaidElements = document.querySelectorAll('.mermaid');
+      if (mermaidElements.length > 0) {
+        mermaid.run({ nodes: [...mermaidElements] }).catch(function(err) {
+          console.warn('Mermaid render error:', err);
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initMermaid(false);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    // CORREGIDO: comillas correctas
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initMermaid(isDark);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+  </script>
+</body>
+</html>

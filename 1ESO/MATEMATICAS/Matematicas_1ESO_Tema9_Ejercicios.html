@@ -1,0 +1,290 @@
+<!-- Matematicas_1ESO_Tema9_Ejercicios.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 1º ESO - Tema 9: Ejercicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%;margin-top:var(--header-height)}
+    .section-divider{margin:2.5rem 0 1.5rem;padding-bottom:.75rem;border-bottom:2px solid var(--primary);display:flex;align-items:center;gap:.75rem}
+    .section-divider h3{color:var(--primary);font-size:1.25rem}.section-divider .badge{background:var(--primary);color:#fff;padding:.25rem .75rem;border-radius:20px;font-size:.875rem;font-weight:600}
+    .exercise-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;margin-bottom:2rem}
+    .exercise-card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .exercise-card:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.12)}
+    .card-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:rgba(26,35,126,.05);border-bottom:1px solid var(--border);border-radius:8px 8px 0 0;font-weight:600;font-size:.9rem}
+    .card-header .level{color:#f9a825}.card-header .code{color:var(--text-muted);font-family:monospace}
+    .card-body{padding:1rem;flex-grow:1}.card-body p{margin-bottom:0;line-height:1.5}
+    .answer-area{padding:0 1rem 1rem}.answer-area textarea{width:100%;min-height:80px;padding:.75rem;border:1px solid var(--border);border-radius:6px;background:var(--bg-body);color:var(--text-main);font-family:inherit;font-size:.95rem;resize:vertical;transition:border-color .2s}
+    .answer-area textarea:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(26,35,126,.1)}
+    .test-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-top:2rem;box-shadow:var(--shadow)}
+    .test-question{margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border)}.test-question:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+    .test-question p{font-weight:500;margin-bottom:.75rem}.test-options{display:flex;flex-direction:column;gap:.5rem}
+    .test-option{display:flex;align-items:center;gap:.5rem;padding:.5rem;border-radius:4px;cursor:pointer;transition:background .2s}.test-option:hover{background:rgba(26,35,126,.05)}.test-option input{cursor:pointer}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:768px){.exercise-grid{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header><div class="header-title"><i class="fa-solid fa-pen-to-square"></i> <span>Tema 9: Ejercicios</span></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header>
+  <main>
+    <!-- 9.1 Elementos básicos: puntos, rectas, planos -->
+    <div class="section-divider"><h3>9.1 Elementos básicos</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.01</span></div><div class="card-body"><p>Describe con palabras: ¿qué es un punto en geometría?</p></div><div class="answer-area"><textarea placeholder="Describe aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.02</span></div><div class="card-body"><p>Dibuja mentalmente: ¿cómo se representa una recta infinita?</p></div><div class="answer-area"><textarea placeholder="Describe aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.03</span></div><div class="card-body"><p>Notación: ¿cómo se denota el segmento entre A y B?</p></div><div class="answer-area"><textarea placeholder="Escribe la notación..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.04</span></div><div class="card-body"><p>Verdadero/Falso: Dos rectas paralelas nunca se cortan.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.05</span></div><div class="card-body"><p>Si $r \perp s$, ¿qué ángulo forman?</p></div><div class="answer-area"><textarea placeholder="Escribe el valor..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.06</span></div><div class="card-body"><p>Describe la diferencia entre semirrecta y segmento.</p></div><div class="answer-area"><textarea placeholder="Describe aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.07</span></div><div class="card-body"><p>¿Pueden tres puntos no alineados definir un plano? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.08</span></div><div class="card-body"><p>Notación: ¿qué significa $A \in r$?</p></div><div class="answer-area"><textarea placeholder="Explica el significado..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.09</span></div><div class="card-body"><p>Clasifica: dos rectas que se cortan en un punto son ______.</p></div><div class="answer-area"><textarea placeholder="Completa la frase..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.1.10</span></div><div class="card-body"><p>¿Cuántos puntos determinan una recta única?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.11</span></div><div class="card-body"><p>Demuestra que por dos puntos distintos pasa una única recta.</p></div><div class="answer-area"><textarea placeholder="Demuestra aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.12</span></div><div class="card-body"><p>Si $r \parallel s$ y $s \parallel t$, ¿qué relación hay entre $r$ y $t$?</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.13</span></div><div class="card-body"><p>Describe cómo construir la perpendicular a una recta dada por un punto exterior.</p></div><div class="answer-area"><textarea placeholder="Describe el procedimiento..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.14</span></div><div class="card-body"><p>¿Pueden dos planos distintos intersecarse en un solo punto? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.15</span></div><div class="card-body"><p>Si tres rectas son coplanarias y dos son paralelas, ¿qué puede decirse de la tercera?</p></div><div class="answer-area"><textarea placeholder="Analiza las posibilidades..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.16</span></div><div class="card-body"><p>Define "lugar geométrico" y da un ejemplo con mediatriz.</p></div><div class="answer-area"><textarea placeholder="Define y ejemplifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.17</span></div><div class="card-body"><p>Demuestra que la mediatriz de un segmento es el lugar geométrico de puntos equidistantes a sus extremos.</p></div><div class="answer-area"><textarea placeholder="Demuestra aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.18</span></div><div class="card-body"><p>¿Cuántos planos distintos pueden pasar por una recta dada?</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.1.19</span></div><div class="card-body"><p>Investiga: ¿qué son las coordenadas cartesianas y cómo relacionan puntos con pares ordenados?</p></div><div class="answer-area"><textarea placeholder="Investiga y resume..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.1.20</span></div><div class="card-body"><p>Demuestra que en el plano euclidiano, por un punto exterior a una recta pasa una única paralela (postulado de las paralelas).</p></div><div class="answer-area"><textarea placeholder="Demuestra aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.1.21</span></div><div class="card-body"><p>Si cuatro puntos no son coplanarios, ¿cuántos planos distintos determinan?</p></div><div class="answer-area"><textarea placeholder="Calcula y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.1.22</span></div><div class="card-body"><p>Demuestra que la intersección de dos planos distintos es una recta (si no son paralelos).</p></div><div class="answer-area"><textarea placeholder="Demuestra aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.1.23</span></div><div class="card-body"><p>Investiga: ¿qué es la geometría proyectiva y cómo difiere de la euclidiana en el tratamiento de paralelas?</p></div><div class="answer-area"><textarea placeholder="Investiga y compara..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.1.24</span></div><div class="card-body"><p>Demuestra que el conjunto de puntos equidistantes a dos rectas secantes son las bisectrices de los ángulos que forman.</p></div><div class="answer-area"><textarea placeholder="Demuestra aquí..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.1.25</span></div><div class="card-body"><p>Problema aplicado: En un sistema CAD, se definen tres puntos A(0,0), B(4,0), C(2,3). Describe cómo se determinarían las rectas AB, BC, CA y sus relaciones (paralelismo, perpendicularidad).</p></div><div class="answer-area"><textarea placeholder="Describe el procedimiento..."></textarea></div></div>
+    </div>
+
+    <!-- 9.2 Ángulos: tipos, operaciones y bisectriz -->
+    <div class="section-divider"><h3>9.2 Ángulos y operaciones</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.01</span></div><div class="card-body"><p>Clasifica: $45^\circ$ es un ángulo ______.</p></div><div class="answer-area"><textarea placeholder="Completa..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.02</span></div><div class="card-body"><p>Convierte a minutos: $2^\circ$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.03</span></div><div class="card-body"><p>Suma: $30^\circ 20' + 15^\circ 40'$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.04</span></div><div class="card-body"><p>Resta: $90^\circ - 35^\circ 25'$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.05</span></div><div class="card-body"><p>¿Qué tipo de ángulo es $120^\circ$?</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.06</span></div><div class="card-body"><p>Define ángulos adyacentes.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.07</span></div><div class="card-body"><p>Si dos ángulos son opuestos por el vértice, ¿qué relación hay entre sus medidas?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.08</span></div><div class="card-body"><p>Convierte $45.5^\circ$ a formato sexagesimal.</p></div><div class="answer-area"><textarea placeholder="Convierte..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.09</span></div><div class="card-body"><p>¿Cuántos grados tiene un ángulo llano?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.2.10</span></div><div class="card-body"><p>Describe qué es la bisectriz de un ángulo.</p></div><div class="answer-area"><textarea placeholder="Describe..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.11</span></div><div class="card-body"><p>Suma: $45^\circ 30' 15'' + 28^\circ 45' 50''$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.12</span></div><div class="card-body"><p>Resta: $180^\circ - 75^\circ 30' 45''$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.13</span></div><div class="card-body"><p>Multiplica: $3 \times (25^\circ 15' 30'')$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.14</span></div><div class="card-body"><p>Divide: $90^\circ \div 4$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.15</span></div><div class="card-body"><p>Si $\alpha$ y $\beta$ son complementarios y $\alpha = 35^\circ$, halla $\beta$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.16</span></div><div class="card-body"><p>Si $\gamma$ y $\delta$ son suplementarios y $\gamma = 110^\circ$, halla $\delta$.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.17</span></div><div class="card-body"><p>Demuestra que la bisectriz divide un ángulo en dos partes iguales.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.18</span></div><div class="card-body"><p>Convierte $2.75^\circ$ a formato sexagesimal con segundos.</p></div><div class="answer-area"><textarea placeholder="Convierte..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.2.19</span></div><div class="card-body"><p>Si dos ángulos consecutivos suman $180^\circ$, ¿qué tipo de ángulos son?</p></div><div class="answer-area"><textarea placeholder="Clasifica y justifica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.2.20</span></div><div class="card-body"><p>Demuestra que la suma de ángulos alrededor de un punto es $360^\circ$.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.2.21</span></div><div class="card-body"><p>Resuelve: $2x + 30^\circ = 90^\circ$. Halla $x$ en formato sexagesimal.</p></div><div class="answer-area"><textarea placeholder="Resuelve..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.2.22</span></div><div class="card-body"><p>Si $\alpha = 2\beta$ y $\alpha + \beta = 120^\circ$, halla $\alpha$ y $\beta$.</p></div><div class="answer-area"><textarea placeholder="Resuelve el sistema..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.2.23</span></div><div class="card-body"><p>Demuestra que las bisectrices de dos ángulos adyacentes son perpendiculares.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.2.24</span></div><div class="card-body"><p>Investiga: ¿cómo se miden ángulos en radianes y cómo se convierten a grados?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.2.25</span></div><div class="card-body"><p>Problema aplicado: En un sistema de navegación, un rumbo cambia de $45^\circ 30'$ a $120^\circ 15'$. Calcula el ángulo de giro en formato sexagesimal.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- 9.3 Triángulos: clasificación y propiedades -->
+    <div class="section-divider"><h3>9.3 Triángulos</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.01</span></div><div class="card-body"><p>Clasifica por lados: triángulo con tres lados iguales.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.02</span></div><div class="card-body"><p>Clasifica por ángulos: triángulo con un ángulo de $90^\circ$.</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.03</span></div><div class="card-body"><p>¿Cuánto suman los ángulos internos de cualquier triángulo?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.04</span></div><div class="card-body"><p>Si dos ángulos de un triángulo miden $50^\circ$ y $60^\circ$, ¿cuánto mide el tercero?</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.05</span></div><div class="card-body"><p>Define ángulo exterior de un triángulo.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.06</span></div><div class="card-body"><p>Si un ángulo exterior mide $120^\circ$, ¿cuánto suman los dos interiores no adyacentes?</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.07</span></div><div class="card-body"><p>Verdadero/Falso: En un triángulo equilátero, todos los ángulos miden $60^\circ$.</p></div><div class="answer-area"><textarea placeholder="Responde..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.08</span></div><div class="card-body"><p>Desigualdad triangular: si dos lados miden 3 cm y 5 cm, ¿entre qué valores puede estar el tercero?</p></div><div class="answer-area"><textarea placeholder="Calcula el intervalo..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.09</span></div><div class="card-body"><p>Clasifica: triángulo con lados 4 cm, 4 cm, 6 cm.</p></div><div class="answer-area"><textarea placeholder="Clasifica por lados..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.3.10</span></div><div class="card-body"><p>¿Puede un triángulo tener dos ángulos rectos? Justifica.</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.11</span></div><div class="card-body"><p>En un triángulo isósceles, el ángulo desigual mide $40^\circ$. Halla los otros dos.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.12</span></div><div class="card-body"><p>Si los ángulos de un triángulo están en razón 2:3:4, halla sus medidas.</p></div><div class="answer-area"><textarea placeholder="Resuelve..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.13</span></div><div class="card-body"><p>Demuestra que en un triángulo rectángulo, los dos ángulos agudos son complementarios.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.14</span></div><div class="card-body"><p>Si un triángulo tiene lados 5, 12, 13, ¿es rectángulo? Justifica con el teorema de Pitágoras.</p></div><div class="answer-area"><textarea placeholder="Verifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.15</span></div><div class="card-body"><p>Clasifica completamente: triángulo con ángulos $30^\circ$, $60^\circ$, $90^\circ$.</p></div><div class="answer-area"><textarea placeholder="Clasifica por lados y ángulos..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.16</span></div><div class="card-body"><p>Si el perímetro de un triángulo equilátero es 24 cm, halla la longitud de cada lado.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.17</span></div><div class="card-body"><p>Demuestra la desigualdad triangular para lados $a=7$, $b=10$, $c=12$.</p></div><div class="answer-area"><textarea placeholder="Verifica las tres desigualdades..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.18</span></div><div class="card-body"><p>Si un ángulo exterior de un triángulo mide $150^\circ$ y uno de los interiores no adyacentes mide $70^\circ$, halla el otro interior no adyacente.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.3.19</span></div><div class="card-body"><p>Investiga: ¿qué es el teorema del coseno y cómo generaliza a Pitágoras?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.3.20</span></div><div class="card-body"><p>Demuestra que la suma de ángulos internos de un triángulo es $180^\circ$ usando rectas paralelas.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.3.21</span></div><div class="card-body"><p>Si en un triángulo $a=8$, $b=15$, y el ángulo entre ellos es $90^\circ$, halla el tercer lado.</p></div><div class="answer-area"><textarea placeholder="Calcula con Pitágoras..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.3.22</span></div><div class="card-body"><p>Demuestra que en un triángulo isósceles, la mediana a la base es también altura y bisectriz.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.3.23</span></div><div class="card-body"><p>Si los lados de un triángulo son $x$, $x+1$, $x+2$ y el perímetro es 24, halla $x$ y clasifica el triángulo.</p></div><div class="answer-area"><textarea placeholder="Resuelve y clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.3.24</span></div><div class="card-body"><p>Investiga: ¿qué son los triángulos de Herón y cómo se calcula su área solo con los lados?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.3.25</span></div><div class="card-body"><p>Problema aplicado: En topografía, se miden dos lados de un triángulo: 100 m y 150 m, con ángulo entre ellos $60^\circ$. Calcula el tercer lado usando ley de cosenos.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- 9.4 Rectas notables y puntos característicos -->
+    <div class="section-divider"><h3>9.4 Rectas notables</h3><span class="badge">25 ejercicios</span></div>
+    <div class="section-divider" style="border-color:var(--primary-light);padding-left:1rem"><span class="badge" style="background:var(--primary-light)">⭐ Básico</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.01</span></div><div class="card-body"><p>Define mediatriz de un segmento.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.02</span></div><div class="card-body"><p>¿Qué punto es la intersección de las mediatrices de un triángulo?</p></div><div class="answer-area"><textarea placeholder="Nombra el punto..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.03</span></div><div class="card-body"><p>Define bisectriz de un ángulo.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.04</span></div><div class="card-body"><p>¿Qué punto es la intersección de las bisectrices de un triángulo?</p></div><div class="answer-area"><textarea placeholder="Nombra el punto..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.05</span></div><div class="card-body"><p>Define mediana de un triángulo.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.06</span></div><div class="card-body"><p>¿Qué punto es la intersección de las medianas?</p></div><div class="answer-area"><textarea placeholder="Nombra el punto..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.07</span></div><div class="card-body"><p>Define altura de un triángulo.</p></div><div class="answer-area"><textarea placeholder="Define..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.08</span></div><div class="card-body"><p>¿Qué punto es la intersección de las alturas?</p></div><div class="answer-area"><textarea placeholder="Nombra el punto..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.09</span></div><div class="card-body"><p>En un triángulo equilátero, ¿coinciden los cuatro puntos notables?</p></div><div class="answer-area"><textarea placeholder="Responde y justifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐</span><span class="code">9.4.10</span></div><div class="card-body"><p>¿Dónde está el circuncentro en un triángulo rectángulo?</p></div><div class="answer-area"><textarea placeholder="Describe la posición..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#2e7d32;padding-left:1rem"><span class="badge" style="background:#2e7d32">⭐⭐ Intermedio</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.11</span></div><div class="card-body"><p>Demuestra que el baricentro divide cada mediana en razón 2:1.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.12</span></div><div class="card-body"><p>Si el circuncentro está en el exterior del triángulo, ¿qué tipo de triángulo es?</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.13</span></div><div class="card-body"><p>Describe cómo construir el incentro de un triángulo con regla y compás.</p></div><div class="answer-area"><textarea placeholder="Describe el procedimiento..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.14</span></div><div class="card-body"><p>Si el ortocentro coincide con un vértice, ¿qué tipo de triángulo es?</p></div><div class="answer-area"><textarea placeholder="Clasifica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.15</span></div><div class="card-body"><p>Demuestra que las mediatrices de un triángulo concurren en un punto equidistante de los vértices.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.16</span></div><div class="card-body"><p>Calcula las coordenadas del baricentro si los vértices son A(1,2), B(4,6), C(7,1).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.17</span></div><div class="card-body"><p>Si en un triángulo isósceles la base mide 10 cm y los lados iguales 13 cm, halla la altura a la base.</p></div><div class="answer-area"><textarea placeholder="Calcula con Pitágoras..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.18</span></div><div class="card-body"><p>Demuestra que en un triángulo rectángulo, el circuncentro es el punto medio de la hipotenusa.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐</span><span class="code">9.4.19</span></div><div class="card-body"><p>Investiga: ¿qué es la recta de Euler y qué puntos notables contiene?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+    </div>
+    <div class="section-divider" style="border-color:#c2185b;padding-left:1rem"><span class="badge" style="background:#c2185b">⭐⭐⭐ Avanzado</span></div>
+    <div class="exercise-grid">
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.4.20</span></div><div class="card-body"><p>Demuestra que el ortocentro, baricentro y circuncentro son colineales (recta de Euler).</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.4.21</span></div><div class="card-body"><p>Si el incentro está a distancia $r$ de cada lado, demuestra que el área del triángulo es $A = r \cdot s$ donde $s$ es el semiperímetro.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.4.22</span></div><div class="card-body"><p>Calcula las coordenadas del circuncentro del triángulo con vértices A(0,0), B(4,0), C(0,3).</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.4.23</span></div><div class="card-body"><p>Demuestra que en un triángulo acutángulo, el ortocentro está en el interior.</p></div><div class="answer-area"><textarea placeholder="Demuestra..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.4.24</span></div><div class="card-body"><p>Investiga: ¿qué son los triángulos órticos y cómo se relacionan con el ortocentro?</p></div><div class="answer-area"><textarea placeholder="Investiga y explica..."></textarea></div></div>
+      <div class="exercise-card"><div class="card-header"><i class="fa-solid fa-layer-group"></i><span class="level">⭐⭐⭐</span><span class="code">9.4.25</span></div><div class="card-body"><p>Problema aplicado: En ingeniería estructural, se necesita hallar el centro de masas de una placa triangular con vértices en (0,0), (6,0), (3,4). Calcula las coordenadas del baricentro.</p></div><div class="answer-area"><textarea placeholder="Calcula..."></textarea></div></div>
+    </div>
+
+    <!-- TEST FINAL -->
+    <div class="section-divider"><h3>Autoevaluación: Test Tema 9</h3><span class="badge">20 preguntas</span></div>
+    <div class="test-container">
+      <div class="test-question"><p>1. Un punto en geometría tiene:</p><div class="test-options"><label class="test-option"><input type="radio" name="q1" value="a"> a) Dimensión cero</label><label class="test-option"><input type="radio" name="q1" value="b"> b) Longitud</label><label class="test-option"><input type="radio" name="q1" value="c"> c) Área</label><label class="test-option"><input type="radio" name="q1" value="d"> d) Volumen</label></div></div>
+      <div class="test-question"><p>2. Notación del segmento AB:</p><div class="test-options"><label class="test-option"><input type="radio" name="q2" value="a"> a) $\overleftrightarrow{AB}$</label><label class="test-option"><input type="radio" name="q2" value="b"> b) $\overline{AB}$</label><label class="test-option"><input type="radio" name="q2" value="c"> c) $\vec{AB}$</label><label class="test-option"><input type="radio" name="q2" value="d"> d) $AB$</label></div></div>
+      <div class="test-question"><p>3. Si $r \perp s$, el ángulo que forman es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q3" value="a"> a) $45^\circ$</label><label class="test-option"><input type="radio" name="q3" value="b"> b) $90^\circ$</label><label class="test-option"><input type="radio" name="q3" value="c"> c) $180^\circ$</label><label class="test-option"><input type="radio" name="q3" value="d"> d) $360^\circ$</label></div></div>
+      <div class="test-question"><p>4. Un ángulo de $120^\circ$ es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q4" value="a"> a) Agudo</label><label class="test-option"><input type="radio" name="q4" value="b"> b) Recto</label><label class="test-option"><input type="radio" name="q4" value="c"> c) Obtuso</label><label class="test-option"><input type="radio" name="q4" value="d"> d) Llano</label></div></div>
+      <div class="test-question"><p>5. $1^\circ$ equivale a:</p><div class="test-options"><label class="test-option"><input type="radio" name="q5" value="a"> a) 60 segundos</label><label class="test-option"><input type="radio" name="q5" value="b"> b) 60 minutos</label><label class="test-option"><input type="radio" name="q5" value="c"> c) 100 minutos</label><label class="test-option"><input type="radio" name="q5" value="d"> d) 360 segundos</label></div></div>
+      <div class="test-question"><p>6. La bisectriz de un ángulo:</p><div class="test-options"><label class="test-option"><input type="radio" name="q6" value="a"> a) Es perpendicular al lado</label><label class="test-option"><input type="radio" name="q6" value="b"> b) Divide el ángulo en dos iguales</label><label class="test-option"><input type="radio" name="q6" value="c"> c) Pasa por el vértice opuesto</label><label class="test-option"><input type="radio" name="q6" value="d"> d) Es paralela a un lado</label></div></div>
+      <div class="test-question"><p>7. Suma de ángulos internos de un triángulo:</p><div class="test-options"><label class="test-option"><input type="radio" name="q7" value="a"> a) $90^\circ$</label><label class="test-option"><input type="radio" name="q7" value="b"> b) $180^\circ$</label><label class="test-option"><input type="radio" name="q7" value="c"> c) $270^\circ$</label><label class="test-option"><input type="radio" name="q7" value="d"> d) $360^\circ$</label></div></div>
+      <div class="test-question"><p>8. Triángulo con tres lados iguales es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q8" value="a"> a) Isósceles</label><label class="test-option"><input type="radio" name="q8" value="b"> b) Escaleno</label><label class="test-option"><input type="radio" name="q8" value="c"> c) Equilátero</label><label class="test-option"><input type="radio" name="q8" value="d"> d) Rectángulo</label></div></div>
+      <div class="test-question"><p>9. Ángulo exterior de un triángulo es igual a:</p><div class="test-options"><label class="test-option"><input type="radio" name="q9" value="a"> a) Ángulo opuesto</label><label class="test-option"><input type="radio" name="q9" value="b"> b) Suma de los dos interiores no adyacentes</label><label class="test-option"><input type="radio" name="q9" value="c"> c) Diferencia de los otros dos</label><label class="test-option"><input type="radio" name="q9" value="d"> d) Mitad de la suma</label></div></div>
+      <div class="test-question"><p>10. Desigualdad triangular: cada lado es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q10" value="a"> a) Mayor que la suma de los otros dos</label><label class="test-option"><input type="radio" name="q10" value="b"> b) Menor que la suma de los otros dos</label><label class="test-option"><input type="radio" name="q10" value="c"> c) Igual a la suma de los otros dos</label><label class="test-option"><input type="radio" name="q10" value="d"> d) Mayor que la diferencia</label></div></div>
+      <div class="test-question"><p>11. Intersección de mediatrices es el:</p><div class="test-options"><label class="test-option"><input type="radio" name="q11" value="a"> a) Baricentro</label><label class="test-option"><input type="radio" name="q11" value="b"> b) Incentro</label><label class="test-option"><input type="radio" name="q11" value="c"> c) Circuncentro</label><label class="test-option"><input type="radio" name="q11" value="d"> d) Ortocentro</label></div></div>
+      <div class="test-question"><p>12. El baricentro es intersección de:</p><div class="test-options"><label class="test-option"><input type="radio" name="q12" value="a"> a) Alturas</label><label class="test-option"><input type="radio" name="q12" value="b"> b) Medianas</label><label class="test-option"><input type="radio" name="q12" value="c"> c) Bisectrices</label><label class="test-option"><input type="radio" name="q12" value="d"> d) Mediatrices</label></div></div>
+      <div class="test-question"><p>13. En triángulo rectángulo, circuncentro está en:</p><div class="test-options"><label class="test-option"><input type="radio" name="q13" value="a"> a) Interior</label><label class="test-option"><input type="radio" name="q13" value="b"> b) Exterior</label><label class="test-option"><input type="radio" name="q13" value="c"> c) Punto medio de hipotenusa</label><label class="test-option"><input type="radio" name="q13" value="d"> d) Vértice del ángulo recto</label></div></div>
+      <div class="test-question"><p>14. El incentro es equidistante a:</p><div class="test-options"><label class="test-option"><input type="radio" name="q14" value="a"> a) Vértices</label><label class="test-option"><input type="radio" name="q14" value="b"> b) Lados</label><label class="test-option"><input type="radio" name="q14" value="c"> c) Puntos medios</label><label class="test-option"><input type="radio" name="q14" value="d"> d) Extremos de medianas</label></div></div>
+      <div class="test-question"><p>15. Si dos ángulos son opuestos por el vértice:</p><div class="test-options"><label class="test-option"><input type="radio" name="q15" value="a"> a) Son suplementarios</label><label class="test-option"><input type="radio" name="q15" value="b"> b) Son complementarios</label><label class="test-option"><input type="radio" name="q15" value="c"> c) Son iguales</label><label class="test-option"><input type="radio" name="q15" value="d"> d) Suma $180^\circ$</label></div></div>
+      <div class="test-question"><p>16. $45^\circ 30' + 28^\circ 45' =$</p><div class="test-options"><label class="test-option"><input type="radio" name="q16" value="a"> a) $73^\circ 75'$</label><label class="test-option"><input type="radio" name="q16" value="b"> b) $74^\circ 15'$</label><label class="test-option"><input type="radio" name="q16" value="c"> c) $73^\circ 15'$</label><label class="test-option"><input type="radio" name="q16" value="d"> d) $74^\circ 75'$</label></div></div>
+      <div class="test-question"><p>17. Triángulo con ángulos $30^\circ$, $60^\circ$, $90^\circ$ es:</p><div class="test-options"><label class="test-option"><input type="radio" name="q17" value="a"> a) Equilátero</label><label class="test-option"><input type="radio" name="q17" value="b"> b) Isósceles</label><label class="test-option"><input type="radio" name="q17" value="c"> c) Rectángulo</label><label class="test-option"><input type="radio" name="q17" value="d"> d) Obtusángulo</label></div></div>
+      <div class="test-question"><p>18. La mediana une un vértice con:</p><div class="test-options"><label class="test-option"><input type="radio" name="q18" value="a"> a) Vértice opuesto</label><label class="test-option"><input type="radio" name="q18" value="b"> b) Punto medio del lado opuesto</label><label class="test-option"><input type="radio" name="q18" value="c"> c) Ortocentro</label><label class="test-option"><input type="radio" name="q18" value="d"> d) Circuncentro</label></div></div>
+      <div class="test-question"><p>19. En triángulo obtusángulo, ortocentro está:</p><div class="test-options"><label class="test-option"><input type="radio" name="q19" value="a"> a) Interior</label><label class="test-option"><input type="radio" name="q19" value="b"> b) En un vértice</label><label class="test-option"><input type="radio" name="q19" value="c"> c) Exterior</label><label class="test-option"><input type="radio" name="q19" value="d"> d) En el lado</label></div></div>
+      <div class="test-question"><p>20. Baricentro divide cada mediana en razón:</p><div class="test-options"><label class="test-option"><input type="radio" name="q20" value="a"> a) 1:1</label><label class="test-option"><input type="radio" name="q20" value="b"> b) 2:1</label><label class="test-option"><input type="radio" name="q20" value="c"> c) 3:1</label><label class="test-option"><input type="radio" name="q20" value="d"> d) 1:2</label></div></div>
+    </div>
+    <footer><p>¿Necesitas repasar teoría? <a href="Matematicas_1ESO_Tema9_Teoria.html"><i class="fa-solid fa-arrow-left"></i> Volver a teoría del Tema 9</a></p></footer>
+    </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "$", right: "$", display: false}
+          ],
+          throwOnError: false,
+          ignoredTags: ["svg", "script", "noscript", "style", "textarea", "pre", "code", "mermaid"]
+        });
+      } catch (e) {
+        console.warn('KaTeX render error:', e);
+      }
+    }
+
+    // Mermaid no se usa en este archivo, pero se mantiene por si acaso
+    function initMermaid(dark) {
+      if (typeof mermaid === 'undefined') return;
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: dark ? 'dark' : 'default',
+        securityLevel: 'loose',
+        fontFamily: 'Albert Sans, system-ui, sans-serif'
+      });
+      var mermaidElements = document.querySelectorAll('.mermaid');
+      if (mermaidElements.length > 0) {
+        mermaid.run({ nodes: [...mermaidElements] }).catch(function(err) {
+          console.warn('Mermaid render error:', err);
+        });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      initMermaid(false);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+
+    var themeToggle = document.getElementById('theme-toggle'),
+        body = document.body,
+        icon = themeToggle.querySelector('i');
+
+    // CORREGIDO: comillas correctas
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.classList.replace('fa-moon', 'fa-sun');
+      initMermaid(true);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    }
+
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      var isDark = body.classList.contains('dark-mode');
+      icon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      initMermaid(isDark);
+      setTimeout(function() {
+        initKaTeX();
+      }, 30);
+    });
+  </script>
+</body>
+</html>
