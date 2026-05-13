@@ -1,0 +1,487 @@
+<!-- Matematicas_2ESO_Tema6_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 6: Sistemas de Ecuaciones Lineales | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    .step-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .step-table th{background:var(--primary-light);color:#fff;padding:.75rem;text-align:left}
+    .step-table td{padding:.75rem;border-bottom:1px solid var(--border)}
+    .step-table tr:last-child td{border-bottom:none}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-diagram-project"></i> <span>Tema 6: Sistemas de Ecuaciones Lineales</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-6-1" class="nav-link"><i class="fa-solid fa-1"></i> 6.1 Concepto y gráfica</a></li>
+        <li><a href="#subtema-6-2" class="nav-link"><i class="fa-solid fa-2"></i> 6.2 Método sustitución</a></li>
+        <li><a href="#subtema-6-3" class="nav-link"><i class="fa-solid fa-3"></i> 6.3 Método igualación</a></li>
+        <li><a href="#subtema-6-4" class="nav-link"><i class="fa-solid fa-4"></i> 6.4 Reducción y problemas</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-6-1">
+        <h2><i class="fa-solid fa-chart-line"></i> 6.1 Concepto y representación gráfica</h2>
+        <p class="intro">Un sistema de ecuaciones lineales es un conjunto de dos o más ecuaciones que deben cumplirse simultáneamente. Su solución representa el punto donde todas las condiciones se satisfacen a la vez.</p>
+        <article>
+          <h3>Definición y notación</h3>
+          <p>Un sistema de dos ecuaciones con dos incógnitas se escribe:</p>
+          <div class="katex-display">$$ \begin{cases} a_1x + b_1y = c_1 \\ a_2x + b_2y = c_2 \end{cases} $$</div>
+          <p>Donde $a_i, b_i, c_i$ son coeficientes conocidos y $(x,y)$ es la solución buscada.</p>
+        </article>
+        <article>
+          <h3>Interpretación geométrica</h3>
+          <p>Cada ecuación lineal representa una recta en el plano cartesiano. La solución del sistema corresponde al punto de intersección de ambas rectas.</p>
+          <ul>
+            <li><strong>Rectas secantes:</strong> Se cortan en un punto → Sistema compatible determinado (1 solución).</li>
+            <li><strong>Rectas coincidentes:</strong> Son la misma recta → Sistema compatible indeterminado (infinitas soluciones).</li>
+            <li><strong>Rectas paralelas:</strong> No se cortan → Sistema incompatible (0 soluciones).</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Identificación del tipo de sistema</h3>
+          <p>Para ecuaciones en forma $y = mx + n$:</p>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-calculator"></i> <strong>Calcular pendientes:</strong> $m_1$ y $m_2$ de cada recta.</li>
+            <li><i class="fa-solid fa-equals"></i> <strong>Comparar pendientes:</strong>
+              <ul style="margin-top:.5rem;margin-left:1.5rem">
+                <li>Si $m_1 \neq m_2$ → Rectas secantes → 1 solución.</li>
+                <li>Si $m_1 = m_2$ y $n_1 = n_2$ → Rectas coincidentes → Infinitas soluciones.</li>
+                <li>Si $m_1 = m_2$ y $n_1 \neq n_2$ → Rectas paralelas → Sin solución.</li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo resuelto</h3>
+          <div class="katex-display">$$ \begin{cases} 2x + y = 5 \\ x - y = 1 \end{cases} \implies \text{Sumando: } 3x = 6 \implies x = 2 \implies y = 1 $$</div>
+          <p>Solución: $(x,y) = (2,1)$, punto de intersección de las rectas.</p>
+        </article>
+        <article>
+          <h3>Intersección de rectas (Chart.js)</h3>
+          <div class="chart-container"><canvas id="intersectionChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Gráfico de las rectas $y = -2x+5$ y $y = x-1$ con su punto de intersección $(2,1)$ marcado.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En ingeniería, los sistemas lineales modelan balance de fuerzas o corrientes eléctricas. En producción, optimizan recursos con múltiples restricciones. En programación lineal básica, la intersección de restricciones define la región factible de soluciones.</p>
+        </div>
+      </section>
+
+      <section id="subtema-6-2">
+        <h2><i class="fa-solid fa-repeat"></i> 6.2 Método de sustitución</h2>
+        <p class="intro">El método de sustitución resuelve sistemas despejando una variable en una ecuación y reemplazándola en la otra, reduciendo el problema a una ecuación con una incógnita.</p>
+        <article>
+          <h3>Protocolo paso a paso</h3>
+          <table class="step-table">
+            <thead><tr><th>Paso</th><th>Operación</th><th>Resultado intermedio</th></tr></thead>
+            <tbody>
+              <tr><td>1</td><td>Despejar una variable en una ecuación</td><td>$x = 7 - 2y$</td></tr>
+              <tr><td>2</td><td>Sustituir en la otra ecuación</td><td>$3(7-2y) - y = 4$</td></tr>
+              <tr><td>3</td><td>Resolver ecuación de una incógnita</td><td>$21 - 6y - y = 4 \implies y = \frac{17}{7}$</td></tr>
+              <tr><td>4</td><td>Sustituir valor en el despeje inicial</td><td>$x = 7 - 2(\frac{17}{7}) = \frac{15}{7}$</td></tr>
+              <tr><td>5</td><td>Verificar en ambas ecuaciones originales</td><td>✓ Igualdad cumplida</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Ejemplo completo</h3>
+          <p>Resolver: $\begin{cases} x + 2y = 7 \\ 3x - y = 4 \end{cases}$</p>
+          <div class="katex-display">$$ \text{Paso 1: } x = 7 - 2y \qquad \text{Paso 2: } 3(7-2y) - y = 4 $$</div>
+          <div class="katex-display">$$ 21 - 6y - y = 4 \implies -7y = -17 \implies y = \frac{17}{7} \qquad x = 7 - 2\cdot\frac{17}{7} = \frac{15}{7} $$</div>
+          <p>Solución: $\left(\frac{15}{7}, \frac{17}{7}\right)$</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-bolt"></i> Método rápido: Criterios para elegir variable a despejar</strong>
+          <ul class="method-steps" style="margin-left:1.5rem">
+            <li><i class="fa-solid fa-circle-check"></i> Preferir variable con coeficiente 1 o -1 (evita fracciones).</li>
+            <li><i class="fa-solid fa-filter"></i> Elegir ecuación con menos términos para simplificar cálculos.</li>
+            <li><i class="fa-solid fa-calculator"></i> Si hay coeficientes fraccionarios, multiplicar primero para eliminar denominadores.</li>
+            <li><i class="fa-solid fa-rotate-left"></i> Verificar siempre la solución sustituyendo en ambas ecuaciones originales.</li>
+          </ul>
+        </div>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En algoritmos numéricos, la sustitución permite reducir dimensionalidad en sistemas grandes. En hojas de cálculo, reemplazar variables con referencias a celdas automatiza resolución iterativa. En modelado paramétrico, despejar una variable facilita el análisis de sensibilidad.</p>
+        </div>
+      </section>
+
+      <section id="subtema-6-3">
+        <h2><i class="fa-solid fa-equals"></i> 6.3 Método de igualación</h2>
+        <p class="intro">El método de igualación despeja la misma variable en ambas ecuaciones y luego iguala las expresiones resultantes, obteniendo una ecuación con una sola incógnita.</p>
+        <article>
+          <h3>Protocolo estructurado</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-arrow-up-right-dots"></i> <strong>Despejar la misma variable</strong> en ambas ecuaciones.</li>
+            <li><i class="fa-solid fa-equals"></i> <strong>Igualar las dos expresiones</strong> obtenidas.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Resolver la ecuación resultante</strong> para la segunda variable.</li>
+            <li><i class="fa-solid fa-rotate-left"></i> <strong>Sustituir el valor hallado</strong> en cualquiera de los despejes iniciales.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Verificar</strong> la solución en el sistema original.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo con transformación algebraica</h3>
+          <p>Resolver: $\begin{cases} 2x - 3y = 1 \\ 4x + y = 9 \end{cases}$</p>
+          <div class="katex-display">$$ \text{Despejar } x: \quad x = \frac{1+3y}{2} \quad \land \quad x = \frac{9-y}{4} $$</div>
+          <div class="katex-display">$$ \text{Igualar: } \frac{1+3y}{2} = \frac{9-y}{4} \implies 2(1+3y) = 9-y \implies 2+6y = 9-y \implies 7y = 7 \implies y = 1 $$</div>
+          <div class="katex-display">$$ \text{Sustituir: } x = \frac{1+3(1)}{2} = 2 \qquad \text{Solución: } (x,y) = (2,1) $$</div>
+        </article>
+        <article>
+          <h3>Transformación paso a paso</h3>
+          <p>Para $\frac{1+3y}{2} = \frac{9-y}{4}$:</p>
+          <ul>
+            <li>Multiplicar ambos lados por 4 (mcm de 2 y 4): $2(1+3y) = 9-y$</li>
+            <li>Aplicar distributiva: $2 + 6y = 9 - y$</li>
+            <li>Transponer términos: $6y + y = 9 - 2$</li>
+            <li>Agrupar: $7y = 7$</li>
+            <li>Despejar: $y = 1$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Comparativa de métodos (Chart.js)</h3>
+          <div class="chart-container"><canvas id="methodsChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Número estimado de operaciones algebraicas para sustitución vs igualación en un sistema típico.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En procesamiento de señales, la igualación de expresiones permite calibrar sensores mediante ecuaciones equivalentes. En algoritmos de optimización, igualar derivadas parciales encuentra puntos críticos. En diseño de circuitos, igualar tensiones o corrientes resuelve redes eléctricas básicas.</p>
+        </div>
+      </section>
+
+      <section id="subtema-6-4">
+        <h2><i class="fa-solid fa-minus"></i> 6.4 Método de reducción y problemas aplicados</h2>
+        <p class="intro">El método de reducción elimina una variable sumando o restando ecuaciones previamente multiplicadas por constantes. Es especialmente eficiente cuando los coeficientes ya están alineados.</p>
+        <article>
+          <h3>Protocolo de reducción</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-multiply"></i> <strong>Multiplicar ecuaciones</strong> por constantes para igualar coeficientes de una variable.</li>
+            <li><i class="fa-solid fa-plus-minus"></i> <strong>Sumar o restar ecuaciones</strong> para eliminar dicha variable.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Resolver la ecuación simple</strong> resultante.</li>
+            <li><i class="fa-solid fa-rotate-left"></i> <strong>Retrosustituir</strong> el valor hallado en una ecuación original.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Verificar</strong> la solución en ambas ecuaciones.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo resuelto</h3>
+          <p>Resolver: $\begin{cases} 3x + 2y = 12 \\ x - 2y = 4 \end{cases}$</p>
+          <div class="katex-display">$$ \text{Observar: coeficientes de } y \text{ son } +2 \text{ y } -2 \text{ (opuestos)} $$</div>
+          <div class="katex-display">$$ \text{Sumar ecuaciones: } (3x+2y) + (x-2y) = 12 + 4 \implies 4x = 16 \implies x = 4 $$</div>
+          <div class="katex-display">$$ \text{Sustituir en segunda ecuación: } 4 - 2y = 4 \implies -2y = 0 \implies y = 0 $$</div>
+          <p>Solución: $(x,y) = (4,0)$</p>
+        </article>
+        <article>
+          <h3>Modelado de problemas: flujo estructurado</h3>
+          <p><strong>1. Datos →</strong> Extraer información numérica y relaciones verbales del enunciado.</p>
+          <p><strong>2. Planteamiento →</strong> Asignar incógnitas ($x$, $y$) y traducir relaciones a ecuaciones lineales.</p>
+          <p><strong>3. Resolución →</strong> Aplicar método algebraico (sustitución, igualación o reducción).</p>
+          <p><strong>4. Validación →</strong> Comprobar que la solución tiene sentido contextual (valores positivos, unidades coherentes).</p>
+        </article>
+        <article>
+          <h3>Tipologías frecuentes de problemas</h3>
+          <ul>
+            <li><strong>Mezclas:</strong> Combinar componentes con distintas propiedades (concentración, precio).</li>
+            <li><strong>Repartos:</strong> Distribuir cantidades con condiciones de proporcionalidad o diferencia.</li>
+            <li><strong>Edades:</strong> Relaciones temporales entre edades de personas en distintos momentos.</li>
+            <li><strong>Geometría:</strong> Perímetros, áreas o ángulos con dos incógnitas relacionadas.</li>
+            <li><strong>Velocidades:</strong> Movimiento relativo, encuentros o persecuciones con dos móviles.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ejemplo de modelado completo</h3>
+          <p>"Dos números suman 15 y su diferencia es 3. Hallar los números."</p>
+          <div class="katex-display">$$ \text{Datos: } x+y=15, \quad x-y=3 \qquad \text{Planteamiento: } \begin{cases} x+y=15 \\ x-y=3 \end{cases} $$</div>
+          <div class="katex-display">$$ \text{Resolución (reducción): sumar ecuaciones } \implies 2x = 18 \implies x = 9 \implies y = 6 $$</div>
+          <div class="katex-display">$$ \text{Validación: } 9+6=15 ✓, \quad 9-6=3 ✓ \qquad \text{Solución: } 9 \text{ y } 6 $$</div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En química básica, el balance de masas en reacciones simples usa sistemas lineales. En estructuras, la distribución de cargas en vigas con dos apoyos se modela con ecuaciones simultáneas. En logística, planificar rutas con dos vehículos y restricciones de capacidad requiere resolver sistemas para optimizar tiempos y costes.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema6_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 6</a></p></footer>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    // Gráfico de intersección de rectas
+    function initIntersectionChart(dark) {
+      var ctx = document.getElementById('intersectionChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+
+      if (ctx.chart) {
+        ctx.chart.destroy();
+      }
+
+      // Puntos para las rectas
+      var labels = [];
+      var data1 = [];
+      var data2 = [];
+      for (var x = -1; x <= 5; x += 0.25) {
+        labels.push(x.toFixed(2));
+        data1.push(-2 * x + 5);
+        data2.push(x - 1);
+      }
+
+      // Punto de intersección (2,1) destacado
+      var intersectionPoint = labels.map(function(l) {
+        var xVal = parseFloat(l);
+        if (Math.abs(xVal - 2) < 0.001) {
+          return 1; // y = 1
+        }
+        return null;
+      });
+
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: labels,
+          datasets: [
+            {
+              label: 'y = -2x + 5',
+              data: data1,
+              borderColor: '#1a237e',
+              backgroundColor: 'rgba(26,35,126,0.1)',
+              fill: false,
+              tension: 0.3,
+              pointRadius: 0,
+              pointHoverRadius: 4
+            },
+            {
+              label: 'y = x - 1',
+              data: data2,
+              borderColor: '#3949ab',
+              backgroundColor: 'rgba(57,73,171,0.1)',
+              fill: false,
+              tension: 0.3,
+              pointRadius: 0,
+              pointHoverRadius: 4
+            },
+            {
+              label: 'Intersección (2,1)',
+              data: intersectionPoint,
+              borderColor: '#4caf50',
+              backgroundColor: '#4caf50',
+              pointRadius: 6,
+              pointHoverRadius: 8,
+              showLine: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              labels: { color: textColor }
+            },
+            title: {
+              display: true,
+              text: 'Intersección de rectas: solución del sistema',
+              color: textColor
+            }
+          },
+          scales: {
+            x: {
+              title: { display: true, text: 'x', color: textColor },
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            },
+            y: {
+              title: { display: true, text: 'y', color: textColor },
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+    }
+
+    // Gráfico de comparativa de métodos
+    function initMethodsChart(dark) {
+      var ctx = document.getElementById('methodsChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+
+      if (ctx.chart) {
+        ctx.chart.destroy();
+      }
+
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Sustitución', 'Igualación'],
+          datasets: [{
+            label: 'Operaciones estimadas',
+            data: [8, 7],
+            backgroundColor: ['#1a237e', '#3949ab'],
+            borderColor: dark ? '#fff' : '#000',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: 'Complejidad operativa por método',
+              color: textColor
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            },
+            x: {
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+    }
+
+    // Inicializar todo al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      var isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+
+      // Inicializar componentes
+      initKaTeX();
+      initIntersectionChart(isDark);
+      initMethodsChart(isDark);
+
+      // Configurar toggle de tema
+      var themeToggle = document.getElementById('theme-toggle');
+      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (icon && isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          var nowDark = document.body.classList.contains('dark-mode');
+          var themeIcon = themeToggle.querySelector('i');
+          if (themeIcon) {
+            themeIcon.className = nowDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          }
+          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+          // Reinicializar componentes sensibles al tema
+          initKaTeX();
+          initIntersectionChart(nowDark);
+          initMethodsChart(nowDark);
+        });
+      }
+
+      // Menú lateral responsivo
+      var menuToggle = document.getElementById('menu-toggle');
+      var sidebar = document.getElementById('sidebar');
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992 && sidebar) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+
+      // Scroll spy para navegación activa
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) {
+          var st = section.offsetTop - 100;
+          if (window.pageYOffset >= st) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

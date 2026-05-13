@@ -1,0 +1,508 @@
+<!-- Matematicas_2ESO_Tema9_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 9: Áreas y Volúmenes | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    .formula-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .formula-table th{background:var(--primary-light);color:#fff;padding:.75rem;text-align:left}
+    .formula-table td{padding:.75rem;border-bottom:1px solid var(--border)}
+    .formula-table tr:last-child td{border-bottom:none}
+    .volume-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+    .volume-table th{background:var(--primary-light);color:#fff;padding:.5rem;text-align:center}
+    .volume-table td{padding:.5rem;border:1px solid var(--border);text-align:center}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-cube"></i> <span>Tema 9: Áreas y Volúmenes</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-9-1" class="nav-link"><i class="fa-solid fa-1"></i> 9.1 Áreas compuestas</a></li>
+        <li><a href="#subtema-9-2" class="nav-link"><i class="fa-solid fa-2"></i> 9.2 Prismas y pirámides</a></li>
+        <li><a href="#subtema-9-3" class="nav-link"><i class="fa-solid fa-3"></i> 9.3 Cuerpos redondos</a></li>
+        <li><a href="#subtema-9-4" class="nav-link"><i class="fa-solid fa-4"></i> 9.4 Capacidad y unidades</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-9-1">
+        <h2><i class="fa-solid fa-shapes"></i> 9.1 Áreas de figuras compuestas y regulares</h2>
+        <p class="intro">El cálculo de áreas de figuras complejas se basa en descomponerlas en formas básicas cuyas fórmulas son conocidas, aplicando luego suma o resta según la configuración geométrica.</p>
+        <article>
+          <h3>Estrategia de descomposición</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-scissors"></i> <strong>Dividir:</strong> Identificar formas básicas (triángulos, rectángulos, trapecios, sectores circulares).</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Calcular:</strong> Aplicar fórmula de área a cada componente.</li>
+            <li><i class="fa-solid fa-plus-minus"></i> <strong>Combinar:</strong> Sumar áreas de componentes añadidos, restar áreas de huecos.</li>
+          </ol>
+          <div class="katex-display">$$ A_{\text{compuesta}} = A_{\text{rect}} + A_{\text{triáng}} - A_{\text{círculo}} $$</div>
+        </article>
+        <article>
+          <h3>Polígonos regulares: fórmula general</h3>
+          <p>Para cualquier polígono regular de $n$ lados:</p>
+          <div class="katex-display">$$ A = \frac{P \cdot a}{2} $$</div>
+          <p>Donde $P = n \cdot l$ es el perímetro y $a$ es la apotema (distancia del centro a un lado).</p>
+          <p><strong>Ejemplo hexágono:</strong></p>
+          <div class="katex-display">$$ A_{\text{hexágono}} = \frac{6l \cdot a}{2} = 3la $$</div>
+        </article>
+        <article>
+          <h3>Fórmulas de áreas básicas (tabla de referencia)</h3>
+          <table class="formula-table">
+            <thead><tr><th>Figura</th><th>Fórmula</th><th>Variables</th></tr></thead>
+            <tbody>
+              <tr><td>Rectángulo</td><td>$A = b \cdot h$</td><td>$b$=base, $h$=altura</td></tr>
+              <tr><td>Triángulo</td><td>$A = \frac{b \cdot h}{2}$</td><td>$b$=base, $h$=altura</td></tr>
+              <tr><td>Trapecio</td><td>$A = \frac{(B+b) \cdot h}{2}$</td><td>$B,b$=bases, $h$=altura</td></tr>
+              <tr><td>Círculo</td><td>$A = \pi r^2$</td><td>$r$=radio</td></tr>
+              <tr><td>Sector circular</td><td>$A = \frac{\pi r^2 \alpha}{360^\circ}$</td><td>$\alpha$=ángulo en grados</td></tr>
+              <tr><td>Polígono regular</td><td>$A = \frac{P \cdot a}{2}$</td><td>$P$=perímetro, $a$=apotema</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Contribución de componentes al área total (Chart.js)</h3>
+          <div class="chart-container"><canvas id="areaChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Descomposición de área compuesta: rectángulo + triángulo - círculo.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En arquitectura, el cálculo de superficies en planos permite estimar materiales de revestimiento. En fabricación, se optimiza el corte de láminas minimizando desperdicio. En diseño de interfaces, las áreas interactivas se dimensionan para garantizar usabilidad y accesibilidad.</p>
+        </div>
+      </section>
+
+      <section id="subtema-9-2">
+        <h2><i class="fa-solid fa-box"></i> 9.2 Volúmenes de prismas y pirámides</h2>
+        <p class="intro">El volumen mide la capacidad de un cuerpo tridimensional. Para prismas y pirámides, fórmulas directas permiten cálculos rápidos basados en el área de la base y la altura.</p>
+        <article>
+          <h3>Principio de Cavalieri</h3>
+          <p>Dos cuerpos con la misma altura tienen igual volumen si todas las secciones paralelas a la base tienen igual área. Esto justifica que la fórmula del prisma sea válida tanto para prismas rectos como oblicuos.</p>
+        </article>
+        <article>
+          <h3>Fórmulas fundamentales</h3>
+          <div class="katex-display">$$ \text{Prisma: } V = A_{\text{base}} \cdot h \qquad \text{Pirámide: } V = \frac{1}{3} A_{\text{base}} \cdot h $$</div>
+          <p><strong>Relación clave:</strong> Una pirámide tiene exactamente un tercio del volumen de un prisma con misma base y altura.</p>
+          <p><strong>Ejemplo prisma hexagonal:</strong></p>
+          <div class="katex-display">$$ A_{\text{base}} = \frac{3\sqrt{3}}{2}l^2 \implies V_{\text{prisma hex}} = \left(\frac{3\sqrt{3}}{2}l^2\right) \cdot h $$</div>
+        </article>
+        <article>
+          <h3>Protocolo de cálculo paso a paso</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-shapes"></i> <strong>Identificar base:</strong> Determinar forma geométrica de la base (triángulo, cuadrado, hexágono, etc.).</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Calcular A_base:</strong> Aplicar fórmula de área correspondiente.</li>
+            <li><i class="fa-solid fa-ruler-vertical"></i> <strong>Medir altura:</strong> Distancia perpendicular entre bases (prisma) o del vértice a la base (pirámide).</li>
+            <li><i class="fa-solid fa-code"></i> <strong>Aplicar fórmula:</strong> $V = A_{\text{base}} \cdot h$ o $V = \frac{1}{3} A_{\text{base}} \cdot h$.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Verificar unidades:</strong> Volumen en unidades cúbicas (cm³, m³, etc.).</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Comparativa prismas vs pirámides (Chart.js)</h3>
+          <div class="chart-container"><canvas id="prismPyramidChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Volúmenes de prismas y pirámides con mismas dimensiones base/altura: relación 3:1.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En logística, el cálculo de capacidad de contenedores optimiza carga y transporte. En ingeniería estructural, se dimensionan pilares y vigas modulares. En almacenamiento industrial, se planifica disposición de mercancías maximizando espacio disponible.</p>
+        </div>
+      </section>
+
+      <section id="subtema-9-3">
+        <h2><i class="fa-solid fa-circle"></i> 9.3 Volúmenes de cuerpos redondos</h2>
+        <p class="intro">Los cuerpos redondos (cilindro, cono, esfera) se generan por rotación de figuras planas. Sus fórmulas de volumen incorporan el número $\pi$ y relaciones geométricas fundamentales.</p>
+        <article>
+          <h3>Fórmulas de volúmenes redondos</h3>
+          <div class="katex-display">$$ \text{Cilindro: } V = \pi r^2 h \qquad \text{Cono: } V = \frac{1}{3} \pi r^2 h \qquad \text{Esfera: } V = \frac{4}{3} \pi r^3 $$</div>
+          <p><strong>Relaciones clave:</strong></p>
+          <ul>
+            <li>Cono vs Cilindro: mismo radio y altura → $V_{\text{cono}} = \frac{1}{3} V_{\text{cilindro}}$</li>
+            <li>Esfera vs Cilindro circunscrito: $V_{\text{esfera}} = \frac{2}{3} V_{\text{cilindro}}$ (Arquímedes)</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ejemplos numéricos</h3>
+          <p><strong>Cilindro:</strong> $r=3$ cm, $h=10$ cm</p>
+          <div class="katex-display">$$ V = \pi (3)^2 \cdot 10 = 90\pi \approx 282,74 \text{ cm}^3 $$</div>
+          <p><strong>Esfera:</strong> $r=5$ cm</p>
+          <div class="katex-display">$$ V = \frac{4}{3} \pi (5)^3 = \frac{500}{3}\pi \approx 523,60 \text{ cm}^3 $$</div>
+        </article>
+        <article>
+          <h3>Tabla comparativa de fórmulas</h3>
+          <table class="volume-table">
+            <thead><tr><th>Cuerpo</th><th>Fórmula</th><th>Ejemplo ($r=3$, $h=10$)</th><th>Unidades</th></tr></thead>
+            <tbody>
+              <tr><td>Cilindro</td><td>$\pi r^2 h$</td><td>$\pi \cdot 9 \cdot 10 = 90\pi \approx 282,74$</td><td>cm³</td></tr>
+              <tr><td>Cono</td><td>$\frac{1}{3}\pi r^2 h$</td><td>$\frac{1}{3} \cdot 90\pi = 30\pi \approx 94,25$</td><td>cm³</td></tr>
+              <tr><td>Esfera</td><td>$\frac{4}{3}\pi r^3$</td><td>$\frac{4}{3}\pi \cdot 27 = 36\pi \approx 113,10$</td><td>cm³</td></tr>
+              <tr><td>Tronco de cono</td><td>$\frac{1}{3}\pi h(R^2+Rr+r^2)$</td><td>$R=4,r=2,h=6 \implies 56\pi \approx 175,93$</td><td>cm³</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Evolución del volumen con el radio (Chart.js)</h3>
+          <div class="chart-container"><canvas id="roundBodiesChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Volumen vs radio para cilindro, cono y esfera con altura constante $h=10$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En ingeniería química, se diseñan tanques y reactores cilíndricos optimizando capacidad y resistencia. En fundición, se calcula volumen de material para moldes de piezas curvas. En astronomía, se modelan volúmenes de cuerpos celestes para estimar masa y densidad.</p>
+        </div>
+      </section>
+
+      <section id="subtema-9-4">
+        <h2><i class="fa-solid fa-flask"></i> 9.4 Problemas de capacidad y conversión de unidades</h2>
+        <p class="intro">La relación entre volumen geométrico y capacidad líquida es fundamental en aplicaciones prácticas. Dominar la escala métrica cúbica permite conversiones precisas entre unidades.</p>
+        <article>
+          <h3>Equivalencias volumen-capacidad</h3>
+          <div class="katex-display">$$ 1 \text{ dm}^3 = 1 \text{ L} \qquad 1 \text{ m}^3 = 1000 \text{ L} \qquad 1 \text{ cm}^3 = 1 \text{ mL} $$</div>
+          <p>Estas equivalencias permiten traducir directamente entre medidas geométricas y capacidades de líquidos.</p>
+        </article>
+        <article>
+          <h3>Escala métrica cúbica</h3>
+          <p>Entre unidades consecutivas de volumen, el factor de conversión es $1000 = 10^3$:</p>
+          <ul>
+            <li>$1 \text{ m}^3 = 1000 \text{ dm}^3$</li>
+            <li>$1 \text{ dm}^3 = 1000 \text{ cm}^3$</li>
+            <li>$1 \text{ cm}^3 = 1000 \text{ mm}^3$</li>
+          </ul>
+          <p><strong>Regla práctica:</strong> Cada salto en la escala multiplica/divide por $1000$.</p>
+        </article>
+        <article>
+          <h3>Protocolo de conversión</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Identificar:</strong> Unidad origen y unidad destino.</li>
+            <li><i class="fa-solid fa-list-ol"></i> <strong>Contar saltos:</strong> Determinar $n$ saltos en escala métrica cúbica.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Operar:</strong> Multiplicar por $1000^n$ (si baja en escala) o dividir (si sube).</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Verificar:</strong> Comprobar orden de magnitud del resultado.</li>
+          </ol>
+          <div class="katex-display">$$ 2,5 \text{ m}^3 = 2,5 \times 1000 = 2500 \text{ L} \qquad 450 \text{ mL} = 450 \text{ cm}^3 = 0,45 \text{ dm}^3 $$</div>
+        </article>
+        <article>
+          <h3>Equivalencias en escala logarítmica (Chart.js)</h3>
+          <div class="chart-container"><canvas id="capacityChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Equivalencias entre unidades de volumen y capacidad en escala logarítmica base 10.</p>
+        </article>
+        <article>
+          <h3>Flujo de resolución de problemas</h3>
+          <p><strong>Datos →</strong> Extraer medidas y unidades del enunciado.</p>
+          <p><strong>Identificar magnitud →</strong> Determinar si se trabaja con volumen geométrico o capacidad líquida.</p>
+          <p><strong>Convertir a unidad común →</strong> Aplicar protocolo de conversión si es necesario.</p>
+          <p><strong>Operar →</strong> Calcular volumen/capacidad con fórmula adecuada.</p>
+          <p><strong>Expresar resultado →</strong> Presentar en unidad solicitada con precisión adecuada.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En química básica, la dosificación de reactivos requiere conversiones precisas entre mL y cm³. En ingeniería civil, se calcula consumo de agua en m³ para dimensionar tuberías. En agricultura, se planifica riego convirtiendo volúmenes de depósito a litros por hectárea. En diseño de envases, se optimiza capacidad comercial equilibrando volumen útil y material de fabricación.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema9_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 9</a></p></footer>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    // Gráfico: Descomposición de área compuesta
+    function initAreaChart(dark) {
+      var ctx = document.getElementById('areaChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Rectángulo', 'Triángulo', '- Círculo', 'Total'],
+          datasets: [{
+            label: 'Área (cm²)',
+            data: [40, 15, -12, 43],
+            backgroundColor: ['#1a237e', '#3949ab', '#c62828', '#4caf50'],
+            borderColor: dark ? '#fff' : '#000',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Descomposición de área compuesta', color: textColor }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor } },
+            x: { ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // Gráfico: Comparativa prismas vs pirámides
+    function initPrismPyramidChart(dark) {
+      var ctx = document.getElementById('prismPyramidChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Prisma', 'Pirámide'],
+          datasets: [{
+            label: 'Volumen (cm³)',
+            data: [120, 40],
+            backgroundColor: ['#1a237e', '#3949ab'],
+            borderColor: dark ? '#fff' : '#000',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Relación 3:1 con misma base y altura', color: textColor }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor } },
+            x: { ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // Gráfico: Evolución del volumen con el radio (cuerpos redondos)
+    function initRoundBodiesChart(dark) {
+      var ctx = document.getElementById('roundBodiesChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var r = [1, 2, 3, 4, 5];
+      var h = 10;
+      var cyl = r.map(function(x) { return Math.PI * x * x * h; });
+      var cone = r.map(function(x) { return (Math.PI * x * x * h) / 3; });
+      var sph = r.map(function(x) { return (4/3) * Math.PI * Math.pow(x, 3); });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: r,
+          datasets: [
+            { label: 'Cilindro', data: cyl, borderColor: '#1a237e', fill: false, tension: 0.3 },
+            { label: 'Cono', data: cone, borderColor: '#3949ab', fill: false, tension: 0.3 },
+            { label: 'Esfera', data: sph, borderColor: '#5c6bc0', fill: false, tension: 0.3 }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Volumen vs radio (h=10 constante)', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Radio r', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Volumen (cm³)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico: Equivalencias volumen-capacidad (doble eje Y)
+    function initCapacityChart(dark) {
+      var ctx = document.getElementById('capacityChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var units = ['mm³', 'cm³', 'dm³', 'm³', 'dam³'];
+      var logVol = [-9, -6, -3, 0, 3]; // log10 de volumen en m³? Ajuste conceptual: usamos valores de ejemplo para representar escala log
+      var cap = [0.001, 1, 1000, 1000000, 1000000000]; // en mL? Solo para visualizar tendencia
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: units,
+          datasets: [
+            {
+              label: 'Volumen (log₁₀)',
+              data: logVol,
+              backgroundColor: '#1a237e',
+              yAxisID: 'y1'
+            },
+            {
+              label: 'Capacidad (mL)',
+              data: cap,
+              backgroundColor: '#3949ab',
+              yAxisID: 'y2'
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Equivalencias volumen-capacidad (escala log)', color: textColor }
+          },
+          scales: {
+            y1: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+              title: { display: true, text: 'log₁₀(Volumen)', color: textColor },
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            },
+            y2: {
+              type: 'logarithmic',
+              display: true,
+              position: 'right',
+              title: { display: true, text: 'Capacidad (mL)', color: textColor },
+              ticks: { color: textColor },
+              grid: { drawOnChartArea: false }
+            },
+            x: {
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            }
+          }
+        }
+      });
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      var isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      
+      // Renderizar KaTeX y gráficos
+      initKaTeX();
+      initAreaChart(isDark);
+      initPrismPyramidChart(isDark);
+      initRoundBodiesChart(isDark);
+      initCapacityChart(isDark);
+      
+      // Toggle de tema oscuro/claro
+      var themeToggle = document.getElementById('theme-toggle');
+      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (icon && isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          var nowDark = document.body.classList.contains('dark-mode');
+          var themeIcon = themeToggle.querySelector('i');
+          if (themeIcon) {
+            themeIcon.className = nowDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          }
+          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+          // Reinicializar componentes sensibles al tema
+          initKaTeX();
+          initAreaChart(nowDark);
+          initPrismPyramidChart(nowDark);
+          initRoundBodiesChart(nowDark);
+          initCapacityChart(nowDark);
+        });
+      }
+      
+      // Menú lateral responsivo
+      var menuToggle = document.getElementById('menu-toggle');
+      var sidebar = document.getElementById('sidebar');
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992 && sidebar) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+      
+      // Scroll spy para enlaces activos
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) {
+          var st = section.offsetTop - 100;
+          if (window.pageYOffset >= st) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

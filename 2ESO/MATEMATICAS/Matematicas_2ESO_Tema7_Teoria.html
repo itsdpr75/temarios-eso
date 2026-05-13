@@ -1,0 +1,504 @@
+<!-- Matematicas_2ESO_Tema7_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 7: Geometría Plana: Semejanza y Tales | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    .comparison-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .comparison-table th{background:var(--primary-light);color:#fff;padding:.75rem;text-align:left}
+    .comparison-table td{padding:.75rem;border-bottom:1px solid var(--border)}
+    .comparison-table tr:last-child td{border-bottom:none}
+    .trig-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+    .trig-table th{background:var(--primary-light);color:#fff;padding:.5rem;text-align:center}
+    .trig-table td{padding:.5rem;border:1px solid var(--border);text-align:center}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-ruler-combined"></i> <span>Tema 7: Geometría Plana: Semejanza y Tales</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-7-1" class="nav-link"><i class="fa-solid fa-1"></i> 7.1 Figuras semejantes</a></li>
+        <li><a href="#subtema-7-2" class="nav-link"><i class="fa-solid fa-2"></i> 7.2 Escalas y planos</a></li>
+        <li><a href="#subtema-7-3" class="nav-link"><i class="fa-solid fa-3"></i> 7.3 Teorema de Tales</a></li>
+        <li><a href="#subtema-7-4" class="nav-link"><i class="fa-solid fa-4"></i> 7.4 Razones trigonométricas</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-7-1">
+        <h2><i class="fa-solid fa-shapes"></i> 7.1 Figuras semejantes y razón de semejanza</h2>
+        <p class="intro">Dos figuras son semejantes cuando tienen la misma forma pero distinto tamaño. Esta relación fundamental permite escalar modelos, interpretar mapas y resolver problemas de proporcionalidad geométrica.</p>
+        <article>
+          <h3>Definición formal y propiedades</h3>
+          <p>Dos figuras planas son <strong>semejantes</strong> si cumplen:</p>
+          <ul>
+            <li><strong>Ángulos correspondientes iguales:</strong> $\angle A = \angle A'$, $\angle B = \angle B'$, etc.</li>
+            <li><strong>Lados correspondientes proporcionales:</strong> $\frac{AB}{A'B'} = \frac{BC}{B'C'} = \frac{CA}{C'A'} = k$</li>
+          </ul>
+          <p>La constante $k$ es la <strong>razón de semejanza</strong>:</p>
+          <div class="katex-display">$$ k = \frac{\text{lado imagen}}{\text{lado original}} $$</div>
+          <ul>
+            <li>Si $k > 1$: ampliación</li>
+            <li>Si $k < 1$: reducción</li>
+            <li>Si $k = 1$: congruencia (misma forma y tamaño)</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Proporcionalidad de perímetros y áreas</h3>
+          <table class="comparison-table">
+            <thead><tr><th>Magnitud</th><th>Relación con razón $k$</th><th>Ejemplo numérico ($k=2$)</th></tr></thead>
+            <tbody>
+              <tr><td>Longitud de lado</td><td>$L' = k \cdot L$</td><td>$L=3 \text{ cm} \implies L'=6 \text{ cm}$</td></tr>
+              <tr><td>Perímetro</td><td>$P' = k \cdot P$</td><td>$P=12 \text{ cm} \implies P'=24 \text{ cm}$</td></tr>
+              <tr><td>Área</td><td>$A' = k^2 \cdot A$</td><td>$A=9 \text{ cm}^2 \implies A'=36 \text{ cm}^2$</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:1rem"><strong>Nota:</strong> El área crece cuadráticamente con $k$, mientras que longitudes y perímetros crecen linealmente.</p>
+        </article>
+        <article>
+          <h3>Crecimiento de área vs perímetro (Chart.js)</h3>
+          <div class="chart-container"><canvas id="scalingChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Comparativa: el perímetro crece linealmente con $k$, mientras el área crece como $k^2$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En modelado 3D, la semejanza permite escalar objetos manteniendo proporciones. En diseño vectorial, los logotipos se redimensionan sin distorsión usando razón de semejanza. En fotogrametría, mapas topográficos usan semejanza para representar territorios a escala reducida.</p>
+        </div>
+      </section>
+
+      <section id="subtema-7-2">
+        <h2><i class="fa-solid fa-map"></i> 7.2 Escalas y planos</h2>
+        <p class="intro">Las escalas permiten representar objetos reales de gran tamaño en formatos manejables (planos, mapas), manteniendo proporcionalidad exacta entre medidas del dibujo y medidas reales.</p>
+        <article>
+          <h3>Definición y notación de escala</h3>
+          <p>La <strong>escala numérica</strong> es la razón entre medida en el plano y medida real:</p>
+          <div class="katex-display">$$ E = \frac{\text{medida plano}}{\text{medida real}} $$</div>
+          <ul>
+            <li><strong>Reducción:</strong> $1:k$ (ej: $1:25000$ → 1 cm en plano = 25000 cm = 250 m reales)</li>
+            <li><strong>Ampliación:</strong> $k:1$ (ej: $10:1$ → 10 cm en plano = 1 cm real)</li>
+            <li><strong>Tamaño natural:</strong> $1:1$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Conversión bidireccional: pasos estructurados</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-code"></i> <strong>Identificar escala:</strong> Leer notación $1:k$ o $k:1$.</li>
+            <li><i class="fa-solid fa-ruler"></i> <strong>Unificar unidades:</strong> Convertir todas las medidas a misma unidad (cm, m, etc.).</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Aplicar fórmula:</strong>
+              <ul style="margin-top:.5rem;margin-left:1.5rem">
+                <li>Plano → Real: $\text{Real} = \frac{\text{Plano}}{E}$</li>
+                <li>Real → Plano: $\text{Plano} = \text{Real} \cdot E$</li>
+              </ul>
+            </li>
+            <li><i class="fa-solid fa-check"></i> <strong>Verificar:</strong> Comprobar coherencia de orden de magnitud.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo de conversión</h3>
+          <p>Escala $E = 1:25000$. Si en plano una distancia mide $4{,}2$ cm:</p>
+          <div class="katex-display">$$ \text{Real} = \frac{4{,}2 \text{ cm}}{1/25000} = 4{,}2 \times 25000 \text{ cm} = 105000 \text{ cm} = 1050 \text{ m} $$</div>
+        </article>
+        <article>
+          <h3>Relación plano-real para distintas escalas (Chart.js)</h3>
+          <div class="chart-container"><canvas id="scaleChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Gráfico de líneas: medida real vs medida en plano para escalas $1:10000$, $1:25000$, $1:50000$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En arquitectura, los planos a escala $1:100$ permiten diseñar edificios completos en formato A3. En navegación, mapas topográficos $1:25000$ facilitan orientación en senderismo. En ingeniería, maquetas a escala reducida permiten probar diseños antes de construcción a tamaño real.</p>
+        </div>
+      </section>
+
+      <section id="subtema-7-3">
+        <h2><i class="fa-solid fa-vector-square"></i> 7.3 Teorema de Tales y aplicaciones</h2>
+        <p class="intro">El teorema de Tales establece una relación de proporcionalidad fundamental cuando rectas paralelas cortan a dos transversales. Es herramienta esencial para medir alturas inaccesibles y resolver problemas de perspectiva.</p>
+        <article>
+          <h3>Enunciado y forma algebraica</h3>
+          <p>Si dos rectas $r$ y $s$ son cortadas por un sistema de rectas paralelas, los segmentos determinados en $r$ son proporcionales a los correspondientes en $s$:</p>
+          <div class="katex-display">$$ \frac{AB}{A'B'} = \frac{BC}{B'C'} = \frac{AC}{A'C'} $$</div>
+          <p>Donde $A,B,C$ están en una transversal y $A',B',C'$ en la otra, con $AA' \parallel BB' \parallel CC'$.</p>
+        </article>
+        <article>
+          <h3>Aplicación clásica: cálculo de alturas inaccesibles</h3>
+          <p>Para medir altura $h$ de un edificio usando sombra:</p>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Identificar paralelas:</strong> Rayos solares son paralelos.</li>
+            <li><i class="fa-solid fa-ruler"></i> <strong>Medir sombras:</strong> $s$ (objeto) y $S$ (referencia de altura conocida $H$).</li>
+            <li><i class="fa-solid fa-equals"></i> <strong>Establecer proporción:</strong> $\frac{h}{s} = \frac{H}{S}$</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Despejar incógnita:</strong> $h = s \cdot \frac{H}{S}$</li>
+          </ol>
+          <div class="katex-display">$$ \text{Ejemplo: } H=1{,}8\text{ m}, S=2{,}4\text{ m}, s=12\text{ m} \implies h = 12 \cdot \frac{1{,}8}{2{,}4} = 9 \text{ m} $$</div>
+        </article>
+        <article>
+          <h3>Relación lineal en segmentos de Tales (Chart.js)</h3>
+          <div class="chart-container"><canvas id="thalesChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Gráfico de dispersión: longitudes de segmentos en una transversal vs correspondientes en otra, mostrando proporcionalidad directa.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En topografía básica, Tales permite medir distancias horizontales inaccesibles usando triangulación. En construcción, se usa para alinear estructuras y verificar verticalidad. En visión por computadora, la proporcionalidad de Tales fundamenta algoritmos de estimación de profundidad a partir de imágenes.</p>
+        </div>
+      </section>
+
+      <section id="subtema-7-4">
+        <h2><i class="fa-solid fa-triangle"></i> 7.4 Razones trigonométricas en triángulos rectángulos</h2>
+        <p class="intro">Las razones trigonométricas relacionan ángulos agudos con cocientes de lados en triángulos rectángulos. Son herramientas esenciales para resolver problemas de medición indirecta en ingeniería, navegación y física.</p>
+        <article>
+          <h3>Definiciones fundamentales</h3>
+          <p>En triángulo rectángulo con ángulo agudo $\alpha$:</p>
+          <div class="katex-display">$$ \sin \alpha = \frac{\text{cateto opuesto}}{\text{hipotenusa}} \qquad \cos \alpha = \frac{\text{cateto adyacente}}{\text{hipotenusa}} \qquad \tan \alpha = \frac{\text{cateto opuesto}}{\text{cateto adyacente}} $$</div>
+          <p><strong>Relación fundamental:</strong> $\sin^2 \alpha + \cos^2 \alpha = 1$</p>
+          <p><strong>Tangente como cociente:</strong> $\tan \alpha = \frac{\sin \alpha}{\cos \alpha}$</p>
+        </article>
+        <article>
+          <h3>Valores notables y fórmulas de despeje</h3>
+          <table class="trig-table">
+            <thead><tr><th>Ángulo</th><th>$\sin$</th><th>$\cos$</th><th>$\tan$</th></tr></thead>
+            <tbody>
+              <tr><td>$30^\circ$</td><td>$\frac{1}{2}$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{\sqrt{3}}{3}$</td></tr>
+              <tr><td>$45^\circ$</td><td>$\frac{\sqrt{2}}{2}$</td><td>$\frac{\sqrt{2}}{2}$</td><td>$1$</td></tr>
+              <tr><td>$60^\circ$</td><td>$\frac{\sqrt{3}}{2}$</td><td>$\frac{1}{2}$</td><td>$\sqrt{3}$</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:1rem"><strong>Fórmulas de despeje para calcular lados:</strong></p>
+          <ul>
+            <li>Cateto opuesto: $co = h \cdot \sin \alpha = ca \cdot \tan \alpha$</li>
+            <li>Cateto adyacente: $ca = h \cdot \cos \alpha = \frac{co}{\tan \alpha}$</li>
+            <li>Hipotenusa: $h = \frac{co}{\sin \alpha} = \frac{ca}{\cos \alpha}$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Variación de seno y coseno (Chart.js)</h3>
+          <div class="chart-container"><canvas id="trigChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Gráfico de líneas: variación de $\sin \alpha$ y $\cos \alpha$ para $\alpha \in [0^\circ, 90^\circ]$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En ingeniería civil, las razones trigonométricas calculan pendientes de carreteras y rampas accesibles. En navegación, determinan rumbos y distancias a partir de ángulos de observación. En física básica, descomponen vectores de fuerza o velocidad en componentes horizontal y vertical.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema7_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 7</a></p></footer>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    // Gráfico: Crecimiento de perímetro vs área
+    function initScalingChart(dark) {
+      var ctx = document.getElementById('scalingChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var k = [1, 1.5, 2, 2.5, 3];
+      var perimeter = k.map(function(x) { return x * 12; });
+      var area = k.map(function(x) { return x * x * 9; });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: k,
+          datasets: [
+            {
+              label: 'Perímetro (crecimiento lineal)',
+              data: perimeter,
+              borderColor: '#1a237e',
+              backgroundColor: 'rgba(26,35,126,0.1)',
+              fill: false,
+              tension: 0.3
+            },
+            {
+              label: 'Área (crecimiento cuadrático)',
+              data: area,
+              borderColor: '#3949ab',
+              backgroundColor: 'rgba(57,73,171,0.1)',
+              fill: false,
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Crecimiento de perímetro vs área con razón k', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Razón de semejanza k', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Valor (unidades)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico: Relación plano-real para distintas escalas
+    function initScaleChart(dark) {
+      var ctx = document.getElementById('scaleChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var plano = [1, 2, 3, 4, 5];
+      var real1 = plano.map(function(x) { return x * 100; });
+      var real2 = plano.map(function(x) { return x * 250; });
+      var real3 = plano.map(function(x) { return x * 500; });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: plano,
+          datasets: [
+            { label: 'Escala 1:10000', data: real1, borderColor: '#1a237e', fill: false, tension: 0.3 },
+            { label: 'Escala 1:25000', data: real2, borderColor: '#3949ab', fill: false, tension: 0.3 },
+            { label: 'Escala 1:50000', data: real3, borderColor: '#5c6bc0', fill: false, tension: 0.3 }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Medida real (m) vs medida en plano (cm)', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Medida en plano (cm)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Medida real (m)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico: Proporcionalidad en teorema de Tales
+    function initThalesChart(dark) {
+      var ctx = document.getElementById('thalesChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var x = [2, 4, 6, 8, 10];
+      var y = x.map(function(val) { return 1.5 * val; });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Segmentos proporcionales',
+              data: x.map(function(xi, i) { return { x: xi, y: y[i] }; }),
+              borderColor: '#1a237e',
+              backgroundColor: 'rgba(26,35,126,0.5)',
+              pointRadius: 5
+            },
+            {
+              label: 'Recta de proporcionalidad',
+              data: [{ x: 0, y: 0 }, { x: 10, y: 15 }],
+              borderColor: '#4caf50',
+              borderDash: [5, 5],
+              pointRadius: 0,
+              showLine: true
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Proporcionalidad en teorema de Tales', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Segmento en recta 1', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Segmento correspondiente en recta 2', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico: Variación de seno y coseno
+    function initTrigChart(dark) {
+      var ctx = document.getElementById('trigChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var angles = [0, 15, 30, 45, 60, 75, 90];
+      var sin = angles.map(function(a) { return Math.sin(a * Math.PI / 180); });
+      var cos = angles.map(function(a) { return Math.cos(a * Math.PI / 180); });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: angles,
+          datasets: [
+            {
+              label: 'sin(α)',
+              data: sin,
+              borderColor: '#1a237e',
+              backgroundColor: 'rgba(26,35,126,0.1)',
+              fill: false,
+              tension: 0.3
+            },
+            {
+              label: 'cos(α)',
+              data: cos,
+              borderColor: '#3949ab',
+              backgroundColor: 'rgba(57,73,171,0.1)',
+              fill: false,
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Variación de sin y cos en [0°, 90°]', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Ángulo α (grados)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Valor de la razón', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, min: 0, max: 1 }
+          }
+        }
+      });
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      var isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      
+      // Renderizar KaTeX y gráficos
+      initKaTeX();
+      initScalingChart(isDark);
+      initScaleChart(isDark);
+      initThalesChart(isDark);
+      initTrigChart(isDark);
+      
+      // Toggle de tema oscuro/claro
+      var themeToggle = document.getElementById('theme-toggle');
+      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (icon && isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          var nowDark = document.body.classList.contains('dark-mode');
+          var themeIcon = themeToggle.querySelector('i');
+          if (themeIcon) {
+            themeIcon.className = nowDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          }
+          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+          // Reinicializar componentes sensibles al tema
+          initKaTeX();
+          initScalingChart(nowDark);
+          initScaleChart(nowDark);
+          initThalesChart(nowDark);
+          initTrigChart(nowDark);
+        });
+      }
+      
+      // Menú lateral responsivo
+      var menuToggle = document.getElementById('menu-toggle');
+      var sidebar = document.getElementById('sidebar');
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992 && sidebar) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+      
+      // Scroll spy para enlaces activos
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) {
+          var st = section.offsetTop - 100;
+          if (window.pageYOffset >= st) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!-- Matematicas_2ESO_Tema10_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 10: Funciones: Introducción | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    .restriction-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .restriction-table th{background:var(--primary-light);color:#fff;padding:.75rem;text-align:left}
+    .restriction-table td{padding:.75rem;border-bottom:1px solid var(--border)}
+    .restriction-table tr:last-child td{border-bottom:none}
+    .function-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+    .function-table th{background:var(--primary-light);color:#fff;padding:.5rem;text-align:center}
+    .function-table td{padding:.5rem;border:1px solid var(--border);text-align:center}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-chart-simple"></i> <span>Tema 10: Funciones: Introducción</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-10-1" class="nav-link"><i class="fa-solid fa-1"></i> 10.1 Concepto y dominio</a></li>
+        <li><a href="#subtema-10-2" class="nav-link"><i class="fa-solid fa-2"></i> 10.2 Representación cartesiana</a></li>
+        <li><a href="#subtema-10-3" class="nav-link"><i class="fa-solid fa-3"></i> 10.3 Monotonía y extremos</a></li>
+        <li><a href="#subtema-10-4" class="nav-link"><i class="fa-solid fa-4"></i> 10.4 Tipos básicos</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-10-1">
+        <h2><i class="fa-solid fa-function"></i> 10.1 Concepto de función, dominio y recorrido</h2>
+        <p class="intro">Una función es una relación matemática que asigna a cada valor de una variable independiente un único valor de una variable dependiente, modelando relaciones causa-efecto en múltiples contextos.</p>
+        <article>
+          <h3>Definición formal y notación</h3>
+          <p>Una <strong>función</strong> $f$ es una regla que asigna a cada elemento $x$ de un conjunto inicial (dominio) un único elemento $y$ de un conjunto final (recorrido):</p>
+          <div class="katex-display">$$ y = f(x) $$</div>
+          <ul>
+            <li><strong>Variable independiente:</strong> $x$ (entrada, causa)</li>
+            <li><strong>Variable dependiente:</strong> $y$ (salida, efecto)</li>
+            <li><strong>Dominio:</strong> $Dom(f) = \{x \in \mathbb{R} : \exists f(x)\}$</li>
+            <li><strong>Recorrido/Imagen:</strong> $Im(f) = \{y \in \mathbb{R} : y = f(x) \text{ para algún } x\}$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Restricciones frecuentes en el dominio</h3>
+          <table class="restriction-table">
+            <thead><tr><th>Expresión</th><th>Condición</th><th>Dominio resultante</th></tr></thead>
+            <tbody>
+              <tr><td>Denominador: $\frac{1}{g(x)}$</td><td>$g(x) \neq 0$</td><td>$\mathbb{R} \setminus \{x : g(x)=0\}$</td></tr>
+              <tr><td>Raíz par: $\sqrt{g(x)}$</td><td>$g(x) \geq 0$</td><td>$\{x : g(x) \geq 0\}$</td></tr>
+              <tr><td>Logaritmo: $\log(g(x))$</td><td>$g(x) > 0$</td><td>$\{x : g(x) > 0\}$</td></tr>
+              <tr><td>Polinomio: $a_nx^n + \dots + a_0$</td><td>Ninguna</td><td>$\mathbb{R}$</td></tr>
+            </tbody>
+          </table>
+          <p style="margin-top:1rem"><strong>Ejemplo:</strong> $f(x) = \sqrt{x-2} \implies x-2 \geq 0 \implies Dom(f) = [2, \infty)$</p>
+        </article>
+        <article>
+          <h3>Dominio visualizado (Chart.js)</h3>
+          <div class="chart-container"><canvas id="domainChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Puntos válidos (azul) vs inválidos (rojo) para $f(x) = \sqrt{x-2}$, ilustrando el dominio $[2, \infty)$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En programación, el dominio define los valores de entrada válidos para una función, previniendo errores de ejecución. En ingeniería, determina rangos operativos seguros para variables físicas. En modelado científico, establece límites realistas para relaciones causa-efecto observadas experimentalmente.</p>
+        </div>
+      </section>
+
+      <section id="subtema-10-2">
+        <h2><i class="fa-solid fa-diagram-project"></i> 10.2 Representación en ejes cartesianos</h2>
+        <p class="intro">La representación gráfica de funciones en el plano cartesiano permite visualizar relaciones entre variables, identificar patrones y analizar comportamiento de forma intuitiva.</p>
+        <article>
+          <h3>Sistema de coordenadas cartesianas</h3>
+          <ul>
+            <li><strong>Eje X (abscisas):</strong> Horizontal, representa variable independiente $x$.</li>
+            <li><strong>Eje Y (ordenadas):</strong> Vertical, representa variable dependiente $y$.</li>
+            <li><strong>Origen:</strong> Punto $(0,0)$ donde se cruzan los ejes.</li>
+            <li><strong>Cuadrantes:</strong> Cuatro regiones definidas por signos de $(x,y)$.</li>
+          </ul>
+          <p>Cada punto del plano corresponde a un par ordenado $P(x,y) \in \mathbb{R}^2$.</p>
+        </article>
+        <article>
+          <h3>Procedimiento de representación paso a paso</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-table"></i> <strong>Construir tabla de valores:</strong> Seleccionar valores de $x$ en el dominio.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Calcular imágenes:</strong> Evaluar $y = f(x)$ para cada $x$ seleccionado.</li>
+            <li><i class="fa-solid fa-location-dot"></i> <strong>Localizar puntos:</strong> Marcar $(x, f(x))$ en el plano cartesiano.</li>
+            <li><i class="fa-solid fa-pen-to-square"></i> <strong>Unir puntos:</strong> Si la función es continua, trazar curva suave; si es discreta, mantener puntos separados.</li>
+            <li><i class="fa-solid fa-label"></i> <strong>Etiquetar:</strong> Añadir ejes, escala, título y leyenda si es necesario.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo: $f(x) = x^2$</h3>
+          <p>Tabla de valores:</p>
+          <code style="display:block;background:var(--bg-card);padding:1rem;border-radius:6px;margin:1rem 0;font-family:monospace;font-size:.9rem">
+x | -2 | -1 | 0 | 1 | 2<br>
+f(x) | 4 | 1 | 0 | 1 | 4
+          </code>
+          <p>Puntos a representar: $\{(-2,4), (-1,1), (0,0), (1,1), (2,4)\}$</p>
+        </article>
+        <article>
+          <h3>Representación gráfica (Chart.js)</h3>
+          <div class="chart-container"><canvas id="plotChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Gráfica de $f(x) = x^2$ con puntos discretos y curva continua, mostrando transición discreto → continuo.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En dashboards de análisis de datos, la representación cartesiana visualiza tendencias y correlaciones. En simuladores de física, traza trayectorias de proyectiles. En procesamiento de señales, muestra evolución temporal de variables medidas por sensores.</p>
+        </div>
+      </section>
+
+      <section id="subtema-10-3">
+        <h2><i class="fa-solid fa-chart-line"></i> 10.3 Crecimiento, decrecimiento y extremos</h2>
+        <p class="intro">El estudio de la monotonía y los extremos de una función permite identificar tendencias, puntos críticos y comportamiento global, esencial para optimización y análisis predictivo.</p>
+        <article>
+          <h3>Definiciones de monotonía</h3>
+          <ul>
+            <li><strong>Creciente:</strong> $x_1 &lt; x_2 \implies f(x_1) &lt; f(x_2)$. La gráfica "sube" al avanzar en $x$.</li>
+            <li><strong>Decreciente:</strong> $x_1 &lt; x_2 \implies f(x_1) &gt; f(x_2)$. La gráfica "baja" al avanzar en $x$.</li>
+            <li><strong>Constante:</strong> $x_1 &lt; x_2 \implies f(x_1) = f(x_2)$. La gráfica es horizontal.</li>
+          </ul>
+          <p><strong>Intervalos de monotonía:</strong> Se expresan mediante intervalos abiertos $(a,b)$ o cerrados $[a,b]$ según continuidad en extremos.</p>
+        </article>
+        <article>
+          <h3>Máximos y mínimos</h3>
+          <ul>
+            <li><strong>Máximo relativo:</strong> Punto $(c, f(c))$ donde $f(c) \geq f(x)$ para $x$ en un entorno de $c$.</li>
+            <li><strong>Mínimo relativo:</strong> Punto $(c, f(c))$ donde $f(c) \leq f(x)$ para $x$ en un entorno de $c$.</li>
+            <li><strong>Máximo absoluto:</strong> Mayor valor de $Im(f)$ en todo el dominio.</li>
+            <li><strong>Mínimo absoluto:</strong> Menor valor de $Im(f)$ en todo el dominio.</li>
+          </ul>
+          <p><strong>Cambio de tendencia:</strong> Un máximo relativo ocurre cuando $f$ pasa de creciente a decreciente; un mínimo relativo, de decreciente a creciente.</p>
+        </article>
+        <article>
+          <h3>Clasificación visual de comportamiento</h3>
+          <table class="function-table">
+            <thead><tr><th>Intervalo</th><th>Comportamiento</th><th>Signo pendiente</th><th>Ejemplo visual</th></tr></thead>
+            <tbody>
+              <tr><td>$(a,b)$</td><td>Creciente</td><td>$m > 0$</td><td>↗</td></tr>
+              <tr><td>$(b,c)$</td><td>Decreciente</td><td>$m &lt; 0$</td><td>↘</td></tr>
+              <tr><td>$(c,d)$</td><td>Constante</td><td>$m = 0$</td><td>→</td></tr>
+              <tr><td>$x = b$</td><td>Máximo relativo</td><td>Cambio + → -</td><td>∧</td></tr>
+              <tr><td>$x = c$</td><td>Mínimo relativo</td><td>Cambio - → +</td><td>∨</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Monotonía y extremos visualizados (Chart.js)</h3>
+          <div class="chart-container"><canvas id="monotonicityChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Gráfica con el máximo relativo marcado; la función crece a la izquierda y decrece a la derecha.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En optimización de recursos, identificar máximos/minimos permite encontrar puntos de eficiencia óptima. En análisis económico, detectar tendencias crecientes/decrecientes ayuda a predecir mercados. En control de procesos industriales, monitorizar cambios de monotonía alerta sobre desviaciones del comportamiento esperado.</p>
+        </div>
+      </section>
+
+      <section id="subtema-10-4">
+        <h2><i class="fa-solid fa-sliders"></i> 10.4 Tipos básicos: constantes, lineales, afines</h2>
+        <p class="intro">Las funciones elementales de primer grado son herramientas fundamentales para modelar relaciones lineales en ciencia, ingeniería y vida cotidiana.</p>
+        <article>
+          <h3>Función constante</h3>
+          <div class="katex-display">$$ y = k \qquad \text{con } k \in \mathbb{R} $$</div>
+          <ul>
+            <li><strong>Gráfica:</strong> Recta horizontal.</li>
+            <li><strong>Pendiente:</strong> $m = 0$.</li>
+            <li><strong>Dominio:</strong> $\mathbb{R}$.</li>
+            <li><strong>Recorrido:</strong> $\{k\}$.</li>
+            <li><strong>Corte eje Y:</strong> $(0, k)$.</li>
+          </ul>
+          <p><strong>Ejemplo:</strong> Tarifa fija de servicio: $C(t) = 15$ € independientemente del tiempo $t$.</p>
+        </article>
+        <article>
+          <h3>Función lineal</h3>
+          <div class="katex-display">$$ y = mx \qquad \text{con } m \in \mathbb{R} $$</div>
+          <ul>
+            <li><strong>Gráfica:</strong> Recta que pasa por el origen $(0,0)$.</li>
+            <li><strong>Pendiente:</strong> $m = \frac{\Delta y}{\Delta x} = \frac{y_2-y_1}{x_2-x_1}$.</li>
+            <li><strong>Monotonía:</strong> Creciente si $m > 0$, decreciente si $m &lt; 0$.</li>
+            <li><strong>Dominio y recorrido:</strong> $\mathbb{R}$.</li>
+          </ul>
+          <p><strong>Ejemplo:</strong> Coste proporcional a cantidad: $C(q) = 2.5q$ € (2.5 €/unidad).</p>
+        </article>
+        <article>
+          <h3>Función afín</h3>
+          <div class="katex-display">$$ y = mx + n \qquad \text{con } m,n \in \mathbb{R} $$</div>
+          <ul>
+            <li><strong>Gráfica:</strong> Recta que no pasa por el origen (salvo $n=0$).</li>
+            <li><strong>Pendiente:</strong> $m$ (igual que en lineal).</li>
+            <li><strong>Ordenada en origen:</strong> $n = f(0)$, punto de corte con eje Y: $(0,n)$.</li>
+            <li><strong>Monotonía:</strong> Igual que lineal, determinada por signo de $m$.</li>
+          </ul>
+          <p><strong>Ejemplo:</strong> Tarifa con coste fijo + variable: $C(t) = 10 + 1.5t$ € (10 € fijos + 1.5 €/hora).</p>
+        </article>
+        <article>
+          <h3>Tabla comparativa de tipos básicos</h3>
+          <table class="function-table">
+            <thead><tr><th>Tipo</th><th>Fórmula</th><th>Pendiente</th><th>Corte eje Y</th><th>Gráfica</th></tr></thead>
+            <tbody>
+              <tr><td>Constante</td><td>$y = k$</td><td>$0$</td><td>$(0,k)$</td><td>Horizontal</td></tr>
+              <tr><td>Lineal</td><td>$y = mx$</td><td>$m$</td><td>$(0,0)$</td><td>Por origen</td></tr>
+              <tr><td>Afín</td><td>$y = mx + n$</td><td>$m$</td><td>$(0,n)$</td><td>Desplazada</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Comparación visual de tipos (Chart.js)</h3>
+          <div class="chart-container"><canvas id="typesChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Superposición de funciones constante ($y=3$), lineal ($y=2x$) y afín ($y=2x+1$) para comparación directa.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En modelado de tarifas, las funciones afines representan costes con componente fijo y variable. En calibración de sensores, las funciones lineales ajustan lecturas brutas a valores físicos reales. En predicción de tendencias simples, la pendiente $m$ cuantifica tasa de cambio constante entre variables observadas.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema10_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 10</a></p></footer>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    // Gráfico de dominio de √(x-2)
+    function initDomainChart(dark) {
+      var ctx = document.getElementById('domainChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var validX = [], validY = [], invalidX = [], invalidY = [];
+      var yOff = 0;
+      for (var x = -2; x <= 6; x += 0.5) {
+        if (x >= 2) {
+          validX.push(x);
+          validY.push(Math.sqrt(x - 2));
+        } else {
+          invalidX.push(x);
+          // Pequeño desplazamiento vertical para visualizar puntos inválidos sin que se superpongan
+          invalidY.push(yOff * 0.15);
+          yOff++;
+        }
+      }
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Puntos válidos (Dom)',
+              data: validX.map(function(xi, i) { return { x: xi, y: validY[i] }; }),
+              backgroundColor: '#1a237e',
+              pointRadius: 5
+            },
+            {
+              label: 'Puntos inválidos',
+              data: invalidX.map(function(xi, i) { return { x: xi, y: invalidY[i] }; }),
+              backgroundColor: '#c62828',
+              pointRadius: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Dominio de f(x) = √(x-2): [2, ∞)', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'x', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'f(x)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico de representación de f(x)=x² (puntos y curva)
+    function initPlotChart(dark) {
+      var ctx = document.getElementById('plotChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      // Puntos discretos
+      var discreteX = [-2, -1, 0, 1, 2];
+      var discreteY = [4, 1, 0, 1, 4];
+      // Curva continua (más puntos)
+      var curveData = [];
+      for (var x = -2; x <= 2; x += 0.1) {
+        curveData.push({ x: x, y: x * x });
+      }
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Puntos discretos',
+              data: discreteX.map(function(xi, i) { return { x: xi, y: discreteY[i] }; }),
+              borderColor: '#1a237e',
+              backgroundColor: '#1a237e',
+              pointRadius: 6,
+              showLine: false
+            },
+            {
+              label: 'Curva continua',
+              data: curveData,
+              borderColor: '#3949ab',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Representación de f(x) = x²', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'x', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'f(x)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // Gráfico de monotonía para f(x) = -x² + 2 (máximo en x=0)
+    function initMonotonicityChart(dark) {
+      var ctx = document.getElementById('monotonicityChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var curvePoints = [];
+      for (var x = -3; x <= 3; x += 0.1) {
+        curvePoints.push({ x: x, y: -x * x + 2 });
+      }
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'f(x) = -x² + 2',
+              data: curvePoints,
+              borderColor: '#1a237e',
+              borderWidth: 2,
+              pointRadius: 0,
+              tension: 0.3
+            },
+            {
+              label: 'Máximo relativo (0,2)',
+              data: [{ x: 0, y: 2 }],
+              backgroundColor: '#4caf50',
+              borderColor: '#4caf50',
+              pointRadius: 8,
+              pointStyle: 'circle',
+              showLine: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Monotonía: creciente hasta x=0, luego decreciente', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'x', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'f(x)', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // Gráfico comparativo de funciones: constante, lineal, afín
+    function initTypesChart(dark) {
+      var ctx = document.getElementById('typesChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var xValues = [-2, -1, 0, 1, 2];
+      var constData = xValues.map(function(x) { return { x: x, y: 3 }; });
+      var linearData = xValues.map(function(x) { return { x: x, y: 2 * x }; });
+      var affineData = xValues.map(function(x) { return { x: x, y: 2 * x + 1 }; });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'Constante: y=3',
+              data: constData,
+              borderColor: '#1a237e',
+              borderDash: [5, 5],
+              pointRadius: 3
+            },
+            {
+              label: 'Lineal: y=2x',
+              data: linearData,
+              borderColor: '#3949ab',
+              pointRadius: 3
+            },
+            {
+              label: 'Afín: y=2x+1',
+              data: affineData,
+              borderColor: '#5c6bc0',
+              pointRadius: 3
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Comparación: constante, lineal, afín', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'x', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'y', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: false }
+          }
+        }
+      });
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      var isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      
+      // Renderizar KaTeX y gráficos
+      initKaTeX();
+      initDomainChart(isDark);
+      initPlotChart(isDark);
+      initMonotonicityChart(isDark);
+      initTypesChart(isDark);
+      
+      // Toggle de tema oscuro/claro
+      var themeToggle = document.getElementById('theme-toggle');
+      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (icon && isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          var nowDark = document.body.classList.contains('dark-mode');
+          var themeIcon = themeToggle.querySelector('i');
+          if (themeIcon) {
+            themeIcon.className = nowDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          }
+          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+          // Reinicializar componentes sensibles al tema
+          initKaTeX();
+          initDomainChart(nowDark);
+          initPlotChart(nowDark);
+          initMonotonicityChart(nowDark);
+          initTypesChart(nowDark);
+        });
+      }
+      
+      // Menú lateral responsivo
+      var menuToggle = document.getElementById('menu-toggle');
+      var sidebar = document.getElementById('sidebar');
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992 && sidebar) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+      
+      // Scroll spy para enlaces activos
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) {
+          var st = section.offsetTop - 100;
+          if (window.pageYOffset >= st) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

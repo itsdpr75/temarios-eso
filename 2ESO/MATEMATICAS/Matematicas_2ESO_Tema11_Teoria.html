@@ -1,0 +1,522 @@
+<!-- Matematicas_2ESO_Tema11_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 11: Estadística y Probabilidad | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    .calc-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .calc-table th{background:var(--primary-light);color:#fff;padding:.75rem;text-align:left}
+    .calc-table td{padding:.75rem;border-bottom:1px solid var(--border)}
+    .calc-table tr:last-child td{border-bottom:none}
+    .cont-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+    .cont-table th{background:var(--primary-light);color:#fff;padding:.5rem;text-align:center;border:1px solid var(--border)}
+    .cont-table td{padding:.5rem;border:1px solid var(--border);text-align:center}
+    .cont-table .total{background:rgba(26,35,126,.08);font-weight:600}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-chart-column"></i> <span>Tema 11: Estadística y Probabilidad</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-11-1" class="nav-link"><i class="fa-solid fa-1"></i> 11.1 Dispersión</a></li>
+        <li><a href="#subtema-11-2" class="nav-link"><i class="fa-solid fa-2"></i> 11.2 Diagramas de caja</a></li>
+        <li><a href="#subtema-11-3" class="nav-link"><i class="fa-solid fa-3"></i> 11.3 Probabilidad</a></li>
+        <li><a href="#subtema-11-4" class="nav-link"><i class="fa-solid fa-4"></i> 11.4 Tablas contingencia</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-11-1">
+        <h2><i class="fa-solid fa-ruler-combined"></i> 11.1 Medidas de dispersión: rango y desviación media</h2>
+        <p class="intro">Las medidas de dispersión cuantifican cómo se distribuyen los datos alrededor de la tendencia central, permitiendo evaluar consistencia, variabilidad y fiabilidad en múltiples contextos analíticos.</p>
+        <article>
+          <h3>Rango: medida básica de dispersión</h3>
+          <p>El <strong>rango</strong> es la diferencia entre el valor máximo y mínimo de un conjunto de datos:</p>
+          <div class="katex-display">$$ R = x_{\text{max}} - x_{\text{min}} $$</div>
+          <ul>
+            <li><strong>Ventaja:</strong> Cálculo inmediato, interpretación intuitiva.</li>
+            <li><strong>Limitación:</strong> Sensible a valores extremos (outliers); ignora distribución interna.</li>
+          </ul>
+          <p><strong>Ejemplo:</strong> Datos $\{3, 7, 5, 12, 8\} \implies R = 12 - 3 = 9$</p>
+        </article>
+        <article>
+          <h3>Desviación media: promedio de distancias a la media</h3>
+          <p>La <strong>desviación media</strong> mide el promedio de las distancias absolutas de cada dato a la media aritmética:</p>
+          <div class="katex-display">$$ \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i \qquad DM = \frac{\sum_{i=1}^{n} |x_i - \bar{x}|}{n} $$</div>
+          <p><strong>Interpretación:</strong></p>
+          <ul>
+            <li>$DM$ pequeña → datos concentrados cerca de $\bar{x}$</li>
+            <li>$DM$ grande → datos dispersos, mayor variabilidad</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Cálculo paso a paso de desviación media</h3>
+          <p>Datos: $\{4, 7, 5, 9, 5\}$</p>
+          <table class="calc-table">
+            <thead><tr><th>Dato $x_i$</th><th>$x_i - \bar{x}$</th><th>$|x_i - \bar{x}|$</th><th>Acumulado</th></tr></thead>
+            <tbody>
+              <tr><td>4</td><td>$4-6=-2$</td><td>2</td><td>2</td></tr>
+              <tr><td>7</td><td>$7-6=1$</td><td>1</td><td>3</td></tr>
+              <tr><td>5</td><td>$5-6=-1$</td><td>1</td><td>4</td></tr>
+              <tr><td>9</td><td>$9-6=3$</td><td>3</td><td>7</td></tr>
+              <tr><td>5</td><td>$5-6=-1$</td><td>1</td><td>8</td></tr>
+              <tr class="total"><td colspan="2">Suma</td><td>8</td><td>-</td></tr>
+            </tbody>
+          </table>
+          <div class="katex-display">$$ \bar{x} = \frac{4+7+5+9+5}{5} = 6 \qquad DM = \frac{8}{5} = 1{,}6 $$</div>
+        </article>
+        <article>
+          <h3>Distancias a la media visualizadas (Chart.js)</h3>
+          <div class="chart-container"><canvas id="dispersionChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Cada barra representa un dato; la altura muestra $|x_i - \bar{x}|$ (media $\bar{x}=6$).</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En control de calidad industrial, la desviación media de dimensiones de piezas indica consistencia del proceso de fabricación. En análisis de rendimiento de sistemas, baja dispersión en tiempos de respuesta sugiere estabilidad operativa. En encuestas, alta desviación en respuestas revela polarización o falta de consenso en la muestra estudiada.</p>
+        </div>
+      </section>
+
+      <section id="subtema-11-2">
+        <h2><i class="fa-solid fa-box-open"></i> 11.2 Diagramas de caja y bigotes (Box plots)</h2>
+        <p class="intro">Los diagramas de caja resumen la distribución de datos mediante cinco valores clave, permitiendo comparar grupos, identificar asimetrías y detectar valores atípicos de forma visual y eficiente.</p>
+        <article>
+          <h3>Resumen de cinco números</h3>
+          <ul>
+            <li><strong>Mínimo:</strong> Valor más pequeño del conjunto (excluyendo outliers).</li>
+            <li><strong>Primer cuartil ($Q_1$):</strong> Percentil 25%; 25% de datos $\leq Q_1$.</li>
+            <li><strong>Mediana ($Q_2$):</strong> Percentil 50%; valor central que divide datos en dos mitades.</li>
+            <li><strong>Tercer cuartil ($Q_3$):</strong> Percentil 75%; 75% de datos $\leq Q_3$.</li>
+            <li><strong>Máximo:</strong> Valor más grande del conjunto (excluyendo outliers).</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Rango intercuartílico y detección de outliers</h3>
+          <div class="katex-display">$$ IQR = Q_3 - Q_1 $$</div>
+          <p>El <strong>rango intercuartílico</strong> contiene el 50% central de los datos. Para identificar valores atípicos:</p>
+          <ul>
+            <li><strong>Límite inferior:</strong> $L_{\text{inf}} = Q_1 - 1{,}5 \cdot IQR$</li>
+            <li><strong>Límite superior:</strong> $L_{\text{sup}} = Q_3 + 1{,}5 \cdot IQR$</li>
+            <li><strong>Outlier:</strong> $x < L_{\text{inf}}$ o $x > L_{\text{sup}}$</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Protocolo de construcción paso a paso</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-sort"></i> <strong>Ordenar datos:</strong> De menor a mayor.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Calcular cuartiles:</strong> $Q_1$, mediana, $Q_3$ usando posición o interpolación.</li>
+            <li><i class="fa-solid fa-ruler"></i> <strong>Determinar IQR:</strong> $IQR = Q_3 - Q_1$.</li>
+            <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Identificar outliers:</strong> Aplicar límites $L_{\text{inf}}$, $L_{\text{sup}}$.</li>
+            <li><i class="fa-solid fa-draw-polygon"></i> <strong>Dibujar caja:</strong> Rectángulo de $Q_1$ a $Q_3$, línea en mediana, bigotes hasta mínimo/máximo no atípicos, puntos para outliers.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Box plot simulado (Chart.js)</h3>
+          <div class="chart-container"><canvas id="boxplotChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Representación estilizada de box plot: caja ($Q_1$ a $Q_3$), línea mediana, bigotes, y outlier marcado con símbolo especial.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En estudios comparativos, los box plots permiten visualizar diferencias de distribución entre grupos (ej: rendimiento académico por método de enseñanza). En monitorización de sensores, detectar outliers ayuda a identificar fallos o eventos anómalos en tiempo real. En análisis de encuestas, la asimetría de la caja revela sesgos en respuestas o polarización de opiniones.</p>
+        </div>
+      </section>
+
+      <section id="subtema-11-3">
+        <h2><i class="fa-solid fa-dice"></i> 11.3 Probabilidad experimental vs teórica</h2>
+        <p class="intro">La probabilidad cuantifica la incertidumbre de eventos. Dos enfoques complementarios —teórico y experimental— permiten modelar y validar predicciones en contextos aleatorios.</p>
+        <article>
+          <h3>Probabilidad teórica (enfoque de Laplace)</h3>
+          <p>Cuando todos los resultados son equiprobables, la probabilidad de un evento $A$ es:</p>
+          <div class="katex-display">$$ P(A) = \frac{\text{casos favorables}}{\text{casos posibles}} $$</div>
+          <p><strong>Requisitos:</strong> Espacio muestral finito y equiprobabilidad de resultados elementales.</p>
+          <p><strong>Ejemplo:</strong> Lanzar dado justo: $P(\text{par}) = \frac{3}{6} = \frac{1}{2}$</p>
+        </article>
+        <article>
+          <h3>Probabilidad experimental (enfoque frecuencial)</h3>
+          <p>Tras $n$ repeticiones de un experimento, la probabilidad experimental de $A$ es:</p>
+          <div class="katex-display">$$ P_{\text{exp}}(A) = \frac{f_A}{n} $$</div>
+          <p>Donde $f_A$ = número de veces que ocurre $A$ en $n$ ensayos.</p>
+          <p><strong>Limitación:</strong> Depende del tamaño muestral; varía entre repeticiones.</p>
+        </article>
+        <article>
+          <h3>Ley de los grandes números</h3>
+          <p>Al aumentar el número de ensayos, la probabilidad experimental converge a la teórica:</p>
+          <div class="katex-display">$$ \lim_{n \to \infty} P_{\text{exp}}(A) = P(A) $$</div>
+          <p><strong>Implicación:</strong> Con muestras grandes, las frecuencias relativas estabilizan valores cercanos a probabilidades teóricas.</p>
+        </article>
+        <article>
+          <h3>Comparativa de enfoques</h3>
+          <table class="calc-table">
+            <thead><tr><th>Enfoque</th><th>Fórmula</th><th>Requisitos</th><th>Limitaciones</th></tr></thead>
+            <tbody>
+              <tr><td>Teórico (Laplace)</td><td>$\frac{\text{favorables}}{\text{posibles}}$</td><td>Equiprobabilidad</td><td>No aplicable si resultados no equiprobables</td></tr>
+              <tr><td>Experimental</td><td>$\frac{f_A}{n}$</td><td>Repetibilidad del experimento</td><td>Varía con $n$; requiere muestras grandes para precisión</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Convergencia experimental → teórica (Chart.js)</h3>
+          <div class="chart-container"><canvas id="convergenceChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Simulación de lanzamientos de moneda: $P_{\text{exp}}(\text{cara})$ oscila inicialmente pero converge a $0{,}5$ al aumentar $n$.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En validación de algoritmos aleatorios, comparar probabilidad experimental con teórica verifica calidad del generador pseudoaleatorio. En testing de software, simular eventos con probabilidad conocida permite evaluar robustez ante incertidumbre. En análisis de riesgos, la convergencia frecuencial justifica usar datos históricos para estimar probabilidades futuras en modelos predictivos.</p>
+        </div>
+      </section>
+
+      <section id="subtema-11-4">
+        <h2><i class="fa-solid fa-table"></i> 11.4 Tablas de contingencia básicas</h2>
+        <p class="intro">Las tablas de contingencia organizan frecuencias conjuntas de dos variables categóricas, facilitando análisis de asociación, cálculo de probabilidades condicionadas y detección de patrones en datos multivariantes.</p>
+        <article>
+          <h3>Estructura y componentes</h3>
+          <p>Una tabla de contingencia de dos variables $A$ (filas) y $B$ (columnas) muestra:</p>
+          <ul>
+            <li><strong>Frecuencias conjuntas:</strong> $n_{ij}$ = número de observaciones con $A=i$ y $B=j$.</li>
+            <li><strong>Frecuencias marginales:</strong> Totales por fila ($n_{i\cdot}$) y columna ($n_{\cdot j}$).</li>
+            <li><strong>Total general:</strong> $n = \sum_{i,j} n_{ij}$.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ejemplo resuelto paso a paso</h3>
+          <p>Encuesta sobre preferencia de transporte ($A$) y grupo de edad ($B$):</p>
+          <table class="cont-table">
+            <thead>
+              <tr><th></th><th>Joven</th><th>Adulto</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Coche</td><td>15</td><td>35</td><td class="total">50</td></tr>
+              <tr><td>Bici</td><td>25</td><td>10</td><td class="total">35</td></tr>
+              <tr><td>Transporte público</td><td>10</td><td>5</td><td class="total">15</td></tr>
+              <tr class="total"><td>Total</td><td>50</td><td>50</td><td>100</td></tr>
+            </tbody>
+          </table>
+          <p><strong>Cálculo de probabilidad condicional:</strong></p>
+          <div class="katex-display">$$ P(\text{Bici} \mid \text{Joven}) = \frac{n_{\text{Bici,Joven}}}{n_{\text{Joven}}} = \frac{25}{50} = 0{,}5 $$</div>
+        </article>
+        <article>
+          <h3>Introducción a probabilidad condicional</h3>
+          <p>La probabilidad de $A$ dado $B$ se calcula como:</p>
+          <div class="katex-display">$$ P(A \mid B) = \frac{P(A \cap B)}{P(B)} = \frac{n_{AB}}{n_B} $$</div>
+          <p><strong>Interpretación frecuencial:</strong> Proporción de casos con $A$ dentro del subconjunto donde ocurre $B$.</p>
+        </article>
+        <article>
+          <h3>Distribución condicional visualizada (Chart.js)</h3>
+          <div class="chart-container"><canvas id="contingencyChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Barras agrupadas: distribución de preferencia de transporte condicionada a grupo de edad (Joven vs Adulto).</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En análisis de encuestas, las tablas de contingencia revelan asociaciones entre variables demográficas y preferencias (ej: edad vs método de pago). En ciencias sociales, permiten estudiar dependencia entre factores como educación y empleo. En marketing digital, segmentar usuarios por comportamiento y características permite personalizar campañas y optimizar conversión.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema11_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 11</a></p></footer>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    // Gráfico de distancias a la media (desviación media)
+    function initDispersionChart(dark) {
+      var ctx = document.getElementById('dispersionChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var datos = [4, 7, 5, 9, 5];
+      var media = 6;
+      var desviaciones = datos.map(function(d) { return Math.abs(d - media); });
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: datos,
+          datasets: [{
+            label: '|xᵢ - x̄|',
+            data: desviaciones,
+            backgroundColor: 'rgba(26,35,126,0.7)',
+            borderColor: '#1a237e',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Desviación media: distancias a x̄=6', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Dato xᵢ', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: '|xᵢ - x̄|', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico de elementos del box plot (representación conceptual)
+    function initBoxplotChart(dark) {
+      var ctx = document.getElementById('boxplotChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Box Plot'],
+          datasets: [
+            { label: 'Q1', data: [2], backgroundColor: '#1a237e' },
+            { label: 'Mediana (Q2)', data: [4], backgroundColor: '#3949ab' },
+            { label: 'Q3', data: [6], backgroundColor: '#5c6bc0' },
+            { label: 'Outlier', data: [12], backgroundColor: '#c62828' }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Elementos de diagrama de caja', color: textColor }
+          },
+          scales: {
+            x: { display: false },
+            y: { title: { display: true, text: 'Valor', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Gráfico de convergencia (ley de grandes números)
+    function initConvergenceChart(dark) {
+      var ctx = document.getElementById('convergenceChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      var n = [10, 50, 100, 500, 1000];
+      var pExp = [0.45, 0.48, 0.49, 0.498, 0.501];
+      
+      // Línea constante teórica (desde x=10 hasta x=1000)
+      var teoricoLine = [
+        { x: 10, y: 0.5 },
+        { x: 1000, y: 0.5 }
+      ];
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          datasets: [
+            {
+              label: 'P experimental (cara)',
+              data: n.map(function(ni, i) { return { x: ni, y: pExp[i] }; }),
+              borderColor: '#1a237e',
+              backgroundColor: 'rgba(26,35,126,0.1)',
+              fill: false,
+              tension: 0.3,
+              pointRadius: 4
+            },
+            {
+              label: 'P teórica = 0.5',
+              data: teoricoLine,
+              borderColor: '#4caf50',
+              borderDash: [5, 5],
+              pointRadius: 0,
+              fill: false
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Ley de grandes números: convergencia', color: textColor }
+          },
+          scales: {
+            x: {
+              type: 'logarithmic',
+              title: { display: true, text: 'Número de lanzamientos (log)', color: textColor },
+              ticks: { color: textColor },
+              grid: { color: gridColor }
+            },
+            y: {
+              title: { display: true, text: 'Probabilidad', color: textColor },
+              ticks: { color: textColor },
+              grid: { color: gridColor },
+              min: 0,
+              max: 1
+            }
+          }
+        }
+      });
+    }
+
+    // Gráfico de barras agrupadas (tabla de contingencia)
+    function initContingencyChart(dark) {
+      var ctx = document.getElementById('contingencyChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Coche', 'Bici', 'Transporte público'],
+          datasets: [
+            { label: 'Joven', data: [15, 25, 10], backgroundColor: '#1a237e' },
+            { label: 'Adulto', data: [35, 10, 5], backgroundColor: '#3949ab' }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Preferencia de transporte por edad', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Transporte', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Frecuencia', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor }, beginAtZero: true }
+          }
+        }
+      });
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      var isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      
+      // Renderizar KaTeX y gráficos
+      initKaTeX();
+      initDispersionChart(isDark);
+      initBoxplotChart(isDark);
+      initConvergenceChart(isDark);
+      initContingencyChart(isDark);
+      
+      // Toggle de tema oscuro/claro
+      var themeToggle = document.getElementById('theme-toggle');
+      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (icon && isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          var nowDark = document.body.classList.contains('dark-mode');
+          var themeIcon = themeToggle.querySelector('i');
+          if (themeIcon) {
+            themeIcon.className = nowDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          }
+          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+          // Reinicializar componentes sensibles al tema
+          initKaTeX();
+          initDispersionChart(nowDark);
+          initBoxplotChart(nowDark);
+          initConvergenceChart(nowDark);
+          initContingencyChart(nowDark);
+        });
+      }
+      
+      // Menú lateral responsivo
+      var menuToggle = document.getElementById('menu-toggle');
+      var sidebar = document.getElementById('sidebar');
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992 && sidebar) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+      
+      // Scroll spy para enlaces activos
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) {
+          var st = section.offsetTop - 100;
+          if (window.pageYOffset >= st) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

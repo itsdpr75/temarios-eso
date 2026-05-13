@@ -1,0 +1,397 @@
+<!-- Matematicas_2ESO_Tema8_Teoria.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Matemáticas 2º ESO - Tema 8: Teorema de Pitágoras | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    .comparison-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+    .comparison-table th{background:var(--primary-light);color:#fff;padding:.75rem;text-align:left}
+    .comparison-table td{padding:.75rem;border-bottom:1px solid var(--border)}
+    .comparison-table tr:last-child td{border-bottom:none}
+    .ternas-table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.9rem}
+    .ternas-table th{background:var(--primary-light);color:#fff;padding:.5rem;text-align:center}
+    .ternas-table td{padding:.5rem;border:1px solid var(--border);text-align:center}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-triangle"></i> <span>Tema 8: Teorema de Pitágoras</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Contenido del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#subtema-8-1" class="nav-link"><i class="fa-solid fa-1"></i> 8.1 Enunciado y demostración</a></li>
+        <li><a href="#subtema-8-2" class="nav-link"><i class="fa-solid fa-2"></i> 8.2 Cálculo de lados</a></li>
+        <li><a href="#subtema-8-3" class="nav-link"><i class="fa-solid fa-3"></i> 8.3 Ternas pitagóricas</a></li>
+        <li><a href="#subtema-8-4" class="nav-link"><i class="fa-solid fa-4"></i> 8.4 Problemas aplicados</a></li>
+      </ul>
+    </aside>
+    <main>
+      <section id="subtema-8-1">
+        <h2><i class="fa-solid fa-square-root-variable"></i> 8.1 Enunciado y demostración visual</h2>
+        <p class="intro">El teorema de Pitágoras establece una relación fundamental entre los lados de un triángulo rectángulo, permitiendo calcular distancias y validar perpendicularidad en múltiples contextos prácticos.</p>
+        <article>
+          <h3>Enunciado formal</h3>
+          <p>En todo triángulo rectángulo, el cuadrado de la longitud de la hipotenusa es igual a la suma de los cuadrados de las longitudes de los catetos:</p>
+          <div class="katex-display">$$ a^2 + b^2 = c^2 $$</div>
+          <p>Donde:</p>
+          <ul>
+            <li>$a$ y $b$: longitudes de los catetos (lados que forman el ángulo recto)</li>
+            <li>$c$: longitud de la hipotenusa (lado opuesto al ángulo recto, siempre el mayor)</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Equivalencia de áreas</h3>
+          <p>Geométricamente, el teorema expresa que el área del cuadrado construido sobre la hipotenusa es igual a la suma de las áreas de los cuadrados construidos sobre los catetos:</p>
+          <div class="katex-display">$$ A_{\text{hip}} = A_{\text{cat1}} + A_{\text{cat2}} \qquad c^2 = a^2 + b^2 $$</div>
+        </article>
+        <article>
+          <h3>Verificación numérica de áreas</h3>
+          <table class="comparison-table">
+            <thead><tr><th>Elemento</th><th>Valor</th><th>Área del cuadrado</th></tr></thead>
+            <tbody>
+              <tr><td>Cateto $a$</td><td>3 unidades</td><td>$a^2 = 9$ u²</td></tr>
+              <tr><td>Cateto $b$</td><td>4 unidades</td><td>$b^2 = 16$ u²</td></tr>
+              <tr><td><strong>Suma áreas catetos</strong></td><td>-</td><td><strong>$9 + 16 = 25$ u²</strong></td></tr>
+              <tr><td>Hipotenusa $c$</td><td>5 unidades</td><td>$c^2 = 25$ u²</td></tr>
+              <tr style="background:rgba(26,35,126,.05)"><td><strong>Verificación</strong></td><td colspan="2"><strong>$25 = 25$ ✓</strong></td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Verificación visual de áreas (Chart.js)</h3>
+          <div class="chart-container"><canvas id="pythagorasChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Comparativa de áreas: $a^2 + b^2 = c^2$ para el triángulo (3,4,5).</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En construcción, el teorema valida perpendicularidad de esquinas usando la regla 3-4-5. En gráficos por computadora, calcula distancias euclidianas entre píxeles. En diseño estructural, determina longitudes de diagonales en marcos triangulados para optimizar resistencia y material.</p>
+        </div>
+      </section>
+
+      <section id="subtema-8-2">
+        <h2><i class="fa-solid fa-calculator"></i> 8.2 Cálculo de hipotenusa y catetos</h2>
+        <p class="intro">El teorema de Pitágoras permite calcular cualquier lado desconocido de un triángulo rectángulo conocidos los otros dos, mediante despejes algebraicos directos.</p>
+        <article>
+          <h3>Fórmulas de despeje</h3>
+          <div class="katex-display">$$ \text{Hipotenusa: } c = \sqrt{a^2 + b^2} \qquad \text{Cateto } a: a = \sqrt{c^2 - b^2} \qquad \text{Cateto } b: b = \sqrt{c^2 - a^2} $$</div>
+          <p><strong>Condiciones de existencia:</strong></p>
+          <ul>
+            <li>La hipotenusa siempre es el lado mayor: $c > a$ y $c > b$</li>
+            <li>El radicando debe ser positivo: $c^2 - b^2 > 0$ para calcular catetos</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Flujo de cálculo paso a paso</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Identificar incógnita:</strong> ¿Buscamos hipotenusa o cateto?</li>
+            <li><i class="fa-solid fa-code"></i> <strong>Aplicar fórmula:</strong> Seleccionar despeje correspondiente.</li>
+            <li><i class="fa-solid fa-superscript"></i> <strong>Elevar al cuadrado:</strong> Calcular $a^2$, $b^2$ o $c^2$.</li>
+            <li><i class="fa-solid fa-plus-minus"></i> <strong>Sumar o restar:</strong> $a^2 + b^2$ para hipotenusa, $c^2 - b^2$ para cateto.</li>
+            <li><i class="fa-solid fa-square-root-variable"></i> <strong>Extraer raíz:</strong> Calcular $\sqrt{\text{resultado}}$.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Verificar:</strong> Comprobar que $c$ es el mayor lado y que unidades son coherentes.</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplos resueltos</h3>
+          <p><strong>Calcular hipotenusa:</strong> $a=6$, $b=8$</p>
+          <div class="katex-display">$$ c = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10 $$</div>
+          <p><strong>Calcular cateto:</strong> $c=13$, $b=5$</p>
+          <div class="katex-display">$$ a = \sqrt{13^2 - 5^2} = \sqrt{169 - 25} = \sqrt{144} = 12 $$</div>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En diseño de pantallas, calcula diagonales a partir de ancho y alto. En navegación, determina rutas directas (hipotenusa) frente a recorridos perimetrales. En ingeniería civil, dimensiona rampas accesibles calculando longitud a partir de desnivel y proyección horizontal.</p>
+        </div>
+      </section>
+
+      <section id="subtema-8-3">
+        <h2><i class="fa-solid fa-list-ol"></i> 8.3 Ternas pitagóricas</h2>
+        <p class="intro">Las ternas pitagóricas son tripletas de números naturales que satisfacen el teorema de Pitágoras. Su conocimiento agiliza cálculos y optimiza diseños en múltiples aplicaciones prácticas.</p>
+        <article>
+          <h3>Definición y clasificación</h3>
+          <p>Una <strong>terna pitagórica</strong> es un conjunto $(a, b, c)$ de números naturales que cumple:</p>
+          <div class="katex-display">$$ a^2 + b^2 = c^2 \qquad \text{con } a \leq b < c $$</div>
+          <ul>
+            <li><strong>Primitivas:</strong> MCD$(a,b,c) = 1$. No tienen factor común.</li>
+            <li><strong>Derivadas:</strong> Múltiplos de ternas primitivas: $(ka, kb, kc)$ también es terna.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Ternas primitivas más usadas</h3>
+          <table class="ternas-table">
+            <thead><tr><th>Terna $(a,b,c)$</th><th>Verificación</th><th>Múltiplos frecuentes</th></tr></thead>
+            <tbody>
+              <tr><td>$(3, 4, 5)$</td><td>$9+16=25$</td><td>$(6,8,10)$, $(9,12,15)$, $(12,16,20)$</td></tr>
+              <tr><td>$(5, 12, 13)$</td><td>$25+144=169$</td><td>$(10,24,26)$, $(15,36,39)$</td></tr>
+              <tr><td>$(8, 15, 17)$</td><td>$64+225=289$</td><td>$(16,30,34)$</td></tr>
+              <tr><td>$(7, 24, 25)$</td><td>$49+576=625$</td><td>$(14,48,50)$</td></tr>
+              <tr><td>$(9, 40, 41)$</td><td>$81+1600=1681$</td><td>$(18,80,82)$</td></tr>
+              <tr><td>$(11, 60, 61)$</td><td>$121+3600=3721$</td><td>$(22,120,122)$</td></tr>
+              <tr><td>$(12, 35, 37)$</td><td>$144+1225=1369$</td><td>$(24,70,74)$</td></tr>
+              <tr><td>$(20, 21, 29)$</td><td>$400+441=841$</td><td>$(40,42,58)$</td></tr>
+            </tbody>
+          </table>
+        </article>
+        <article>
+          <h3>Generación básica (método de Euclides)</h3>
+          <p>Para $m > n$ naturales, la terna primitiva se genera como:</p>
+          <div class="katex-display">$$ a = m^2 - n^2 \qquad b = 2mn \qquad c = m^2 + n^2 $$</div>
+          <p><strong>Ejemplo:</strong> $m=3$, $n=2$</p>
+          <div class="katex-display">$$ a = 3^2 - 2^2 = 5 \qquad b = 2\cdot3\cdot2 = 12 \qquad c = 3^2 + 2^2 = 13 \implies (5,12,13) $$</div>
+        </article>
+        <article>
+          <h3>Distribución de ternas (Chart.js)</h3>
+          <div class="chart-container"><canvas id="triplesChart"></canvas></div>
+          <p style="text-align:center;margin-top:.5rem;font-size:.9rem;color:var(--text-muted)">Pares $(a,b)$ que generan hipotenusas enteras, mostrando simetría y densidad de ternas pitagóricas.</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En fabricación, usar ternas conocidas optimiza recortes de material minimizando desperdicio. En diseño de videojuegos, generan grids triangulares para niveles con ángulos rectos perfectos. En topografía rápida, permiten calibrar perpendicularidad sin instrumentos usando cuerdas con marcas en proporciones 3-4-5.</p>
+        </div>
+      </section>
+
+      <section id="subtema-8-4">
+        <h2><i class="fa-solid fa-diagram-project"></i> 8.4 Problemas de aplicación práctica</h2>
+        <p class="intro">El teorema de Pitágoras modela situaciones reales donde intervienen distancias, alturas o diagonales. Una estrategia sistemática garantiza resolución eficiente y validación contextual.</p>
+        <article>
+          <h3>Tipologías frecuentes</h3>
+          <ul>
+            <li><strong>Diagonales:</strong> De rectángulos, cuadrados, pantallas, cuadros.</li>
+            <li><strong>Alturas:</strong> De triángulos isósceles/equiláteros (descomponiendo en dos rectángulos).</li>
+            <li><strong>Distancias cartesianas:</strong> Entre puntos $(x_1,y_1)$ y $(x_2,y_2)$: $d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$</li>
+            <li><strong>Descomposición:</strong> Figuras complejas divididas en triángulos rectángulos.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Estrategia de modelado: flujo estructurado</h3>
+          <ol class="method-steps" style="list-style:decimal;margin-left:1.5rem">
+            <li><i class="fa-solid fa-magnifying-glass"></i> <strong>Datos:</strong> Extraer medidas conocidas y relación geométrica del enunciado.</li>
+            <li><i class="fa-solid fa-brain"></i> <strong>Esquema mental:</strong> Identificar el triángulo rectángulo oculto y asignar $a$, $b$, $c$.</li>
+            <li><i class="fa-solid fa-equals"></i> <strong>Planteamiento:</strong> Escribir $a^2 + b^2 = c^2$ con valores conocidos e incógnita.</li>
+            <li><i class="fa-solid fa-calculator"></i> <strong>Cálculo:</strong> Aplicar despeje correspondiente y operar paso a paso.</li>
+            <li><i class="fa-solid fa-check"></i> <strong>Validación física:</strong> Verificar que resultado tiene sentido (positivo, unidades coherentes, magnitud razonable).</li>
+          </ol>
+        </article>
+        <article>
+          <h3>Ejemplo resuelto completo</h3>
+          <p>"Un poste de 12 m se sujeta con un cable anclado a 5 m de su base. ¿Longitud del cable?"</p>
+          <div class="katex-display">$$ \text{Datos: cateto vertical } a=12\text{ m}, \text{ cateto horizontal } b=5\text{ m}, \text{ incógnita: hipotenusa } c $$</div>
+          <div class="katex-display">$$ \text{Planteamiento: } c = \sqrt{a^2 + b^2} = \sqrt{12^2 + 5^2} = \sqrt{144 + 25} = \sqrt{169} = 13\text{ m} $$</div>
+          <p><strong>Validación:</strong> $13 > 12$ y $13 > 5$ ✓, unidades en metros ✓, magnitud coherente ✓</p>
+        </article>
+        <div class="practical-box">
+          <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+          <p>En topografía básica, calcula distancias inaccesibles mediante triangulación. En ingeniería eléctrica, optimiza longitudes de cableado entre puntos en 2D. En logística, estima tiempos de desplazamiento directo frente a rutas perimetrales. En diseño arquitectónico, dimensiona vigas diagonales en estructuras trianguladas para maximizar resistencia con mínimo material.</p>
+        </div>
+      </section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_2ESO_Tema8_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 8</a></p></footer>
+    </main>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <script>
+    // Inicialización de KaTeX
+    function initKaTeX() {
+      if (typeof renderMathInElement !== 'function') return;
+      try {
+        renderMathInElement(document.body, {
+          delimiters: [
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false }
+          ],
+          throwOnError: false,
+          ignoredTags: ['svg', 'script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        });
+      } catch (e) {
+        console.warn('KaTeX error:', e);
+      }
+    }
+
+    // Gráfico de barras: áreas a², b², c²
+    function initPythagorasChart(dark) {
+      var ctx = document.getElementById('pythagorasChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+      
+      ctx.chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Cateto a² (3²)', 'Cateto b² (4²)', 'Hipotenusa c² (5²)'],
+          datasets: [{
+            label: 'Área (unidades²)',
+            data: [9, 16, 25],
+            backgroundColor: ['#1a237e', '#3949ab', '#5c6bc0'],
+            borderColor: dark ? '#fff' : '#000',
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Verificación: 9 + 16 = 25', color: textColor }
+          },
+          scales: {
+            y: { beginAtZero: true, ticks: { color: textColor }, grid: { color: gridColor } },
+            x: { ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // Gráfico de dispersión: ternas pitagóricas (a,b)
+    function initTriplesChart(dark) {
+      var ctx = document.getElementById('triplesChart');
+      if (!ctx || typeof Chart === 'undefined') return;
+      var textColor = dark ? '#f5f5f5' : '#212121';
+      var gridColor = dark ? '#444' : '#e0e0e0';
+      if (ctx.chart) ctx.chart.destroy();
+
+      var points = [];
+      var triples = [[3,4],[5,12],[8,15],[7,24],[9,40],[12,35],[20,21]];
+      triples.forEach(function(t) {
+        points.push({ x: t[0], y: t[1] });
+      });
+
+      ctx.chart = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [{
+            label: 'Pares (a,b) de ternas primitivas',
+            data: points,
+            borderColor: '#1a237e',
+            backgroundColor: 'rgba(26,35,126,0.6)',
+            pointRadius: 6
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { labels: { color: textColor } },
+            title: { display: true, text: 'Distribución de ternas pitagóricas primitivas', color: textColor }
+          },
+          scales: {
+            x: { title: { display: true, text: 'Cateto a', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } },
+            y: { title: { display: true, text: 'Cateto b', color: textColor }, ticks: { color: textColor }, grid: { color: gridColor } }
+          }
+        }
+      });
+    }
+
+    // Inicialización al cargar la página
+    document.addEventListener('DOMContentLoaded', function() {
+      var isDark = localStorage.getItem('theme') === 'dark';
+      if (isDark) {
+        document.body.classList.add('dark-mode');
+      }
+      
+      initKaTeX();
+      initPythagorasChart(isDark);
+      initTriplesChart(isDark);
+      
+      // Toggle de tema oscuro/claro
+      var themeToggle = document.getElementById('theme-toggle');
+      var icon = themeToggle ? themeToggle.querySelector('i') : null;
+      if (icon && isDark) {
+        icon.classList.replace('fa-moon', 'fa-sun');
+      }
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          document.body.classList.toggle('dark-mode');
+          var nowDark = document.body.classList.contains('dark-mode');
+          var themeIcon = themeToggle.querySelector('i');
+          if (themeIcon) {
+            themeIcon.className = nowDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+          }
+          localStorage.setItem('theme', nowDark ? 'dark' : 'light');
+          // Reinicializar componentes sensibles al tema
+          initKaTeX();
+          initPythagorasChart(nowDark);
+          initTriplesChart(nowDark);
+        });
+      }
+      
+      // Menú lateral responsivo
+      var menuToggle = document.getElementById('menu-toggle');
+      var sidebar = document.getElementById('sidebar');
+      if (menuToggle && sidebar) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('open');
+        });
+      }
+      document.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 992 && sidebar) {
+            sidebar.classList.remove('open');
+          }
+        });
+      });
+      
+      // Scroll spy para enlaces activos
+      var sections = document.querySelectorAll('section');
+      var navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', function() {
+        var current = '';
+        sections.forEach(function(section) {
+          var st = section.offsetTop - 100;
+          if (window.pageYOffset >= st) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(function(link) {
+          link.classList.remove('active');
+          if (link.getAttribute('href').slice(1) === current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
