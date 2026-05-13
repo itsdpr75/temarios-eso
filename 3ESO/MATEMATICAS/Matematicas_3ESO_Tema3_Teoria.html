@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 3º ESO - Tema 3: Polinomios y fracciones algebraicas | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-superscript"></i> <span>Tema 3: Polinomios y fracciones algebraicas</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-3-1" class="nav-link"><i class="fa-solid fa-1"></i> 3.1 Operaciones avanzadas con polinomios</a></li>
+        <li><a href="#modulo-3-2" class="nav-link"><i class="fa-solid fa-2"></i> 3.2 Teorema del resto y regla de Ruffini</a></li>
+        <li><a href="#modulo-3-3" class="nav-link"><i class="fa-solid fa-3"></i> 3.3 Factorización de polinomios</a></li>
+        <li><a href="#modulo-3-4" class="nav-link"><i class="fa-solid fa-4"></i> 3.4 Fracciones algebraicas y operaciones</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 3.1 Operaciones avanzadas con polinomios -->
+      <section id="modulo-3-1">
+        <h2>3.1 Operaciones avanzadas con polinomios</h2>
+        <p class="intro">Los polinomios son expresiones algebraicas formadas por la suma de monomios, donde cada monomio es el producto de un coeficiente numérico y una o más variables elevadas a potencias enteras no negativas. Dominar las operaciones con polinomios es fundamental para resolver ecuaciones de grado superior, modelar fenómenos y simplificar expresiones en múltiples ramas de las matemáticas y la ingeniería.</p>
+        <article>
+          <h3>Suma y resta de polinomios</h3>
+          <p>Para sumar o restar polinomios, se agrupan los <strong>términos semejantes</strong>, es decir, aquellos que tienen las mismas variables elevadas a las mismas potencias. Solo se pueden sumar o restar coeficientes de términos semejantes.</p>
+          <ul>
+      <li>Ejemplo: $(3x^2 + 2x - 5) + (x^2 - 4x + 3) = 4x^2 - 2x - 2$</li><li>La resta se realiza cambiando el signo de todos los términos del polinomio que se resta y sumando después: $(3x^2 + 2x - 5) - (x^2 - 4x + 3) = 2x^2 + 6x - 8$</li><li>Es conveniente escribir los polinomios en <strong>forma ordenada</strong> (de mayor a menor grado) para facilitar la identificación de términos semejantes.</li><li>Si un polinomio carece de algún grado, se puede colocar un cero en su lugar como ayuda visual.</li>
+    </ul>
+          <div class="katex-display">$$P(x) + Q(x) = \sum (a_i + b_i) \cdot x^i$$</div>
+        </article>
+
+        <article>
+          <h3>Multiplicación de polinomios</h3>
+          <p>La multiplicación de polinomios se realiza aplicando la <strong>propiedad distributiva</strong>: cada término del primer polinomio se multiplica por cada término del segundo polinomio. A continuación, se agrupan los términos semejantes.</p>
+          <ul>
+      <li>Multiplicar un monomio por un polinomio: $3x \cdot (2x^2 - x + 4) = 6x^3 - 3x^2 + 12x$</li><li>Multiplicar dos binomios: $(x + 3)(x - 2) = x^2 - 2x + 3x - 6 = x^2 + x - 6$</li><li>El grado del producto es la suma de los grados de los factores: $\text{grado}(P \cdot Q) = \text{grado}(P) + \text{grado}(Q)$</li><li>Es útil aplicar las <strong>identidades notables</strong> para agilizar productos frecuentes como $(a+b)^2$, $(a-b)^2$ y $(a+b)(a-b)$.</li>
+    </ul>
+          <div class="katex-display">$$P(x) \cdot Q(x) = \sum_{k=0}^{m+n} \left(\sum_{i+j=k} a_i \cdot b_j\right) x^k$$</div>
+        </article>
+
+        <article>
+          <h3>División de polinomios</h3>
+          <p>La división de polinomios es análoga a la división entera de números. Dados dos polinomios $D(x)$ (dividendo) y $d(x)$ (divisor), existen dos polinomios $C(x)$ (cociente) y $R(x)$ (resto) tales que:</p>
+          <div class="katex-display">$$D(x) = d(x) \cdot C(x) + R(x), \quad \text{con } \text{grado}(R) < \text{grado}(d)$$</div>
+          <ul>
+      <li>Si $R(x) = 0$, se dice que la división es exacta y $d(x)$ divide a $D(x)$.</li><li>El método de división se realiza de forma similar a la división larga de números: se divide el término de mayor grado del dividendo entre el de mayor grado del divisor, se multiplica el resultado por el divisor y se resta del dividendo. Se repite el proceso con el resto obtenido.</li><li>Solo se puede dividir si el grado del dividendo es mayor o igual que el grado del divisor.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las operaciones con polinomios se utilizan en el diseño de curvas y superficies en animación por ordenador (gráficos Bézier), en el cálculo de trayectorias en física y en la modelización de señales en telecomunicaciones.</p>
+    </div>
+      </section>
+
+      <!-- 3.2 Teorema del resto y regla de Ruffini -->
+      <section id="modulo-3-2">
+        <h2>3.2 Teorema del resto y regla de Ruffini</h2>
+        <p class="intro">El teorema del resto y la regla de Ruffini son herramientas potentes que permiten evaluar polinomios y dividirlos por binomios de la forma $(x - a)$ de manera rápida y eficiente. Estos métodos son la base de la factorización y la resolución de ecuaciones polinómicas.</p>
+        <article>
+          <h3>Teorema del resto</h3>
+          <p>El <strong>teorema del resto</strong> establece que el resto de la división de un polinomio $P(x)$ entre $(x - a)$ es igual al valor del polinomio evaluado en $x = a$:</p>
+          <div class="katex-display">$$R = P(a)$$</div>
+          <ul>
+      <li>Esto nos permite calcular el resto de una división sin necesidad de realizar la división completa.</li><li>Ejemplo: para calcular el resto de $P(x) = x^3 - 2x^2 + 3x - 1$ al dividirlo por $(x - 2)$, basta con evaluar $P(2) = 8 - 8 + 6 - 1 = 5$.</li><li>Si $P(a) = 0$, entonces $(x - a)$ es un divisor exacto de $P(x)$, y se dice que $a$ es una <strong>raíz</strong> del polinomio.</li><li>El teorema del resto es esencial para la comprobación rápida de raíces enteras de un polinomio.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Regla de Ruffini</h3>
+          <p>La <strong>regla de Ruffini</strong> es un método abreviado para dividir un polinomio entre un binomio de la forma $(x - a)$. El algoritmo consta de los siguientes pasos:</p>
+          <ul>
+      <li>Se escriben los coeficientes del dividendo en una fila horizontal.</li><li>A la izquierda se escribe el valor de $a$ (con signo cambiado).</li><li>Se baja el primer coeficiente sin modificar.</li><li>Cada coeficiente siguiente se obtiene multiplicando el último resultado por $a$ y sumándolo al coeficiente correspondiente.</li><li>Los números obtenidos en la fila inferior son los coeficientes del cociente (con un grado menos) y el último número es el <strong>resto</strong>.</li>
+    </ul>
+          <ul>
+      <li>La regla de Ruffini es mucho más rápida que la división larga cuando el divisor es de la forma $(x - a)$.</li><li>También se puede aplicar de forma iterativa para dividir un polinomio entre varios factores lineales.</li><li>Los coeficientes deben incluir ceros para los grados ausentes del polinomio.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>La regla de Ruffini se emplea en ingeniería de control para determinar los polos de un sistema (las raíces del polinomio característico), lo que permite analizar la estabilidad de un sistema automático como el piloto automático de un avión.</p>
+    </div>
+      </section>
+
+      <!-- 3.3 Factorización de polinomios -->
+      <section id="modulo-3-3">
+        <h2>3.3 Factorización de polinomios</h2>
+        <p class="intro">Factorizar un polinomio significa expresarlo como producto de polinomios de menor grado. La factorización es una técnica inversa a la multiplicación y resulta esencial para resolver ecuaciones, simplificar expresiones y analizar el comportamiento de funciones polinómicas.</p>
+        <article>
+          <h3>Sacar factor común</h3>
+          <p>La técnica más sencilla de factorización consiste en identificar un factor que se repite en todos los términos del polinomio y extraerlo.</p>
+          <ul>
+      <li><strong>Factor común numérico</strong>: $6x^2 + 9x = 3x(2x + 3)$</li><li><strong>Factor común literal</strong>: $x^3 - x^2 = x^2(x - 1)$</li><li><strong>Factor común completo</strong> (número y letras): $12x^3y - 8x^2y^2 = 4x^2y(3x - 2y)$</li><li>En polinomios de varias variables, se extrae el factor común con el menor exponente de cada variable.</li><li>Siempre conviene verificar la factorización desarrollando el resultado para comprobar que se obtiene el polinomio original.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Identidades notables</h3>
+          <p>Las identidades notables son fórmulas de productos especiales que, reconocidas al instante, permiten factorizar rápidamente ciertos polinomios.</p>
+          <ul>
+      <li><strong>Cuadrado de una suma</strong>: $a^2 + 2ab + b^2 = (a + b)^2$</li><li><strong>Cuadrado de una diferencia</strong>: $a^2 - 2ab + b^2 = (a - b)^2$</li><li><strong>Diferencia de cuadrados</strong>: $a^2 - b^2 = (a + b)(a - b)$</li><li>Es fundamental identificar cuándo un trinomio se ajusta a una de estas formas.</li><li>Ejemplo: $x^2 - 16 = x^2 - 4^2 = (x + 4)(x - 4)$</li><li>Ejemplo: $4x^2 + 12x + 9 = (2x)^2 + 2 \cdot 2x \cdot 3 + 3^2 = (2x + 3)^2$</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Factorización por raíces</h3>
+          <p>Si conocemos una raíz $a$ de un polinomio $P(x)$, es decir, si $P(a) = 0$, entonces podemos afirmar que $(x - a)$ es un factor del polinomio. Aplicando la regla de Ruffini obtenemos el cociente, que podemos intentar factorizar a su vez.</p>
+          <ul>
+      <li>Para buscar raíces enteras, se prueban los divisores del término independiente.</li><li>Ejemplo: para $P(x) = x^3 - 6x^2 + 11x - 6$, se prueba con $x = 1$: $P(1) = 1 - 6 + 11 - 6 = 0$. Luego $P(x) = (x - 1)(x^2 - 5x + 6) = (x - 1)(x - 2)(x - 3)$.</li><li>Un polinomio de grado $n$ tiene, como máximo, $n$ raíces reales.</li><li>La combinación de estas técnicas (factor común, identidades notables y raíces) permite factorizar la mayoría de polinomios que se trabajan en 3.º de la ESO.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>La factorización de polinomios es clave en criptografía, donde los sistemas de seguridad como RSA dependen de la dificultad de factorizar números grandes. Además, en física se usa para descomponer expresiones y encontrar soluciones analíticas a ecuaciones del movimiento.</p>
+    </div>
+      </section>
+
+      <!-- 3.4 Fracciones algebraicas y operaciones -->
+      <section id="modulo-3-4">
+        <h2>3.4 Fracciones algebraicas y operaciones</h2>
+        <p class="intro">Una fracción algebraica es el cociente de dos polinomios. Las operaciones con fracciones algebraicas siguen las mismas reglas que las fracciones numéricas, pero requieren un dominio previo de las operaciones con polinomios y la factorización.</p>
+        <article>
+          <h3>Simplificación de fracciones algebraicas</h3>
+          <p>Simplificar una fracción algebraica consiste en dividir numerador y denominador por sus factores comunes.</p>
+          <ul>
+      <li>Una fracción algebraica $\frac{N(x)}{D(x)}$ se simplifica factorizando tanto el numerador como el denominador y cancelando los factores comunes.</li><li>Ejemplo: $\frac{x^2 - 9}{x^2 + 6x + 9} = \frac{(x+3)(x-3)}{(x+3)^2} = \frac{x - 3}{x + 3}$</li><li><strong>Importante</strong>: la simplificación es válida siempre que los factores cancelados no se anulen (es decir, $x \neq -3$ en el ejemplo).</li><li>El dominio de la fracción algebraica son todos los valores de $x$ para los que el denominador no es cero.</li><li>Una fracción está simplificada cuando el numerador y el denominador no tienen factores comunes.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Suma y resta de fracciones algebraicas</h3>
+          <p>Para sumar o restar fracciones algebraicas, estas deben tener el <strong>mínimo común denominador</strong> (m.c.m. de los denominadores).</p>
+          <ul>
+      <li>Si las fracciones tienen el mismo denominador: $\frac{A}{C} + \frac{B}{C} = \frac{A + B}{C}$</li><li>Si tienen distinto denominador, se halla el m.c.m., se amplifican ambas fracciones y se suman los numeradores.</li><li>Ejemplo: $\frac{1}{x} + \frac{1}{x+1} = \frac{x+1+x}{x(x+1)} = \frac{2x+1}{x(x+1)}$</li><li>Antes de operar, conviene factorizar los denominadores para identificar el m.c.m. más fácilmente.</li><li>El resultado final debe quedar siempre simplificado y con indicación del dominio.</li>
+    </ul>
+          <div class="katex-display">$$\frac{A(x)}{B(x)} \pm \frac{C(x)}{D(x)} = \frac{A(x) \cdot D(x) \pm C(x) \cdot B(x)}{B(x) \cdot D(x)}$$</div>
+        </article>
+
+        <article>
+          <h3>Multiplicación y división de fracciones algebraicas</h3>
+          <p>Las reglas son análogas a las de las fracciones numéricas:</p>
+          <ul>
+      <li><strong>Multiplicación</strong>: se multiplican numeradores entre sí y denominadores entre sí: $\frac{A}{B} \cdot \frac{C}{D} = \frac{A \cdot C}{B \cdot D}$</li><li><strong>División</strong>: se multiplica por la inversa del divisor: $\frac{A}{B} \div \frac{C}{D} = \frac{A}{B} \cdot \frac{D}{C} = \frac{A \cdot D}{B \cdot C}$</li><li>Es recomendable factorizar antes de multiplicar para poder cancelar factores comunes y evitar desarrollos innecesarios.</li><li>Ejemplo: $\frac{x^2 - 4}{x + 3} \cdot \frac{x + 3}{x - 2} = \frac{(x+2)(x-2)}{x+3} \cdot \frac{x+3}{x-2} = x + 2$</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las fracciones algebraicas aparecen en el cálculo de resistencias eléctricas en paralelo ($R_{total} = \frac{R_1 \cdot R_2}{R_1 + R_2}$), en la determinación de concentraciones en química y en la simplificación de funciones racionales que modelan costes y beneficios en economía.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_3ESO_Tema3_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 3</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO A - Tema 6: Introducción al cálculo | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-infinity"></i> <span>Tema 6: Introducción al cálculo</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-6-1" class="nav-link"><i class="fa-solid fa-1"></i> 6.1 Tasa de variación media e instantánea</a></li>
+        <li><a href="#modulo-6-2" class="nav-link"><i class="fa-solid fa-2"></i> 6.2 Reglas de derivación básicas</a></li>
+        <li><a href="#modulo-6-3" class="nav-link"><i class="fa-solid fa-3"></i> 6.3 Aplicaciones: monotonía, extremos y curvatura</a></li>
+        <li><a href="#modulo-6-4" class="nav-link"><i class="fa-solid fa-4"></i> 6.4 Optimización geométrica y física</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 6.1 Tasa de variación media e instantánea -->
+      <section id="modulo-6-1">
+        <h2>6.1 Tasa de variación media e instantánea</h2>
+        <p class="intro">El cálculo nació para resolver el problema fundamental del movimiento: ¿cómo medir la velocidad instantánea de un objeto cuando solo conocemos su posición en distintos instantes? La respuesta viene de la mano de las tasas de variación.</p>
+        <article>
+          <h3>Tasa de variación media (TVM)</h3>
+          <p>La <strong>tasa de variación media</strong> de una función $f$ en el intervalo $[a, b]$ es el cambio medio de la función por unidad de cambio de $x$:</p>
+          <div class="katex-display">$$\text{TVM}_{[a,b]} = \frac{f(b) - f(a)}{b - a}$$</div>
+          <p>Geométricamente, es la <strong>pendiente de la recta secante</strong> que une los puntos $(a, f(a))$ y $(b, f(b))$ de la gráfica de $f$.</p>
+          <p><strong>Interpretación física</strong>: Si $f(t)$ representa la posición de un objeto en el instante $t$, la TVM en $[t_0, t_1]$ es la <strong>velocidad media</strong> en ese intervalo.</p>
+        </article>
+
+        <article>
+          <h3>Tasa de variación instantánea (TVI)</h3>
+          <p>La <strong>tasa de variación instantánea</strong> en un punto $x = a$ se define como el límite de la TVM cuando el intervalo se reduce a cero:</p>
+          <div class="katex-display">$$\text{TVI}(a) = \lim_{h \to 0} \frac{f(a + h) - f(a)}{h}$$</div>
+          <p>Geométricamente, es la <strong>pendiente de la recta tangente</strong> a la gráfica de $f$ en el punto $(a, f(a))$.</p>
+          <p><strong>Interpretación física</strong>: Es la <strong>velocidad instantánea</strong> en el instante $t = a$.</p>
+        </article>
+
+        <article>
+          <h3>Relación entre TVM y TVI</h3>
+          <ul>
+      <li>La TVM da una aproximación promedio.</li><li>La TVI da el valor exacto en un punto.</li><li>La TVI es el límite de la TVM cuando $h \to 0$.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Recta tangente a una curva</h3>
+          <p>La recta tangente a la gráfica de $f$ en el punto $(a, f(a))$ tiene pendiente $m = \text{TVI}(a)$ y su ecuación es:</p>
+          <div class="katex-display">$$y - f(a) = m \cdot (x - a)$$</div>
+        </article>
+
+        <article>
+          <h3>Ejemplo completo</h3>
+          <p>Sea $f(x) = x^2$. La TVI en $x = 3$ es:</p>
+          <div class="katex-display">$$\text{TVI}(3) = \lim_{h \to 0} \frac{(3+h)^2 - 9}{h} = \lim_{h \to 0} \frac{6h + h^2}{h} = \lim_{h \to 0} (6 + h) = 6$$</div>
+          <p>La recta tangente en $(3, 9)$ es: $y - 9 = 6(x - 3)$, es decir, $y = 6x - 9$.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>El cuentakilómetros de un coche mide la velocidad instantánea (TVI del espacio respecto al tiempo). Si viajas $100$ km en $1$ hora, tu velocidad media es $100$ km/h (TVM), pero en ningún momento mantuviste exactamente $100$ km/h de forma constante. La TVI varía continuamente.</p>
+    </div>
+      </section>
+
+      <!-- 6.2 Reglas de derivación básicas -->
+      <section id="modulo-6-2">
+        <h2>6.2 Reglas de derivación básicas</h2>
+        <p class="intro">La <strong>derivada</strong> de una función $f$ en un punto $x$, que se denota $f'(x)$, es la tasa de variación instantánea. La derivada de una función es, a su vez, una nueva función: la <strong>función derivada</strong>.</p>
+        <article>
+          <h3>Definición de derivada</h3>
+          <div class="katex-display">$$f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}$$</div>
+        </article>
+
+        <article>
+          <h3>Notaciones de la derivada</h3>
+          <ul>
+      <li>$f'(x)$ (notación de Lagrange)</li><li>$y'$ (notación de Newton)</li><li>$\frac{dy}{dx}$ o $\frac{df}{dx}$ (notación de Leibniz)</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Reglas básicas de derivación</h3>
+          <p><strong>Funciones constantes</strong>:</p>
+          <div class="katex-display">$$\frac{d}{dx}(k) = 0$$</div>
+          <p><strong>Potencias</strong> (regla fundamental):</p>
+          <div class="katex-display">$$\frac{d}{dx}(x^n) = n \cdot x^{n-1}$$</div>
+          <p><strong>Suma y diferencia</strong>:</p>
+          <div class="katex-display">$$(f \pm g)'(x) = f'(x) \pm g'(x)$$</div>
+          <p><strong>Producto por constante</strong>:</p>
+          <div class="katex-display">$$\frac{d}{dx}(k \cdot f) = k \cdot f'(x)$$</div>
+        </article>
+
+        <article>
+          <h3>Regla del producto</h3>
+          <div class="katex-display">$$(f \cdot g)'(x) = f'(x) \cdot g(x) + f(x) \cdot g'(x)$$</div>
+        </article>
+
+        <article>
+          <h3>Regla del cociente</h3>
+          <div class="katex-display">$$\left(\frac{f}{g}\right)'(x) = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{g(x)^2}$$</div>
+        </article>
+
+        <article>
+          <h3>Regla de la cadena</h3>
+          <p>Si $h(x) = (g \circ f)(x) = g(f(x))$, entonces:</p>
+          <div class="katex-display">$$h'(x) = g'(f(x)) \cdot f'(x)$$</div>
+          <p>Esta regla es esencial para derivar funciones compuestas.</p>
+        </article>
+
+        <article>
+          <h3>Derivadas de funciones especiales</h3>
+          <ul>
+      <li>$\frac{d}{dx}(e^x) = e^x$</li><li>$\frac{d}{dx}(\ln x) = \frac{1}{x}$</li><li>$\frac{d}{dx}(\sin x) = \cos x$</li><li>$\frac{d}{dx}(\cos x) = -\sin x$</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Tabla resumen de derivadas</h3>
+          <div class="katex-display">$$\begin{array}{|c|c|} \hline f(x) & f'(x) \\ \hline k & 0 \\ x^n & nx^{n-1} \\ e^x & e^x \\ \ln x & 1/x \\ \sin x & \cos x \\ \cos x & -\sin x \\ \hline \end{array}$$</div>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>La derivada se usa en física para calcular la velocidad a partir de la posición y la aceleración a partir de la velocidad. En economía, la derivada del coste es el coste marginal, que indica cuánto aumenta el coste al producir una unidad más.</p>
+    </div>
+      </section>
+
+      <!-- 6.3 Aplicaciones: monotonía, extremos y curvatura -->
+      <section id="modulo-6-3">
+        <h2>6.3 Aplicaciones: monotonía, extremos y curvatura</h2>
+        <p class="intro">Una vez que sabemos calcular derivadas, podemos usarlas para analizar el comportamiento de las funciones: saber dónde crecen y dónde decrecen, localizar máximos y mínimos, y estudiar la curvatura de las gráficas.</p>
+        <article>
+          <h3>Criterio de monotonía</h3>
+          <ul>
+      <li>Si $f'(x) > 0$ en un intervalo, $f$ es <strong>estrictamente creciente</strong> en ese intervalo.</li><li>Si $f'(x) < 0$ en un intervalo, $f$ es <strong>estrictamente decreciente</strong> en ese intervalo.</li><li>Si $f'(x) = 0$ en un intervalo, $f$ es <strong>constante</strong> en ese intervalo.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Puntos críticos y extremos relativos</h3>
+          <p>Un <strong>punto crítico</strong> es un valor $x_0$ donde $f'(x_0) = 0$ o $f'(x_0)$ no existe.</p>
+          <p><strong>Criterio de la primera derivada</strong> para extremos relativos:</p>
+          <ol>
+      <li>Si $f'$ cambia de positiva a negativa en $x_0$: <strong>máximo relativo</strong>.</li><li>Si $f'$ cambia de negativa a positiva en $x_0$: <strong>mínimo relativo</strong>.</li><li>Si $f'$ no cambia de signo: no es extremo (es un punto de inflexión horizontal).</li>
+    </ol>
+          <p><strong>Criterio de la segunda derivada</strong>:</p>
+          <ul>
+      <li>Si $f'(x_0) = 0$ y $f''(x_0) < 0$: <strong>máximo relativo</strong>.</li><li>Si $f'(x_0) = 0$ y $f''(x_0) > 0$: <strong>mínimo relativo</strong>.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Concavidad y convexidad</h3>
+          <p>La <strong>segunda derivada</strong> $f''(x)$ informa sobre la curvatura:</p>
+          <ul>
+      <li>$f''(x) > 0$: $f$ es <strong>convexa</strong> (cóncava hacia arriba, forma de U).</li><li>$f''(x) < 0$: $f$ es <strong>cóncava</strong> (cóncava hacia abajo, forma de ∩).</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Puntos de inflexión</h3>
+          <p>Un <strong>punto de inflexión</strong> es donde la curvatura cambia de signo, es decir, donde $f''$ cambia de signo (pasando por cero o sin existir).</p>
+        </article>
+
+        <article>
+          <h3>Procedimiento completo de estudio</h3>
+          <p>Para estudiar una función $f$:</p>
+          <ol>
+      <li><strong>Dominio</strong> de $f$.</li><li><strong>Intersección</strong> con los ejes.</li><li><strong>Simetría</strong> (par, impar).</li><li><strong>Asíntotas</strong>.</li><li><strong>Derivada primera</strong> $f'(x)$ y estudio de monotonía.</li><li><strong>Extremos relativos</strong>.</li><li><strong>Derivada segunda</strong> $f''(x)$ y estudio de curvatura.</li><li><strong>Puntos de inflexión</strong>.</li><li><strong>Representación gráfica</strong>.</li>
+    </ol>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>En economía, los máximos de beneficio y mínimos de coste se hallan con derivadas. En física, la velocidad máxima se alcanza donde la aceleración (derivada segunda de la posición) es cero. En ingeniería, los puntos de inflexión de una viga indican zonas de máximo esfuerzo.</p>
+    </div>
+      </section>
+
+      <!-- 6.4 Optimización geométrica y física -->
+      <section id="modulo-6-4">
+        <h2>6.4 Optimización geométrica y física</h2>
+        <p class="intro">La optimización consiste en encontrar los valores de las variables que hacen que una función alcance su valor máximo o mínimo. Es una de las aplicaciones más prácticas del cálculo diferencial.</p>
+        <article>
+          <h3>Método de optimización</h3>
+          <ol>
+      <li><strong>Identificar la variable</strong> a optimizar y la cantidad objetivo.</li><li><strong>Expresar la función objetivo</strong> en términos de una sola variable.</li><li><strong>Determinar el dominio</strong> (restricciones físicas del problema).</li><li><strong>Calcular la derivada</strong> y hallar los puntos críticos.</li><li><strong>Evaluar</strong> la función objetivo en los puntos críticos y en los extremos del dominio.</li><li><strong>Seleccionar</strong> el valor óptimo.</li>
+    </ol>
+        </article>
+
+        <article>
+          <h3>Problemas geométricos típicos</h3>
+          <p><strong>Área máxima con perímetro fijo</strong>:</p>
+          <p>Si un rectángulo tiene perímetro $P$, su área es $A(x) = x\left(\frac{P}{2} - x\right) = \frac{P}{2}x - x^2$.</p>
+          <p>Derivando: $A'(x) = \frac{P}{2} - 2x = 0 \implies x = \frac{P}{4}$.</p>
+          <p>El rectángulo de área máxima es el <strong>cuadrado</strong>.</p>
+          <p><strong>Caja de volumen máximo</strong>:</p>
+          <p>De una lámina de dimensiones dadas se recortan cuadrados de lado $x$ en las esquinas. Se pliegan para formar una caja abierta de volumen $V(x)$. Se halla el máximo derivando.</p>
+        </article>
+
+        <article>
+          <h3>Problemas físicos</h3>
+          <p><strong>Distancia mínima</strong>: Para encontrar el punto más cercano de una curva a un punto dado, se minimiza la función distancia usando la derivada.</p>
+          <p><strong>Tiempo mínimo</strong>: En problemas de trayectoria, se minimiza la función tiempo (distancia/velocidad).</p>
+        </article>
+
+        <article>
+          <h3>Extremos absolutos</h3>
+          <p>Si $f$ es continua en un intervalo cerrado $[a, b]$, el máximo y mínimo absolutos se encuentran:</p>
+          <ul>
+      <li>En los puntos críticos interiores ($f'(x) = 0$).</li><li>En los extremos del intervalo ($a$ y $b$).</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Problemas de optimización con varias variables</h3>
+          <p>Cuando hay más de una variable, usamos la <strong>condición de restricción</strong> para reducir a una sola variable antes de derivar.</p>
+          <p><strong>Ejemplo</strong>: Minimizar la superficie de un cilindro de volumen $V$ fijo. Con $V = \pi r^2 h$ y $S = 2\pi r^2 + 2\pi r h$, sustituimos $h = \frac{V}{\pi r^2}$ y derivamos $S(r)$ respecto a $r$.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>- <strong>Ingeniería</strong>: Diseñar un contenedor cilíndrico de volumen fijo con la mínima cantidad de material. - <strong>Física</strong>: La ley de Snell de la refracción se deduce minimizando el tiempo de recorrido de la luz. - <strong>Economía</strong>: Determinar el precio que maximiza el beneficio o la producción que minimiza el coste medio.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOA_Tema6_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 6</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

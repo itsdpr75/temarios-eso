@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO B - Tema 3: Funciones en contextos reales | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-chart-line"></i> <span>Tema 3: Funciones en contextos reales</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-3-1" class="nav-link"><i class="fa-solid fa-1"></i> 3.1 Interpretación de gráficas en noticias y ciencia</a></li>
+        <li><a href="#modulo-3-2" class="nav-link"><i class="fa-solid fa-2"></i> 3.2 Modelos lineales y de crecimiento</a></li>
+        <li><a href="#modulo-3-3" class="nav-link"><i class="fa-solid fa-3"></i> 3.3 Funciones a trozos en tarifas e impuestos</a></li>
+        <li><a href="#modulo-3-4" class="nav-link"><i class="fa-solid fa-4"></i> 3.4 Optimización básica con herramientas digitales</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 3.1 Interpretación de gráficas en noticias y ciencia -->
+      <section id="modulo-3-1">
+        <h2>3.1 Interpretación de gráficas en noticias y ciencia</h2>
+        <p class="intro">Las <strong>gráficas</strong> son una forma visual de representar datos y relaciones entre variables. Aparecen constantemente en periódicos, informes meteorológicos, estudios científicos y redes sociales. Saber interpretarlas correctamente es una competencia fundamental para tomar decisiones informadas. Una <strong>función</strong> es una relación entre dos magnitudes de forma que a cada valor de la variable independiente $x$ le corresponde un único valor de la variable dependiente $y$.</p>
+        <article>
+          <h3>Elementos de una gráfica</h3>
+          <p>Toda gráfica debe contener:
+- <strong>Ejes</strong>: el eje horizontal ($x$) y el eje vertical ($y$).
+- <strong>Título</strong>: describe qué representa la gráfica.
+- <strong>Escala</strong>: valores numéricos de los ejes.
+- <strong>Leyenda</strong>: si hay varias series de datos.
+- <strong>Unidades</strong>: siempre deben aparecer junto a los números.</p>
+        </article>
+
+        <article>
+          <h3>Lectura de gráficas</h3>
+          <p>Para interpretar una gráfica correctamente:
+- <strong>Identificar las variables</strong>: ¿qué representa cada eje?
+- <strong>Observar la tendencia general</strong>: ¿crece, decrece, es constante, oscila?
+- <strong>Leer valores concretos</strong>: buscar puntos específicos.
+- <strong>Detectar engaños</strong>: ejes que no empiezan en cero, escalas inconsistentes, gráficas de áreas engañosas.</p>
+        </article>
+
+        <article>
+          <h3>Tipos de gráficas en los medios</h3>
+          <ul>
+      <li><strong>Gráfica de líneas</strong>: ideal para mostrar la evolución de una variable a lo largo del tiempo.</li><li><strong>Gráfica de barras</strong>: compara cantidades entre categorías.</li><li><strong>Gráfica de sectores</strong>: muestra la proporción de cada parte respecto al total.</li><li><strong>Gráfica de dispersión</strong>: relaciona dos variables y muestra su correlación.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Crecimiento y decrecimiento</h3>
+          <p>Una función es <strong>creciente</strong> en un intervalo si al aumentar $x$ también aumenta $y$. Es <strong>decreciente</strong> si al aumentar $x$ disminuye $y$. Es <strong>constante</strong> si $y$ no cambia.</p>
+        </article>
+
+        <article>
+          <h3>Engaños comunes en gráficas</h3>
+          <ul>
+      <li><strong>Eje vertical que no empieza en cero</strong>: una pequeña diferencia se ve enorme.</li><li><strong>Escalas no uniformes</strong>: las distancias entre marcas no son proporcionales.</li><li><strong>Gráficas de áreas o volúmenes</strong>: si un dato es el doble que otro, el área (o el volumen) puede hacer que se vea $4$ (o $8$) veces mayor.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un periódico muestra una gráfica del desempleo con el eje $Y$ que empieza en $3{,}5\text{ M}$ (millones) y termina en $4{,}2\text{ M}$. El salto de $0{,}7\text{ M}$ se ve dramático. Si el eje empezara en $0$, la variación del $3{,}5$ al $4{,}2$ sobre un total cercano a $47\text{ M}$ de población activa parecería mucho menor.</p>
+    </div>
+      </section>
+
+      <!-- 3.2 Modelos lineales y de crecimiento -->
+      <section id="modulo-3-2">
+        <h2>3.2 Modelos lineales y de crecimiento</h2>
+        <p class="intro">Los <strong>modelos lineales</strong> son las funciones más sencillas y aparecen en numerosas situaciones: tarifas planas con coste por unidad, conversiones entre unidades, relaciones de proporcionalidad, etc. Su gráfica es una recta.</p>
+        <article>
+          <h3>Función lineal</h3>
+          <p>La función lineal tiene la forma:</p>
+          <div class="katex-display">$$f(x) = mx + n$$</div>
+          <p>Donde:
+- <strong>$m$</strong> es la <strong>pendiente</strong>: indica cuánto cambia $y$ cuando $x$ aumenta en $1$. Si $m > 0$, la función crece; si $m < 0$, decrece.
+- <strong>$n$</strong> es la <strong>ordenada en el origen</strong>: valor de $y$ cuando $x = 0$.</p>
+        </article>
+
+        <article>
+          <h3>Proporcionalidad directa</h3>
+          <p>Cuando $n = 0$, tenemos una función de proporcionalidad directa: $f(x) = mx$. La gráfica pasa por el origen.</p>
+          <p>Ejemplo: si $1$ litro de gasolina cuesta $1{,}60\text{ €}$, el coste de $x$ litros es $f(x) = 1{,}60x$.</p>
+        </article>
+
+        <article>
+          <h3>Cálculo de la pendiente</h3>
+          <p>La pendiente entre dos puntos $(x_1, y_1)$ y $(x_2, y_2)$ es:</p>
+          <div class="katex-display">$$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$</div>
+        </article>
+
+        <article>
+          <h3>Función de crecimiento exponencial</h3>
+          <p>Algunas magnitudes no crecen linealmente, sino de forma <strong>exponencial</strong>:</p>
+          <div class="katex-display">$$f(x) = a \cdot b^x$$</div>
+          <p>En el crecimiento exponencial, la tasa de crecimiento es proporcional al valor actual. Esto produce curvas que empiezan despacio y luego se disparan.</p>
+          <p>Ejemplos: crecimiento de una población, interés compuesto, propagación de un virus.</p>
+        </article>
+
+        <article>
+          <h3>Crecimiento frente a decrecimiento exponencial</h3>
+          <ul>
+      <li>Si $b > 1$: la función <strong>crece</strong> exponencialmente.</li><li>Si $0 < b < 1$: la función <strong>decrece</strong> exponencialmente.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Diferencia clave entre crecimiento lineal y exponencial</h3>
+          <p>El crecimiento lineal añade una <strong>cantidad fija</strong> cada periodo. El crecimiento exponencial multiplica por un <strong>factor fijo</strong> cada periodo. Por eso el exponencial siempre acaba superando al lineal si se espera lo suficiente.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Una app de mensajería cobra $5\text{ €}$ de alta y $0{,}10\text{ €}$ por mensaje. El coste mensual es $f(x) = 0{,}10x + 5$. Si envías $200$ mensajes, pagas $25\text{ €}$. La pendiente ($0{,}10$) indica que cada mensaje adicional cuesta $0{,}10\text{ €}$.</p>
+    </div>
+      </section>
+
+      <!-- 3.3 Funciones a trozos en tarifas e impuestos -->
+      <section id="modulo-3-3">
+        <h2>3.3 Funciones a trozos en tarifas e impuestos</h2>
+        <p class="intro">Las <strong>funciones a trozos</strong> (o definidas por intervalos) son aquellas cuya expresión cambia según el valor de $x$. Son muy frecuentes en tarifas de servicios, tramos impositivos, precios escalonados y problemas de optimización.</p>
+        <article>
+          <h3>Definición de función a trozos</h3>
+          <p>Una función a trozos se define por distintas fórmulas en distintos intervalos:</p>
+          <div class="katex-display">$$f(x) = \begin{cases} f_1(x) & \text{si } x \in I_1 \\ f_2(x) & \text{si } x \in I_2 \\ \ldots & \end{cases}$$</div>
+        </article>
+
+        <article>
+          <h3>Ejemplo: tarifa de agua</h3>
+          <p>Supongamos una tarifa de agua con un <strong>mínimo fijo</strong> y un coste por $\text{m}^3$:
+- Cuota fija: $10\text{ €/mes}$
+- Primeros $10\text{ m}^3$: $0{,}50\text{ €/m}^3$
+- De $10$ a $25\text{ m}^3$: $0{,}80\text{ €/m}^3$
+- Más de $25\text{ m}^3$: $1{,}20\text{ €/m}^3$</p>
+          <div class="katex-display">$$f(x) = \begin{cases} 10 + 0{,}50x & \text{si } 0 \leq x \leq 10 \\ 10 + 5 + 0{,}80(x-10) & \text{si } 10 < x \leq 25 \\ 10 + 5 + 12 + 1{,}20(x-25) & \text{si } x > 25 \end{cases}$$</div>
+        </article>
+
+        <article>
+          <h3>Ejemplo: tarifa eléctrica con tramos</h3>
+          <p>La factura eléctrica en España se estructura en <strong>tramos de potencia</strong> y <strong>tramos de consumo</strong>. A mayor consumo, el precio por kWh puede ser mayor, incentivando el ahorro.</p>
+        </article>
+
+        <article>
+          <h3>Ejemplo: impuesto sobre la renta (IRPF)</h3>
+          <p>El IRPF se aplica por tramos progresivos: cada tramo de ingresos tributa a un tipo distinto, y solo los ingresos dentro de ese tramo pagan ese porcentaje.</p>
+        </article>
+
+        <article>
+          <h3>Representación gráfica de funciones a trozos</h3>
+          <p>Las funciones a trozos se representan dibujando cada fragmento en su intervalo correspondiente. Los puntos de cambio pueden ser:
+- <strong>Continuos</strong>: la función no salta (los segmentos se unen).
+- <strong>Discontinuos</strong>: hay un salto (por ejemplo, el coste de un aparcamiento por horas completa).</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un aparcamiento cobra $2\text{ €}$ la primera hora (o fracción) y $1{,}50\text{ €}$ cada hora adicional (o fracción). Si aparco $3$ horas y $20$ minutos, se redondea a $4$ horas: coste $= 2 + 3 \times 1{,}50 = 6{,}50\text{ €}$.</p>
+    </div>
+      </section>
+
+      <!-- 3.4 Optimización básica con herramientas digitales -->
+      <section id="modulo-3-4">
+        <h2>3.4 Optimización básica con herramientas digitales</h2>
+        <p class="intro">La <strong>optimización</strong> consiste en encontrar el mejor valor posible de una magnitud (el máximo beneficio, el mínimo coste, la mejor relación, etc.) dentro de unas restricciones dadas. Es una de las aplicaciones más útiles de las matemáticas en la vida profesional.</p>
+        <article>
+          <h3>Problemas de maximización y minimización</h3>
+          <p>Para resolver un problema de optimización:
+1. <strong>Identificar la función objetivo</strong>: la magnitud que queremos maximizar o minimizar.
+2. <strong>Expresar esa función</strong> en términos de una variable.
+3. <strong>Determinar el dominio</strong>: los valores posibles de esa variable.
+4. <strong>Hallar el valor óptimo</strong> usando cálculo, la gráfica de la función o herramientas digitales.</p>
+        </article>
+
+        <article>
+          <h3>Optimización de áreas</h3>
+          <p>Problema clásico: con una cantidad fija de material, ¿qué forma maximiza el área?</p>
+          <p>Ejemplo: con $40\text{ m}$ de valla, ¿qué dimensiones de un rectángulo dan el área máxima?</p>
+          <p>Si el largo es $x$ y el ancho es $y$: $2x + 2y = 40 \implies y = 20 - x$</p>
+          <p>El área es $A = x \cdot y = x(20 - x) = 20x - x^2$</p>
+          <p>Esta es una parábola cóncava hacia abajo, con su máximo en $x = -b/(2a) = -20/(-2) = 10$.</p>
+          <p>Por tanto, el rectángulo que maximiza el área es un <strong>cuadrado</strong> de $10 \times 10\text{ m}$, con área $100\text{ m}^2$.</p>
+        </article>
+
+        <article>
+          <h3>Optimización de beneficios</h3>
+          <p>Si el beneficio $B$ depende del número de unidades $x$ vendidas:</p>
+          <div class="katex-display">$$B(x) = \text{Ingresos} - \text{Costes} = p \cdot x - (cx + F) = (p - c)x - F$$</div>
+          <p>Donde $p$ es el precio, $c$ el coste unitario y $F$ los costes fijos.</p>
+        </article>
+
+        <article>
+          <h3>Uso de herramientas digitales</h3>
+          <p>Las <strong>hojas de cálculo</strong> (Excel, Google Sheets, Calc) permiten:
+- Introducir datos y calcular automáticamente.
+- Crear gráficas para visualizar funciones.
+- Usar el <strong>Solver</strong> para encontrar valores óptimos.
+- Simular escenarios cambiando parámetros.</p>
+        </article>
+
+        <article>
+          <h3>Verificación con la gráfica</h3>
+          <p>La gráfica de la función objetivo nos permite ver visualmente dónde se alcanza el máximo o mínimo. La combinación de análisis algebraico y representación gráfica es una estrategia muy potente.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un evento en un auditorio de $500$ localidades cobra $20\text{ €}$ la entrada. Cada vez que se sube el precio en $1\text{ €}$, asisten $20$ personas menos. Si el precio es $x$: asistentes $= 500 - 20(x-20) = 900 - 20x$ (para $x \geq 20$). Los ingresos son $I(x) = x(900 - 20x) = 900x - 20x^2$, con máximo en $x = 900/40 = 22{,}50\text{ €}$, produciendo $10\,125\text{ €}$.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOB_Tema3_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 3</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

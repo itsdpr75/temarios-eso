@@ -78,182 +78,182 @@
   [x] 2.2 Aproximaciones y error absoluto/relativo
   [x] 2.3 Fracciones generatrices
   [x] 2.4 Resolución de problemas multi-etapa
-[] Tema 3: Proporcionalidad ampliada
-  [] 3.1 Magnitudes directamente proporcionales
-  [] 3.2 Magnitudes inversamente proporcionales
-  [] 3.3 Regla de tres compuesta
-  [] 3.4 Porcentajes encadenados y problemas financieros
-[] Tema 4: Álgebra I
-  [] 4.1 Monomios: grado, coeficiente, operaciones
-  [] 4.2 Polinomios: suma, resta y multiplicación
-  [] 4.3 Identidades notables
-  [] 4.4 Valor numérico y simplificación
-[] Tema 5: Ecuaciones
-  [] 5.1 Ecuaciones de primer grado con paréntesis y fracciones
-  [] 5.2 Ecuaciones de segundo grado incompletas
-  [] 5.3 Ecuaciones de segundo grado completas (fórmula)
-  [] 5.4 Problemas modelados con ecuaciones
-[] Tema 6: Sistemas de ecuaciones lineales
-  [] 6.1 Concepto y representación gráfica
-  [] 6.2 Método de sustitución
-  [] 6.3 Método de igualación
-  [] 6.4 Método de reducción y problemas aplicados
-[] Tema 7: Geometría plana: semejanza y Tales
-  [] 7.1 Figuras semejantes y razón de semejanza
-  [] 7.2 Escalas y planos
-  [] 7.3 Teorema de Tales y aplicaciones
-  [] 7.4 Razones trigonométricas en triángulos rectángulos
-[] Tema 8: Teorema de Pitágoras
-  [] 8.1 Enunciado y demostración visual
-  [] 8.2 Cálculo de hipotenusa y catetos
-  [] 8.3 Ternas pitagóricas
-  [] 8.4 Problemas de aplicación práctica
-[] Tema 9: Áreas y volúmenes
-  [] 9.1 Áreas de figuras compuestas y regulares
-  [] 9.2 Volúmenes de prismas y pirámides
-  [] 9.3 Volúmenes de cuerpos redondos
-  [] 9.4 Problemas de capacidad y conversión de unidades
-[] Tema 10: Funciones: introducción
-  [] 10.1 Concepto de función, dominio y recorrido
-  [] 10.2 Representación en ejes cartesianos
-  [] 10.3 Crecimiento, decrecimiento y extremos
-  [] 10.4 Tipos básicos: constantes, lineales, afines
-[] Tema 11: Estadística y probabilidad
-  [] 11.1 Medidas de dispersión: rango y desviación media
-  [] 11.2 Diagramas de caja y bigotes
-  [] 11.3 Probabilidad experimental vs teórica
-  [] 11.4 Tablas de contingencia básicas
+[x] Tema 3: Proporcionalidad ampliada
+  [x] 3.1 Magnitudes directamente proporcionales
+  [x] 3.2 Magnitudes inversamente proporcionales
+  [x] 3.3 Regla de tres compuesta
+  [x] 3.4 Porcentajes encadenados y problemas financieros
+[x] Tema 4: Álgebra I
+  [x] 4.1 Monomios: grado, coeficiente, operaciones
+  [x] 4.2 Polinomios: suma, resta y multiplicación
+  [x] 4.3 Identidades notables
+  [x] 4.4 Valor numérico y simplificación
+[x] Tema 5: Ecuaciones
+  [x] 5.1 Ecuaciones de primer grado con paréntesis y fracciones
+  [x] 5.2 Ecuaciones de segundo grado incompletas
+  [x] 5.3 Ecuaciones de segundo grado completas (fórmula)
+  [x] 5.4 Problemas modelados con ecuaciones
+[x] Tema 6: Sistemas de ecuaciones lineales
+  [x] 6.1 Concepto y representación gráfica
+  [x] 6.2 Método de sustitución
+  [x] 6.3 Método de igualación
+  [x] 6.4 Método de reducción y problemas aplicados
+[x] Tema 7: Geometría plana: semejanza y Tales
+  [x] 7.1 Figuras semejantes y razón de semejanza
+  [x] 7.2 Escalas y planos
+  [x] 7.3 Teorema de Tales y aplicaciones
+  [x] 7.4 Razones trigonométricas en triángulos rectángulos
+[x] Tema 8: Teorema de Pitágoras
+  [x] 8.1 Enunciado y demostración visual
+  [x] 8.2 Cálculo de hipotenusa y catetos
+  [x] 8.3 Ternas pitagóricas
+  [x] 8.4 Problemas de aplicación práctica
+[x] Tema 9: Áreas y volúmenes
+  [x] 9.1 Áreas de figuras compuestas y regulares
+  [x] 9.2 Volúmenes de prismas y pirámides
+  [x] 9.3 Volúmenes de cuerpos redondos
+  [x] 9.4 Problemas de capacidad y conversión de unidades
+[x] Tema 10: Funciones: introducción
+  [x] 10.1 Concepto de función, dominio y recorrido
+  [x] 10.2 Representación en ejes cartesianos
+  [x] 10.3 Crecimiento, decrecimiento y extremos
+  [x] 10.4 Tipos básicos: constantes, lineales, afines
+[x] Tema 11: Estadística y probabilidad
+  [x] 11.1 Medidas de dispersión: rango y desviación media
+  [x] 11.2 Diagramas de caja y bigotes
+  [x] 11.3 Probabilidad experimental vs teórica
+  [x] 11.4 Tablas de contingencia básicas
 
 [] Cuaderno extra de ejercicios Markdown
 
 3º ESO - MATEMATICAS ----------------------
-[] Tema 1: Números reales
-  [] 1.1 Racionales e irracionales
-  [] 1.2 Recta real e intervalos
-  [] 1.3 Aproximaciones, cotas de error y notación científica
-  [] 1.4 Operaciones con números reales
-[] Tema 2: Potencias, raíces y radicales
-  [] 2.1 Propiedades de potencias y exponentes racionales
-  [] 2.2 Radicales: simplificación y operaciones
-  [] 2.3 Racionalización de denominadores
-  [] 2.4 Ecuaciones con radicales
-[] Tema 3: Polinomios y fracciones algebraicas
-  [] 3.1 Operaciones avanzadas con polinomios
-  [] 3.2 Teorema del resto y regla de Ruffini
-  [] 3.3 Factorización de polinomios
-  [] 3.4 Fracciones algebraicas y operaciones
-[] Tema 4: Ecuaciones y sistemas avanzados
-  [] 4.1 Ecuaciones racionales y bicuadradas
-  [] 4.2 Sistemas 2x2 no lineales
-  [] 4.3 Sistemas 3x3 lineales
-  [] 4.4 Inecuaciones de primer grado y representación
-[] Tema 5: Funciones lineales y cuadráticas
-  [] 5.1 Pendiente, ordenada en origen y ecuación de la recta
-  [] 5.2 Parábolas: vértice, eje de simetría, concavidad
-  [] 5.3 Transformaciones de funciones
-  [] 5.4 Modelado de problemas reales con funciones
-[] Tema 6: Geometría analítica en el plano
-  [] 6.1 Distancia entre puntos y punto medio
-  [] 6.2 Ecuación de la recta: formas explícita, general y punto-pendiente
-  [] 6.3 Posiciones relativas de dos rectas
-  [] 6.4 Distancias de punto a recta y entre paralelas
-[] Tema 7: Trigonometría
-  [] 7.1 Razones trigonométricas y círculo goniométrico
-  [] 7.2 Ángulos notables y reducción al primer cuadrante
-  [] 7.3 Resolución de triángulos rectángulos
-  [] 7.4 Aplicaciones: alturas, distancias y navegación
-[] Tema 8: Estadística descriptiva avanzada
-  [] 8.1 Medidas de dispersión: varianza y desviación típica
-  [] 8.2 Coeficiente de variación y puntuaciones típicas
-  [] 8.3 Diagramas de caja avanzados y outliers
-  [] 8.4 Interpretación crítica de datos estadísticos
-[] Tema 9: Probabilidad compuesta
-  [] 9.1 Espacio muestral y álgebra de sucesos
-  [] 9.2 Probabilidad condicionada y teorema de la probabilidad total
-  [] 9.3 Diagramas de árbol y tablas de contingencia
-  [] 9.4 Problemas de extracción con y sin reemplazo
+[x] Tema 1: Números reales
+  [x] 1.1 Racionales e irracionales
+  [x] 1.2 Recta real e intervalos
+  [x] 1.3 Aproximaciones, cotas de error y notación científica
+  [x] 1.4 Operaciones con números reales
+[x] Tema 2: Potencias, raíces y radicales
+  [x] 2.1 Propiedades de potencias y exponentes racionales
+  [x] 2.2 Radicales: simplificación y operaciones
+  [x] 2.3 Racionalización de denominadores
+  [x] 2.4 Ecuaciones con radicales
+[x] Tema 3: Polinomios y fracciones algebraicas
+  [x] 3.1 Operaciones avanzadas con polinomios
+  [x] 3.2 Teorema del resto y regla de Ruffini
+  [x] 3.3 Factorización de polinomios
+  [x] 3.4 Fracciones algebraicas y operaciones
+[x] Tema 4: Ecuaciones y sistemas avanzados
+  [x] 4.1 Ecuaciones racionales y bicuadradas
+  [x] 4.2 Sistemas 2x2 no lineales
+  [x] 4.3 Sistemas 3x3 lineales
+  [x] 4.4 Inecuaciones de primer grado y representación
+[x] Tema 5: Funciones lineales y cuadráticas
+  [x] 5.1 Pendiente, ordenada en origen y ecuación de la recta
+  [x] 5.2 Parábolas: vértice, eje de simetría, concavidad
+  [x] 5.3 Transformaciones de funciones
+  [x] 5.4 Modelado de problemas reales con funciones
+[x] Tema 6: Geometría analítica en el plano
+  [x] 6.1 Distancia entre puntos y punto medio
+  [x] 6.2 Ecuación de la recta: formas explícita, general y punto-pendiente
+  [x] 6.3 Posiciones relativas de dos rectas
+  [x] 6.4 Distancias de punto a recta y entre paralelas
+[x] Tema 7: Trigonometría
+  [x] 7.1 Razones trigonométricas y círculo goniométrico
+  [x] 7.2 Ángulos notables y reducción al primer cuadrante
+  [x] 7.3 Resolución de triángulos rectángulos
+  [x] 7.4 Aplicaciones: alturas, distancias y navegación
+[x] Tema 8: Estadística descriptiva avanzada
+  [x] 8.1 Medidas de dispersión: varianza y desviación típica
+  [x] 8.2 Coeficiente de variación y puntuaciones típicas
+  [x] 8.3 Diagramas de caja avanzados y outliers
+  [x] 8.4 Interpretación crítica de datos estadísticos
+[x] Tema 9: Probabilidad compuesta
+  [x] 9.1 Espacio muestral y álgebra de sucesos
+  [x] 9.2 Probabilidad condicionada y teorema de la probabilidad total
+  [x] 9.3 Diagramas de árbol y tablas de contingencia
+  [x] 9.4 Problemas de extracción con y sin reemplazo
 
 [] Cuaderno extra de ejercicios Markdown
 
 4º ESO - MATEMATICAS ACADÉMICAS (A) ----------------------
-[] Tema 1: Números reales y análisis
-  [] 1.1 Intervalos, semirrectas y valor absoluto
-  [] 1.2 Propiedades de la desigualdad
-  [] 1.3 Entorno, límites intuitivos y asíntotas
-  [] 1.4 Continuidad y discontinuidad de funciones
-[] Tema 2: Potencias, raíces y logaritmos
-  [] 2.1 Propiedades avanzadas y cambio de base
-  [] 2.2 Ecuaciones exponenciales y logarítmicas
-  [] 2.3 Crecimiento exponencial y decay
-  [] 2.4 Aplicaciones en ciencias y economía
-[] Tema 3: Álgebra y fracciones algebraicas
-  [] 3.1 Operaciones complejas y simplificación
-  [] 3.2 Ecuaciones fraccionarias y extranas soluciones
-  [] 3.3 Inecuaciones de primer y segundo grado
-  [] 3.4 Sistemas de inecuaciones y representación gráfica
-[] Tema 4: Ecuaciones polinómicas y no lineales
-  [] 4.1 Factorización avanzada y raíces múltiples
-  [] 4.2 Ecuaciones de grado superior a 2
-  [] 4.3 Sistemas no lineales (circunferencia-parábola, etc.)
-  [] 4.4 Optimización y problemas de máximos/mínimos
-[] Tema 5: Funciones especiales
-  [] 5.1 Funciones exponenciales y logarítmicas
-  [] 5.2 Funciones trigonométricas y periodicidad
-  [] 5.3 Composición e inversa de funciones
-  [] 5.4 Transformaciones gráficas combinadas
-[] Tema 6: Introducción al cálculo
-  [] 6.1 Tasa de variación media e instantánea
-  [] 6.2 Reglas de derivación básicas
-  [] 6.3 Aplicaciones: monotonía, extremos y curvatura
-  [] 6.4 Optimización geométrica y física
-[] Tema 7: Geometría analítica avanzada
-  [] 7.1 Ecuación de la circunferencia
-  [] 7.2 Posiciones relativas recta-circunferencia
-  [] 7.3 Lugares geométricos y cónicas básicas
-  [] 7.4 Vectores en el plano: operaciones y aplicaciones
-[] Tema 8: Estadística bidimensional
-  [] 8.1 Distribuciones dobles y nubes de puntos
-  [] 8.2 Covarianza y coeficiente de correlación lineal
-  [] 8.3 Recta de regresión y predicción
-  [] 8.4 Fiabilidad del modelo y límites
-[] Tema 9: Probabilidad y combinatoria
-  [] 9.1 Principios fundamentales de conteo
-  [] 9.2 Variaciones, permutaciones y combinaciones
-  [] 9.3 Distribución binomial
-  [] 9.4 Distribución normal estándar y tipificación
+[x] Tema 1: Números reales y análisis
+  [x] 1.1 Intervalos, semirrectas y valor absoluto
+  [x] 1.2 Propiedades de la desigualdad
+  [x] 1.3 Entorno, límites intuitivos y asíntotas
+  [x] 1.4 Continuidad y discontinuidad de funciones
+[x] Tema 2: Potencias, raíces y logaritmos
+  [x] 2.1 Propiedades avanzadas y cambio de base
+  [x] 2.2 Ecuaciones exponenciales y logarítmicas
+  [x] 2.3 Crecimiento exponencial y decay
+  [x] 2.4 Aplicaciones en ciencias y economía
+[x] Tema 3: Álgebra y fracciones algebraicas
+  [x] 3.1 Operaciones complejas y simplificación
+  [x] 3.2 Ecuaciones fraccionarias y extranas soluciones
+  [x] 3.3 Inecuaciones de primer y segundo grado
+  [x] 3.4 Sistemas de inecuaciones y representación gráfica
+[x] Tema 4: Ecuaciones polinómicas y no lineales
+  [x] 4.1 Factorización avanzada y raíces múltiples
+  [x] 4.2 Ecuaciones de grado superior a 2
+  [x] 4.3 Sistemas no lineales (circunferencia-parábola, etc.)
+  [x] 4.4 Optimización y problemas de máximos/mínimos
+[x] Tema 5: Funciones especiales
+  [x] 5.1 Funciones exponenciales y logarítmicas
+  [x] 5.2 Funciones trigonométricas y periodicidad
+  [x] 5.3 Composición e inversa de funciones
+  [x] 5.4 Transformaciones gráficas combinadas
+[x] Tema 6: Introducción al cálculo
+  [x] 6.1 Tasa de variación media e instantánea
+  [x] 6.2 Reglas de derivación básicas
+  [x] 6.3 Aplicaciones: monotonía, extremos y curvatura
+  [x] 6.4 Optimización geométrica y física
+[x] Tema 7: Geometría analítica avanzada
+  [x] 7.1 Ecuación de la circunferencia
+  [x] 7.2 Posiciones relativas recta-circunferencia
+  [x] 7.3 Lugares geométricos y cónicas básicas
+  [x] 7.4 Vectores en el plano: operaciones y aplicaciones
+[x] Tema 8: Estadística bidimensional
+  [x] 8.1 Distribuciones dobles y nubes de puntos
+  [x] 8.2 Covarianza y coeficiente de correlación lineal
+  [x] 8.3 Recta de regresión y predicción
+  [x] 8.4 Fiabilidad del modelo y límites
+[x] Tema 9: Probabilidad y combinatoria
+  [x] 9.1 Principios fundamentales de conteo
+  [x] 9.2 Variaciones, permutaciones y combinaciones
+  [x] 9.3 Distribución binomial
+  [x] 9.4 Distribución normal estándar y tipificación
 
 [] Cuaderno extra de ejercicios Markdown
 
 4º ESO - MATEMATICAS APLICADAS (B) ----------------------
-[] Tema 1: Números y proporcionalidad aplicada
-  [] 1.1 Escalas, mapas y planos técnicos
-  [] 1.2 Porcentajes en contextos comerciales y financieros
-  [] 1.3 Interés simple y descuentos sucesivos
-  [] 1.4 Conversión de unidades y magnitudes cotidianas
-[] Tema 2: Álgebra práctica
-  [] 2.1 Ecuaciones lineales en presupuestos y balances
-  [] 2.2 Sistemas de ecuaciones en mezclas y repartos
-  [] 2.3 Ecuaciones cuadráticas en trayectorias y áreas
-  [] 2.4 Modelado matemático de problemas reales
-[] Tema 3: Funciones en contextos reales
-  [] 3.1 Interpretación de gráficas en noticias y ciencia
-  [] 3.2 Modelos lineales y de crecimiento
-  [] 3.3 Funciones a trozos en tarifas y impuestos
-  [] 3.4 Optimización básica con herramientas digitales
-[] Tema 4: Geometría aplicada
-  [] 4.1 Medición indirecta y semejanza en arquitectura
-  [] 4.2 Cálculo de volúmenes y capacidades
-  [] 4.3 Teselaciones y patrones en diseño
-  [] 4.4 Geometría en tecnología y programación básica
-[] Tema 5: Estadística y probabilidad aplicada
-  [] 5.1 Muestreo, sesgos y encuestas
-  [] 5.2 Lectura crítica de gráficos en medios
-  [] 5.3 Probabilidad en juegos, seguros y decisiones
-  [] 5.4 Herramientas digitales para análisis de datos
-[] Tema 6: Finanzas y economía básica
-  [] 6.1 Presupuestos personales y familiares
-  [] 6.2 IVA, IRPF y deducciones básicas
-  [] 6.3 Préstamos, amortización y interés compuesto
-  [] 6.4 Ahorro, inversión y riesgo financiero
+[x] Tema 1: Números y proporcionalidad aplicada
+  [x] 1.1 Escalas, mapas y planos técnicos
+  [x] 1.2 Porcentajes en contextos comerciales y financieros
+  [x] 1.3 Interés simple y descuentos sucesivos
+  [x] 1.4 Conversión de unidades y magnitudes cotidianas
+[x] Tema 2: Álgebra práctica
+  [x] 2.1 Ecuaciones lineales en presupuestos y balances
+  [x] 2.2 Sistemas de ecuaciones en mezclas y repartos
+  [x] 2.3 Ecuaciones cuadráticas en trayectorias y áreas
+  [x] 2.4 Modelado matemático de problemas reales
+[x] Tema 3: Funciones en contextos reales
+  [x] 3.1 Interpretación de gráficas en noticias y ciencia
+  [x] 3.2 Modelos lineales y de crecimiento
+  [x] 3.3 Funciones a trozos en tarifas y impuestos
+  [x] 3.4 Optimización básica con herramientas digitales
+[x] Tema 4: Geometría aplicada
+  [x] 4.1 Medición indirecta y semejanza en arquitectura
+  [x] 4.2 Cálculo de volúmenes y capacidades
+  [x] 4.3 Teselaciones y patrones en diseño
+  [x] 4.4 Geometría en tecnología y programación básica
+[x] Tema 5: Estadística y probabilidad aplicada
+  [x] 5.1 Muestreo, sesgos y encuestas
+  [x] 5.2 Lectura crítica de gráficos en medios
+  [x] 5.3 Probabilidad en juegos, seguros y decisiones
+  [x] 5.4 Herramientas digitales para análisis de datos
+[x] Tema 6: Finanzas y economía básica
+  [x] 6.1 Presupuestos personales y familiares
+  [x] 6.2 IVA, IRPF y deducciones básicas
+  [x] 6.3 Préstamos, amortización y interés compuesto
+  [x] 6.4 Ahorro, inversión y riesgo financiero
 
 [] Cuaderno extra de ejercicios Markdown

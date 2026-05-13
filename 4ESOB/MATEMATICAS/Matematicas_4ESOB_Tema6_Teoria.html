@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO B - Tema 6: Finanzas y economía básica | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-coins"></i> <span>Tema 6: Finanzas y economía básica</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-6-1" class="nav-link"><i class="fa-solid fa-1"></i> 6.1 Presupuestos personales y familiares</a></li>
+        <li><a href="#modulo-6-2" class="nav-link"><i class="fa-solid fa-2"></i> 6.2 IVA, IRPF y deducciones básicas</a></li>
+        <li><a href="#modulo-6-3" class="nav-link"><i class="fa-solid fa-3"></i> 6.3 Préstamos, amortización e interés compuesto</a></li>
+        <li><a href="#modulo-6-4" class="nav-link"><i class="fa-solid fa-4"></i> 6.4 Ahorro, inversión y riesgo financiero</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 6.1 Presupuestos personales y familiares -->
+      <section id="modulo-6-1">
+        <h2>6.1 Presupuestos personales y familiares</h2>
+        <p class="intro">Un <strong>presupuesto</strong> es un plan financiero que detalla los ingresos y gastos previstos durante un periodo de tiempo. Es la herramienta más básica y efectiva para gestionar bien el dinero. Tener un presupuesto ayuda a evitar problemas económicos, a ahorrar y a alcanzar metas financieras.</p>
+        <article>
+          <h3>Componentes de un presupuesto</h3>
+          <p>Un presupuesto personal o familiar tiene dos grandes bloques:</p>
+          <p><strong>Ingresos</strong>: todo el dinero que entra.
+- Salario neto.
+- Ingresos por alquileres, inversiones.
+- Pensiones, becas, ayudas.
+- Ingresos extra o irregulares.</p>
+          <p><strong>Gastos</strong>: todo el dinero que sale.
+- <strong>Gastos fijos</strong>: alquiler/hipoteca, suministros, seguros, cuotas.
+- <strong>Gastos variables</strong>: alimentación, transporte, ocio, ropa.
+- <strong>Ahorro</strong>: dinero destinado al futuro (se recomienda al menos el $10$-$20\%$ de los ingresos).</p>
+        </article>
+
+        <article>
+          <h3>La regla del 50/30/20</h3>
+          <p>Una regla práctica para distribuir los ingresos es la <strong>regla del 50/30/20</strong>:
+- <strong>$50\%$</strong> para necesidades básicas (vivienda, alimentación, transporte).
+- <strong>$30\%$</strong> para deseos personales (ocio, ropa, restauración).
+- <strong>$20\%$</strong> para ahorro y pago de deudas.</p>
+        </article>
+
+        <article>
+          <h3>Balance presupuestario</h3>
+          <div class="katex-display">$$\text{Balance} = \text{Ingresos totales} - \text{Gastos totales}$$</div>
+          <ul>
+      <li>Si el balance es <strong>positivo</strong>: hay superávit (se puede ahorrar o invertir).</li><li>Si el balance es <strong>negativo</strong>: hay déficit (hay que reducir gastos o aumentar ingresos).</li><li>Si el balance es <strong>cero</strong>: se equilibra exactamente.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Tasa de ahorro</h3>
+          <p>La tasa de ahorro mide qué porcentaje de los ingresos se ahorra:</p>
+          <div class="katex-display">$$\text{Tasa de ahorro } (\%) = \frac{\text{Ahorro}}{\text{Ingresos totales}} \times 100$$</div>
+        </article>
+
+        <article>
+          <h3>Herramientas para controlar el presupuesto</h3>
+          <ul>
+      <li><strong>Apps de finanzas personales</strong>: Fintonic, Money Manager, etc.</li><li><strong>Hojas de cálculo</strong>: Excel o Google Sheets con categorías de gastos.</li><li><strong>Método del sobre</strong>: dividir el dinero en efectivo en sobres por categoría.</li><li><strong>Banca digital</strong>: las apps de los bancos permiten clasificar los gastos automáticamente.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Una familia con ingresos netos de $2\,500\text{ €/mes}$ hace el siguiente presupuesto: hipoteca ($800\text{ €}$), suministros ($200\text{ €}$), alimentación ($500\text{ €}$), transporte ($150\text{ €}$), ocio ($200\text{ €}$), ropa ($100\text{ €}$), seguros ($150\text{ €}$), móvil+internet ($60\text{ €}$), otros ($40\text{ €}$). Gastos totales $= 2\,200\text{ €.}$ Ahorro $= 300\text{ €.}$ Tasa de ahorro $= 300/2\,500 = 12\%$.</p>
+    </div>
+      </section>
+
+      <!-- 6.2 IVA, IRPF y deducciones básicas -->
+      <section id="modulo-6-2">
+        <h2>6.2 IVA, IRPF y deducciones básicas</h2>
+        <p class="intro">El sistema fiscal español recauda impuestos para financiar los servicios públicos (sanidad, educación, infraestructuras, pensiones...). Los dos impuestos más importantes para las personas son el <strong>IVA</strong> y el <strong>IRPF</strong>.</p>
+        <article>
+          <h3>IVA: Impuesto sobre el Valor Añadido</h3>
+          <p>El IVA grava el consumo. Se aplica a casi todas las compras de bienes y servicios:</p>
+          <ul>
+      <li><strong>Tipo general ($21\%$)</strong>: electrónicos, ropa, muebles, servicios en general.</li><li><strong>Tipo reducido ($10\%$)</strong>: transporte, hostelería, some productos de alimentación.</li><li><strong>Tipo superreducido ($4\%$)</strong>: pan, leche, frutas, verduras, medicamentos, libros, periódicos.</li>
+    </ul>
+          <p>Precio con IVA $=$ Precio base $\times (1 + \text{tipo de IVA})$</p>
+        </article>
+
+        <article>
+          <h3>Desglose del IVA en una factura</h3>
+          <p>Si un producto cuesta $121\text{ €}$ (IVA incluido al $21\%$):
+- Base imponible $= 121 / 1{,}21 = 100\text{ €}$
+- IVA $= 100 \times 0{,}21 = 21\text{ €}$</p>
+          <div class="katex-display">$$\text{Base imponible} = \frac{\text{Precio con IVA}}{1 + \text{tipo}}$$</div>
+        </article>
+
+        <article>
+          <h3>IRPF: Impuesto sobre la Renta de las Personas Físicas</h3>
+          <p>El IRPF grava los ingresos de las personas (salarios, alquileres, inversiones...). Es un impuesto <strong>progresivo</strong>: quien gana más, paga un porcentaje mayor.</p>
+          <p>| Base liquidable | Tipo | |---|---| | Hasta $12\,450\text{ €}$ | $19\%$ | | De $12\,450$ a $20\,200\text{ €}$ | $24\%$ | | De $20\,200$ a $35\,200\text{ €}$ | $30\%$ | | De $35\,200$ a $60\,000\text{ €}$ | $37\%$ | | Más de $60\,000\text{ €}$ | $45\%$ |</p>
+          <p>Cada tramo se aplica <strong>solo a la parte de ingresos dentro de ese rango</strong>, no a toda la cantidad.</p>
+        </article>
+
+        <article>
+          <h3>Cálculo de la cuota íntegra del IRPF</h3>
+          <p>La cuota íntegra se calcula sumando las cuotas de cada tramo:</p>
+          <div class="katex-display">$$\text{Cuota} = \sum (\text{Base del tramo} \times \text{Tipo del tramo})$$</div>
+        </article>
+
+        <article>
+          <h3>Retenciones</h3>
+          <p>Las empresas retienen mensualmente una parte del salario como pago a cuenta del IRPF. En la declaración de la renta (primavera de cada año) se regulariza: si se ha retenido de más, te devuelven; si has pagado de menos, debes más.</p>
+        </article>
+
+        <article>
+          <h3>Deducciones más comunes</h3>
+          <ul>
+      <li><strong>Vivienda habitual</strong>: deducción por inversión en vivienda (en algunos casos).</li><li><strong>Aportaciones a planes de pensiones</strong>: reducen la base imponible (máximo $1\,500\text{ €/año}$).</li><li><strong>Donativos</strong>: deducibles al $80\%$ para los primeros $250\text{ €}$ y al $40\%$ para el resto.</li><li><strong>Familia numerosa</strong>: deducciones adicionales por cada hijo.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un trabajador gana $24\,000\text{ €}$ brutos al año. Tras aplicar las reducciones, su base liquidable es $20\,000\text{ €.}$ Cuota IRPF: $12\,450 \times 0{,}19 + 7\,550 \times 0{,}24 = 2\,365{,}50 + 1\,812 = 4\,177{,}50\text{ €.}$ Type efectivo: $4\,177{,}50 / 20\,000 = 20{,}89\%$ (no el $30\%$ del tramo más alto).</p>
+    </div>
+      </section>
+
+      <!-- 6.3 Préstamos, amortización e interés compuesto -->
+      <section id="modulo-6-3">
+        <h2>6.3 Préstamos, amortización e interés compuesto</h2>
+        <p class="intro">Comprender cómo funcionan los <strong>préstamos</strong> y el <strong>interés compuesto</strong> es fundamental para tomar buenas decisiones financieras. Un préstamo mal entendido puede convertirse en una carga económica durante años.</p>
+        <article>
+          <h3>Interés compuesto</h3>
+          <p>A diferencia del interés simple, el interés compuesto se calcula sobre el capital acumulado (capital inicial más intereses generados):</p>
+          <div class="katex-display">$$M = C \cdot (1 + r)^t$$</div>
+          <p>Donde:
+- <strong>$M$</strong> es el montante (capital final)
+- <strong>$C$</strong> es el capital inicial
+- <strong>$r$</strong> es el tipo de interés por periodo (en tanto por uno)
+- <strong>$t$</strong> es el número de periodos</p>
+        </article>
+
+        <article>
+          <h3>Capitalización</h3>
+          <p>Cuando el interés se reinvierte, el dinero crece de forma <strong>exponencial</strong>. La capitalización puede ser:
+- <strong>Anual</strong>: el interés se calcula una vez al año.
+- <strong>Mensual</strong>: el interés se calcula cada mes ($12$ veces al año).
+- <strong>Diaria</strong>: el interés se calcula cada día ($365$ veces al año).</p>
+          <p>Para un interés nominal $r$ con capitalización $n$ veces al año, el interés efectivo es:</p>
+          <div class="katex-display">$$r_{\text{efectivo}} = \left(1 + \frac{r}{n}\right)^n - 1$$</div>
+        </article>
+
+        <article>
+          <h3>Préstamos: conceptos básicos</h3>
+          <ul>
+      <li><strong>Capital</strong>: cantidad de dinero que se presta.</li><li><strong>Interés</strong>: coste del préstamo para el prestatario.</li><li><strong>Plazo</strong>: tiempo para devolver el préstamo.</li><li><strong>Cuota</strong>: pago periódico (mensual) que incluye capital e intereses.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Cuota de un préstamo</h3>
+          <p>La fórmula de la cuota mensual de un préstamo es:</p>
+          <div class="katex-display">$$\text{Cuota} = C \cdot \frac{r_m \cdot (1 + r_m)^n}{(1 + r_m)^n - 1}$$</div>
+          <p>Donde $r_m$ es el tipo de interés mensual y $n$ el número de cuotas mensuales.</p>
+        </article>
+
+        <article>
+          <h3>Tabla de amortización</h3>
+          <p>Una tabla de amortización detalla cada cuota:
+- Cuota total.
+- Parte que corresponde a intereses.
+- Parte que corresponde a amortización de capital.
+- Capital pendiente.</p>
+          <p>Al principio, la mayor parte de la cuota son intereses; al final, se amortiza más capital.</p>
+        </article>
+
+        <article>
+          <h3>Coste total de un préstamo</h3>
+          <div class="katex-display">$$\text{Coste total} = \text{Cuota} \times n - C$$</div>
+        </article>
+
+        <article>
+          <h3>TAE: Tasa Anual Equivalente</h3>
+          <p>La TAE es el coste real del préstamo incluyendo comisiones y gastos. Permite comparar ofertas de distintas entidades.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un préstamo de $10\,000\text{ €}$ al $6\%$ anual en $5$ años ($60$ cuotas mensuales). Tipo mensual $= 0{,}06/12 = 0{,}005$. Cuota $\approx 193{,}33\text{ €.}$ Coste total $= 193{,}33 \times 60 - 10\,000 = 1\,599{,}80\text{ €.}$ Se paga un $16\%$ más del capital prestado solo en intereses.</p>
+    </div>
+      </section>
+
+      <!-- 6.4 Ahorro, inversión y riesgo financiero -->
+      <section id="modulo-6-4">
+        <h2>6.4 Ahorro, inversión y riesgo financiero</h2>
+        <p class="intro">El <strong>ahorro</strong> es la parte de los ingresos que no se gasta. La <strong>inversión</strong> es colocar ese ahorro en instrumentos que generen rentabilidad. Entender la relación entre riesgo y beneficio es clave para tomar buenas decisiones financieras a lo largo de la vida.</p>
+        <article>
+          <h3>Tipos de ahorro</h3>
+          <ul>
+      <li><strong>Ahorro a corto plazo</strong>: depósitos bancarios, cuentas remuneradas.</li><li><strong>Ahorro a medio plazo</strong>: fondos de inversión conservadores, bonos.</li><li><strong>Ahorro a largo plazo</strong>: planes de pensiones, acciones, fondos indexados.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>La regla del interés compuesto: el tiempo es dinero</h3>
+          <p>El interés compuesto es el aliado más poderoso del inversor a largo plazo:</p>
+          <div class="katex-display">$$M = C \cdot (1 + r)^t$$</div>
+          <p>Ejemplo: $1\,000\text{ €}$ al $5\%$ anual:
+- A $10$ años: $1\,629\text{ €}$
+- A $20$ años: $2\,653\text{ €}$
+- A $30$ años: $4\,322\text{ €}$</p>
+          <p>El dinero se <strong>duplica</strong> aproximadamente cada $70/r$ años (regla del $70$).</p>
+        </article>
+
+        <article>
+          <h3>Diversificación</h3>
+          <p>La <strong>diversificación</strong> consiste en repartir las inversiones entre distintos activos para reducir el riesgo. El principio es: «no poner todos los huevos en la misma cesta».</p>
+        </article>
+
+        <article>
+          <h3>Riesgo y rentabilidad</h3>
+          <p>Existe una relación directa entre <strong>riesgo y rentabilidad</strong>:
+- <strong>Bajo riesgo, baja rentabilidad</strong>: depósitos bancarios ($1$-$2\%$), bonos del Estado.
+- <strong>Riesgo medio, rentabilidad media</strong>: fondos de inversión mixtos ($4$-$6\%$).
+- <strong>Alto riesgo, alta rentabilidad potencial</strong>: acciones individuales, criptomonedas.</p>
+        </article>
+
+        <article>
+          <h3>Instrumentos financieros básicos</h3>
+          <ul>
+      <li><strong>Cuenta remunerada</strong>: el banco paga intereses por tu dinero. Liquidez total, bajo rendimiento.</li><li><strong>Depósito a plazo fijo</strong>: bloqueas el dinero durante un tiempo a cambio de más intereses.</li><li><strong>Bonos</strong>: prestas dinero al Estado o a una empresa. Te pagan intereses periódicos y devuelven el capital al vencimiento.</li><li><strong>Acciones</strong>: compras una parte de una empresa. Ganancias si la empresa sube (y dividendos). Pérdidas si baja.</li><li><strong>Fondos de inversión</strong>: un profesional gestiona tu dinero invirtiendo en una cartera diversificada.</li><li><strong>Fondos indexados</strong>: replican un índice bursátil (como el IBEX 35 o el S&P 500). Comisiones muy bajas.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Inflación</h3>
+          <p>La <strong>inflación</strong> es el aumento generalizado de los precios. Reduce el poder adquisitivo del dinero. Si la inflación es del $2\%$ y tu ahorro rinde el $1\%$, en realidad estás perdiendo poder adquisitivo.</p>
+          <div class="katex-display">$$\text{Rentabilidad real} \approx \text{Rentabilidad nominal} - \text{Inflación}$$</div>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Una persona ahorra $200\text{ €/mes}$ desde los $25$ hasta los $65$ años ($40$ años) en un fondo indexado que da una rentabilidad media del $7\%$ anual. Aportación total $= 200 \times 12 \times 40 = 96\,000\text{ €.}$ Montante final $\approx 525\,000\text{ €.}$ El interés compuesto ha generado $429\,000\text{ €}$ de ganancia. Por eso se dice que «el mejor momento para empezar a invertir fue ayer; el segundo mejor, hoy».</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOB_Tema6_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 6</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

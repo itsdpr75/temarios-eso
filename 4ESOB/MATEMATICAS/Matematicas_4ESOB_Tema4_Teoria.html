@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO B - Tema 4: Geometría aplicada | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-shapes"></i> <span>Tema 4: Geometría aplicada</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-4-1" class="nav-link"><i class="fa-solid fa-1"></i> 4.1 Medición indirecta y semejanza en arquitectura</a></li>
+        <li><a href="#modulo-4-2" class="nav-link"><i class="fa-solid fa-2"></i> 4.2 Cálculo de volúmenes y capacidades</a></li>
+        <li><a href="#modulo-4-3" class="nav-link"><i class="fa-solid fa-3"></i> 4.3 Teselaciones y patrones en diseño</a></li>
+        <li><a href="#modulo-4-4" class="nav-link"><i class="fa-solid fa-4"></i> 4.4 Geometría en tecnología y programación básica</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 4.1 Medición indirecta y semejanza en arquitectura -->
+      <section id="modulo-4-1">
+        <h2>4.1 Medición indirecta y semejanza en arquitectura</h2>
+        <p class="intro">La <strong>semejanza de triángulos</strong> es una de las herramientas geométricas más poderosas para medir distancias que no podemos medir directamente: la altura de un edificio, la profundidad de un pozo, la anchura de un río... Se basa en el principio de que dos figuras son semejantes si tienen la misma forma pero distinto tamaño.</p>
+        <article>
+          <h3>Triángulos semejantes</h3>
+          <p>Dos triángulos son <strong>semejantes</strong> cuando sus ángulos son iguales y sus lados son proporcionales. Si $\triangle ABC \sim \triangle DEF$, entonces:</p>
+          <div class="katex-display">$$\frac{AB}{DE} = \frac{BC}{EF} = \frac{AC}{DF} = k$$</div>
+          <p>Donde <strong>$k$</strong> es la <strong>razón de semejanza</strong> (o escala).</p>
+        </article>
+
+        <article>
+          <h3>Criterios de semejanza de triángulos</h3>
+          <p>Dos triángulos son semejantes si cumplen uno de estos criterios:
+- <strong>AA</strong> (Ángulo-Ángulo): dos ángulos iguales.
+- <strong>LAL</strong> (Lado-Ángulo-Lado): dos lados proporcionales y el ángulo comprendido igual.
+- <strong>LLL</strong> (Lado-Lado-Lado): los tres lados proporcionales.</p>
+        </article>
+
+        <article>
+          <h3>Teorema de Tales</h3>
+          <p>El <strong>teorema de Tales</strong> establece que si una recta paralela a uno de los lados de un triángulo corta a los otros dos, divide a estos en segmentos proporcionales:</p>
+          <div class="katex-display">$$\frac{AD}{AB} = \frac{AE}{AC} = \frac{DE}{BC}$$</div>
+        </article>
+
+        <article>
+          <h3>Medición indirecta de alturas</h3>
+          <p>Para medir la altura $h$ de un objeto (un árbol, un edificio), podemos usar la sombra proyectada por el sol. Si un objeto de altura conocida proyecta una sombra y el objeto desconocido proyecta otra sombra al mismo tiempo:</p>
+          <div class="katex-display">$$\frac{h}{h'} = \frac{s}{s'}$$</div>
+          <p>Donde $h$ y $h'$ son las alturas y $s$ y $s'$ las sombras.</p>
+        </article>
+
+        <article>
+          <h3>Teorema de Pitágoras</h3>
+          <p>En un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos:</p>
+          <div class="katex-display">$$a^2 + b^2 = c^2$$</div>
+          <p>Este teorema, combinado con la semejanza, permite resolver innumerables problemas de medición.</p>
+        </article>
+
+        <article>
+          <h3>Semejanza en arquitectura</h3>
+          <p>Los arquitectos utilizan la semejanza para:
+- Calcular alturas de edificios a partir de maquetas.
+- Determinar distancias entre puntos inaccesibles.
+- Diseñar fachadas manteniendo las proporciones.
+- Comprobar que los elementos estructurales mantienen la proporción correcta.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Para medir la altura de una torre, clavamos una varilla vertical de $1\text{ m}$ y medimos su sombra: $0{,}80\text{ m}$. La sombra de la torre mide $12\text{ m}$. Por semejanza: $h/1 = 12/0{,}80 = 15\text{ m}$. La torre mide $15\text{ m}$ de altura.</p>
+    </div>
+      </section>
+
+      <!-- 4.2 Cálculo de volúmenes y capacidades -->
+      <section id="modulo-4-2">
+        <h2>4.2 Cálculo de volúmenes y capacidades</h2>
+        <p class="intro">El <strong>volumen</strong> de un cuerpo es la cantidad de espacio que ocupa en tres dimensiones. Se mide en unidades cúbicas ($\text{m}^3$, $\text{cm}^3$...) o en <strong>litros</strong> para líquidos y gases ($1\text{ L} = 1\text{ dm}^3 = 1\,000\text{ cm}^3$).</p>
+        <article>
+          <h3>Volúmenes de prismas y cilindros</h3>
+          <p>La fórmula general para prismas y cilindros es:</p>
+          <div class="katex-display">$$V = A_{\text{base}} \cdot h$$</div>
+          <ul>
+      <li><strong>Prisma rectangular</strong>: $V = a \cdot b \cdot h$</li><li><strong>Prisma triangular</strong>: $V = \dfrac{b_{\text{base}} \cdot h_{\text{base}}}{2} \cdot h$</li><li><strong>Cilindro</strong>: $V = \pi r^2 h$</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Volúmenes de pirámides y conos</h3>
+          <p>Las pirámides y conos tienen un volumen que es un tercio del del prisma o cilindro correspondiente:</p>
+          <div class="katex-display">$$V = \frac{1}{3} \cdot A_{\text{base}} \cdot h$$</div>
+          <ul>
+      <li><strong>Pirámide rectangular</strong>: $V = \dfrac{1}{3} \cdot a \cdot b \cdot h$</li><li><strong>Cono</strong>: $V = \dfrac{1}{3}\pi r^2 h$</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Volumen de la esfera</h3>
+          <div class="katex-display">$$V = \frac{4}{3}\pi r^3$$</div>
+        </article>
+
+        <article>
+          <h3>Conversión entre volumen y capacidad</h3>
+          <div class="katex-display">$$1\text{ m}^3 = 1\,000\text{ dm}^3 = 1\,000\text{ L}$$ $$1\text{ dm}^3 = 1\text{ L} = 1\,000\text{ cm}^3 = 1\,000\text{ mL}$$</div>
+        </article>
+
+        <article>
+          <h3>Áreas laterales y totales</h3>
+          <p>Además del volumen, en muchas aplicaciones se necesita el área de la superficie:
+- <strong>Prisma rectangular</strong>: $A_{\text{total}} = 2(ab + bh + ah)$
+- <strong>Cilindro</strong>: $A_{\text{lateral}} = 2\pi r h$, $A_{\text{total}} = 2\pi r h + 2\pi r^2$
+- <strong>Cono</strong>: $A_{\text{lateral}} = \pi r g$ (donde $g = \sqrt{r^2 + h^2}$ es la generatriz)
+- <strong>Esfera</strong>: $A = 4\pi r^2$</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un depósito de agua cilíndrico tiene $3\text{ m}$ de diámetro y $2\text{ m}$ de altura. Su volumen es $V = \pi \cdot 1{,}5^2 \cdot 2 = 4{,}5\pi \approx 14{,}14\text{ m}^3 = 14\,140\text{ L}$. El área lateral para pintarlo es $A = 2\pi \cdot 1{,}5 \cdot 2 = 6\pi \approx 18{,}85\text{ m}^2$.</p>
+    </div>
+      </section>
+
+      <!-- 4.3 Teselaciones y patrones en diseño -->
+      <section id="modulo-4-3">
+        <h2>4.3 Teselaciones y patrones en diseño</h2>
+        <p class="intro">Una <strong>teselación</strong> es un recubrimiento completo del plano con figuras geométricas sin superposiciones ni huecos. Las teselaciones aparecen en mosaicos, pavimentos, revestimientos, baldosas, tejidos y numerosas aplicaciones de diseño.</p>
+        <article>
+          <h3>Teselaciones regulares</h3>
+          <p>Solo existen <strong>tres teselaciones regulares</strong> (formadas por un único tipo de polígono regular):
+- <strong>Triángulos equiláteros</strong> (ángulo interior $60°$)
+- <strong>Cuadrados</strong> (ángulo interior $90°$)
+- <strong>Hexágonos regulares</strong> (ángulo interior $120°$)</p>
+          <p>La condición para que un polígono regular tesele el plano es que su ángulo interior divida exactamente a $360°$.</p>
+        </article>
+
+        <article>
+          <h3>Ángulo interior de un polígono regular</h3>
+          <div class="katex-display">$$\alpha = \frac{(n-2) \cdot 180°}{n}$$</div>
+          <p>Para que tesela: $360°/\alpha$ debe ser un número entero.</p>
+          <ul>
+      <li>Triángulo: $360°/60° = 6$ ✓</li><li>Cuadrado: $360°/90° = 4$ ✓</li><li>Pentágono: $360°/108° = 3{,}33$ ✗</li><li>Hexágono: $360°/120° = 3$ ✓</li><li>Heptágono: $360°/128{,}57° = 2{,}8$ ✗</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Teselaciones semirregulares</h3>
+          <p>Las teselaciones semirregulares usan <strong>dos o más tipos</strong> de polígonos regulares. En cada vértice, los ángulos deben sumar $360°$. Por ejemplo: dos hexágonos y un triángulo ($120° + 120° + 60° + 60° = 360°$).</p>
+        </article>
+
+        <article>
+          <h3>Teselaciones en la naturaleza y el arte</h3>
+          <ul>
+      <li>Las <strong>panales de abejas</strong> forman una teselación hexagonal (maximiza el área con mínimo perímetro).</li><li>El artista <strong>M.C. Escher</strong> creó famosas teselaciones con figuras de animales y personas.</li><li>Los <strong> cristales</strong> y las <strong>estructuras moleculares</strong> forman patrones teselados.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Simetrías en las teselaciones</h3>
+          <p>Las teselaciones pueden presentar:
+- <strong>Simetría de traslación</strong>: al desplazar la figura se obtiene la misma imagen.
+- <strong>Simetría de rotación</strong>: al girar la figura alrededor de un punto se obtiene la misma imagen.
+- <strong>Simetría de reflexión</strong>: existe un eje que divide la figura en dos mitades simétricas.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Para embaldosar una habitación de $4\text{ m} \times 3\text{ m}$ con baldosas cuadradas de $20\text{ cm}$ de lado, calculamos cuántas baldosas necesitamos en cada dirección: $400/20 = 20$ y $300/20 = 15$. Total: $20 \times 15 = 300$ baldosas.</p>
+    </div>
+      </section>
+
+      <!-- 4.4 Geometría en tecnología y programación básica -->
+      <section id="modulo-4-4">
+        <h2>4.4 Geometría en tecnología y programación básica</h2>
+        <p class="intro">La geometría es la base de muchas tecnologías modernas: diseño asistido por ordenador (CAD), gráficos por ordenador, videojuegos, impresión 3D, realidad virtual, robótica y sistemas GPS. Comprender conceptos geométricos es esencial en multitud de profesiones técnicas.</p>
+        <article>
+          <h3>Coordenadas cartesianas y pantallas</h3>
+          <p>En informática, las pantallas se dividen en <strong>píxeles</strong> organizados en una cuadrícula. La posición de cada píxel se determina mediante coordenadas $(x, y)$, igual que en el plano cartesiano. La diferencia es que en pantallas el origen $(0, 0)$ suele estar en la esquina superior izquierda y el eje $Y$ crece hacia abajo.</p>
+        </article>
+
+        <article>
+          <h3>Vectores y movimiento</h3>
+          <p>Un <strong>vector</strong> tiene magnitud (longitud) y dirección. En programación de videojuegos y simulaciones, los vectores representan:
+- La <strong>velocidad</strong> de un objeto (dirección y rapidez).
+- La <strong>aceleración</strong> (cambio de velocidad).
+- Las <strong>fuerzas</strong> que actúan sobre un cuerpo.</p>
+        </article>
+
+        <article>
+          <h3>Distancia entre dos puntos</h3>
+          <p>La distancia entre dos puntos $A(x_1, y_1)$ y $B(x_2, y_2)$ en el plano se calcula aplicando el teorema de Pitágoras:</p>
+          <div class="katex-display">$$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$</div>
+        </article>
+
+        <article>
+          <h3>Punto medio de un segmento</h3>
+          <p>El punto medio $M$ del segmento $AB$ es:</p>
+          <div class="katex-display">$$M = \left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$</div>
+        </article>
+
+        <article>
+          <h3>Geometría en impresión 3D</h3>
+          <p>La impresión 3D construye objetos capa a capa. Los modelos 3D se definen mediante:
+- <strong>Mallas poligonales</strong>: superficies formadas por triángulos.
+- <strong>Coordenadas $(x, y, z)$</strong>: cada vértice tiene tres coordenadas.
+- <strong>STL</strong>: formato estándar que describe la superficie como una colección de triángulos.</p>
+        </article>
+
+        <article>
+          <h3>GPS y geometría de la esfera</h3>
+          <p>El sistema GPS calcula la posición mediante triangulación con satélites. La distancia entre dos puntos en la superficie terrestre se calcula usando la geometría esférica, pero para distancias cortas se puede aproximar con la fórmula plana.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>En un videojuego, un personaje está en la posición $(2, 5)$ y debe llegar a $(10, 13)$. La distancia que debe recorrer es $d = \sqrt{(10-2)^2 + (13-5)^2} = \sqrt{64 + 64} = \sqrt{128} \approx 11{,}31$ unidades. El punto medio del trayecto es $(6, 9)$.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOB_Tema4_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 4</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

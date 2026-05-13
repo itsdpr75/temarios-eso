@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO A - Tema 3: Álgebra y fracciones algebraicas | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-divide"></i> <span>Tema 3: Álgebra y fracciones algebraicas</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-3-1" class="nav-link"><i class="fa-solid fa-1"></i> 3.1 Operaciones complejas con fracciones algebraicas</a></li>
+        <li><a href="#modulo-3-2" class="nav-link"><i class="fa-solid fa-2"></i> 3.2 Ecuaciones fraccionarias y soluciones extrañas</a></li>
+        <li><a href="#modulo-3-3" class="nav-link"><i class="fa-solid fa-3"></i> 3.3 Inecuaciones de primer y segundo grado</a></li>
+        <li><a href="#modulo-3-4" class="nav-link"><i class="fa-solid fa-4"></i> 3.4 Sistemas de inecuaciones y representación gráfica</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 3.1 Operaciones complejas con fracciones algebraicas -->
+      <section id="modulo-3-1">
+        <h2>3.1 Operaciones complejas con fracciones algebraicas</h2>
+        <p class="intro">Una <strong>fracción algebraica</strong> es el cociente de dos polinomios. Su manejo requiere dominar la simplificación, las operaciones aritméticas y la factorización de polinomios. Son la base de expresiones racionales que aparecen en几乎所有 campos de las matemáticas aplicadas.</p>
+        <article>
+          <h3>Simplificación de fracciones algebraicas</h3>
+          <p>Para simplificar una fracción algebraica $\frac{P(x)}{Q(x)}$:</p>
+          <ol>
+      <li>Factorizar numerador y denominador.</li><li>Cancelar factores comunes.</li>
+    </ol>
+          <p><strong>Ejemplo</strong>:</p>
+          <div class="katex-display">$$\frac{x^2 - 4}{x^2 - 4x + 4} = \frac{(x-2)(x+2)}{(x-2)^2} = \frac{x+2}{x-2}, \quad x \neq 2$$</div>
+        </article>
+
+        <article>
+          <h3>Suma y resta de fracciones algebraicas</h3>
+          <p>Para sumar o restar fracciones con distinto denominador:</p>
+          <ol>
+      <li>Calcular el <strong>mínimo común múltiplo</strong> (MCM) de los denominadores.</li><li>Expresar cada fracción con el MCM como denominador.</li><li>Sumar los numeradores.</li><li>Simplificar el resultado.</li>
+    </ol>
+          <p><strong>Ejemplo</strong>:</p>
+          <div class="katex-display">$$\frac{1}{x} + \frac{1}{x+1} = \frac{x+1+x}{x(x+1)} = \frac{2x+1}{x(x+1)}$$</div>
+        </article>
+
+        <article>
+          <h3>Producto de fracciones algebraicas</h3>
+          <div class="katex-display">$$\frac{A}{B} \cdot \frac{C}{D} = \frac{A \cdot C}{B \cdot D}$$</div>
+          <p>Es conveniente simplificar antes de multiplicar.</p>
+        </article>
+
+        <article>
+          <h3>Cociente de fracciones algebraicas</h3>
+          <div class="katex-display">$$\frac{A}{B} \div \frac{C}{D} = \frac{A}{B} \cdot \frac{D}{C} = \frac{A \cdot D}{B \cdot C}$$</div>
+          <p>Dividir por una fracción equivale a multiplicar por su inversa.</p>
+        </article>
+
+        <article>
+          <h3>Factorizaciones útiles</h3>
+          <p>Para trabajar con fracciones algebraicas es esencial dominar:</p>
+          <ul>
+      <li><strong>Trinomio cuadrado perfecto</strong>: $a^2 \pm 2ab + b^2 = (a \pm b)^2$</li><li><strong>Diferencia de cuadrados</strong>: $a^2 - b^2 = (a+b)(a-b)$</li><li><strong>Trinomio de segundo grado</strong>: $ax^2 + bx + c = a(x - r_1)(x - r_2)$</li><li><strong>Suma/diferencia de cubos</strong>: $a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2)$</li><li><strong>Factor común</strong>: $ax + bx = x(a + b)$</li><li><strong>Agrupación</strong>: $ax + bx + ay + by = x(a+b) + y(a+b) = (x+y)(a+b)$</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las fracciones algebraicas aparecen en el cálculo de resistencias eléctricas en paralelo ($R_{\text{total}} = \frac{R_1 \cdot R_2}{R_1 + R_2}$), en óptica (fórmulas de lentes) y en economía al calcular costes medios o beneficios por unidad.</p>
+    </div>
+      </section>
+
+      <!-- 3.2 Ecuaciones fraccionarias y soluciones extrañas -->
+      <section id="modulo-3-2">
+        <h2>3.2 Ecuaciones fraccionarias y soluciones extrañas</h2>
+        <p class="intro">Una <strong>ecuación fraccionaria</strong> (o ecuación racional) es aquella en la que la incógnita aparece en el denominador de una o más fracciones. Para resolverlas, transformamos la ecuación en una ecuación polinómica, pero debemos tener cuidado con las <strong>soluciones extrañas</strong>.</p>
+        <article>
+          <h3>Método de resolución</h3>
+          <ol>
+      <li><strong>Identificar las restricciones</strong>: Determinar qué valores anulan algún denominador (éstos no pueden ser solución).</li><li><strong>Reducir a denominador común</strong>: Multiplicar toda la ecuación por el MCM de los denominadores.</li><li><strong>Resolver la ecuación polinómica</strong> resultante.</li><li><strong>Verificar las soluciones</strong>: Comprobar que cada solución no anula ningún denominador original.</li>
+    </ol>
+          <p><strong>Ejemplo</strong>: Resolver $\frac{2}{x} + \frac{3}{x+1} = 1$</p>
+          <p>Restricción: $x \neq 0$ y $x \neq -1$.</p>
+          <p>Multiplicando por $x(x+1)$:</p>
+          <div class="katex-display">$$2(x+1) + 3x = x(x+1)$$</div>
+          <div class="katex-display">$$2x + 2 + 3x = x^2 + x$$</div>
+          <div class="katex-display">$$x^2 - 4x - 2 = 0$$</div>
+          <div class="katex-display">$$x = \frac{4 \pm \sqrt{16 + 8}}{2} = \frac{4 \pm \sqrt{24}}{2} = 2 \pm \sqrt{6}$$</div>
+          <p>Ambas soluciones son válidas (no anulan denominadores).</p>
+        </article>
+
+        <article>
+          <h3>Soluciones extrañas</h3>
+          <p>Una <strong>solución extraña</strong> es un valor que satisface la ecuación transformada pero no la original, porque anula algún denominador. Siempre hay que verificar.</p>
+          <p><strong>Ejemplo</strong>: Resolver $\frac{x}{x-2} = \frac{2}{x-2} + 1$</p>
+          <p>Multiplicando por $x - 2$: $x = 2 + (x - 2)$, es decir, $x = x$. La ecuación se cumple para todo $x$, pero $x = 2$ anula el denominador. Solución: $\mathbb{R} \setminus \{2\}$.</p>
+        </article>
+
+        <article>
+          <h3>Ecuaciones fraccionarias que se reducen a cuadráticas</h3>
+          <p>Al multiplicar por el MCM podemos obtener ecuaciones de grado 2 (o superior). Se resuelven con las técnicas habituales.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las ecuaciones fraccionarias surgen al calcular tiempos en problemas de velocidad: si un coche recorre un trayecto a $v$ km/h y otro a $v+10$ km/h, las ecuaciones del tipo $\frac{d}{v} + \frac{d}{v+10} = t$ son fraccionarias.</p>
+    </div>
+      </section>
+
+      <!-- 3.3 Inecuaciones de primer y segundo grado -->
+      <section id="modulo-3-3">
+        <h2>3.3 Inecuaciones de primer y segundo grado</h2>
+        <p class="intro">Las inecuaciones son desigualdades algebraicas que, a diferencia de las ecuaciones, tienen un conjunto de soluciones (generalmente un intervalo). Resolverlas requiere aplicar las mismas técnicas que con ecuaciones, pero respetando las reglas del orden.</p>
+        <article>
+          <h3>Inecuaciones de primer grado</h3>
+          <p>La forma general es $ax + b > 0$, $ax + b < 0$, $ax + b \geq 0$ o $ax + b \leq 0$.</p>
+          <p><strong>Regla clave</strong>: Al multiplicar o dividir por un número negativo, se invierte el sentido de la desigualdad.</p>
+          <p><strong>Ejemplo</strong>: $-3x + 6 \leq 0 \implies -3x \leq -6 \implies x \geq 2$.</p>
+          <p>Solución: $[2, +\infty)$.</p>
+        </article>
+
+        <article>
+          <h3>Inecuaciones de segundo grado</h3>
+          <p>La forma general es $ax^2 + bx + c \gtrless 0$.</p>
+          <p><strong>Método de resolución</strong>:</p>
+          <ol>
+      <li>Calcular el discriminante $\Delta = b^2 - 4ac$.</li><li>Si $\Delta < 0$:</li><li>Si $\Delta = 0$:</li><li>Si $\Delta > 0$:</li>
+    </ol>
+          <p><strong>Regla nemotécnica</strong>: Si $a > 0$, el polinomio es positivo fuera de las raíces y negativo entre ellas.</p>
+        </article>
+
+        <article>
+          <h3>Inecuaciones con valor absoluto</h3>
+          <ul>
+      <li>$|f(x)| < a \iff -a < f(x) < a$</li><li>$|f(x)| > a \iff f(x) < -a \text{ o } f(x) > a$</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Inecuaciones fraccionarias</h3>
+          <p>Para resolver $\frac{P(x)}{Q(x)} > 0$:</p>
+          <ol>
+      <li>Factorizar $P$ y $Q$.</li><li>Estudiar el signo de cada factor en intervalos determinados por las raíces de $P$ y $Q$.</li><li>Determinar el signo de la fracción en cada intervalo usando una tabla de signos.</li>
+    </ol>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las inecuaciones aparecen en diseño: las dimensiones de una caja deben ser positivas y no superar ciertos límites. En economía, la condición de beneficio positivo es $\text{Ingresos} - \text{Costes} > 0$, que genera inecuaciones.</p>
+    </div>
+      </section>
+
+      <!-- 3.4 Sistemas de inecuaciones y representación gráfica -->
+      <section id="modulo-3-4">
+        <h2>3.4 Sistemas de inecuaciones y representación gráfica</h2>
+        <p class="intro">Un <strong>sistema de inecuaciones</strong> es un conjunto de dos o más inecuaciones que deben cumplirse simultáneamente. La solución del sistema es la intersección de las soluciones individuales.</p>
+        <article>
+          <h3>Resolución de sistemas de inecuaciones</h3>
+          <ol>
+      <li>Resolver cada inecuación por separado.</li><li>La solución del sistema es la intersección de todas las soluciones.</li>
+    </ol>
+          <p><strong>Ejemplo</strong>: Resolver el sistema $\begin{cases} 2x + 1 > 3 \\ 3x - 2 \leq 7 \end{cases}$</p>
+          <ul>
+      <li>De la primera: $x > 1$, es decir, $(1, +\infty)$.</li><li>De la segunda: $x \leq 3$, es decir, $(-\infty, 3]$.</li><li>Intersección: $(1, 3]$.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Sistemas de inecuaciones de segundo grado</h3>
+          <p>Cada inecuación puede generar intervalos abiertos o cerrados. La intersección puede ser un intervalo, la unión de intervalos o el conjunto vacío.</p>
+        </article>
+
+        <article>
+          <h3>Representación gráfica</h3>
+          <ul>
+      <li>En una recta real: cada inecuación se representa con un intervalo coloreado. La solución del sistema es la zona donde se solapan todas las marcas.</li><li>En el plano: cada inecuación lineal define una semiplano. La solución del sistema es la intersección de todos los semiplanos, que puede ser un polígono (region factible).</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Inecuaciones con dos variables</h3>
+          <p>Una inecuación como $y \leq 2x + 1$ define un semiplano. Para representarla:</p>
+          <ol>
+      <li>Dibujar la recta frontera $y = 2x + 1$ (si la desigualdad es estricta, línea discontinua).</li><li>Tomar un punto de prueba (por ejemplo, $(0,0)$).</li><li>Si el punto satisface la desigualdad, la solución es el semiplano que lo contiene.</li>
+    </ol>
+        </article>
+
+        <article>
+          <h3>Optimización con restricciones</h3>
+          <p>Los sistemas de inecuaciones son la base de la <strong>programación lineal</strong>, que permite optimizar (maximizar o minimizar) una función objetivo sujeta a restricciones. La solución óptima se encuentra en un vértice de la región factible.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Una empresa fabrica dos productos con restricciones de materia prima y mano de obra. El sistema de inecuaciones modela las restricciones y la función objetivo es el beneficio. La región factible indica las combinaciones posibles de producción, y el vértice óptimo da la combinación más rentable.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOA_Tema3_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 3</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

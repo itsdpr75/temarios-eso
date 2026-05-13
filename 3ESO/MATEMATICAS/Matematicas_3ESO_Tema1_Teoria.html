@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>Matemáticas 3º ESO - Tema 1: Números reales | Teoría</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:280px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1600px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem;display:flex;align-items:center;gap:.75rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow)}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}article ul{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}.mermaid{text-align:center;margin:1rem 0}
+    .chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin:1rem 0;max-width:600px;margin-left:auto;margin-right:auto}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    .method-steps{display:grid;gap:.75rem;margin:1rem 0}.method-step{display:flex;gap:.75rem;align-items:flex-start}
+    .method-step i{color:var(--primary);margin-top:.25rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}
+    aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style></head><body><header><div style="display:flex;align-items:center;gap:1rem"><button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button><div class="header-title"><i class="fa-solid fa-calculator"></i><span>Tema 1: Números reales</span></div></div><button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button></header><div class="layout"><aside id="sidebar"><div class="nav-title">Contenido del Tema</div><ul class="nav-list">
+        <li><a href="#s10" class="nav-link"><i class="fa-solid fa-1"></i> 1.1 Racionales e irracionales</a></li>
+        <li><a href="#s11" class="nav-link"><i class="fa-solid fa-2"></i> 1.2 Recta real e intervalos</a></li>
+        <li><a href="#s12" class="nav-link"><i class="fa-solid fa-3"></i> 1.3 Aproximaciones, cotas de error y notación científica</a></li>
+        <li><a href="#s13" class="nav-link"><i class="fa-solid fa-4"></i> 1.4 Operaciones con números reales</a></li>
+      </ul></aside><main>
+      <section id="s10"><h2>1.1 Racionales e irracionales</h2><p class="intro">Los números reales $\mathbb{R}$ comprenden todos los valores de la recta numérica. Se dividen en racionales e irracionales.</p>
+<article><h3>Conjuntos numéricos</h3><p>Los racionales $\mathbb{Q}$ se expresan como $\frac{p}{q}$ con $p,q \in \mathbb{Z}$, $q \neq 0$. Los irracionales $\mathbb{R} \setminus \mathbb{Q}$ tienen expansión decimal infinita no periódica.</p><div class="katex-display">$$ \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} $$</div></article>
+<div class="practical-box"><strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong><p>En programación, comprender racionales e irracionales ayuda a entender errores de precisión en cálculos.</p></div></section>
+      <section id="s11"><h2>1.2 Recta real e intervalos</h2><article><h3>Irracionales fundamentales</h3><ul><li>$\pi \approx 3{,}14159...$</li><li>$\sqrt{2} \approx 1{,}41421...$</li><li>$e \approx 2{,}71828...$</li><li>$\varphi = \frac{1+\sqrt{5}}{2} \approx 1{,}618...$</li></ul></article>
+<div class="practical-box"><strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong><p>Los intervalos se usan para definir rangos válidos de entrada y tolerancias en ingeniería.</p></div></section>
+      <section id="s12"><h2>1.3 Aproximaciones, cotas de error y notación científica</h2><p class="intro">La recta real permite representar geométricamente cualquier número real.</p>
+<article><h3>Representación en la recta</h3><p>Cada punto corresponde a un único real. Se elige origen, orientación y unidad.</p></article>
+<div class="practical-box"><strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong><p>La notación científica es esencial en ciencias para distancias astronómicas y tamaños subatómicos.</p></div></section>
+      <section id="s13"><h2>1.4 Operaciones con números reales</h2><article><h3>Tipos de intervalos</h3><ul><li>Cerrado: $[a,b] = \{x \mid a \leq x \leq b\}$</li><li>Abierto: $(a,b) = \{x \mid a < x < b\}$</li><li>Semiabierto: $[a,b)$, $(a,b]$</li><li>Infinitos: $[a,+\infty)$, $(-\infty,b)$</li></ul></article>
+<div class="practical-box"><strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong><p>Las operaciones con radicales aparecen en geometría (Pitágoras), física y estadística.</p></div></section>
+      <footer><p>¿Listo para practicar? <a href="Matematicas_3ESO_Tema1_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios</a></p></footer></main></div>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js"></script><script>
+    function initKaTeX(){if(typeof renderMathInElement!=='function')return;try{renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false,ignoredTags:['svg','script','noscript','style','textarea','pre','code','mermaid']});}catch(e){console.warn('KaTeX error:',e);}}
+    function initMermaid(dark){if(typeof mermaid!=='undefined'){mermaid.initialize({startOnLoad:false,theme:dark?'dark':'default',securityLevel:'loose',fontFamily:'Albert Sans, system-ui, sans-serif'});document.querySelectorAll('.mermaid').forEach(function(el){if(!el.dataset.processed){el.dataset.processed='true';mermaid.run({nodes:[el]})}});}}
+    function initConvergenceChart(dark){var ctx=document.getElementById('convergenceChart');if(ctx&&typeof Chart!=='undefined'){var tc=dark?'#f5f5f5':'#212121',gc=dark?'#444':'#e0e0e0';var data=[];var approx=0;for(var i=1;i<=10;i++){approx+=6/Math.pow(10,i);data.push({x:i,y:approx});}data.push({x:11,y:1/3});if(ctx.chart){ctx.chart.destroy();}ctx.chart=new Chart(ctx,{type:'scatter',data:{labels:[1,2,3,4,5,6,7,8,9,10,11],datasets:[{label:'Aproximación decimal',data:data,borderColor:'#1a237e',backgroundColor:'rgba(26,35,126,0.3)',pointRadius:4},{label:'Valor exacto 1/3',data:[{x:1,y:1/3},{x:11,y:1/3}],borderColor:'#4caf50',borderDash:[5,5],pointRadius:0}]},options:{responsive:true,plugins:{legend:{labels:{color:tc}},title:{display:true,text:'Convergencia hacia fracción generatriz',color:tc}},scales:{x:{title:{display:true,text:'Iteración',color:tc},ticks:{color:tc},grid:{color:gc}},y:{title:{display:true,text:'Valor',color:tc},ticks:{color:tc},grid:{color:gc},min:0.3,max:0.34}}}});}}
+    document.addEventListener('DOMContentLoaded',function(){mermaid.initialize({startOnLoad:true,theme:'neutral'});setTimeout(function(){initKaTeX();initMermaid(false);initConvergenceChart(false);},50);});
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');initMermaid(true);initConvergenceChart(true);}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');initKaTeX();initMermaid(isDark);initConvergenceChart(isDark);});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script></body></html>

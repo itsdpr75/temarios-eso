@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO B - Tema 5: Estadística y probabilidad aplicada | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-chart-pie"></i> <span>Tema 5: Estadística y probabilidad aplicada</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-5-1" class="nav-link"><i class="fa-solid fa-1"></i> 5.1 Muestreo, sesgos y encuestas</a></li>
+        <li><a href="#modulo-5-2" class="nav-link"><i class="fa-solid fa-2"></i> 5.2 Lectura crítica de gráficos en medios</a></li>
+        <li><a href="#modulo-5-3" class="nav-link"><i class="fa-solid fa-3"></i> 5.3 Probabilidad en juegos, seguros y decisiones</a></li>
+        <li><a href="#modulo-5-4" class="nav-link"><i class="fa-solid fa-4"></i> 5.4 Herramientas digitales para análisis de datos</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 5.1 Muestreo, sesgos y encuestas -->
+      <section id="modulo-5-1">
+        <h2>5.1 Muestreo, sesgos y encuestas</h2>
+        <p class="intro">La <strong>estadística</strong> es la ciencia que recoge, organiza, analiza e interpreta datos para tomar decisiones. En nuestra vida diaria, estamos constantemente expuestos a datos estadísticos: encuestas políticas, estudios médicos, ratings de series, valoraciones de productos... Saber evaluar la calidad de esos datos es una competencia esencial.</p>
+        <article>
+          <h3>Población y muestra</h3>
+          <ul>
+      <li><strong>Población</strong>: conjunto completo de individuos o elementos que se quieren estudiar.</li><li><strong>Muestra</strong>: subconjunto representativo de la población.</li><li><strong>Censo</strong>: estudio de toda la población (caro y lento).</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Tipos de muestreo</h3>
+          <ul>
+      <li><strong>Muestreo aleatorio simple</strong>: cada individuo tiene la misma probabilidad de ser elegido.</li><li><strong>Muestreo estratificado</strong>: se divide la población en grupos (estratos) y se muestrea dentro de cada uno.</li><li><strong>Muestreo sistemático</strong>: se elige cada $k$-ésimo individuo de una lista.</li><li><strong>Muestreo por conglomerados</strong>: se seleccionan grupos naturales (aulas, barrios) al azar.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Sesgos estadísticos</h3>
+          <p>Un <strong>sesgo</strong> es una desviación sistemática que hace que los resultados no representen correctamente a la población. Los más comunes son:</p>
+          <ul>
+      <li><strong>Sesgo de selección</strong>: la muestra no es representativa (ej.: encuesta en una red social sobre el uso de redes sociales).</li><li><strong>Sesgo de no respuesta</strong>: quienes responden la encuesta son diferentes de quienes no responden.</li><li><strong>Sesgo de pregunta capciosa</strong>: las preguntas se formulan para influir en la respuesta.</li><li><strong>Sesgo del entrevistador</strong>: la actitud del entrevistador influye en las respuestas.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Tamaño de la muestra</h3>
+          <p>Para que una muestra sea fiable, debe ser suficientemente grande. Una regla orientativa es:</p>
+          <div class="katex-display">$$n \geq \frac{z^2 \cdot p \cdot (1-p)}{e^2}$$</div>
+          <p>Donde $z$ es el nivel de confianza, $p$ la proporción estimada y $e$ el error máximo admisible.</p>
+        </article>
+
+        <article>
+          <h3>El margen de error</h3>
+          <p>Toda encuesta tiene un <strong>margen de error</strong>. Si una encuesta dice que el $52\%$ de los votantes apoya una medida con un margen de error del $\pm 3\%$, el resultado real está entre el $49\%$ y el $55\%$.</p>
+        </article>
+
+        <article>
+          <h3>Cuestionarios y encuestas</h3>
+          <p>Diseñar una buena encuesta requiere:
+- Preguntas claras y neutrales.
+- Opciones de respuesta completas y excluyentes.
+- Orden lógico de las preguntas.
+- Tamaño de muestra adecuado.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un periódico online realiza una encuesta: «¿Crees que los políticos ganan demasiado?». El $89\%$ responde que sí. Sin embargo, la encuesta está sesgada: quienes leen noticias políticas online y participan en encuestas suelen tener opiniones más marcadas. Además, la pregunta es dirigida («demasiado» es subjetivo).</p>
+    </div>
+      </section>
+
+      <!-- 5.2 Lectura crítica de gráficos en medios -->
+      <section id="modulo-5-2">
+        <h2>5.2 Lectura crítica de gráficos en medios</h2>
+        <p class="intro">Los gráficos estadísticos son una herramienta poderosa para comunicar información, pero también pueden usarse para <strong>engañar o manipular</strong>. Saber leerlos de forma crítica es fundamental para interpretar correctamente las noticias y los informes.</p>
+        <article>
+          <h3>Medidas de centralización</h3>
+          <p>Las tres medidas principales de centralización son:</p>
+          <ul>
+      <li><strong>Media aritmética</strong>: suma de todos los datos dividida entre el número de datos.</li>
+    </ul>
+          <div class="katex-display">$$\bar{x} = \frac{x_1 + x_2 + \ldots + x_n}{n} = \frac{\sum x_i}{n}$$</div>
+          <ul>
+      <li><strong>Mediana</strong>: valor central de los datos ordenados. Si hay $n$ datos, la mediana es el dato en la posición $\dfrac{n+1}{2}$ (si $n$ es impar) o la media de los dos centrales (si $n$ es par).</li><li><strong>Moda</strong>: valor que más se repite.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Medidas de dispersión</h3>
+          <p>Las medidas de dispersión indican qué tan «separados» están los datos:</p>
+          <ul>
+      <li><strong>Rango</strong>: diferencia entre el valor máximo y el mínimo.</li><li><strong>Varianza</strong>: media de los cuadrados de las desviaciones respecto a la media.</li>
+    </ul>
+          <div class="katex-display">$$s^2 = \frac{\sum (x_i - \bar{x})^2}{n}$$</div>
+          <ul>
+      <li><strong>Desviación típica</strong>: raíz cuadrada de la varianza.</li>
+    </ul>
+          <div class="katex-display">$$s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}}$$</div>
+        </article>
+
+        <article>
+          <h3>Gráficos estadísticos</h3>
+          <ul>
+      <li><strong>Diagrama de barras</strong>: compara categorías mediante barras de igual anchura.</li><li><strong>Histograma</strong>: similar a las barras pero para datos agrupados en intervalos.</li><li><strong>Gráfico de sectores</strong>: muestra proporciones respecto al total ($360°$).</li><li><strong>Diagrama de caja y bigotes</strong>: muestra la mediana, los cuartiles y los valores extremos.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Trampas visuales en los gráficos</h3>
+          <ul>
+      <li><strong>Eje $Y$ truncado</strong>: empezar el eje vertical en un valor distinto de cero exagera las diferencias.</li><li><strong>Barras desproporcionadas</strong>: usar área o volumen en vez de longitud para representar cantidades unidimensionales.</li><li><strong>Escalas no uniformes</strong>: las distancias entre marcas no son proporcionales.</li><li><strong>Datos cherry-picked</strong>: mostrar solo los datos que apoyan una conclusión y ocultar los demás.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Una empresa afirma que «nuestros sueldos subieron un $50\%$». La media de los sueldos pasó de $2\,000\text{ €}$ a $3\,000\text{ €.}$ Pero al analizar los datos, resulta que el CEO subió su sueldo de $10\,000\text{ €}$ a $20\,000\text{ €}$ mientras los demás empleados no tuvieron subida. La media es engañosa aquí: la mediana sería $0\%$ de subida.</p>
+    </div>
+      </section>
+
+      <!-- 5.3 Probabilidad en juegos, seguros y decisiones -->
+      <section id="modulo-5-3">
+        <h2>5.3 Probabilidad en juegos, seguros y decisiones</h2>
+        <p class="intro">La <strong>probabilidad</strong> es la rama de las matemáticas que mide la posibilidad de que ocurra un evento. Se expresa como un número entre $0$ (imposible) y $1$ (seguro), o como un porcentaje entre $0\%$ y $100\%$.</p>
+        <article>
+          <h3>Regla de Laplace</h3>
+          <p>Si todos los resultados son igualmente probables:</p>
+          <div class="katex-display">$$P(A) = \frac{\text{Casos favorables}}{\text{Casos posibles}}$$</div>
+        </article>
+
+        <article>
+          <h3>Tipos de eventos</h3>
+          <ul>
+      <li><strong>Evento seguro</strong>: probabilidad $1$ ($100\%$).</li><li><strong>Evento imposible</strong>: probabilidad $0$ ($0\%$).</li><li><strong>Evento complementario</strong>: $P(\bar{A}) = 1 - P(A)$.</li><li><strong>Eventos incompatibles</strong> (mutuamente excluyentes): no pueden ocurrir a la vez. $P(A \cup B) = P(A) + P(B)$.</li><li><strong>Eventos independientes</strong>: la ocurrencia de uno no afecta al otro. $P(A \cap B) = P(A) \cdot P(B)$.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Probabilidad y juegos de azar</h3>
+          <p>En un dado estándar de $6$ caras:
+- $P(\text{par}) = 3/6 = 1/2$
+- $P(\text{mayor que } 4) = 2/6 = 1/3$
+- $P(\text{6}) = 1/6$</p>
+        </article>
+
+        <article>
+          <h3>Probabilidad y seguros</h3>
+          <p>Las compañías de seguros usan la probabilidad para calcular las <strong>primas</strong> (lo que pagas). La prima se basa en la probabilidad de que ocurra el siniestro multiplicada por el coste esperado, más un margen de beneficio.</p>
+          <div class="katex-display">$$\text{Prima} \approx P(\text{siniestro}) \times \text{Coste esperado} + \text{Margen}$$</div>
+        </article>
+
+        <article>
+          <h3>Toma de decisiones con probabilidad</h3>
+          <p>En la vida cotidiana tomamos decisiones basándonos en probabilidades intuitivas:
+- ¿Llevo paraguas? Depende de la probabilidad de lluvia.
+- ¿Me hago un seguro? Depende de la probabilidad y el coste del riesgo.
+- ¿Invierto en este negocio? Depende de la probabilidad de éxito.</p>
+        </article>
+
+        <article>
+          <h3>Riesgo y beneficio</h3>
+          <p>El <strong>valor esperado</strong> de una decisión con varios resultados posibles es:</p>
+          <div class="katex-display">$$E = \sum p_i \cdot x_i$$</div>
+          <p>Donde $p_i$ es la probabilidad de cada resultado y $x_i$ su valor.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un seguro de coche cuesta $600\text{ €/año}$. La probabilidad de tener un accidente es del $5\%$ y el coste medio del accidente es de $8\,000\text{ €.}$ El coste esperado sin seguro es $0{,}05 \times 8\,000 = 400\text{ €.}$ La prima ($600\text{ €}$) incluye un margen de $200\text{ €}$ para la aseguradora. Aun así, puede merecer la pena porque un accidente grave podría costar mucho más.</p>
+    </div>
+      </section>
+
+      <!-- 5.4 Herramientas digitales para análisis de datos -->
+      <section id="modulo-5-4">
+        <h2>5.4 Herramientas digitales para análisis de datos</h2>
+        <p class="intro">En la era digital, tenemos acceso a numerosas <strong>herramientas</strong> que facilitan la recogida, organización y análisis de datos. Desde hojas de cálculo hasta programas estadísticos avanzados, estas herramientas nos permiten trabajar con grandes volúmenes de información de forma eficiente.</p>
+        <article>
+          <h3>Hojas de cálculo (Excel, Google Sheets, Calc)</h3>
+          <p>Las funciones estadísticas más útiles son:
+- <strong>PROMEDIO</strong> / <strong>AVERAGE</strong>: calcula la media.
+- <strong>MEDIANA</strong> / <strong>MEDIAN</strong>: calcula la mediana.
+- <strong>MODA</strong> / <strong>MODE</strong>: calcula la moda.
+- <strong>DESVEST.M</strong> / <strong>STDEV.S</strong>: calcula la desviación típica muestral.
+- <strong>VAR.M</strong> / <strong>VAR.S</strong>: calcula la varianza muestral.
+- <strong>CONTAR.SI</strong> / <strong>COUNTIF</strong>: cuenta celdas que cumplen una condición.
+- <strong>FRECUENCIA</strong>: calcula frecuencias para intervalos.</p>
+        </article>
+
+        <article>
+          <h3>Gráficos en hojas de cálculo</h3>
+          <p>Las hojas de cálculo permiten crear rápidamente:
+- Gráficos de barras y columnas.
+- Gráficos de líneas.
+- Gráficos de sectores (circular).
+- Diagramas de dispersión.</p>
+        </article>
+
+        <article>
+          <h3>Tablas de frecuencias</h3>
+          <p>Una tabla de frecuencias organiza los datos mostrando:
+- <strong>Frecuencia absoluta ($n_i$)</strong>: cuántas veces aparece cada valor.
+- <strong>Frecuencia relativa ($f_i$)</strong>: $f_i = n_i / N$, donde $N$ es el total.
+- <strong>Frecuencia acumulada ($N_i$)</strong>: suma acumulada de frecuencias.</p>
+        </article>
+
+        <article>
+          <h3>Representación de datos agrupados</h3>
+          <p>Cuando hay muchos datos distintos, se agrupan en <strong>intervalos</strong> (clases). Para cada intervalo se calcula la frecuencia y se representa con un histograma.</p>
+        </article>
+
+        <article>
+          <h3>Análisis exploratorio de datos</h3>
+          <p>El análisis exploratorio consiste en:
+1. <strong>Observar</strong> la distribución de los datos (simetría, valores atípicos).
+2. <strong>Calcular</strong> las medidas de centralización y dispersión.
+3. <strong>Representar</strong> gráficamente los datos.
+4. <strong>Extraer conclusiones</strong> relevantes.</p>
+        </article>
+
+        <article>
+          <h3>Datos abiertos y fuentes de información</h3>
+          <p>Existen numerosas fuentes de datos públicos:
+- <strong>INE</strong> (Instituto Nacional de Estadística).
+- <strong>Eurostat</strong> (oficina estadística de la UE).
+- <strong>Banco Mundial</strong> (datos globales de desarrollo).
+- <strong>Datos.gob.es</strong> (portal de datos abiertos del gobierno español).</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un alumno registra las temperaturas máximas de su ciudad durante $30$ días: $22, 24, 19, 25, 28, 30, 27, 23, 21, 26, 29, 31, 25, 24, 20, 22, 27, 28, 26, 23, 21, 25, 30, 29, 24, 22, 26, 28, 25, 23$. Con una hoja de cálculo, calcula rápidamente la media ($\approx 25{,}1\text{ °C}$), la mediana ($25\text{ °C}$) y la desviación típica ($\approx 3{,}1\text{ °C}$), y genera un histograma para ver la distribución.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOB_Tema5_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 5</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

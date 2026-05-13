@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 3º ESO - Tema 5: Funciones lineales y cuadráticas | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-chart-line"></i> <span>Tema 5: Funciones lineales y cuadráticas</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-5-1" class="nav-link"><i class="fa-solid fa-1"></i> 5.1 Pendiente, ordenada en origen y ecuación de la recta</a></li>
+        <li><a href="#modulo-5-2" class="nav-link"><i class="fa-solid fa-2"></i> 5.2 Parábolas: vértice, eje de simetría, concavidad</a></li>
+        <li><a href="#modulo-5-3" class="nav-link"><i class="fa-solid fa-3"></i> 5.3 Transformaciones de funciones</a></li>
+        <li><a href="#modulo-5-4" class="nav-link"><i class="fa-solid fa-4"></i> 5.4 Modelado de problemas reales con funciones</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 5.1 Pendiente, ordenada en origen y ecuación de la recta -->
+      <section id="modulo-5-1">
+        <h2>5.1 Pendiente, ordenada en origen y ecuación de la recta</h2>
+        <p class="intro">Las funciones lineales son las funciones más sencillas y fundamentales en matemáticas. Se representan gráficamente mediante una recta y sirven para modelizar relaciones proporcionales y afines. Comprender los conceptos de pendiente y ordenada en origen es esencial para interpretar y construir gráficos en cualquier ámbito científico.</p>
+        <article>
+          <h3>La recta como función afín</h3>
+          <p>Una <strong>función afín</strong> tiene la forma $f(x) = mx + n$, donde $m$ y $n$ son constantes:</p>
+          <ul>
+      <li>$m$ es la <strong>pendiente</strong> de la recta: mide la inclinación. Si $m > 0$, la recta crece; si $m < 0$, decrece; si $m = 0$, es horizontal.</li><li>$n$ es la <strong>ordenada en el origen</strong>: es el punto donde la recta corta al eje $Y$, es decir, el valor de $f(0)$.</li><li>El caso particular $f(x) = mx$ (cuando $n = 0$) se denomina <strong>función lineal</strong> o de proporcionalidad directa; su gráfica pasa por el origen de coordenadas.</li><li>Para dibujar una recta basta con calcular dos puntos, por ejemplo $x = 0$ y $x = 1$, y unirlos.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Cálculo de la pendiente</h3>
+          <p>La pendiente de una recta que pasa por dos puntos $A(x_1, y_1)$ y $B(x_2, y_2)$ se calcula mediante la fórmula:</p>
+          <div class="katex-display">$$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$</div>
+          <ul>
+      <li>La pendiente indica cuánto cambia $y$ por cada unidad que cambia $x$.</li><li>Una pendiente $m = 2$ significa que por cada unidad a la derecha, la recta sube 2 unidades.</li><li>Una pendiente $m = -\frac{1}{2}$ significa que por cada 2 unidades a la derecha, la recta baja 1 unidad.</li><li>Dos rectas paralelas tienen la misma pendiente.</li><li>Dos rectas perpendiculares tienen pendientes que cumplen $m_1 \cdot m_2 = -1$.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Obtención de la ecuación de una recta</h3>
+          <p>A partir de la pendiente $m$ y un punto $(x_0, y_0)$ de la recta, la ecuación punto-pendiente es:</p>
+          <div class="katex-display">$$y - y_0 = m(x - x_0)$$</div>
+          <ul>
+      <li>Si conocemos dos puntos, se calcula primero la pendiente y luego se sustituye uno de los puntos.</li><li>A partir de la gráfica, se pueden leer directamente la pendiente (contando $\frac{\Delta y}{\Delta x}$) y la ordenada en el origen.</li><li>Ejemplo: la recta que pasa por $(1, 3)$ y $(3, 7)$ tiene pendiente $m = \frac{7-3}{3-1} = 2$ y ecuación $y = 2x + 1$.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las funciones lineales se usan en economía para calcular costes y beneficios (coste fijo + coste variable por unidad), en física para describir el movimiento rectilíneo uniforme ($d = v \cdot t + d_0$), y en la vida diaria para interpretar facturas de agua, luz o teléfono que tienen un término fijo y un término variable.</p>
+    </div>
+      </section>
+
+      <!-- 5.2 Parábolas: vértice, eje de simetría, concavidad -->
+      <section id="modulo-5-2">
+        <h2>5.2 Parábolas: vértice, eje de simetría, concavidad</h2>
+        <p class="intro">Las funciones cuadráticas son funciones polinómicas de grado 2 cuya gráfica es una <strong>parábola</strong>. Aparecen de forma natural al estudiar el movimiento de los proyectiles, la trayectoria de un balón o el área de figuras geométricas. Comprender sus elementos principales permite analizar y representar estas curvas con facilidad.</p>
+        <article>
+          <h3>Forma general de una función cuadrática</h3>
+          <p>Una función cuadrática tiene la expresión $f(x) = ax^2 + bx + c$, donde $a \neq 0$:</p>
+          <ul>
+      <li>$a$ determina la <strong>concavidad</strong>: si $a > 0$, la parábola abre hacia arriba (forma de U); si $a < 0$, abre hacia abajo (forma de ∩).</li><li>$b$ influye en la posición horizontal del vértice.</li><li>$c$ es la ordenada en el origen, es decir, el punto donde la parábola corta al eje $Y$.</li><li>El eje de simetría es una recta vertical que divide la parábola en dos mitades idénticas.</li><li>La parábola siempre es simétrica respecto a su eje.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Vértice y eje de simetría</h3>
+          <p>El <strong>vértice</strong> es el punto más bajo (si $a > 0$) o más alto (si $a < 0$) de la parábola. Sus coordenadas se calculan mediante:</p>
+          <div class="katex-display">$$x_v = \frac{-b}{2a}, \qquad y_v = f\left(\frac{-b}{2a}\right)$$</div>
+          <ul>
+      <li>El <strong>eje de simetría</strong> es la recta vertical $x = \frac{-b}{2a}$.</li><li>Si el vértice está en el origen, la ecuación es $f(x) = ax^2$.</li><li>El vértice es el punto donde la función alcanza su valor mínimo ($a > 0$) o máximo ($a < 0$).</li><li>Para representar una parábola, se calcula el vértice, la ordenada en el origen y algunos puntos simétricos respecto al eje.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Raíces y puntos de corte</h3>
+          <p>Los <strong>puntos de corte</strong> con el eje $X$ (raíces o ceros) se obtienen resolviendo la ecuación $ax^2 + bx + c = 0$:</p>
+          <ul>
+      <li>Si el discriminante $\Delta = b^2 - 4ac > 0$, la parábola corta al eje $X$ en dos puntos.</li><li>Si $\Delta = 0$, la parábola toca el eje $X$ en un solo punto (el vértice está sobre el eje).</li><li>Si $\Delta < 0$, la parábola no corta al eje $X$.</li><li>El corte con el eje $Y$ siempre es el punto $(0, c)$.</li><li>La intersección de dos parábolas se calcula igualando sus expresiones.</li>
+    </ul>
+          <div class="katex-display">$$f(x) = ax^2 + bx + c = a\left(x - \frac{-b + \sqrt{\Delta}}{2a}\right)\left(x - \frac{-b - \sqrt{\Delta}}{2a}\right)$$</div>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las parábolas son esenciales en física para describir trayectorias de objetos bajo la gravedad (lanzamientos de baloncesto, saltos de esquí acuático), en ingeniería para el diseño de antenas parabólicas (satélites, radares) y en arquitectura para diseñar arcos y puentes suspendidos.</p>
+    </div>
+      </section>
+
+      <!-- 5.3 Transformaciones de funciones -->
+      <section id="modulo-5-3">
+        <h2>5.3 Transformaciones de funciones</h2>
+        <p class="intro">Las transformaciones de funciones permiten obtener nuevas funciones a partir de una función dada mediante traslaciones, reflexiones y dilataciones. Estas operaciones son fundamentales en geometría analítica, en la interpretación de gráficos y en la modelización de fenómenos que presentan variaciones respecto a un patrón base.</p>
+        <article>
+          <h3>Traslaciones verticales y horizontales</h3>
+          <p>Una <strong>traslación vertical</strong> se obtiene sumando o restando una constante a la función:</p>
+          <ul>
+      <li>$f(x) + k$ traslada la gráfica $k$ unidades hacia arriba si $k > 0$ y hacia abajo si $k < 0$.</li><li>Ejemplo: si $f(x) = x^2$, entonces $f(x) + 3 = x^2 + 3$ desplaza la parábola 3 unidades hacia arriba.</li><li>Una <strong>traslación horizontal</strong> se obtiene sustituyendo $x$ por $(x - h)$:</li><li>$f(x - h)$ traslada la gráfica $h$ unidades hacia la derecha si $h > 0$ y hacia la izquierda si $h < 0$.</li><li>Ejemplo: $f(x - 2) = (x - 2)^2$ desplaza la parábola 2 unidades a la derecha.</li><li>La combinación de ambas da la <strong>forma vértice</strong> de la parábola: $f(x) = a(x - h)^2 + k$, donde $(h, k)$ es el vértice.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Reflexiones (simetrías)</h3>
+          <p>Una <strong>reflexión</strong> invierte la gráfica respecto a un eje:</p>
+          <ul>
+      <li>$f(-x)$ refleja la gráfica respecto al eje $Y$ (simetría vertical).</li><li>$-f(x)$ refleja la gráfica respecto al eje $X$ (simetría horizontal).</li><li>Ejemplo: si $f(x) = x^2$, entonces $-f(x) = -x^2$ invierte la parábola (ahora abre hacia abajo).</li><li>Ejemplo: si $f(x) = \sqrt{x}$, entonces $f(-x) = \sqrt{-x}$ no está definida para $x > 0$.</li><li>Reflexión respecto al origen: $-f(-x)$ invierte la gráfica respecto a ambos ejes.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Dilataciones y contracciones</h3>
+          <p>Las dilataciones y contracciones modifican la «anchura» o «altura» de la gráfica:</p>
+          <ul>
+      <li>$a \cdot f(x)$ multiplica todas las ordenadas por $a$. Si $|a| > 1$ es una dilatación vertical; si $0 < |a| < 1$, una contracción vertical.</li><li>$f(ax)$ comprime horizontalmente si $|a| > 1$ y dilata si $0 < |a| < 1$.</li><li>Ejemplo: $2x^2$ es una parábola «más estrecha» que $x^2$; $\frac{1}{2}x^2$ es «más ancha».</li><li>El coeficiente $a$ en $f(x) = ax^2 + bx + c$ controla la «apertura» de la parábola.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Las transformaciones de funciones se utilizan en el diseño de videojuegos (animación de personajes mediante traslaciones y reflexiones), en procesamiento de señales (modulación de ondas) y en el diseño gráfico para crear patrones y simetrías.</p>
+    </div>
+      </section>
+
+      <!-- 5.4 Modelado de problemas reales con funciones -->
+      <section id="modulo-5-4">
+        <h2>5.4 Modelado de problemas reales con funciones</h2>
+        <p class="intro">La capacidad de modelizar situaciones reales mediante funciones es una de las competencias matemáticas más valiosas. Consiste en traducir un enunciado verbal a una expresión algebraica que relacione las variables del problema, analizar el comportamiento de esa función y extraer conclusiones útiles.</p>
+        <article>
+          <h3>Pasos para modelizar con funciones</h3>
+          <p>Para modelizar un problema con funciones se sigue este proceso:</p>
+          <ul>
+      <li>Identificar las <strong>variables</strong> del problema y determinar cuál es la variable independiente ($x$) y cuál la dependiente ($y$).</li><li>Plantear la <strong>expresión algebraica</strong> que relaciona ambas variables.</li><li>Determinar el <strong>dominio</strong> de la función (los valores que tiene sentido asignar a la variable independiente).</li><li>Analizar la función: calcular valores concretos, determinar máximos y mínimos, representar la gráfica si es posible.</li><li><strong>Interpretar</strong> los resultados en el contexto del problema original.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Modelos lineales</h3>
+          <p>Los modelos lineales se aplican cuando existe una relación de proporcionalidad o afín entre las variables:</p>
+          <ul>
+      <li>Un taxi cobra $3\text{ €}$ de bajada y $0{,}80\text{ €/km}$. El coste es $C(x) = 0{,}8x + 3$.</li><li>Un tanque con $500$ litros de agua pierde $15$ litros por hora: $V(t) = 500 - 15t$.</li><li>El dominio debe reflejar las restricciones del problema (no puede haber litros negativos ni recorridos negativos).</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Modelos cuadráticos</h3>
+          <p>Los modelos cuadráticos aparecen cuando una variable depende del cuadrado de otra:</p>
+          <ul>
+      <li>El área de un rectángulo de perímetro $40\text{ m}$ en función de la base: $A(x) = x(20 - x) = -x^2 + 20x$.</li><li>La altura de un proyectil: $h(t) = -5t^2 + 20t + 10$.</li><li>En estos casos, el vértice proporciona el <strong>valor óptimo</strong> (máximo o mínimo).</li><li>El vértice de $A(x) = -x^2 + 20x$ es $(10, 100)$, lo que significa que el área máxima es $100\text{ m}^2$ con una base de $10\text{ m}$.</li>
+    </ul>
+          <div class="katex-display">$$A_{\text{máx}} = f\left(\frac{-b}{2a}\right)$$</div>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>El modelado con funciones se usa en empresas para predecir beneficios (función cuadrática con vértice en el beneficio máximo), en ecología para modelizar poblaciones, en medicina para describir la concentración de un fármaco en sangre a lo largo del tiempo, y en arquitectura para optimizar materiales en construcciones.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_3ESO_Tema5_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 5</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>

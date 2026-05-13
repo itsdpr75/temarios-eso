@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Matemáticas 4º ESO B - Tema 1: Números y proporcionalidad aplicada | Teoría</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <style>
+    :root{--primary:#1a237e;--primary-light:#3949ab;--bg-body:#f8f9fa;--bg-card:#fff;--text-main:#212121;--text-muted:#616161;--border:#e0e0e0;--shadow:0 2px 8px rgba(0,0,0,.08);--sidebar-width:260px;--header-height:64px;--transition:.3s ease}
+    .dark-mode{--bg-body:#121212;--bg-card:#1e1e1e;--text-main:#f5f5f5;--text-muted:#bdbdbd;--border:#333;--shadow:0 2px 8px rgba(0,0,0,.3)}
+    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+    body{font-family:'Albert Sans',system-ui,-apple-system,sans-serif;background:var(--bg-body);color:var(--text-main);line-height:1.6;transition:background var(--transition),color var(--transition)}
+    header{position:fixed;top:0;left:0;right:0;height:var(--header-height);background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;z-index:1000;box-shadow:0 2px 4px rgba(0,0,0,.1)}
+    .header-title{display:flex;align-items:center;gap:.75rem;font-weight:600}.header-title i{font-size:1.25rem}
+    #theme-toggle{background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background var(--transition)}
+    #theme-toggle:hover{background:rgba(255,255,255,.25)}#menu-toggle{display:none;background:none;border:none;color:#fff;font-size:1.25rem;cursor:pointer}
+    .layout{display:grid;grid-template-columns:var(--sidebar-width) 1fr;margin-top:var(--header-height);min-height:calc(100vh - var(--header-height))}
+    aside{position:sticky;top:var(--header-height);background:var(--bg-card);border-right:1px solid var(--border);padding:1.5rem;overflow-y:auto;height:calc(100vh - var(--header-height));transition:transform var(--transition)}
+    .nav-title{font-size:.875rem;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;letter-spacing:.5px}
+    .nav-list{list-style:none;display:flex;flex-direction:column;gap:.25rem}
+    .nav-link{display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem;border-radius:6px;color:var(--text-main);text-decoration:none;font-weight:500;transition:background var(--transition),color var(--transition)}
+    .nav-link:hover,.nav-link.active{background:var(--primary);color:#fff}.nav-link i{width:20px;text-align:center}
+    main{padding:2rem;max-width:1440px;margin:0 auto;width:100%}
+    section{margin-bottom:3rem;scroll-margin-top:calc(var(--header-height) + 1rem)}
+    section h2{color:var(--primary);border-bottom:2px solid var(--primary);padding-bottom:.5rem;margin-bottom:1.25rem;font-size:1.5rem}
+    section>p.intro{color:var(--text-muted);margin-bottom:1.5rem;font-size:1.05rem}
+    article{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:1.5rem;margin-bottom:1.5rem;box-shadow:var(--shadow);max-width:80ch}
+    article h3{color:var(--primary-light);margin:0 0 1rem;font-size:1.25rem}article p{margin-bottom:1rem}
+    article ul,article ol{margin:.5rem 0 1rem 1.5rem}article li{margin-bottom:.35rem}
+    .katex-display{overflow-x:auto;overflow-y:hidden;padding:.5rem 0}
+    .practical-box{border-left:4px solid var(--primary);background:rgba(26,35,126,.05);padding:1.25rem 1.5rem;border-radius:0 8px 8px 0;margin:1.5rem 0}
+    .practical-box strong{color:var(--primary);display:block;margin-bottom:.5rem}
+    footer{text-align:center;padding:2rem;color:var(--text-muted);border-top:1px solid var(--border);margin-top:2rem}
+    footer a{color:var(--primary);text-decoration:none;font-weight:600}footer a:hover{text-decoration:underline}
+    @media(max-width:991px){#menu-toggle{display:block}aside{position:fixed;left:0;top:var(--header-height);transform:translateX(-100%);z-index:999;width:var(--sidebar-width);box-shadow:2px 0 8px rgba(0,0,0,.1)}aside.open{transform:translateX(0)}.layout{grid-template-columns:1fr}main{padding:1.5rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <button id="menu-toggle" aria-label="Menú"><i class="fa-solid fa-bars"></i></button>
+      <div class="header-title"><i class="fa-solid fa-ruler-combined"></i> <span>Tema 1: Números y proporcionalidad aplicada</span></div>
+    </div>
+    <button id="theme-toggle" aria-label="Cambiar tema"><i class="fa-solid fa-moon"></i></button>
+  </header>
+  <div class="layout">
+    <aside id="sidebar">
+      <div class="nav-title">Módulos del Tema</div>
+      <ul class="nav-list">
+        <li><a href="#modulo-1-1" class="nav-link"><i class="fa-solid fa-1"></i> 1.1 Escalas, mapas y planos técnicos</a></li>
+        <li><a href="#modulo-1-2" class="nav-link"><i class="fa-solid fa-2"></i> 1.2 Porcentajes en contextos comerciales y financieros</a></li>
+        <li><a href="#modulo-1-3" class="nav-link"><i class="fa-solid fa-3"></i> 1.3 Interés simple y descuentos sucesivos</a></li>
+        <li><a href="#modulo-1-4" class="nav-link"><i class="fa-solid fa-4"></i> 1.4 Conversión de unidades y magnitudes cotidianas</a></li>
+      </ul>
+    </aside>
+    <main>
+      <!-- 1.1 Escalas, mapas y planos técnicos -->
+      <section id="modulo-1-1">
+        <h2>1.1 Escalas, mapas y planos técnicos</h2>
+        <p class="intro">Las <strong>escalas</strong> son fundamentales en nuestra vida cotidiana. Cuando miramos un mapa de carreteras, el plano de una casa o el diseño de un mueble, estamos trabajando con representaciones a escala. Una escala nos permite representar objetos muy grandes (como una ciudad) o muy pequeños (como un componente electrónico) en un formato manejable. La escala es la <strong>relación de proporción</strong> entre las dimensiones reales de un objeto y las dimensiones de su representación dibujada. Se expresa como un cociente o como una fracción.</p>
+        <article>
+          <h3>La fórmula de la escala</h3>
+          <p>La escala se define con la siguiente relación:</p>
+          <div class="katex-display">$$E = \frac{d}{D}$$</div>
+          <p>Donde:
+- <strong>$E$</strong> es la escala (un número sin unidades)
+- <strong>$d$</strong> es la dimensión en el dibujo (en cm o mm)
+- <strong>$D$</strong> es la dimensión real (en cm o mm)</p>
+          <p>Si la escala es $1:200$, significa que $1\text{ cm}$ en el plano equivale a $200\text{ cm}$ ($2\text{ m}$) en la realidad.</p>
+          <ul>
+      <li>En una <strong>escala de reducción</strong>, el numerador es menor que el denominador ($E < 1$), como $1:500$ en mapas.</li><li>En una <strong>escala de ampliación</strong>, el numerador es mayor que el denominador ($E > 1$), como $5:1$ en dibujos de componentes.</li><li>La <strong>escala natural</strong> es $1:1$, cuando el dibujo mide igual que el objeto real.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Tipos de escalas en mapas y planos</h3>
+          <p>Los mapas utilizan diferentes escalas según el nivel de detalle necesario:
+- <strong>Mapas a gran escala</strong> ($1:10\,000$ o mayor): muestran mucho detalle, como planos urbanos o catastrales.
+- <strong>Mapas a pequeña escala</strong> ($1:1\,000\,000$ o menor): muestran continentes o el mundo entero, con poco detalle.</p>
+          <p>En planos técnicos (arquitectura, ingeniería, diseño industrial), las escalas más habituales son:
+- $1:1$, $1:2$, $1:5$, $1:10$, $1:20$, $1:50$, $1:100$, $1:200$, $1:500$, $1:1000$</p>
+        </article>
+
+        <article>
+          <h3>Cálculos con escalas</h3>
+          <p>Para resolver problemas con escalas usamos la <strong>proporción directa</strong>:</p>
+          <div class="katex-display">$$\frac{d}{D} = E \implies d = E \cdot D \quad \text{y} \quad D = \frac{d}{E}$$</div>
+          <p>Por ejemplo, si un mapa tiene escala $1:25\,000$ y la distancia entre dos ciudades en el mapa es $8\text{ cm}$:</p>
+          <div class="katex-display">$$D = \frac{d}{E} = \frac{8}{1/25\,000} = 8 \times 25\,000 = 200\,000\text{ cm} = 2\,000\text{ m} = 2\text{ km}$$</div>
+        </article>
+
+        <article>
+          <h3>Errores comunes al trabajar con escalas</h3>
+          <ul>
+      <li><strong>No unificar unidades</strong>: siempre convierte todo a la misma unidad antes de calcular. Si el plano está en cm, convierte las medidas reales a cm.</li><li><strong>Confundir reducción y ampliación</strong>: una escala $2:1$ significa que el dibujo es el doble de grande que la realidad.</li><li><strong>Olvidar el cuadrado de la escala para áreas</strong>: si la escala lineal es $1:100$, la escala de áreas es $(1:100)^2 = 1:10\,000$.</li>
+    </ul>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un arquitecto necesita representar una vivienda de $12\text{ m}$ de largo en un plano a escala $1:75$. La longitud en el plano será $d = 12\,000 / 75 = 160\text{ mm} = 16\text{ cm}$.</p>
+    </div>
+      </section>
+
+      <!-- 1.2 Porcentajes en contextos comerciales y financieros -->
+      <section id="modulo-1-2">
+        <h2>1.2 Porcentajes en contextos comerciales y financieros</h2>
+        <p class="intro">Los <strong>porcentajes</strong> están presentes en casi todas las transacciones comerciales: descuentos en tiendas, IVA en facturas, intereses bancarios, encuestas de opinión, revisiones de precios... Dominar los porcentajes es una competencia matemática esencial para la vida adulta. Un porcentaje es una <strong>fracción de denominador 100</strong>. El símbolo $\%$ significa «por cada cien».</p>
+        <article>
+          <h3>Cálculo de un porcentaje</h3>
+          <p>Para calcular el $p\%$ de una cantidad $C$:</p>
+          <div class="katex-display">$$\text{Resultado} = \frac{p}{100} \cdot C = 0{,}01 \cdot p \cdot C$$</div>
+          <p>Por ejemplo, el $15\%$ de $360\text{ €}$:</p>
+          <div class="katex-display">$$\frac{15}{100} \times 360 = 0{,}15 \times 360 = 54\text{ €}$$</div>
+        </article>
+
+        <article>
+          <h3>Aumento y disminución porcentual</h3>
+          <p>Cuando una cantidad sufre un <strong>aumento porcentual</strong> del $p\%$, la nueva cantidad se calcula así:</p>
+          <div class="katex-display">$$C' = C \cdot \left(1 + \frac{p}{100}\right)$$</div>
+          <p>Para una <strong>disminución porcentual</strong> del $p\%$:</p>
+          <div class="katex-display">$$C' = C \cdot \left(1 - \frac{p}{100}\right)$$</div>
+          <ul>
+      <li>El factor $(1 + p/100)$ se llama <strong>coeficiente multiplicador de aumento</strong>.</li><li>El factor $(1 - p/100)$ se llama <strong>coeficiente multiplicador de disminución</strong>.</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Descuentos sucesivos</h3>
+          <p>Cuando se aplican varios descuentos seguidos, <strong>no se suman los porcentajes</strong>. Cada descuento se aplica sobre el resultado anterior:</p>
+          <div class="katex-display">$$C' = C \cdot \left(1 - \frac{p_1}{100}\right) \cdot \left(1 - \frac{p_2}{100}\right) \cdot \ldots$$</div>
+        </article>
+
+        <article>
+          <h3>IVA: Impuesto sobre el Valor Añadido</h3>
+          <p>El IVA es un impuesto que se aplica al precio de venta de la mayoría de bienes y servicios en España. Los tipos de IVA vigentes son:
+- <strong>General</strong>: $21\%$
+- <strong>Reducido</strong>: $10\%$ (alimentación, transporte, etc.)
+- <strong>Superreducido</strong>: $4\%$ (pan, leche, medicamentos, libros, etc.)</p>
+        </article>
+
+        <article>
+          <h3>El porcentaje como herramienta comparativa</h3>
+          <p>Los porcentajes permiten comparar magnitudes de forma significativa. Decir «ha subido un $5\%$» es más informativo que decir «ha subido $20\text{ €}$», ya que el porcentaje es relativo al valor de partida.</p>
+          <p>Para calcular el <strong>porcentaje de variación</strong> entre dos cantidades:</p>
+          <div class="katex-display">$$\text{Variación } \% = \frac{\text{Valor final} - \text{Valor inicial}}{\text{Valor inicial}} \times 100$$</div>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Un ordenador cuesta $800\text{ €}$ sin IVA. Con IVA general ($21\%$): Precio final $= 800 \times 1{,}21 = 968\text{ €}$. Si hay un descuento del $10\%$ antes del IVA: Precio rebajado $= 800 \times 0{,}90 = 720\text{ €}$; con IVA $= 720 \times 1{,}21 = 871{,}20\text{ €}$.</p>
+    </div>
+      </section>
+
+      <!-- 1.3 Interés simple y descuentos sucesivos -->
+      <section id="modulo-1-3">
+        <h2>1.3 Interés simple y descuentos sucesivos</h2>
+        <p class="intro">El <strong>interés simple</strong> es el método más básico para calcular el rendimiento de un capital prestado o invertido. Aunque en la práctica financiera se utiliza más el interés compuesto, el interés simple se aplica en operaciones a muy corto plazo y es la base para entender conceptos financieros más avanzados.</p>
+        <article>
+          <h3>Fórmula del interés simple</h3>
+          <div class="katex-display">$$I = C \cdot r \cdot t$$</div>
+          <p>Donde:
+- <strong>$I$</strong> es el interés producido
+- <strong>$C$</strong> es el capital inicial
+- <strong>$r$</strong> es el tipo de interés (en tanto por uno, no en porcentaje)
+- <strong>$t$</strong> es el tiempo (en años)</p>
+          <p>El <strong>capital acumulado</strong> al cabo del tiempo $t$ es:</p>
+          <div class="katex-display">$$M = C + I = C \cdot (1 + r \cdot t)$$</div>
+          <p>Por ejemplo, si invertimos $3\,000\text{ €}$ al $4\%$ anual durante $2$ años:</p>
+          <div class="katex-display">$$I = 3\,000 \times 0{,}04 \times 2 = 240\text{ €}$$ $$M = 3\,000 + 240 = 3\,240\text{ €}$$</div>
+        </article>
+
+        <article>
+          <h3>Cálculo del tiempo y del tipo de interés</h3>
+          <p>A veces conocemos el interés producido y necesitamos hallar el tiempo o el tipo de interés:</p>
+          <div class="katex-display">$$t = \frac{I}{C \cdot r} \qquad r = \frac{I}{C \cdot t}$$</div>
+        </article>
+
+        <article>
+          <h3>Descuentos comerciales</h3>
+          <p>En el comercio, un <strong>descuento comercial</strong> es una reducción del precio de venta. Se calcula igual que un porcentaje de disminución. Cuando se aplican descuentos encadenados, cada uno se calcula sobre el precio que queda tras el anterior:</p>
+          <div class="katex-display">$$P_{\text{final}} = P_{\text{original}} \times (1 - d_1) \times (1 - d_2) \times \ldots$$</div>
+        </article>
+
+        <article>
+          <h3>Equivalencia entre descuento único y sucesivo</h3>
+          <p>Dos descuentos sucesivos del $20\%$ y del $10\%$ equivalen a un descuento único del:</p>
+          <div class="katex-display">$$d_{\text{único}} = 1 - (1-0{,}20)(1-0{,}10) = 1 - 0{,}80 \times 0{,}90 = 1 - 0{,}72 = 0{,}28 = 28\%$$</div>
+        </article>
+
+        <article>
+          <h3>El problema del redondeo</h3>
+          <p>En operaciones financieras, los redondeos pueden generar diferencias. Es importante acordar las reglas de redondeo:
+- Se redondea al céntimo de euro en la factura final.
+- En cálculos intermedios, se trabaja con más decimales para evitar errores acumulados.</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>Una tienda ofrece un $30\%$ de descuento y luego un $10\%$ adicional. En una camiseta de $50\text{ €}$: tras el primer descuento $= 50 \times 0{,}70 = 35\text{ €}$; tras el segundo $= 35 \times 0{,}90 = 31{,}50\text{ €}$. El descuento total es del $37\%$, no del $40\%$.</p>
+    </div>
+      </section>
+
+      <!-- 1.4 Conversión de unidades y magnitudes cotidianas -->
+      <section id="modulo-1-4">
+        <h2>1.4 Conversión de unidades y magnitudes cotidianas</h2>
+        <p class="intro">En la vida diaria necesitamos <strong>convertir entre diferentes unidades</strong> constantemente: de kilómetros a millas cuando viajamos, de grados Celsius a Fahrenheit, de litros a galones, de euros a otras monedas. La conversión de unidades es una competencia transversal que aplica en ciencias, tecnología, cocina, deportes y muchas otras áreas.</p>
+        <article>
+          <h3>El sistema internacional de unidades (SI)</h3>
+          <p>El SI establece $7$ magnitudes fundamentales. Las más utilizadas en nuestro contexto son:
+- <strong>Longitud</strong>: metro ($\text{m}$)
+- <strong>Masa</strong>: kilogramo ($\text{kg}$)
+- <strong>Tiempo</strong>: segundo ($\text{s}$)
+- <strong>Temperatura</strong>: kelvin ($\text{K}$)</p>
+        </article>
+
+        <article>
+          <h3>Prefijos del SI</h3>
+          <p>Los múltiplos y submúltiplos del metro se forman con prefijos:
+- <strong>kilo</strong> ($\text{k}$) $= 10^3$: kilómetro ($\text{km} = 1\,000\text{ m}$)
+- <strong>hecto</strong> ($\text{h}$) $= 10^2$: hectómetro ($\text{hm} = 100\text{ m}$)
+- <strong>deca</strong> ($\text{da}$) $= 10^1$: decámetro ($\text{dam} = 10\text{ m}$)
+- <strong>deci</strong> ($\text{d}$) $= 10^{-1}$: decímetro ($\text{dm} = 0{,}1\text{ m}$)
+- <strong>centi</strong> ($\text{c}$) $= 10^{-2}$: centímetro ($\text{cm} = 0{,}01\text{ m}$)
+- <strong>mili</strong> ($\text{m}$) $= 10^{-3}$: milímetro ($\text{mm} = 0{,}001\text{ m}$)</p>
+        </article>
+
+        <article>
+          <h3>Factores de conversión</h3>
+          <p>Un <strong>factor de conversión</strong> es una fracción igual a $1$ que relaciona dos unidades equivalentes. Por ejemplo:</p>
+          <div class="katex-display">$$1\text{ km} = 1\,000\text{ m} \implies \frac{1\text{ km}}{1\,000\text{ m}} = 1$$</div>
+          <p>Para convertir $3{,}5\text{ km}$ a metros:</p>
+          <div class="katex-display">$$3{,}5\text{ km} \times \frac{1\,000\text{ m}}{1\text{ km}} = 3\,500\text{ m}$$</div>
+        </article>
+
+        <article>
+          <h3>Conversiones de superficie y volumen</h3>
+          <ul>
+      <li><strong>Superficie</strong>: $1\text{ m}^2 = 10\,000\text{ cm}^2$, $1\text{ ha} = 10\,000\text{ m}^2$</li><li><strong>Volumen</strong>: $1\text{ m}^3 = 1\,000\text{ L}$, $1\text{ L} = 1\,000\text{ cm}^3 = 1\text{ dm}^3$</li>
+    </ul>
+        </article>
+
+        <article>
+          <h3>Conversiones de velocidad</h3>
+          <div class="katex-display">$$1\text{ km/h} = \frac{1\,000\text{ m}}{3\,600\text{ s}} = \frac{1}{3{,}6}\text{ m/s}$$</div>
+          <p>Para pasar de $\text{km/h}$ a $\text{m/s}$: dividimos entre $3{,}6$. Para pasar de $\text{m/s}$ a $\text{km/h}$: multiplicamos por $3{,}6$.</p>
+        </article>
+
+        <article>
+          <h3>Temperatura: Celsius, Fahrenheit y Kelvin</h3>
+          <p>Las escalas de temperatura más comunes se relacionan mediante:</p>
+          <div class="katex-display">$$F = \frac{9}{5}\,C + 32 \qquad K = C + 273{,}15$$</div>
+        </article>
+
+        <article>
+          <h3>Unidades anglosajonas</h3>
+          <p>Es útil conocer algunas equivalencias:
+- $1\text{ pulgada} = 2{,}54\text{ cm}$
+- $1\text{ pie} = 12\text{ pulgadas} = 30{,}48\text{ cm}$
+- $1\text{ milla} = 1\,609\text{ m}$
+- $1\text{ libra} = 0{,}453\text{ kg}$
+- $1\text{ galón (EE.UU.)} = 3{,}785\text{ L}$</p>
+        </article>
+
+        <div class="practical-box">
+      <strong><i class="fa-solid fa-lightbulb"></i> Aplicación práctica</strong>
+      <p>En una receta americana se piden $2$ tazas de harina. Sabiendo que $1\text{ taza} \approx 240\text{ mL}$, necesitamos $2 \times 240 = 480\text{ mL} = 0{,}48\text{ L}$ de harina. Si nuestra báscula mide en gramos y la densidad de la harina es $0{,}55\text{ g/mL}$, entonces $480 \times 0{,}55 = 264\text{ g}$.</p>
+    </div>
+      </section>
+
+      <footer>
+                <p>¿Listo para practicar? <a href="Matematicas_4ESOB_Tema1_Ejercicios.html"><i class="fa-solid fa-arrow-right"></i> Ir a ejercicios del Tema 1</a></p>
+      </footer>
+    </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      if(typeof renderMathInElement==='function') renderMathInElement(document.body,{
+        delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+        throwOnError:false
+      });
+    });
+    var themeToggle=document.getElementById('theme-toggle'),body=document.body,icon=themeToggle.querySelector('i');
+    if(localStorage.getItem('theme')==='dark'){body.classList.add('dark-mode');icon.classList.replace('fa-moon','fa-sun');}
+    themeToggle.addEventListener('click',function(){body.classList.toggle('dark-mode');var isDark=body.classList.contains('dark-mode');icon.className=isDark?'fa-solid fa-sun':'fa-solid fa-moon';localStorage.setItem('theme',isDark?'dark':'light');});
+    var menuToggle=document.getElementById('menu-toggle'),sidebar=document.getElementById('sidebar');
+    menuToggle.addEventListener('click',function(){sidebar.classList.toggle('open');});
+    document.querySelectorAll('.nav-link').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<992)sidebar.classList.remove('open');});});
+    var sections=document.querySelectorAll('section'),navLinks=document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll',function(){var current='';sections.forEach(function(section){var st=section.offsetTop-100;if(pageYOffset>=st)current=section.getAttribute('id');});navLinks.forEach(function(link){link.classList.remove('active');if(link.getAttribute('href').slice(1)===current)link.classList.add('active');});});
+  </script>
+</body>
+</html>
